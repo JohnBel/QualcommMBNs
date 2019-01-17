@@ -1,0 +1,13 @@
+epdg_fqdn:vowifi.jio.com;
+epdg_ipv4_address:49.44.48.78;
+static_fqdn_enabled:FALSE;
+ke_payload_enabled:FALSE;
+ikev2_self_id_type:ID_RFC822_ADDR;
+pcscfv4_attr_type_val:16384;
+ikev2_sa_rekey_timer_soft_sec:86400;
+ikev2_sa_rekey_timer_hard_sec:86500;
+esp_rekey_timer_soft_sec:86400;
+esp_rekey_timer_hard_sec:86500;
+natt_keep_alive_timer_sec:20; 
+epdg_fqdn_impi_based:TRUE;
+ikev2_self_id_type: ID_RFC822_ADDR_MAC_IMPI_BASED;

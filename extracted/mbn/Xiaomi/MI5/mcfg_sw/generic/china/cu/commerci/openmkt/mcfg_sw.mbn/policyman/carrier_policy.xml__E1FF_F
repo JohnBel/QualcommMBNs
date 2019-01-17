@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Policy for CU CSFB+G DSDS 
+$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CU/openMarket/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 10156175 $"
+        schema_ver  = "1"
+        policy_ver  = "75.2.15"
+>
+
+  <initial>
+    <actions>
+      <!-- Define the MCCs in which FDD LTE is to be disabled -->
+      <mcc_list name="home_mccs">
+        460
+      </mcc_list>
+      <plmn_list name = "ca_combo_operators">
+        460-01 460-06 460-09
+      </plmn_list>	  
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none" >
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <rf_bands />
+          <svc_mode> LIMITED </svc_mode>
+          <freq_list list="cpfl" />
+        </actions>
+      </define_fullrat_config>
+
+      <!-- HOME RF bands list --> 
+      <rf_band_list name="rf_bands_home">
+        <!-- GSM Band mapping: GSM bands are
+                B7->GSM_DCS_1800->Bit-7,
+                B8->GSM_EGSM_900->Bit-8
+                B9->GSM_PGSM_900->Bit-9.
+                B19->GSM_850 -> Bit-19,
+                B21->GSM_PCS_1900-> Bit-21
+                     WCDMA Band mapping: WCDMA bands are
+                B22-> SYS_SBAND_WCDMA_I_IMT_2000
+                B49->SYS_SBAND_WCDMA_VIII_900
+             Refer: sys_sband_e_type in sys.h
+        -->
+        <gw_bands base="none" >
+          <include> 7 8 9 19 21 22 49 </include>
+        </gw_bands> 
+        <!-- LTE Band: 1,3, 40 and 41 is mapped to Band Bit: 0, 2, 39 and 40 respectively.
+                      Refer: sys_sband_lte_e_type in sys.h
+        --> 
+        <lte_bands base="none" >
+          <include> 0 2 39 40 </include>
+        </lte_bands> 
+        <tds_bands base="none" />
+      </rf_band_list>
+
+      <!-- ROAM RF bands list --> 
+      <rf_band_list name="rf_bands_roam">
+        <!-- GSM Band mapping: GSM bands are
+                B7->GSM_DCS_1800->Bit-7,
+                B8->GSM_EGSM_900->Bit-8
+                B9->GSM_PGSM_900->Bit-9.
+                B19->GSM_850 -> Bit-19,
+                B21->GSM_PCS_1900-> Bit-21
+                     WCDMA Band mapping: WCDMA bands are
+                B22-> SYS_SBAND_WCDMA_I_IMT_2000
+                B23->SYS_SBAND_WCDMA_II_PCS_1900
+                B26->SYS_SBAND_WCDMA_V_850
+                B49->SYS_SBAND_WCDMA_VIII_900
+             Refer: sys_sband_e_type in sys.h
+        -->
+        <gw_bands base="none" >
+          <include> 7 8 9 19 21 22 23 26 49 </include>
+        </gw_bands> 
+        <lte_bands base="hardware" />
+        <tds_bands base="none" />
+      </rf_band_list>
+
+      <!-- Set initial RAT Capability and RF bands -->
+      <rat_capability base="none" >
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <rf_bands_if list="rf_bands_home" />
+
+      <!-- Set UE mode to CSFB -->
+      <ue_mode> CSFB </ue_mode>
+      <freq_list_if list="cpfl" />
+
+      <feature single_sim="normal"> dualmmode </feature>
+      
+    </actions>
+  </initial>
+
+  <!--
+  ===========================================================================  
+    Rules to handle OOS situations.
+  ===========================================================================  
+  -->
+
+  <!-- RULE #1 -->
+  <!-- We wait if we don't have location or we are not ONLINE.
+  -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <not> <have_location /> </not>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      </any_of>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!--
+  ===========================================================================  
+    Rules where location info can be used.
+  ===========================================================================  
+  -->
+  
+  <!-- RULE #2 -->
+  <!-- If we are Home, stay with Home bands.
+       If we are Roaming, stay with roaming bands.
+  -->
+  <if precond="none">
+    <cond> <location_mcc_in list="home_mccs" /> </cond>
+    <then>
+      <rf_bands list="rf_bands_home" />
+      <svc_mode> FULL </svc_mode>
+      <freq_list list="cpfl" />
+    </then>
+    <else>
+      <rf_bands list="rf_bands_roam" />
+      <svc_mode> FULL </svc_mode>
+      <freq_list list="default" />
+    </else>
+  </if>
+
+  <!-- RULE #3 -->
+  <!-- Rules for averting empty UEcap in OTA message..
+  -->
+  <rule precond="none">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <serving_plmn_in list = "ca_combo_operators" /> </cond>
+        <then> <ca_band_combos string="41CA-0;41AA-39A-0;41A-39AA-0;3CA-0;3A-1AA-0;3AA-1A-0;" /> </then>
+        <else>
+         <ca_band_combos string="" />
+        </else>
+      </if>
+    <continue />
+  </actions>
+  </rule>
+</policy>

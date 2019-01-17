@@ -1,0 +1,14 @@
+PDN_APN_String:vzwapp;
+Supported_RAT_Priority_List:WWAN, IWLAN;
+
+PDN_APN_String:vzwinternet;
+Supported_RAT_Priority_List:WWAN;
+
+PDN_APN_String:vzwims;
+Supported_RAT_Priority_List:WWAN, IWLAN;
+Override_Type:API;
+
+PDN_APN_String:vzwemergency;
+Override_Type:API;
+Supported_RAT_Priority_List:WWAN, IWLAN;
+

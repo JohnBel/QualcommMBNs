@@ -1,0 +1,3 @@
+[submodule "utils/EfsTools"]
+	path = utils/EfsTools
+	url = https://github.com/JohnBel/EfsTools.git

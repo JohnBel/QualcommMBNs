@@ -1,0 +1,64 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- 7+5 mode Device configuration file for open Market DSDS with W+W support",
+      "$Header: //commercial/MPSS.TH.2.0.c1/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+5_mode/W+W/device_config.xml#2 $",
+      "-->",
+      "",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 9384863 $\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"2031.2.3\"",
+      ">",
+      "",
+      "  <initial>",
+      "    <actions>",
+      "",
+      "      <!-- Define device configuration as DSDS -->",
+      "      <device_configuration num_sims=\"2\" max_active_voice=\"1\" max_active_data=\"1\">",
+      "        <config primary=\"C H G W L T\" secondary=\"G W\" />",
+      "        <config primary=\"C H G W\" secondary=\"G W L T\" />",
+      "        <e911_config primary=\"C H G W L T\" secondary=\"G W\" />",
+      "        <e911_config primary=\"C H G W\" secondary=\"G W L T\" />",
+      "      </device_configuration>",
+      "",
+      "      <feature subs=\"this\">  dualmmode </feature>",
+      "      <feature subs=\"other\"> dualmmode </feature>",
+      "",
+      "    </actions>",
+      "  </initial>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "DeviceMode": {
+    "Value": 0
+  },
+  "ImsHybridEnable": {
+    "Value": 0
+  },
+  "QmiCatMode": {
+    "Value": 0
+  },
+  "ScanScopeRule": {
+    "Value": 62
+  },
+  "TrmConfiguration": {
+    "Config": 0,
+    "Mask": 0
+  },
+  "UimSelectDefaultSimApplication": {
+    "Value": 0
+  },
+  "DualStandbyConfigItems": {
+    "DedicatedVoiceSubs": 0,
+    "DedicatedDataSubs": 0,
+    "ActiveSubs": 0,
+    "PrioritySubs": 9,
+    "DualStandbyPref": 0,
+    "Reserved": 0
+  }
+}
