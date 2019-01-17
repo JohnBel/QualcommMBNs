@@ -1,0 +1,10 @@
+[QIPCALL:ImsVoiceSuppsConfig]
+
+#This config is required not to send out unsubscribe to NW
+#when conference call is end.
+
+*isUnsubcribeDisabled = 1
+
+
+
+

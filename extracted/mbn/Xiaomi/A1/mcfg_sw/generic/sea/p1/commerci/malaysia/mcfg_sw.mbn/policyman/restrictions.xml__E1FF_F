@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Restrictions in China DSDx devices 
+$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/Restrictions/china_dsdx/restrictions.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15931866 $"
+        policy_ver  = "4000.5.32"
+>
+
+  <initial>
+
+    <mcc_list name="restrictions:home_mccs">
+      460 455
+    </mcc_list>
+	
+	<mcc_list name="na_mccs"> 302 310 311 312 313 314 315 316 330 </mcc_list>
+	
+    <plmn_list name ="ct_imsi_plmn">
+      460-03 460-11
+    </plmn_list>
+	
+	<!-- Define  RF band list which excluse LTE Band 40 41-->
+	<rf_band_list name="no_b40_b41">
+		<gw_bands base="hardware" />
+		<lte_bands base="hardware">
+			<exclude> 39 </exclude>
+		</lte_bands>
+		<tds_bands base="hardware" />
+	</rf_band_list>
+
+  </initial>
+
+  <if>
+    <any_of>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      <not> <have_location /> </not>
+    </any_of>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <if>
+    <all_of>
+      <location_mcc_in list="restrictions:home_mccs" />
+      <any_of>
+        <imsi_mcc_in session="1x" list="restrictions:home_mccs" />
+        <imsi_plmn_in list="ct_imsi_plmn" />
+      </any_of>
+    </all_of>
+    <then>
+      <svc_mode> LIMITED </svc_mode>
+      <rat_capability base="none">
+        <include> G </include>
+      </rat_capability>
+    </then>
+  </if>
+  
+    <!-- Set config based on location(China/Japan/Roam). -->
+	<select>
+		<case>
+			<location_mcc_in list="na_mccs" />
+			<actions>
+				<rf_bands list="no_b40_b41" />
+				<freq_list list="default" />
+			</actions>
+		</case>
+
+</policy>

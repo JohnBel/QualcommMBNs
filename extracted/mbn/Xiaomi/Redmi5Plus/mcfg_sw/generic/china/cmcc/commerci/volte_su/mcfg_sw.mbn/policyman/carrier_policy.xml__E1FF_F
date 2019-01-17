@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for CMCC CSFB configuration with GWL roaming
+$Header: //commercial/MPSS.TA.2.3.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/CMCC/subsidized/carrier_policy.xml#6 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15620961 $"
+        schema_ver  = "1"
+        policy_ver  = "76.1.31"
+>
+
+  <initial>
+    <actions>
+
+      <!-- Define the Home MCCs -->
+      <mcc_list name="home_mccs"> 460 </mcc_list>
+
+      <mcc_list name="lw_roam_mccs"> 440 441 450 </mcc_list>
+
+      <!-- These are the CMCC IMSI PLMNs -->
+      <plmn_list name = "unrestricted_operators">
+        460-00 460-02 460-04 460-07 460-08
+      </plmn_list>
+
+      <plmn_list name = "ca_combo_operators">
+        460-00 460-02 460-04 460-07 460-08
+      </plmn_list>
+
+      <!-- These are the CU IMSI PLMNs -->
+      <plmn_list name="cu_imsi">
+        460-01 460-06 460-09
+      </plmn_list>
+
+      <!-- These are the CT IMSI MCCs -->
+      <mcc_list name="ct_mccs">
+        455 460
+      </mcc_list>
+
+      <boolean_define name="change_rat_order_in_full_rat" initial="true" />
+
+      <define_fullrat_config>
+        <actions>   
+          <rf_bands base="hardware" />
+          <if>
+            <cond> <boolean_test name="change_rat_order_in_full_rat" /> </cond>
+            <then> <rat_order> G W L T C H </rat_order> </then>
+          </if>
+          <if>
+           <cond>
+             <imsi_mcc_in session="1x" list="ct_mccs" />
+           </cond>
+           <then>
+             <rat_capability base="none">
+               <include> CDMA HDR GSM </include>
+             </rat_capability>
+             <svc_mode> ALL </svc_mode>
+             <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+           </then>
+           <else>
+             <rat_capability base="none">
+               <include> TDSCDMA LTE GSM WCDMA </include>
+             </rat_capability>
+             <svc_mode> LIMITED </svc_mode>
+             <scan_optimization tgpp="disabled" tgpp2="disabled" />
+           </else>
+          </if>
+       </actions>
+      </define_fullrat_config>
+
+      <!-- Home RF Band list --> 
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base="hardware" />
+        <!--  Refer to sys_sband_lte_e_type in sys.h for band mapping -->
+        <lte_bands base="none" >
+          <include> 2 7 33 37 38 39 40 </include>
+        </lte_bands> 
+        <tds_bands base="hardware" />
+      </rf_band_list>
+
+      <!-- Set initial power up capability -->
+      <rat_capability_if base="none">
+        <include> GSM TDSCDMA LTE </include>
+      </rat_capability_if>
+      <rf_bands_if list="rf_bands_home" />
+
+      <ue_mode> CSFB </ue_mode>
+
+      <feature single_sim="normal"> dualmmode </feature>
+
+      <boolean_define name="home" initial="true" />
+      <ca_band_combos string="" />
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <if precond="none">
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+  <then>
+    <stop />
+  </then>
+  </if>
+
+  <!-- RULE #2 -->
+  <if precond="none">
+    <volte_enabled />
+    <then>
+      <voice_domain_pref mandatory="false"> IMS_PREF </voice_domain_pref>
+      <continue />
+    </then>
+    <else>
+      <voice_domain_pref mandatory="true"> CS_ONLY </voice_domain_pref>
+      <continue />
+    </else>
+  </if>
+
+<!-- RULE #3 -->
+  <!-- Restrict CU cards to GSM only.
+  -->
+  <rule precond="IMSI">
+    <conditions>
+      <imsi_plmn_in list="cu_imsi" />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> GSM </include>
+      </rat_capability>
+      <rf_bands />
+      <svc_mode> FULL </svc_mode>
+      <rat_order> G W L T C H </rat_order>
+      <scan_optimization tgpp="disabled" tgpp2="disabled" />
+    </actions>
+  </rule>
+
+  <!-- RULE #4 -->
+  <!-- We Wait if we don't have location or we are not ONLINE.
+  -->
+  <rule precond="none">
+    <conditions>
+      <not> <have_location /> </not>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!-- RULE #5 -->
+  <rule precond="SS">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <serving_plmn_in list = "ca_combo_operators" /> </cond>
+        <then> <ca_band_combos string="38CA-0;38AA-38A-0;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41AA-39A-0;41A-39AA-0;40CA-0;40CA-1;40AA-40A-0;39CA-0;38CC-0;38AA-38AA-0;41AA-41AA-0;41AA-41AA-1;41CC-0;41CC-1;41AA-39AA-0;40CC-0;40CC-1;40AA-40AA-0;39CC-0;41CC-39A-0;41CA-39AA-0;41AA-39CA-0;41A-39CC-0;41AA-41AA-39A-0;41AA-41A-39AA-0;41AA-39AA-39A-0;41A-39AA-39AA-0;41DC-0;" /> </then>
+        <else>
+         <ca_band_combos string="" />
+        </else>
+      </if>
+    <continue />
+  </actions>
+  </rule>
+
+  <!-- RULE #6 -->
+  <!-- If we have location, determine UE location and continue evaluation.
+  -->
+  <rule precond="none">
+    <conditions>
+      <have_location />
+    </conditions>
+    <actions>
+      <svc_mode> FULL </svc_mode>
+      <boolean_set name="home">
+        <location_mcc_in list="home_mccs" />
+      </boolean_set>
+      <scan_optimization tgpp="disabled" tgpp2="disabled" />
+      <rat_order> L W T G C H </rat_order>
+      <boolean_set name="change_rat_order_in_full_rat" value="false" />
+      <continue />
+    </actions>
+  </rule>
+
+  <!--
+  ====================================================================
+    Rules where location info can be used.
+  ====================================================================
+  -->
+
+  <!-- RULE #7 -->
+  <!-- 1x cards in Home get CDMA + HDR and GSM in roaming -->
+  <rule precond="IMSI">
+    <conditions>
+      <imsi_mcc_in session="1x" list="ct_mccs" />
+    </conditions>
+    <actions>
+      <rf_bands />
+      <if>
+        <cond> <boolean_test name="home" /> </cond>
+        <then>
+          <rat_capability base="none">
+            <include> CDMA HDR </include>
+          </rat_capability>
+        </then>
+        <else>
+          <rat_capability base="none">
+            <include> GSM </include>
+          </rat_capability>
+        </else>
+      </if>
+    </actions>
+  </rule>
+
+  <!-- RULE #8 -->
+  <!-- Other cards get TGL in Home -->
+  <rule precond="none">
+    <conditions>
+      <boolean_test name="home" />
+    </conditions>
+    <actions>
+      <rat_capability base = "none">
+        <include> TDSCDMA GSM LTE </include>
+      </rat_capability>
+      <rf_bands list="rf_bands_home" />
+    </actions>
+  </rule>
+
+  <!-- RULE #9 -->
+  <!-- Other cards in Japan/Korea restrict to LW capability -->
+  <rule precond="none">
+    <conditions>
+      <not> <boolean_test name="home" /> </not>
+      <location_mcc_in list="lw_roam_mccs" />
+    </conditions>
+    <actions>
+      <rf_bands />
+      <rat_capability base = "none">
+        <include> LTE WCDMA </include>
+      </rat_capability>
+    </actions>
+  </rule>
+  
+  <!-- RULE #10 -->
+  <!-- Other cards restrict to GWL -->
+  <rule precond="none">
+    <conditions>
+      <true/>
+    </conditions>
+    <actions>
+      <rf_bands />
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+    </actions>
+  </rule>
+
+</policy>

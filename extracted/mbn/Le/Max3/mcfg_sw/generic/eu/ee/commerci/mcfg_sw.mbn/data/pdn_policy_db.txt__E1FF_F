@@ -1,0 +1,13 @@
+PDN_APN_String:everywhere;
+Supported_RAT_Priority_List:WWAN;
+
+PDN_APN_String:ims; 
+Override_Type:API; 
+Supported_RAT_Priority_List:IWLAN,WWAN;
+
+PDN_APN_String:eezone;
+Supported_RAT_Priority_List:IWLAN,WWAN;
+
+
+
+

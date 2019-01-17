@@ -1,0 +1,38 @@
+
+[QIPCALL:ImsVoiceConfig]
+
+#This config is required to enable 380 response validation as per
+#3GPP.
+
+*enableAlternateSrvRspCheck = 0
+
+#This config is required to configure the default URI type
+#(SIP/TEL) for MO calls.
+
+uriType = QPE_IMS_URI_TEL
+
+#This config is required to include MTT USSD feature tag into IMS registration.
+
+ussdAcceptContact = "g.3gpp.nw-init-ussi"
+
+#This config is required to enable the MT USSI.
+
+enableMTUSSI = 1
+
+#This config is required to configure the default invite retry counter.
+
+inviteRetryCounter = 2
+
+#This config is required to enable emergency call operation in CS-only mode.
+
+emergCallCSOnly = 0
+
+#This config is required to configure the privacy type. Set 0: for none, 1: for id, 2: for header.
+
+privacyType = 2
+
+#This config is required to configure the terminating identity presentation or restriction type.
+
+terminatingIdentityService = 5
+
+

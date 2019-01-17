@@ -1,0 +1,14 @@
+ikev2_peer_id_type:ID_FQDN;
+ikev2_dh_group_list:5;
+ikev2_encr_algo_list:12;
+ikev2_aes_cbc_encr_key_size_list:128;
+ikev2_hash_algo_list:12;
+ikev2_prf_algo_list:5;
+esp_encr_algo_list:3,12;
+esp_aes_cbc_encr_key_size_list:128;
+esp_auth_algo_list:2,5;
+ikev2_eap_fra_pseudo_enabled:TRUE;
+ikev2_eap_reauth_realm_enabled:TRUE;
+static_fqdn_enabled:FALSE;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

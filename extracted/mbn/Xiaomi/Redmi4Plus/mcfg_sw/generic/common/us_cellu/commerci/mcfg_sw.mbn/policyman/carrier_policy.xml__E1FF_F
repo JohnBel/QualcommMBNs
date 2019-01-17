@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier configuration file for SRLTE with GWL roaming for USCC
+     $Header: //components/rel/mmcp.mpss/7.3/policyman/configurations/Carrier/USCC/subsidized/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 9126011 $"
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "56.1.2"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of the MCCs in which SRLTE is allowed -->
+      <mcc_list name="sxlte_mccs"> 311 </mcc_list>
+
+      <!-- These are the serving system PLMNs for which SRLTE will be allowed
+       -->
+      <!-- NOTE: Proper functioning of the SXLTE policy requires that there
+           be an PLMN list named "sxlte_plmns". Do NOT rename this list.
+      -->
+      <plmn_list name="sxlte_plmns">
+        311-225 311-580
+      </plmn_list>
+
+      <!-- Define the OOS timer with a 2 minute interval -->
+      <define_timer name="noservice" interval="2" units="min" id="1" />
+
+      <!-- Define initial RAT capability as CHL for SUBS1-->
+      <rat_capability_if base="none" >
+        <include> CDMA HDR LTE </include>
+      </rat_capability_if>
+
+      <feature> srlte </feature>
+
+      <!-- Define Intial UE mode as 1X_CSFB_PREF -->
+      <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+      <!-- Boolean: Is the device at home? -->
+      <boolean_define name="home" initial="true" />
+      <boolean_set name="home">
+        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>
+      </boolean_set>
+
+      <!-- Define an RF band list that excludes GWT bands and include CHL bands-->
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base="none" >
+          <include> 0 1 2 </include>
+        </gw_bands>
+        <lte_bands base="none" >
+          <include> 1 3 4 11 16 24 </include>
+        </lte_bands>
+        <tds_bands base="none" />
+      </rf_band_list>
+
+      <!-- Define an RF band list that include GW bands -->
+      <rf_band_list name="rf_bands_roam">
+        <gw_bands base="none" >
+          <include> 7 8 9 19 20 21 22 23 26 49 </include>
+        </gw_bands>
+        <lte_bands base="none" >
+          <include> 2 6 12 </include>
+        </lte_bands>
+        <tds_bands base="none" />
+      </rf_band_list>
+
+      <!-- Define an RF band list that excludes TDS bands -->
+      <rf_band_list name="rf_bands_gwl">
+        <gw_bands base="hardware" />
+        <lte_bands base="hardware" />
+        <tds_bands base="none" />
+      </rf_band_list>
+
+      <!-- On first boot, include FDD LTE bands -->
+      <rf_bands_if list="rf_bands_home" />
+
+    </actions>
+  </initial>
+
+<!--
+  ====================================================================
+    Rules to handle OOS situations and timers.
+  ====================================================================
+  -->
+
+  <!-- RULE #1 -->
+  <!-- If we are not ONLINE do not continue to other rules and stop the timer
+  -->
+  <rule precond="none">
+    <conditions>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    </conditions>
+    <actions>
+      <timer_stop name="noservice" />
+    </actions>
+  </rule>
+
+  <!-- RULE #2 -->
+  <!-- If the oos timer has expired enable Full RAT mode.
+  -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="noservice" />
+    </conditions>
+    <actions>
+      <expired_timer_handled name="noservice" />
+      <ue_mode> CSFB </ue_mode>
+      <rat_capability base="config" />
+      <rf_bands list="rf_bands_gwl" />
+      <svc_mode> ALL </svc_mode>
+    </actions>
+  </rule>
+
+  <!-- RULE #3 -->
+  <!-- Determine location..
+  -->
+  <if precond="none">
+    <cond> <have_location /> </cond>
+    <then>
+      <boolean_set name="home">
+        <location_mcc_in list="sxlte_mccs" />
+      </boolean_set>
+      <svc_mode> FULL </svc_mode>
+      <timer_stop name="noservice" />
+      <continue />
+    </then>
+    <else> <timer_start name="noservice" /> </else>
+  </if>
+
+<!--
+  ====================================================================
+    Rules to implement SRLTE
+  ====================================================================
+  -->
+
+  <!-- RULE #5 -->
+  <!-- If conditions allow, operate as SRLTE with CHL.
+  -->
+  <rule>
+    <conditions>
+      <boolean_test name="home" />
+    </conditions>
+    <actions>
+      <ue_mode> 1X_CSFB_PREF </ue_mode>
+      <rat_capability base="none">
+        <include> CDMA HDR LTE </include>
+      </rat_capability>
+      <rf_bands list="rf_bands_home" />
+    </actions>
+  </rule>
+
+  <!-- RULE #6 -->
+  <!-- Anything else is CSFB with GWL.
+  -->
+  <rule>
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <ue_mode> CSFB </ue_mode>
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <rf_bands list="rf_bands_roam" />
+    </actions>
+  </rule>
+
+</policy>

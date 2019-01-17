@@ -1,0 +1,24 @@
+Adding Comments LTE RSRQ Src LTE SNR Destination
+Some Comments
+Ignore these commenrs
+@@@
+LTEDLRSRQSrcLow = -70;
+LTEDLRSRQSrcHigh = -60;
+LTEDLSNRSrcLow = 100;
+LTEDLSNRSrcHigh = 150;
+LTEDLRSRQTargetLow = -70;
+LTEDLRSRQTargetHigh = -60;
+LTEDLSNRTargetLow = 100;
+LTEDLSNRTargetHigh = 150;
+LTEDLSRATMonitorTime = 5;
+LTEDLTRATMonitorTime = 5;
+WLANRssiThresholdHigh = -65;
+WLANRssiThresholdLow = -75;
+WLANRssiThresholdRepoint = -70;
+WLANSamplingTimerValue = 3;
+WLANMonitorTimerValue = 5;
+LTE_UL_Sampling_Timer = 1000;
+LTE_UL_Monitoring_Time = 6000;
+LTE_UL_Alpha = 0.75;
+LTE_UL_Threashold_Bad_Delay = 70.0;
+LTE_UL_Threashold_Good_Delay = 60.0;

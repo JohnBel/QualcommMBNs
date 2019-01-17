@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML. 
+       Power up and LPM is in Full RAT mode.
+$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#1 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 10156175 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "43.1.6"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of the HOME MCCs -->
+      <mcc_list name="volte_only_mccs"> 440 441 </mcc_list>
+
+      <!-- MCCs in which to add TDSCDMA to the capabilities -->
+      <mcc_list name="tds_mccs"> 460 </mcc_list>
+
+      <!-- Define the OOS timer with a 2 minute interval -->
+      <define_timer name="noservice" interval="2" units="min" id="1" />
+
+      <!-- Define specialization -->
+      <specialization> volte_e911_calls </specialization>
+
+      <rf_bands />
+
+      <!-- UE mode is always NORMAL -->
+      <ue_mode> NORMAL </ue_mode>
+
+      <feature> normal </feature>
+
+      <volte enabled="true" />
+
+      <!-- On first boot, set RAT capability to all RATs -->
+      <rat_capability_if base="config" />
+
+    </actions>
+  </initial>
+
+  <!--
+  ====================================================================
+    Rules to handle OOS situations.
+  ====================================================================
+  -->
+
+  <!-- RULE #1 -->
+  <!-- If we are in LPM, reset the timer.
+  -->
+  <rule precond="none">
+    <conditions>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    </conditions>
+    <actions>
+      <timer_stop name="noservice" />
+    </actions>
+  </rule>
+
+  <!-- RULE #2 -->
+  <!-- If UE has entered deep sleep after coming ONLINE,
+           enable Full RAT mode.
+  -->
+  <rule precond="none">
+    <conditions>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <enforce_full_rat />
+    </conditions>
+
+    <actions>
+      <rat_capability base="none" >
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <svc_mode> LIMITED </svc_mode>
+      <call_mode> NORMAL </call_mode>
+    </actions>
+  </rule>
+
+
+  <!-- RULE #3 -->
+  <!-- If the oos timer has expired and there is no service,
+           enable Full RAT mode and restart the timer.
+  -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="noservice" />
+      <not> <have_service /> </not>
+    </conditions>
+    <actions>
+      <expired_timer_handled name="noservice" />
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <svc_mode> LIMITED </svc_mode>
+      <call_mode> NORMAL </call_mode>
+    </actions>
+  </rule>
+
+  <!-- RULE #4 -->
+  <!-- We wait if we don't have location or we are not ONLINE.
+  -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <not> <have_location /> </not>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      </any_of>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!-- RULE #5 -->
+  <!-- This rule only runs when we have some sort of service.  Set service mode
+           to FULL and continue to set RATs/bands/etc. based on location.
+  -->
+  <if precond="none">
+    <cond> <have_service /> </cond>
+    <then>
+      <timer_stop name="noservice" />
+      <svc_mode> FULL </svc_mode>
+      <continue />
+    </then>
+    <else> <timer_start name="noservice" /> </else>
+  </if>
+
+
+  <!--
+  ====================================================================
+    Rules to handle KDDI VoLTE-only and roaming requirements.
+  ====================================================================
+  -->
+
+  <!-- RULE #6 -->
+  <!-- If in Japan, restrict RATs to LTE and set VoLTE-only E911 call mode.
+  -->
+  <rule>
+    <conditions>
+      <location_mcc_in list="volte_only_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> LTE </include>
+      </rat_capability>
+      <call_mode> VOLTE </call_mode>
+    </actions>
+  </rule>
+
+  <!-- RULE #7 -->
+  <!-- If in China, restrict RATs to TGWL
+  -->
+  <rule>
+    <conditions>
+      <location_mcc_in list="tds_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> TDSCDMA GSM WCDMA LTE </include>
+      </rat_capability>
+      <call_mode> NORMAL </call_mode>
+    </actions>
+  </rule>
+
+  <!-- RULE #8 -->
+  <!-- If roaming outside, restrict RATs to GWL
+  -->
+  <rule>
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <call_mode> NORMAL </call_mode>
+    </actions>
+  </rule>
+
+</policy>

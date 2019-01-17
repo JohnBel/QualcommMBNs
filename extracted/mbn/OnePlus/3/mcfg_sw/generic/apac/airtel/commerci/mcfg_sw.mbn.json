@@ -1,0 +1,200 @@
+{
+  "AggressionManagement": {
+    "Value": 1
+  },
+  "Profile1": {
+    "Values": "AQABABcAAAACAAAApaWlpRgAAAAYAAAAAAAAAAAAAAABEA4AYWlydGVsZ3Bycy5jb20RAAEAAw=="
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "RefreshVoteOk": {
+    "Value": 1
+  },
+  "RpmInfo": {
+    "Field1": 1,
+    "Field2": 20,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 0,
+    "Field6": 10,
+    "Field7": 0
+  },
+  "RpmParams": {
+    "Field1": 1,
+    "Field2": 60,
+    "Field3": 30,
+    "Field4": 60,
+    "Field5": 30,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0,
+    "Field10": 0
+  },
+  "RpmSuppportedSim": {
+    "Value": "AwEABAEABgUAAQcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "ValueString": "\u0003\u0001"
+  },
+  "SerReqThrottleBehavior": {
+    "Value": 1
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsPref"
+  },
+  "SmsOnly": {
+    "Value": 0
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "WcdmaRrcCsfbSkipSib11Opt": {
+    "Value": 1
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 4
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 2
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 2
+  },
+  "GsmAmrCallConfiguration": {
+    "Value": 1
+  },
+  "AGpsDefaultQosTime": {
+    "Value": 64
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 127
+  },
+  "EdgeFeatureSupport": {
+    "Value": 1
+  },
+  "EnsEnabled": {
+    "Value": 0
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 180
+  },
+  "SmsMoRetryInterval": {
+    "Value": 45
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 3
+  },
+  "EdaFeatureSupport": {
+    "Value": 1
+  },
+  "WcdmaRrcVersion": {
+    "Value": 4
+  },
+  "WcdmaRxDiversityControl": {
+    "Value": 3
+  },
+  "WcdmaEqualizerControl": {
+    "Value": 51
+  },
+  "HsdpaCategory": {
+    "Value": 14
+  },
+  "WcdmaRrcPdcpDisabled": {
+    "Value": 1
+  },
+  "EDtmFeatureSupport": {
+    "Value": 0
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 6
+  },
+  "CpuBasedFlowControl": {
+    "Value": 1
+  },
+  "VoipRegistrationMode": {
+    "Value": 0
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "WcdmaHsupaCmController": {
+    "Value": 1
+  },
+  "RepeatedAcch": {
+    "Value": 1
+  },
+  "DisableCmCallType": {
+    "Value": 0
+  },
+  "GsmA5AlgorithmsSupported": {
+    "Value": 5
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "CstoVoipFallbackTimer": {
+    "Value": 10
+  },
+  "VoipCancelRetryTimer": {
+    "Value": 10
+  },
+  "UmtsAmrCodecPreferenceConfig": {
+    "Value": 5
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "Banner": {
+    "ValueString": "Airtel"
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 0
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "UimFirstInstructionClass": {
+    "Value": 1
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -16385
+  },
+  "GprsEnableAniteGcf51010": {
+    "Value": 0
+  }
+}

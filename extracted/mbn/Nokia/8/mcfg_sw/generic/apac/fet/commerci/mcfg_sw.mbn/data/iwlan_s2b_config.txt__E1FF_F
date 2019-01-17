@@ -1,0 +1,8 @@
+static_fqdn_enabled:FALSE;
+epdg_fqdn:epdg.epc.mnc001.mcc466.pub.3gppnetwork.org;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_FQDN;
+pcscfv4_attr_type_val:16384;
+pcscfv6_attr_type_val:16386;
+natt_keep_alive_timer_sec:10;
+

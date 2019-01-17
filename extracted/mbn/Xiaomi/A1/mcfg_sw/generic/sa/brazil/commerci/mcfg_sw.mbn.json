@@ -1,0 +1,53 @@
+{
+  "ImsEnable": {
+    "Value": 0
+  },
+  "ScanScopeRule": {
+    "Value": 15
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 31
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "WcdmaRrcVersion": {
+    "Value": 4
+  },
+  "WcdmaRxDiversityControl": {
+    "Value": 3
+  },
+  "WcdmaEqualizerControl": {
+    "Value": 51
+  },
+  "HsdpaCategory": {
+    "Value": 24
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 6
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "Banner": {
+    "ValueString": "Brazil"
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -1
+  }
+}

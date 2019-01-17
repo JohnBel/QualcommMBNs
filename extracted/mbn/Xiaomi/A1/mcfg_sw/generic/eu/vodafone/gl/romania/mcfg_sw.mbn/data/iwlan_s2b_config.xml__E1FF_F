@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<IWLAN_S2B_CONFIG>
+    <GENERIC_VARIANT>
+        <epdg_addr_info>
+            <static_fqdn_enabled>FALSE</static_fqdn_enabled>
+        </epdg_addr_info>
+        <ikev2_info>
+            <ke_payload_enabled>FALSE</ke_payload_enabled>
+            <self_id>
+                <id_type>ID_RFC822_ADDR</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </self_id>
+            <peer_id>
+                <id_type>ID_FQDN</id_type>
+            </peer_id>
+            <ikev2_sa_rekey_timer>
+                <soft_sec>64800</soft_sec>
+                <hard_sec>64900</hard_sec>
+            </ikev2_sa_rekey_timer>
+            <esp_rekey_timer>
+                <soft_sec>64800</soft_sec>
+                <hard_sec>64900</hard_sec>
+            </esp_rekey_timer>
+        </ikev2_info>
+    </GENERIC_VARIANT>
+    <WP_VARIANT>
+        <ikev2_info>
+            <esp_auth_algo_list>
+                <algo value="1"/>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <configured_ike_port>4500</configured_ike_port>
+        </ikev2_info>
+    </WP_VARIANT>
+</IWLAN_S2B_CONFIG>

@@ -1,0 +1,57 @@
+{
+  "WcdmaRrcFeature": {
+    "Value": 29
+  },
+  "WcdmaRrcWtolCmSupport": {
+    "Value": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 31
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 2
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 2
+  },
+  "GsmAmrCallConfiguration": {
+    "Value": 1
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "Banner": {
+    "ValueString": "iMobile"
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 2
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "UimFirstInstructionClass": {
+    "Value": 1
+  },
+  "GprsMultiSlotClass": {
+    "Value": 33
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -16385
+  }
+}

@@ -1,0 +1,6 @@
+
+[QIPCALL:Transport]
+*TCPThresholdValue = 0 
+
+
+

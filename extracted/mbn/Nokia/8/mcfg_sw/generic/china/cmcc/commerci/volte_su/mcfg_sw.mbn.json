@@ -1,0 +1,460 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- 7+5 mode Device configuration file for CMCC subsidized devices",
+      "$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+5_mode/1x+L/device_config.xml#3 $",
+      "-->",
+      "",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 13690601 $\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"2029.1.12\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <!-- Define device configuration as DSDS -->",
+      "    <device_configuration num_sims=\"2\" max_active_voice=\"1\" max_active_data=\"1\">",
+      "      <config primary=\"C H G W L T\" secondary=\"G W\" />",
+      "      <config primary=\"C H G W\" secondary=\"G W L T\" />",
+      "      <config primary=\"G W\" secondary=\"C H G W L T\" />",
+      "      <config primary=\"G W L T\" secondary=\"C H G W\" />",
+      "      <e911_config primary=\"C H G W L T\" secondary=\"G W\" />",
+      "      <e911_config primary=\"G W\" secondary=\"C H G W L T\" />",
+      "    </device_configuration>",
+      "",
+      "    <!-- These are the CMCC IMSI PLMNs -->",
+      "    <plmn_list name= \"cmcc_imsi\" ns=\"global\">",
+      "      460-00 460-02 460-04 460-07 460-08",
+      "    </plmn_list>",
+      "",
+      "    <!-- These are the CT IMSI MCCs -->",
+      "    <mcc_list name=\"ct_mccs\" ns=\"global\">",
+      "      455 460",
+      "    </mcc_list>",
+      "",
+      "    <boolean_define name=\"cm:reject_dds_change\" ns=\"global\" initial=\"false\" />",
+      "    <boolean_define name=\"cm:reject_1xdata\" ns=\"global\" initial=\"true\" />",
+      "    <boolean_define name=\"cm:start_ps_sub\" ns=\"global\" initial=\"false\" />",
+      "",
+      "  </initial>",
+      "",
+      "  <!-- reject 1x Data if either of cards is CMCC",
+      "  -->",
+      "",
+      "  <boolean_set name=\"cm:reject_1xdata\">",
+      "    <any_of>",
+      "      <imsi_plmn_in subs=\"this\" list=\"cmcc_imsi\" />",
+      "      <imsi_plmn_in subs=\"other\" list=\"cmcc_imsi\" />",
+      "    </any_of>",
+      "  </boolean_set>",
+      "",
+      "",
+      "  <!-- Type1 device: DDS change is not allowed only for CT+CMCC(DDS) -> CT(DDS)+CMCC.",
+      "  -->",
+      "  <boolean_set name=\"cm:reject_dds_change\">",
+      "    <any_of>",
+      "",
+      "      <!-- CMCC(DDS)+CT -->",
+      "      <all_of>",
+      "        <is_subs_dds subs=\"this\" />",
+      "        <imsi_plmn_in subs=\"this\" list=\"cmcc_imsi\" />",
+      "        <imsi_mcc_in subs=\"other\" session=\"1x\" list=\"ct_mccs\" />",
+      "      </all_of>",
+      "",
+      "      <!-- CT+CMCC(DDS) -->",
+      "      <all_of>",
+      "        <is_subs_dds subs=\"other\" />",
+      "        <imsi_plmn_in subs=\"other\" list=\"cmcc_imsi\" />",
+      "        <imsi_mcc_in subs=\"this\" session=\"1x\" list=\"ct_mccs\" />",
+      "      </all_of>",
+      "",
+      "    </any_of>",
+      "  </boolean_set>",
+      "",
+      "  <!-- Start PS SUB first if we have a CMCC card -->",
+      "  <boolean_set name=\"cm:start_ps_sub\">",
+      "    <any_of>",
+      "      <imsi_plmn_in subs=\"this\" list=\"cmcc_imsi\" />",
+      "      <imsi_plmn_in subs=\"other\" list=\"cmcc_imsi\" />",
+      "    </any_of>",
+      "  </boolean_set>",
+      "",
+      "  <!-- Set subphone capability based on the cards -->",
+      "  <select>",
+      "",
+      "    <!-- CMCC+non-CMCC gets most capability on primary -->",
+      "    <case>",
+      "      <all_of>",
+      "        <imsi_plmn_in subs=\"this\" list=\"cmcc_imsi\" />",
+      "        <not> <imsi_plmn_in subs=\"other\" list=\"cmcc_imsi\" /> </not>",
+      "      </all_of>",
+      "      <actions>",
+      "        <select_config index=\"3\" />",
+      "      </actions>",
+      "    </case>",
+      "",
+      "    <!-- non-CMCC+CMCC gets most capability on secondary-->",
+      "    <case>",
+      "      <all_of>",
+      "        <not> <imsi_plmn_in subs=\"this\" list=\"cmcc_imsi\" /> </not>",
+      "        <imsi_plmn_in subs=\"other\" list=\"cmcc_imsi\" />",
+      "      </all_of>",
+      "      <actions>",
+      "        <select_config index=\"1\" />",
+      "      </actions>",
+      "    </case>",
+      "",
+      "    <!-- Otherwise follow normal DDS rules for all cards -->",
+      "    <case>",
+      "      <true />",
+      "      <actions>",
+      "        <select_config index=\"-1\" />",
+      "      </actions>",
+      "    </case>",
+      "  </select>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "Profile5": {
+    "Values": "AQAFABYAAAAEAAAApaWlpd4BAADeAQAADwAAAAAAAAABEAMAU09TEQABAAMfAAEAATYAAQAB"
+  },
+  "ImsSipConfig": {
+    "Value": "ANAHAACAPgAAaEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMHUAAAAAAAAAAAAAAAAAADB1AAAAAAAAcBcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ImsUserAgent": {
+    "ValueString": ""
+  },
+  "QpImsPlaniConfig": {
+    "Version": 0,
+    "AccessType": 0,
+    "Lac": 0,
+    "Tac": 0,
+    "CellIdentity": 0,
+    "Sid": 0,
+    "Nid": 0,
+    "Pzid": 0,
+    "BaseId": 0,
+    "SectorIdString": "",
+    "SubnetLength": 0,
+    "TimeSeconds": 0,
+    "TimeMinutes": 0,
+    "TimeHours": 0,
+    "TimeDays": 0,
+    "TimeMonths": 0,
+    "TimeYears": 0,
+    "TimeDayOfWeek": 0,
+    "MccString": "",
+    "MncString": "",
+    "Reserved": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Ehplmn": {
+    "Value": "BWTwAGTwIGTwcGTwgGTwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "ImsEnable": {
+    "Value": 1
+  },
+  "ImsOperationMode": {
+    "Value": 2
+  },
+  "InternalAuth": {
+    "Value": 0
+  },
+  "Profile1": {
+    "Values": "AQABADUAAAAJAAAApaWlpREAAAAXBAAAAAAAAAAAAAA2AAEAAAEQAAARAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8fAAEAAQ=="
+  },
+  "Profile2": {
+    "Values": "AQACABYAAAAEAAAApaWlpTQBAAA0AQAADwAAAAAAAAABEAMAaW1zEQABAAMfAAEAATYAAQAA"
+  },
+  "Profile3": {
+    "Values": "AQADABgAAAAEAAAApaWlpYkBAACJAQAADwAAAAAAAAABEAUAQ01ORVQRAAEAAx8AAQAANgABAAA="
+  },
+  "QpImsRegConfig": {
+    "RegOnModeString": "3",
+    "RegModeConfigString": "16",
+    "RegManagerPdpProfileNameString": "",
+    "RegEventPacket": 0,
+    "RegPcoeEnabled": 0,
+    "RegDhcpEnabled": 0,
+    "RegPreConfigEnabled": 0,
+    "RegManagerPreConfigServerBaseString": "",
+    "RegRatConfigString": "None",
+    "RegNvPcScfEnabled": 0,
+    "RegWlanEnabled": 0,
+    "RegUserNameImsi": 0,
+    "RegResponseForOptions": 0,
+    "RegConfigMaxDiscoveryCount": 0,
+    "RegManagerDiscoveryScheduleString": "",
+    "RegManagerCdmaPdpProfileNameString": "",
+    "RegConfigPdnRecoveryDelayTimerVal": 0,
+    "RegManagerPdpFailureScheduleString": "",
+    "RegConfigMaxIntermediatePDPRetries": 0,
+    "RegConfigEhrpdRecoveryTime": 0,
+    "RegConfigRegistrationAttempts": 0,
+    "RegConfigDelayAttemptTimer": 0,
+    "RegConfigTestMode": 0,
+    "RegPcScfPort": 0
+  },
+  "QpImsRegConfigDb": {
+    "Version": 3,
+    "Items": [
+      {
+        "Rat": 16,
+        "ApnIndex": 17,
+        "ImsServiceInfoString": "VoLte_Vt_Sms",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 20616,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "26368",
+        "AuthSecType": 6,
+        "IpTypeInfo": 17
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "34816",
+        "AuthSecType": 80,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      }
+    ],
+    "Items2": [
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 4096,
+        "ServicePriorityWwan": 12290
+      },
+      {
+        "RatApnFallback": 7,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 20616,
+        "ServicePriorityWwan": 0
+      }
+    ],
+    "AllowedImsSrvOnWlanString": "20992",
+    "AddAllFTs": 0,
+    "AcsPriority": 0,
+    "ISimPriority": 0,
+    "NvPriority": 50,
+    "PcoPriority": 0,
+    "ImsServiceStatus": 0,
+    "ApnNames": [
+      "b",
+      "",
+      ""
+    ],
+    "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "QpImsUtConfig": {
+    "Version": 0,
+    "ApnNameString": "xcap.ims.mnc000.mcc460.pub.3gppnetwork.org:80",
+    "DomainNameString": "",
+    "AssociatedUriString": "",
+    "ApplicationUidString": "",
+    "RatConfig": 0,
+    "IpAddrType": 0,
+    "RetryTimerValue": 0,
+    "RetryAttemptCount": 0,
+    "ApnType": 0,
+    "GbaUbType": 0,
+    "GbaUbMode": 0,
+    "BsfAddrString": "",
+    "DisableUt": 0,
+    "GbaTlsMode": 0,
+    "PdnHysTimerValue": 0,
+    "RatMaskValue": 0,
+    "Apn2IpAddrType": 0,
+    "Apn2ApnNameString": ""
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsPref"
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "TputOptParams": {
+    "Field1": 1,
+    "Field2": 0,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 58
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 0
+  },
+  "SdConfigurableItems": {
+    "Version": 3,
+    "Items": [
+      60,
+      180,
+      5,
+      1,
+      180,
+      3600,
+      130,
+      3600,
+      130,
+      14,
+      36,
+      4,
+      1,
+      5200,
+      3000,
+      2200,
+      3,
+      253,
+      5,
+      2,
+      300,
+      300,
+      0,
+      0,
+      0
+    ]
+  },
+  "TtyMode": {
+    "Value": 3
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 1
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "Banner": {
+    "ValueString": "CMCC_C_DS_VC"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  }
+}

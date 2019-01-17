@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy file for SRLTE in open market with GWL roaming
+$Header: //commercial/MPSS.TA.2.3.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/test/carrier_policy.xml#3 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15100486 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "74.3.26"
+>
+
+  <initial>
+
+    <!-- List of the MCCs in which SRLTE is allowed -->
+    <mcc_list name="sxlte_mccs"> 001 002 003 004 005 006 007 008 009 010 011 012 404 405 455 460 310 330 374 </mcc_list>
+
+    <!-- These are the serving system PLMNs for which SRLTE will be allowed 
+     -->
+    <!-- NOTE: Proper functioning of the SRLTE policy requires that there
+         be an PLMN list named "sxlte_plmns". Do NOT rename this list.
+    -->
+    <plmn_list name = "sxlte_plmns">
+      404-00 405-00 455-02 455-07 460-03 460-11 001-01 330-01 374-01 310-00 310-01
+    </plmn_list>
+
+    <define_fullrat_config timer_secs = "1200">
+      <actions>
+        <ue_mode> CSFB </ue_mode>
+        <rat_capability base="none">
+          <include> C H G W L </include>
+        </rat_capability>
+        <rf_bands />
+        <svc_mode> ALL </svc_mode>
+        <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+        <freq_list list="cpfl" />
+      </actions>
+    </define_fullrat_config>
+
+    <!-- Define the 1x_oos timer with a 1 minute interval -->
+    <define_timer name = "1x_oos" interval = "1" units = "min" id = "100" />
+
+    <!-- Define initial RAT capability as CHL -->
+    <rat_capability_if base="none" >
+      <include> C H L </include>
+    </rat_capability_if>
+
+    <!-- Define Intial UE mode as 1X_CSFB_PREF -->
+    <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+    <!-- On first boot, include all bands -->
+    <rf_bands base="hardware" />
+
+    <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+    <freq_list_if list="cpfl" />
+
+    <feature single_sim="srlte"> dualmmode </feature>
+
+    <boolean_define name="cm:L1x_before_GW_in_e911" initial="true" />
+	
+    <boolean_set name="cm:L1x_before_GW_in_e911">
+      <current_mcc_in list="sxlte_mccs" />
+    </boolean_set>
+      
+  </initial>
+
+  <!-- RULE #1 -->
+  <!-- We wait if we don't have location or we are not ONLINE.
+  -->
+  <if precond="none">
+    <all_of>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <have_location />
+    </all_of>
+    <then> 
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </then>
+    <else> <stop/> </else>
+  </if>
+
+  <!--
+  ====================================================================
+    Rules where location info can be used. Rules to implement SRLTE
+  ====================================================================
+  -->
+
+  <!-- Set config based on location(China/Roam). -->
+  <select>
+    <case>
+      <location_mcc_in list="sxlte_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include> C H L </include>
+        </rat_capability>
+        <ue_mode> 1X_CSFB_PREF </ue_mode>
+        <scan_optimization tgpp="no_auto_camp_only" tgpp2="disabled" />
+        <freq_list list="cpfl" />
+        <boolean_set name="cm:L1x_before_GW_in_e911" value="true" />
+      </actions>
+    </case>
+
+    <case>
+      <true />
+      <actions>
+        <rat_capability base="none">
+          <include> G W L </include>
+        </rat_capability>
+        <ue_mode> CSFB </ue_mode>
+        <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+        <freq_list list="default" />
+        <boolean_set name="cm:L1x_before_GW_in_e911" value="false" />
+      </actions>
+    </case>
+  </select>
+
+</policy>

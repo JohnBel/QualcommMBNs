@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for Verizon RPM property 
+$Header:  $
+-->
+<policy name        = "generic"
+        changelist  = "$Change:  $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "54.1.0"
+>
+  <initial>
+    <actions>
+	
+      <boolean_define name="cm:rpm_enabled" initial="true" />
+    
+    </actions>
+  </initial>
+</policy>

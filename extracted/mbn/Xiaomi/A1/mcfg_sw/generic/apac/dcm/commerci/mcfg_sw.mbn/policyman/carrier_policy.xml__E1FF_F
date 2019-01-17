@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy with DoCoMo requirements
+     $Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/Docomo/subsidized/carrier_policy.xml#1 $
+-->
+<policy name            = "generic"
+        changelist      = "$Change: 15931866 $"
+        policy_ver      = "55.1.6"
+>
+
+  <initial>
+
+    <mcc_list name="home_mccs"> 440 441 </mcc_list>
+
+    <define_fullrat_config>
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+    </define_fullrat_config>
+
+    <rat_capability_if base="none" >
+      <include> G W L </include>
+    </rat_capability_if>
+
+    <rf_bands base="hardware" />
+
+    <ue_mode> NORMAL </ue_mode>
+
+    <feature single_sim="normal"> dualmmode </feature>
+
+  </initial>
+
+  <if>
+    <any_of>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      <not> <have_location /> </not>
+    </any_of>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <svc_mode> FULL </svc_mode>
+
+  <if>
+    <location_mcc_in list="home_mccs" />
+    <then>
+      <rat_capability base="none" >
+        <include> L W </include>
+      </rat_capability>
+    </then>
+    <else>
+      <rat_capability base="none" >
+        <include> G W L </include>
+      </rat_capability>
+    </else>
+  </if>
+
+</policy>

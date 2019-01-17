@@ -1,0 +1,8 @@
+epdg_fqdn:epdg.epc.aptg.com.tw;
+epdg_ipv4_address:103.231.48.192;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_FQDN;
+pcscfv4_attr_type_val:16384;
+pcscfv6_attr_type_val:16390;
+natt_keep_alive_timer_sec:10;
+

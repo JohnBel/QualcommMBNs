@@ -1,0 +1,11 @@
+epdg_fqdn:EPDG.epc.mnc030.mcc234.pub.3gppnetwork.org;
+esp_rekey_timer_soft_sec:1500;
+esp_rekey_timer_hard_sec:1800;
+ikev2_sa_rekey_timer_soft_sec:3000;
+ikev2_sa_rekey_timer_hard_sec:4200;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+ikev2_retransmit_timer_sec:3;
+ikev2_max_retries:6;
+#configured_ike_port:4500;
+

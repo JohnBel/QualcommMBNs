@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy file for RJIL
+$Header: //components/rel/mmcp.mpss/8.0.2/policyman/configurations/Carrier/OpenMarket/7+5_mode/RJIL/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 12070021 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "116.2.0"
+>
+
+  <initial>
+
+    <!-- List of the MCCs in which SRLTE is allowed -->
+    <mcc_list name="home_mccs"> 404 405 </mcc_list>
+
+    <rat_capability_if base="none" >
+      <include> G W L </include>
+    </rat_capability_if>
+
+    <boolean_define name="pm:scanCompleted" initial="false" writable="true" />
+    <boolean_define name="previousLPM" initial="false" />
+    <boolean_define name="RJILnotActive" initial="true" />
+    <boolean_define name="PreviousRoam" initial="false" />
+
+    <boolean_define name="PrevGSMinModePref" initial="false" />  
+    <boolean_set name="PrevGSMinModePref">
+      <user_mode_pref_contains> GSM </user_mode_pref_contains>
+    </boolean_set>
+  
+    <boolean_define name="PrevWCDMAinModePref" initial="false" />  
+    <boolean_set name="PrevWCDMAinModePref">
+      <user_mode_pref_contains> WCDMA </user_mode_pref_contains>
+    </boolean_set>
+
+    <!-- Define the GW_timer timer with a 1 minute interval -->
+    <define_timer name = "GW_timer" interval = "720" units = "min" id = "1005" />
+      
+  </initial>
+  
+  <if precond="none">
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    <then>
+      <boolean_set name="previousLPM" value="true" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+      <stop />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <boolean_test name="previousLPM" />
+    <then>
+      <boolean_set name="previousLPM" value="false" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <num_subs> 1 </num_subs>
+      <subs_is_active subs="other" />
+    </all_of>
+    <then>
+      <boolean_set name="RJILnotActive" value="true" />
+      <stop />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <num_subs> 2 </num_subs>
+      <boolean_test name="RJILnotActive" />
+    </all_of>
+    <then>
+      <boolean_set name="RJILnotActive" value="false" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <num_subs> 1 </num_subs>
+      <subs_is_active/>
+    </all_of>
+    <then>
+      <boolean_set name="RJILnotActive" value="false" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <boolean_test name="PrevGSMinModePref" />
+      <not> <user_mode_pref_contains> GSM </user_mode_pref_contains> </not>
+    </all_of>
+    <then>
+      <boolean_set name="PrevGSMinModePref" value="false" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <user_mode_pref_contains> GSM </user_mode_pref_contains>
+      <not> <boolean_test name="PrevGSMinModePref" /> </not>
+    </all_of>
+    <then>
+      <boolean_set name="PrevGSMinModePref" value="true" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <boolean_test name="PrevWCDMAinModePref" />
+      <not> <user_mode_pref_contains> WCDMA </user_mode_pref_contains> </not>
+    </all_of>
+    <then>
+      <boolean_set name="PrevWCDMAinModePref" value="false" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <user_mode_pref_contains> WCDMA </user_mode_pref_contains>
+      <not> <boolean_test name="PrevWCDMAinModePref" /> </not>
+    </all_of>
+    <then>
+      <boolean_set name="PrevWCDMAinModePref" value="true" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <timer_expired name="GW_timer" />
+    </all_of>
+    <then>
+      <expired_timer_handled name="GW_timer" />
+      <rat_capability base="none" >
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <not> <boolean_test name="pm:scanCompleted" /> </not>
+      <not> <have_location /> </not>
+    </all_of>
+    <then>
+      <stop />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <any_of>
+        <is_subs_dds />
+        <is_subs_dds isPermanent="false" />
+      </any_of>
+    </all_of>
+    <then>
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+
+  <if precond="none">
+    <all_of>
+      <have_location /> 
+      <not> <location_mcc_in list="home_mccs" /> </not>
+    </all_of>
+    <then>
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+      <boolean_set name="PreviousRoam" value="true" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <all_of>
+      <any_of>
+      <not> <boolean_test name="pm:scanCompleted" /> </not>
+      <all_of>
+        <boolean_test name="pm:scanCompleted" />
+        <boolean_test name="PreviousRoam" />
+      </all_of>
+      </any_of>
+      <have_location />
+      <location_mcc_in list="home_mccs" />
+    </all_of>
+    <then>
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <timer_stop name="GW_timer" />
+      <boolean_set name="PreviousRoam" value="false" />
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+
+  <if>
+    <service_status_in> FULL </service_status_in>
+    <then>
+      <timer_stop name="GW_timer" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <boolean_test name="pm:scanCompleted" />
+    <then>
+      <rat_capability base="none" >
+        <include> LTE </include>
+      </rat_capability>
+      <timer_start name="GW_timer" />
+    </then>
+  </if>
+  
+  <if precond="none">
+    <true/>
+    <then>
+      <rat_capability base="none" >
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <boolean_set name="pm:scanCompleted" value="false" />
+    </then>
+  </if>
+  
+</policy>

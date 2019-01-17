@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for RJIL CSFB configuration with L in home config <-> GWL in roam config
+$Header: $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: $"
+        schema_ver  = "1"
+        policy_ver  = "116.2.0"
+>
+
+  <initial>
+    <actions>
+
+      <mcc_list name="home_mccs">
+        404 405
+      </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <if>
+            <cond>
+              <not> <is_subs_dds /> </not>
+            </cond>
+            <then>
+              <rat_capability base="none">
+                <include> GSM WCDMA LTE </include>
+              </rat_capability>
+              <svc_mode> LIMITED </svc_mode>
+            </then>
+          </if>
+        </actions>
+      </define_fullrat_config>
+
+      <rat_capability_if base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability_if>
+	  
+      <rf_bands base="hardware" />
+
+      <feature single_sim="normal"> dualmmode </feature>
+
+      <ue_mode> CSFB </ue_mode>
+
+    </actions>
+  </initial>
+
+  <!--
+  ====================================================================
+    Rules to handle DDS and OOS situations.
+  ====================================================================
+  -->
+
+  <!-- RULE #1 -->
+  <!-- If SUB is DDS, then set RAT capability to GWL and bail out. 
+  -->
+  <rule precond="none">
+    <conditions>
+      <is_subs_dds />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> LTE WCDMA GSM </include>
+      </rat_capability>
+      <svc_mode> FULL </svc_mode>
+    </actions>
+  </rule>
+
+  <!-- RULE #2 -->
+  <!-- We wait if we don't have location or we are not ONLINE. 
+  -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <not> <have_location /> </not>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      </any_of>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!-- RULE #3 -->
+  <!-- If we have location and ONLINE, set RAT_order, service mode and continue.
+  -->
+  <rule precond="none">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <svc_mode> FULL </svc_mode>
+      <continue />
+    </actions>
+  </rule>
+
+<!--
+====================================================================
+  Rules where location info can be used.
+====================================================================
+-->
+
+  <!-- RULE #4 -->
+  <!-- If we are at home and non-DDS, stay in L 
+  -->
+  <rule precond="IMSI">
+    <conditions>
+      <location_mcc_in list="home_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> LTE </include>
+      </rat_capability>
+    </actions>
+  </rule>
+
+  <!-- RULE #5 -->
+  <!-- If we are roaming and non-DDS, stay in GWL 
+  -->
+  <rule precond="none">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> LTE WCDMA GSM </include>
+      </rat_capability>
+    </actions>
+  </rule>
+
+</policy>

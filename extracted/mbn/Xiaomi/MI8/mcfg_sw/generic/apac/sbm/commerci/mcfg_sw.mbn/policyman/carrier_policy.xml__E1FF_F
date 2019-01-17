@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for SBM with SRLTE roaming and excluding LTE B41 for VOLTE calls.
+ Based on SBM Requirement OTR-PLMN-200001.
+$Header: //commercial/MPSS.AT.4.0.2.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/SBM/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15945178 $"
+        policy_ver  = "108.1.8"
+>
+  <initial>
+
+    <mcc_list name="pm:exclude_bands_mccs"> 440 441 </mcc_list>
+
+    <boolean_define name="full_rat_at_powerup" initial="true" />
+    <boolean_define name="full_rat_from_acqfail" initial="true" />
+
+    <rf_band_list name="rf_bands_home">
+      <gw_bands base="none">
+        <include> 22 49 </include>
+      </gw_bands>
+      <lte_bands base="none">
+        <include> 0 2 7 10 27 40 41 </include>
+        <exclude_for_volte> 41 </exclude_for_volte>
+      </lte_bands>
+      <tds_bands base="none" />
+    </rf_band_list>
+
+    <rf_band_list name="rf_bands_roam">
+      <gw_bands base="none">
+        <include> 7 8 9 19 21 22 23 25 26 49 </include>
+      </gw_bands>
+      <lte_bands base="none">
+        <include> 0 1 2 3 4 6 7 11 16 24 25 27 37 38 39 40 41 </include>
+      </lte_bands>
+      <tds_bands base="none" />
+    </rf_band_list>
+
+    <define_fullrat_config timer_secs = "1800" scan_fail_cnt = "0">
+      <rf_bands base="hardware" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      </define_fullrat_config>
+
+    <rat_capability_if base="none">
+      <include> L W </include>
+    </rat_capability_if>
+
+    <rf_bands_if list="rf_bands_home" />
+    <feature single_sim="normal"> dualmmode </feature>
+    <ue_mode> CSFB </ue_mode>
+
+  </initial>
+
+  <!-- Determine Full RAT at power up -->
+  <if>
+    <all_of>
+      <boolean_test name="full_rat_at_powerup" />
+      <enforce_full_rat />
+    </all_of>
+    <then>
+      <boolean_set name="full_rat_at_powerup" value="false" />
+      <fullrat_enter />
+    </then>
+  </if>
+
+  <!-- Determine Full RAT after ONLINE -->
+  <if>
+    <all_of>
+      <boolean_test name="full_rat_from_acqfail" />
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <time_in_lpm> 1800 </time_in_lpm>
+      <oos_scan_cnt test=">=" value="1" />
+    </all_of>
+    <then>
+      <boolean_set name="full_rat_from_acqfail" value="false" />
+      <fullrat_enter />
+    </then>
+  </if>
+
+  <!-- Set the boolean and wait if UE is not ONLINE  -->
+  <if>
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    <then>
+      <boolean_set name="full_rat_from_acqfail" value="true" />
+      <stop />
+    </then>
+  </if>
+
+  <!-- Wait if location is unknown  -->
+  <if>
+    <not> <have_location /> </not>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <svc_mode> FULL </svc_mode>
+  <boolean_set name="full_rat_at_powerup" value="false" />
+  <boolean_set name="full_rat_from_acqfail" value="false" />
+
+  <!-- Determine configuration based on location -->
+  <select>
+
+    <case>
+      <location_mcc_in list="pm:exclude_bands_mccs" />
+      <actions>
+        <rf_bands list="rf_bands_home" />
+        <rat_capability base="none">
+          <include> L W </include>
+        </rat_capability>
+      </actions>
+    </case>
+
+    <case>
+      <true />
+      <actions>
+        <rf_bands list="rf_bands_roam" />
+        <rat_capability base="none">
+          <include> G W L </include>
+        </rat_capability>
+      </actions>
+    </case>
+
+  </select>
+
+</policy>

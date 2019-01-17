@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<IWLAN_S2B_CONFIG>
+    <GENERIC_VARIANT>
+        <epdg_addr_info>
+            <fqdn>epdg.ims.mnc101.mcc732.pub.3gppnetwork.org</fqdn>
+            <pcscf_attr>
+                <v4_attr_type_val>16384</v4_attr_type_val>
+                <v6_attr_type_val>16386</v6_attr_type_val>
+            </pcscf_attr>
+            <natt_info>
+                <keep_alive_timer_sec>180</keep_alive_timer_sec>
+            </natt_info>
+        </epdg_addr_info>
+        <ikev2_info>
+            <self_id>
+                <id_type>ID_RFC822_ADDR</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </self_id>
+            <peer_id>
+                <id_type>ID_FQDN</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </peer_id>
+            <ikev2_dh_group_list>
+                <dh_group value="2"/>
+            </ikev2_dh_group_list>
+            <dpd_timer_sec>120</dpd_timer_sec>
+            <ikev2_hash_algo_list>
+                <algo value="2"/>
+            </ikev2_hash_algo_list>
+            <ikev2_prf_algo_list>
+                <prf_algo value="2"/>
+            </ikev2_prf_algo_list>
+            <esp_encr_algo_list>
+                <encr_algo value="12">
+                    <key_size>128</key_size>
+                </encr_algo>
+            </esp_encr_algo_list>
+            <esp_auth_algo_list>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+        </ikev2_info>
+    </GENERIC_VARIANT>
+    <WP_VARIANT>
+        <ikev2_info>
+            <esp_auth_algo_list>
+                <algo value="1"/>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <configured_ike_port>4500</configured_ike_port>
+        </ikev2_info>
+    </WP_VARIANT>
+</IWLAN_S2B_CONFIG>

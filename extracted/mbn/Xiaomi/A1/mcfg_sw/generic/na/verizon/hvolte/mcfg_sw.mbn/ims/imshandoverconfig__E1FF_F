@@ -1,0 +1,38 @@
+Adding Comments LTE RSRQ Src LTE SNR Destination
+Some Comments
+Ignore these commenrs
+@@@
+ALGO_FLAVOR = 1;
+MediaULJitterGood = 10;
+Alpha_media = 0.65;
+MediaULJitterAcceptable = 40;
+MediaULJitterFair = 40;
+MediaULJitterBad = 50;
+MediaULFrameLossGood = 5;
+MediaULFrameLossAcceptable = 3;
+MediaULFrameLossFair = 20;
+MediaULFrameLossBad = 50;
+MediaDL95JitterGood = 4; 
+MediaDL95JitterAcceptable = 60;
+MediaDL95JitterFair = 6;
+MediaDL95JitterBad = 7;
+MediaDLJitterGood = 10;
+MediaDLJitterAcceptable = 40;
+MediaDLJitterFair = 40;
+MediaDLJitterBad = 50;
+MediaDLFrameLossGood = 5;
+MediaDLFrameLossAcceptable = 3;
+MediaDLFrameLossFair = 20;
+MediaDLFrameLossBad = 50;
+MediaDLQDJSpeechBad = 3;
+MediaDLQDJSilenceBad = 24;
+MediaDLQDJSpeechAcceptable = 2;
+MediaDLQDJSilenceAcceptable = 16;
+MediaTimerInterval = 1;
+MediaMetricsDisabled = 0;
+DeltaMediaULJitterAcceptable = -24;
+DeltaMediaDLJitterAcceptable = -24;
+DeltaMediaDLQDJSpeechBad = -1;
+DeltaMediaDLQDJSilenceBad = -8;
+MAX_1x_samples = 5; 
+LTE_MONITOR_TIME_SEC = 2;

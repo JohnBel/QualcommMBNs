@@ -1,0 +1,94 @@
+
+
+
+[QIPCALL:ImsVoiceQoSConfig]
+
+#This config is required to enable sending SDP answer in PRACK
+#for 183 if the local qos is granted before 183 response is recvd by
+#the UE.
+
+qosOptimization = 0
+
+#This config is required to configure the timer for dedicated
+#bearer allocation.
+
+qosReservationTimer = 6000
+
+#This config is required to enable set the desired qos strength
+#for local and remote UEs.
+
+qosDesiredStrength = 1
+
+#This config is required to enable 183 for Reneg
+
+qosMc183 = 0
+
+#This config is required to configure if the UE must wait for
+#video dedicated bearer allocation during call setup.
+
+*localQosResReqVideo = 0
+
+#This config is required to enable Qos MC precondition negotiation
+#in SDP.
+
+qosMcPreconditionsEnabled = 1
+
+#This config is required to enable Qos precondition negotiation
+#in SDP.
+
+*qosPreconditionsEnabled = 0
+
+#This config is required to configure the MBR threshold.
+
+iMBRthresholdValue = 0
+
+#This config is required to configure if the UE must wait for
+#audio dedicated bearer allocation during call setup.
+
+*localQosResReqAudio = 0
+
+#This config is required to configure if the initial SDP
+#directionality should be inactive in REINVITE when preconditions are
+#used
+
+reinviteSdpDirInactive = 0
+
+#This config is required to enable MBR check for video bearer.
+
+qosMbrVideoCheckReqEnabled = 1
+
+#This config is required to configure if the initial SDP
+#directionality should be inactive when preconditions are used.
+
+inviteSdpDirInactive = 0
+
+#This config is required to enable MBR check for audio bearer.
+
+qosMbrAudioCheckReqEnabled = 0
+
+
+[QIPCALL:ImsVoiceSessionTimerConfig]
+
+#This config is required to configure the session refresher shall
+#be UAC/UAS.
+
+sessionRefresherType = QP_CONFIG_SES_REFRESHER_UAC
+
+#This config is required to enable session timer support.
+
+sessionTimerEnabled = 1
+
+#This config is required to enable Sesssion Expiry timer
+#negotiation.
+
+allowSeNegotiation = 0
+
+#This config is required to configure the method for session
+#referesh shall be REINVITE/UPDATE.
+
+sessionRefresherMethod = QP_CONFIG_SES_REFRESH_UPDATE
+
+
+[QIPCALL:ImsVoiceConfig]
+
+

@@ -1,0 +1,312 @@
+{
+  "SuppressAddUpdateParam": {
+    "Value": 1
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Policy for CU CSFB+G DSDS",
+      "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CU/openMarket/carrier_policy.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 10156175 $\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"75.2.17\"",
+      ">",
+      "",
+      "  <initial>",
+      "    <actions>",
+      "      <!-- Define the MCCs in which FDD LTE is to be disabled -->",
+      "      <mcc_list name=\"home_mccs\">",
+      "        460",
+      "      </mcc_list>",
+      "      <plmn_list name = \"cu\">",
+      "        460-01 460-06 460-09 460-10",
+      "      </plmn_list>",
+      "      <mcc_list name=\"mcc_no_gws\">",
+      "        440 450",
+      "      </mcc_list>",
+      "      <define_fullrat_config scan_fail_cnt=\"2\">",
+      "        <actions>",
+      "          <rat_capability base=\"none\" >",
+      "            <include> GSM WCDMA LTE </include>",
+      "          </rat_capability>",
+      "          <rf_bands />",
+      "          <svc_mode> LIMITED </svc_mode>",
+      "          <freq_list list=\"cpfl\" />",
+      "        </actions>",
+      "      </define_fullrat_config>",
+      "",
+      "      <!-- HOME RF bands list -->",
+      "      <rf_band_list name=\"rf_bands_home\">",
+      "        <!-- GSM Band mapping: GSM bands are",
+      "                B7->GSM_DCS_1800->Bit-7,",
+      "                B8->GSM_EGSM_900->Bit-8",
+      "                B9->GSM_PGSM_900->Bit-9.",
+      "                B19->GSM_850 -> Bit-19,",
+      "                B21->GSM_PCS_1900-> Bit-21",
+      "                     WCDMA Band mapping: WCDMA bands are",
+      "                B22-> SYS_SBAND_WCDMA_I_IMT_2000",
+      "                B49->SYS_SBAND_WCDMA_VIII_900",
+      "             Refer: sys_sband_e_type in sys.h",
+      "        -->",
+      "        <gw_bands base=\"none\" >",
+      "          <include> 7 8 9 19 21 22 49 </include>",
+      "        </gw_bands>",
+      "        <!-- LTE Band: 1,3, 40 and 41 is mapped to Band Bit: 0, 2, 39 and 40 respectively.",
+      "                      Refer: sys_sband_lte_e_type in sys.h",
+      "        -->",
+      "        <lte_bands base=\"none\" >",
+      "          <include> 0 2 39 40 </include>",
+      "        </lte_bands>",
+      "        <tds_bands base=\"none\" />",
+      "      </rf_band_list>",
+      "",
+      "      <!-- ROAM RF bands list -->",
+      "      <rf_band_list name=\"rf_bands_roam\">",
+      "        <!-- GSM Band mapping: GSM bands are",
+      "                B7->GSM_DCS_1800->Bit-7,",
+      "                B8->GSM_EGSM_900->Bit-8",
+      "                B9->GSM_PGSM_900->Bit-9.",
+      "                B19->GSM_850 -> Bit-19,",
+      "                B21->GSM_PCS_1900-> Bit-21",
+      "                     WCDMA Band mapping: WCDMA bands are",
+      "                B22-> SYS_SBAND_WCDMA_I_IMT_2000",
+      "                B23->SYS_SBAND_WCDMA_II_PCS_1900",
+      "                B26->SYS_SBAND_WCDMA_V_850",
+      "                B49->SYS_SBAND_WCDMA_VIII_900",
+      "             Refer: sys_sband_e_type in sys.h",
+      "        -->",
+      "        <gw_bands base=\"none\" >",
+      "          <include> 7 8 9 19 21 22 23 26 49 </include>",
+      "        </gw_bands>",
+      "        <lte_bands base=\"hardware\" />",
+      "        <tds_bands base=\"none\" />",
+      "      </rf_band_list>",
+      "",
+      "      <!-- Set initial RAT Capability and RF bands -->",
+      "      <rat_capability base=\"none\" >",
+      "        <include> GSM WCDMA LTE </include>",
+      "      </rat_capability>",
+      "      <rf_bands_if list=\"rf_bands_home\" />",
+      "",
+      "      <!-- All bands list -->",
+      "      <rf_band_list name=\"rf_bands_all\">",
+      "        <gw_bands  base=\"hardware\" />",
+      "        <lte_bands base=\"hardware\" />",
+      "        <tds_bands base=\"none\" />",
+      "      </rf_band_list>",
+      "",
+      "      <!-- Set UE mode to CSFB -->",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <freq_list_if list=\"cpfl\" />",
+      "",
+      "      <feature single_sim=\"normal\"> dualmmode </feature>",
+      "",
+      "    </actions>",
+      "  </initial>",
+      "",
+      "  <!--",
+      "  ===========================================================================",
+      "    Rules to handle OOS situations.",
+      "  ===========================================================================",
+      "  -->",
+      "  <!-- RULE #0 -->",
+      "  <!-- If in Japan or Korea, allowed WL.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "     <location_mcc_in list=\"mcc_no_gws\" />",
+      "    </conditions>",
+      "    <actions>",
+      "      <rat_capability base=\"none\">",
+      "        <include> WCDMA LTE </include>",
+      "      </rat_capability>",
+      "      <rf_bands list=\"rf_bands_all\" />",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <freq_list list=\"default\" />",
+      "    </actions>",
+      "  </rule>",
+      "  <!-- RULE #1 -->",
+      "  <!-- Rule For Non-China Operator.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <not> <imsi_mcc_in list=\"home_mccs\" /> </not>",
+      "    </conditions>",
+      "    <actions>",
+      "      <rat_capability base=\"none\" >",
+      "        <include> GSM WCDMA LTE CDMA HDR </include>",
+      "      </rat_capability>",
+      "",
+      "      <rf_bands list=\"rf_bands_all\" />",
+      "",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <freq_list list=\"default\" />",
+      "    </actions>",
+      "  </rule>",
+      "  <!-- RULE #1 -->",
+      "  <!-- We wait if we don't have location or we are not ONLINE.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <any_of>",
+      "        <not> <have_location /> </not>",
+      "        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "      </any_of>",
+      "    </conditions>",
+      "    <actions />",
+      "  </rule>",
+      "",
+      "  <!--",
+      "  ===========================================================================",
+      "    Rules where location info can be used.",
+      "  ===========================================================================",
+      "  -->",
+      "",
+      "  <!-- RULE #2 -->",
+      "  <!-- If we are Home, stay with Home bands.",
+      "       If we are Roaming, stay with roaming bands.",
+      "  -->",
+      "  <if precond=\"none\">",
+      "    <cond>",
+      "    \t <location_mcc_in list=\"home_mccs\" />",
+      "    \t <imsi_plmn_in list = \"cu\" />",
+      "    </cond>",
+      "    <then>",
+      "      <rat_capability base=\"none\" >",
+      "        <include> GSM WCDMA LTE </include>",
+      "      </rat_capability>",
+      "      <rf_bands list=\"rf_bands_home\" />",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <freq_list list=\"cpfl\" />",
+      "    </then>",
+      "    <else>",
+      "      <rat_capability base=\"none\" >",
+      "        <include> GSM WCDMA LTE CDMA HDR </include>",
+      "      </rat_capability>",
+      "      <rf_bands list=\"rf_bands_all\" />",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <freq_list list=\"default\" />",
+      "    </else>",
+      "  </if>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 1,
+    "Field2": 65535
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "Profile1": {
+    "Values": "AQABAA4AAAACAAAApaWlpULEvUJcx71CAAAAAAAAAAABEAUAM0dORVQRAAEAAw=="
+  },
+  "Profile2": {
+    "Values": "AQACAA4AAAACAAAApaWlpXrHvUJ6x71CAAAAAAAAAAABEAUAM0dXQVARAAEAAw=="
+  },
+  "Profile3": {
+    "Values": "AQADAA4AAAACAAAApaWlpY/HvUKPx71CAAAAAAAAAAABEAUAV09ORVQRAAEAAw=="
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 58
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "GsmAmrCallConfiguration": {
+    "Value": 1
+  },
+  "AGpsDefaultQosTime": {
+    "Value": 64
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 1
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "EdgeFeatureSupport": {
+    "Value": 1
+  },
+  "EdgeMultislotClass": {
+    "Value": 33
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 180
+  },
+  "SmsMoRetryInterval": {
+    "Value": 5
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 3
+  },
+  "EdaFeatureSupport": {
+    "Value": 1
+  },
+  "UmtsAmrCodecPreferenceConfig": {
+    "Value": 15
+  },
+  "Banner": {
+    "ValueString": "CU_DS_CSFB_G"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 2
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "UimFirstInstructionClass": {
+    "Value": 1
+  },
+  "GprsMultiSlotClass": {
+    "Value": 33
+  },
+  "GprsEnableAniteGcf51010": {
+    "Value": 0
+  }
+}

@@ -1,0 +1,3 @@
+***Modify this file ONLY if you need to deviate from the defaults. Defaults can be found in the THRESHOLD_DOC_FILES directory. Please reach out to Customer Engineering Team for details.****
+Plug in the param name and desired value in the following format: param_name = param_value; eg. RanOut_S_Idle_CellPref_L_SNR = 24;
+Place inputs below this line: @@@

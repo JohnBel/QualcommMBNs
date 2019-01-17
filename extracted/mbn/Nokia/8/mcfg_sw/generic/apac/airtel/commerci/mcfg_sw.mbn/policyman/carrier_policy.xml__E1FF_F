@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for Airtel configuration for CA combination
+$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/Airtel/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 13741990 $"
+        schema_ver  = "1"
+        policy_ver  = "73.2.33"
+>
+
+  <initial>
+    <actions>
+      <!-- Define the Home MCCs -->
+      
+      <plmn_list name = "ca_combo_operators">
+        404-02 404-03 404-10 404-16 404-31 404-40 404-45 404-49 404-70 404-90 404-92 404-93 404-94 404-95 404-96 404-97 404-98 405-51 405-52 405-53 405-54 405-55 405-56
+      </plmn_list>
+
+      <ca_band_combos string="" />
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <rule precond="SS">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <serving_plmn_in list = "ca_combo_operators" /> </cond>
+        <then> <ca_band_combos string="40A-3AA-0;3CA-0;40CA-0;40CA-1;40CC-0;40CC-1;3AA-3A-0;40AA-40A-0;40C-3AA-0;" /> </then>
+        <else>
+         <ca_band_combos string="" />
+        </else>
+      </if>
+    <continue />
+  </actions>
+  </rule>
+
+</policy>

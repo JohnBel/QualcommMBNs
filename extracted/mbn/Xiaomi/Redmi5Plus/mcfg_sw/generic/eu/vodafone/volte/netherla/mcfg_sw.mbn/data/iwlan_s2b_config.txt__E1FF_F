@@ -1,0 +1,10 @@
+Static_fqdn_enabled:FALSE;
+epdg_plmn_list:;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_sa_rekey_timer_soft_sec:86400;
+ikev2_sa_rekey_timer_hard_sec:86500;
+esp_rekey_timer_soft_sec:28800;
+esp_rekey_timer_hard_sec:28900;
+ke_payload_enabled:FALSE;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

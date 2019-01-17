@@ -1,0 +1,168 @@
+{
+  "IwlanS2bConfigXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "EmmNasNvItems": {
+    "Value": "BgAAAAABAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "AndsfXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      ""
+    ]
+  },
+  "LteEmergRedial": {
+    "Version": 1,
+    "RedialOnLte": 257
+  },
+  "MmgsdiRefreshVoteOk": {
+    "Value": 1
+  },
+  "GetNetAutoMode": {
+    "Version": 0,
+    "Value": 1,
+    "Reserved": 0
+  },
+  "WlanOffloadConfig": {
+    "Value": 0
+  },
+  "Ds3gppMtu": {
+    "Value": 1440
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;",
+      ""
+    ]
+  },
+  "GnssLppEnable": {
+    "Value": 3
+  },
+  "ImsEnable": {
+    "Value": 0
+  },
+  "LteDisableDuration": {
+    "Value": 0
+  },
+  "Profile1": {
+    "Values": "AQABABkAAAAEAAAApaWlpZ0AAACdAAAAAAAAAAAAAAABEAYAdHJlLml0EQABAAMfAAEAADYAAQAA"
+  },
+  "Profile2": {
+    "Values": ""
+  },
+  "Profile3": {
+    "Values": ""
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsPref"
+  },
+  "SmsMandatory": {
+    "Value": 1
+  },
+  "SmsOnly": {
+    "Value": 0
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "Auto"
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfb": {
+    "Value": 1
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
+    "Value": 2000
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 31
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "AGpsDefaultQosTime": {
+    "Value": 64
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 180
+  },
+  "SmsMoRetryInterval": {
+    "Value": 45
+  },
+  "WcdmaRxDiversityControl": {
+    "Value": 3
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 6
+  },
+  "NasReleaseCompliance": {
+    "Value": 3
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "CstoVoipFallbackTimer": {
+    "Value": 10
+  },
+  "VoipCancelRetryTimer": {
+    "Value": 10
+  },
+  "Banner": {
+    "ValueString": "H3G_ITALY"
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 0
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "WcdmaRrcFeature": {
+    "Value": 0
+  },
+  "WcdmaRrcWtolCmSupport": {
+    "Value": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 31,
+    "Mode": 0
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 0
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 0
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 0
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 0
+  },
+  "GsmAmrCallConfiguration": {
+    "Value": 0
+  },
+  "BandClassPreference": {
+    "Nam": 255,
+    "Band": 0
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 2,
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 0
+  },
+  "RrcCipheringEnabled": {
+    "Value": 0
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "UimFirstInstructionClass": {
+    "Value": 0
+  },
+  "GprsMultiSlotClass": {
+    "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 255,
+    "Value": 0
+  }
+}

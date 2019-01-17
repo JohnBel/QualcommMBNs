@@ -1,0 +1,71 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- 7+7 mode Device configuration file for open Market DSDS with L+L support",
+      "$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+7_mode/L+L/device_config.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 15931866 $\"",
+      "        policy_ver  = \"2036.1.7\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <device_configuration num_sims=\"2\" max_active_voice=\"1\" max_active_data=\"2\">",
+      "      <config primary=\"C H G W L T\" secondary=\"G W L T\" />",
+      "      <config primary=\"G W L T\" secondary=\"C H G W L T\" />",
+      "      <e911_config primary=\"C H G W L T\" secondary=\"G W L T\" />",
+      "      <e911_config primary=\"G W L T\" secondary=\"C H G W L T\" />",
+      "    </device_configuration>",
+      "",
+      "    <feature subs=\"this\">  dualmmode </feature>",
+      "    <feature subs=\"other\"> dualmmode </feature>",
+      "",
+      "  </initial>",
+      "",
+      "</policy>"
+    ]
+  },
+  "DeviceMode": {
+    "Value": 0
+  },
+  "ImsHybridEnable": {
+    "Value": 0
+  },
+  "RfnvTdscdmaBcConfig": {
+    "ValueString": ""
+  },
+  "LteBandpref": {
+    "Value": 21
+  },
+  "QmiCatMode": {
+    "Value": 0
+  },
+  "ScanScopeRule": {
+    "Value": 62
+  },
+  "RfBandConfiguration": {
+    "Value": 562950035735424
+  },
+  "UimSelectDefaultSimApplication": {
+    "Value": 0
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": 896
+  },
+  "DualStandbyConfigItems": {
+    "DedicatedVoiceSubs": 0,
+    "DedicatedDataSubs": 0,
+    "ActiveSubs": 0,
+    "PrioritySubs": 5,
+    "DualStandbyPref": 0,
+    "Reserved": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": 1256
+  }
+}

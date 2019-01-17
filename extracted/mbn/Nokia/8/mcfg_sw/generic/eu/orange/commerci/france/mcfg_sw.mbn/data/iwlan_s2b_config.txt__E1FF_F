@@ -1,0 +1,17 @@
+static_fqdn_enabled:FALSE;
+epdg_plmn_list:;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+pcscfv6_attr_type_val:16390;
+pcscfv4_attr_type_val:16384;
+ikev2_dh_group_list:5;
+ikev2_encr_algo_list:12;
+ikev2_aes_encr_key_size_list:128;
+ikev2_hash_algo_list:12;
+ikev2_prf_algo_list:5;
+esp_encr_algo_list:12;
+esp_auth_algo_list:12;
+esp_aes_encr_key_size_list:128;
+natt_keep_alive_timer_sec:50;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

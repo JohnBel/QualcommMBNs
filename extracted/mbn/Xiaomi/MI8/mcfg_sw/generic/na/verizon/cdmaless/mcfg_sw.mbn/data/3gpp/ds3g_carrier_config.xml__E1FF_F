@@ -1,0 +1,14 @@
+<CarrierConfiguration>
+  <Node>
+    <APN>ims</APN>
+    <PcoList>
+      <InternalPco>
+        <PCO>0xFF01</PCO>
+        <PCO>0xFF02</PCO>
+      </InternalPco>
+      <ExternalPco>
+        <PCO>0xFF00</PCO>
+      </ExternalPco>
+    </PcoList>
+  </Node>
+</CarrierConfiguration>

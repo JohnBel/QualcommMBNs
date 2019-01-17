@@ -1,0 +1,7 @@
+andsf_rule_mgr_active:1;
+lte_meas_alpha:50;
+lte_sampling_interval:1000;
+lte_avg_interval:5000;
+wifi_meas_alpha:65;
+wifi_sampling_interval:1000;
+wifi_avg_interval:5000;

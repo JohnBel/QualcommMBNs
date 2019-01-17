@@ -1,0 +1,47 @@
+Adding Comments LTE RSRQ Src LTE SNR Destination
+Some Comments
+Ignore these commenrs
+@@@
+LTEDLRSRQSrcLow = -70;
+LTEDLRSRQSrcHigh = -60;
+LTEDLSNRSrcLow = 100;
+LTEDLSNRSrcHigh = 150;
+LTEDLRSRQTargetLow = -70;
+LTEDLRSRQTargetHigh = -60;
+LTEDLSNRTargetLow = 100;
+LTEDLSNRTargetHigh = 150;
+LTEDLSRATMonitorTime = 5;
+LTEDLTRATMonitorTime = 5;
+WLANRssiThresholdHigh = -65;
+WLANRssiThresholdLow = -75;
+WLANRssiThresholdRepoint = -70;
+WLANSamplingTimerValue = 3;
+WLANMonitorTimerValue = 5;
+LTE_UL_Sampling_Timer = 1000;
+LTE_UL_Monitoring_Time = 6000;
+LTE_UL_Alpha = 0.75;
+LTE_UL_Threashold_Bad_Delay = 70.0;
+LTE_UL_Threashold_Good_Delay = 60.0;
+2G3GMeasurementsFeatureEnabled = 1;
+2G3GReselectionTimer = 10;
+DISABLE_CS_REPOINT = 0;
+GERAN_BER_threshold = 6;
+GERAN_RXLEV_ALPHA = 0.65;
+GERAN_SNR_ALPHA = 0.65;
+GERAN_RXQUAL_ALPHA = 0.65;
+monitor2GTimeInSec = 2;
+GERAN_RSSIThresholdLow = -100;
+GERAN_RSSIThresholdHigh = -95;
+GERAN_SNR_threshold = 7;
+GRAN_SamplingTimer = 500;
+GERAN_Count_Suspended_State = 50;
+WCDMA_ECIO_ALPHA = 0.65;
+WCDMA_RSCP_ALPHA = 0.65;
+monitor3GTimeInSec = 2;
+WCDMA_ECIOThreshold = -15;
+WCDMA_RSCPThreshold_Low = -115;
+WCDMA_RSCPThreshold_High = -110;
+WCDMA_SamplingTimer = 500;
+WWAN_GUARD_TIMER = 7;
+WLAN_GUARD_TIMER = 7;
+WCDMA_Count_Suspended_State = 10;

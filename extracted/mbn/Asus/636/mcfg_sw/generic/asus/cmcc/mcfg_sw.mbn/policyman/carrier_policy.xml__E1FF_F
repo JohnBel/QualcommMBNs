@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for CMCC CSFB configuration with TGL Home <-> GWL roaming
+$Header: //components/rel/mmcp.mpss/8.1.1/policyman/configurations/Carrier/OpenMarket/7+5_mode/CMCC/openMarket/carrier_policy.xml#2 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 14466445 $"
+        policy_ver  = "73.2.40"
+>
+
+  <initial>
+
+      <!-- Define the Home MCCs -->
+      <mcc_list name="home_mccs">
+        460
+      </mcc_list>
+
+      <!-- Paull_Wang -->
+	  <!-- Disable NA FCC LTE B40 -->
+      <mcc_list name="FCC_MCCS">
+        302 310 311 312 313 314 315 316
+      </mcc_list>
+
+      <plmn_list name = "ca_combo_operators">
+        460-00 460-02 460-04 460-07 460-08
+      </plmn_list>
+	  
+	  <!-- DavidCW_Huang Start -->
+	  <!-- Define the PLMN List -->
+	  
+	  <!-- PH_GLOBE -->
+      <plmn_list name = "ca_combo_operators_GLOBE">
+        515-02
+      </plmn_list>
+	  
+	  <!-- HK_Smartone -->
+      <plmn_list name = "ca_combo_operators_Smartone">
+        454-06 454-15 454-17
+      </plmn_list>
+	  
+	  <!-- HK_CSL_Smartone -->
+      <plmn_list name = "ca_combo_operators_CSL_Smartone">
+        454-06 454-15 454-17 454-00 454-02 454-10 454-16 454-18 454-19
+      </plmn_list>
+	  
+	  <!-- JP_DOCOMO -->
+      <plmn_list name = "ca_combo_operators_DOCOMO">
+        440-10 
+      </plmn_list>
+	  
+	  <!-- JP_SOFTBANK_UQ -->
+      <plmn_list name = "ca_combo_operators_SOFTBANK">
+        440-20 440-21 441-01 441-10
+      </plmn_list>
+	  
+	  <!-- JP_KDDI -->
+      <plmn_list name = "ca_combo_operators_KDDI">
+        440-50 440-51 440-52 440-53 440-54 440-70 440-71 440-72 440-73 440-74 440-75 440-76
+      </plmn_list>
+	  
+	  <!-- SG_M1 -->
+      <plmn_list name = "ca_combo_operators_M1">
+        525-03 
+      </plmn_list>
+	  
+	  <!-- SG_Singtel -->
+      <plmn_list name = "ca_combo_operators_Singtel">
+        525-01 525-07 525-02
+      </plmn_list>
+	  
+	  <!-- SG_Starhub -->
+      <plmn_list name = "ca_combo_operators_Starhub">
+        525-05 525-06 525-08
+      </plmn_list>	  
+	  
+	  <!-- CH_CMCC -->
+      <plmn_list name = "ca_combo_operators_CMCC">
+        460-00 460-02 460-04 460-07 460-08
+      </plmn_list>
+	  
+	  <!-- Italy Vodafone -->
+      <plmn_list name = "ca_combo_operators_IT_Vodafone">
+        222-10
+      </plmn_list>
+	  
+	  <!-- Italy TIM -->
+      <plmn_list name = "ca_combo_operators_IT_TIM">
+        222-01
+      </plmn_list>
+	  
+	  <!-- Italy other -->
+      <plmn_list name = "ca_combo_operators_IT_Other">
+        222-02 222-07 222-30 222-77 222-88 222-98 222-99
+      </plmn_list>
+	  
+	  <!-- Czech_O2 -->
+      <plmn_list name = "ca_combo_operators_O2">
+        230-02 
+      </plmn_list>
+	  
+	  <!-- Czech_T-Mobile -->
+      <plmn_list name = "ca_combo_operators_T_Mobile">
+        230-01
+      </plmn_list>
+	  
+	  <!-- Czech_Vodafone -->
+      <plmn_list name = "ca_combo_operators_Vodafone">
+        230-03 230-99
+      </plmn_list>
+
+	  <!-- NL_Tmobile -->
+      <plmn_list name = "ca_combo_operators_NL_Tmobile">
+        204-16 204-20
+      </plmn_list>
+	  
+     <!-- FR_Bouygues -->
+      <plmn_list name = "ca_combo_operators_FR_Bouygues">
+        208-20 208-21 208-88
+      </plmn_list>
+	  
+	  <plmn_list name = "ca_combo_operators_RJIL">
+        405-840 405-854 405-855 405-856 405-857 405-858 405-859 405-860 405-861 405-862 405-863 405-864 405-865 405-866 405-867 405-868 405-869 405-870 405-871 405-872 405-873 405-874
+      </plmn_list>
+	  
+	  <!-- TWW_CHT_FET_TWM_Tstart -->
+      <plmn_list name = "CHT_FET_TWM_Tstart_operators">
+       466-92 466-11 466-01 466-03 466-97 466-89
+      </plmn_list>
+	  
+	  <!-- Germany -->
+      <plmn_list name = "ca_combo_operators_DE_DTAG">
+        262-01
+      </plmn_list>
+	  
+	  <!-- Ireland -->
+      <plmn_list name = "ca_combo_operators_IE_Vodafone">
+        272-01
+      </plmn_list>
+	  
+	  <!-- Turkey -->
+      <plmn_list name = "ca_combo_operators_TR_Vodafone">
+        286-02
+      </plmn_list>
+	  
+	  <!-- IN RF Band list -->
+       <rf_band_list name="rf_bands_IN_RJIL">
+         <gw_bands base = "hardware" />
+        <lte_bands base="none" >
+          <include> 2 4 39 </include>
+        </lte_bands>
+        <tds_bands base = "hardware" />
+       </rf_band_list>
+	  <!-- DavidCW_Huang End -->
+
+	  <!-- Paull_Wang -->
+	  <!-- Disable NA FCC LTE B40 -->
+       <rf_band_list name="rf_bands_NA_FCC">
+         <gw_bands base = "hardware" />
+        <lte_bands base="hardware" >
+          <exclude> 39 </exclude>
+        </lte_bands>
+        <tds_bands base = "hardware" />
+       </rf_band_list>
+	   
+      <define_fullrat_config>
+        <rat_capability base="none">
+           <include> CDMA HDR TDSCDMA GSM WCDMA LTE </include>
+        </rat_capability>
+        <rf_bands />
+        <rat_order> L W T G C H </rat_order>
+        <freq_list list="cpfl" />
+      </define_fullrat_config>
+
+      <!-- Home RF Band list --> 
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base="hardware" />
+	    <lte_bands base="hardware" />
+        <tds_bands base="hardware" />
+      </rf_band_list>
+
+      <!-- Set initial power up capability -->
+      <rat_capability_if base="none">
+        <include> GSM TDSCDMA LTE </include>
+      </rat_capability_if>
+      <rf_bands_if list="rf_bands_home" />
+
+      <feature single_sim="normal"> dualmmode </feature>
+      <ue_mode> CSFB </ue_mode>
+      <freq_list_if list="cpfl" />
+      <ca_band_combos string="" />
+
+  </initial>
+  
+ <!--
+  ====================================================================
+    Rules to handle OOS situations.
+  ====================================================================
+  -->
+ <!-- RULE #1 -->
+ <!-- We wait if we don't have location or we are not ONLINE. -->
+  <if precond="none">
+    <cond>
+      <any_of>
+        <not> <have_location /> </not>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      </any_of>
+    </cond>
+    <then />
+  </if>
+  
+  <!-- DavidCW_Huang Start -->
+  <!--
+  ===========================================================================  
+    Rules to Set CA Combination.
+  ===========================================================================  
+  -->
+  <!-- CA RULE #00 -->
+  <!-- Default -->
+  <if precond="none">
+    <cond>
+      <not> <location_mcc_in> 001 466 452 530 520 515 502 510 454 404 405 440 441 525 470 250 401 460 724 732 730 310 311 302 334 716 222 216 268 208 214 262 226 231 293 230 204 255 621 286 432 260 246 247 248 602 505 272 </location_mcc_in> </not>
+    </cond>
+    <then>
+        <ca_band_combos string="" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #FCC -->
+  <!-- FCC_TestSIM -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 001 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #01 -->
+  <!-- Taiwan -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 466 </location_mcc_in>
+    </cond>
+    <then>  <!-- RULE #01-1 CHT_FET_TWM_Tstart CA optimize-->
+	  <if>  
+	    <serving_plmn_in list = "CHT_FET_TWM_Tstart_operators" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;38CA-0;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  <else> <!-- RULE #01 GT CA optimize-->
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;38CA-0;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+
+  <!-- CA RULE #02 -->
+  <!-- Japan -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 440 441 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if> <!-- RULE #02-1 DOCOMO-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_DOCOMO" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;19AA-1A-0;19A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;3CC-0;19AA-3A-0;19A-3AA-0;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;3CA-1A-0;3C-1AA-0;19AA-3A-1A-0;19A-3AA-1A-0;19A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;28AA-3C-0;28A-3CA-0;" /> </then>
+	  </if> 
+	  <if> <!-- RULE #02-2 SoftBank-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_SOFTBANK" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;28AA-3C-0;28A-3CA-0;3CC-0;" /> </then>
+	  </if>
+	  <if> <!-- RULE #02-3 KDDI-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_KDDI" /> </cond>
+	    <then> <ca_band_combos string="18AA-1A-0;18A-1AA-0;18AA-1A-1;18A-1AA-1;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;" /> </then>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #03 -->
+  <!-- India(IN) -->
+  <if precond="none">
+    <cond> <!-- RULE #03-1 other than RJIL-->
+      <location_mcc_in> 404 405 </location_mcc_in>
+    </cond>
+    <then>
+	   <if>
+	     <not> <serving_plmn_in list = "ca_combo_operators_RJIL" /> </not>
+         <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;5AA-1A-0;5A-1AA-0;5AA-1A-1;5A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;32A-3AA-0;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;7AA-5A-0;7A-5AA-0;7AA-5A-1;7A-5AA-1;40A-5AA-0;40A-5AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;3CA-1A-0;3C-1AA-0;5AA-3A-1A-0;5A-3AA-1A-0;5A-3A-1AA-0;5AA-3A-1A-1;5A-3AA-1A-1;5A-3A-1AA-1;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;5AA-3C-0;5A-3CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-5A-3A-0;7A-5AA-3A-0;7A-5A-3AA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;40CC-0;40CC-1;" /> </then>
+       </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #04 -->
+  <!-- Thailand -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 520 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;5AA-1A-0;5A-1AA-0;5AA-1A-1;5A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;7AA-5A-0;7A-5AA-0;7AA-5A-1;7A-5AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;3CA-1A-0;3C-1AA-0;5AA-3A-1A-0;5A-3AA-1A-0;5A-3A-1AA-0;5AA-3A-1A-1;5A-3AA-1A-1;5A-3A-1AA-1;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;5AA-3C-0;5A-3CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-5A-3A-0;7A-5AA-3A-0;7A-5A-3AA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #05 -->
+  <!-- Philippines -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 515 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if>  <!-- RULE #05-1 Globe -->
+	    <serving_plmn_in list = "ca_combo_operators_GLOBE" /> 
+	    <then> <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  <else> <!-- RULE #05-2 other -->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;5AA-1A-0;5A-1AA-0;5AA-1A-1;5A-1AA-1;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;3CA-1A-0;3C-1AA-0;5AA-3A-1A-0;5A-3AA-1A-0;5A-3A-1AA-0;5AA-3A-1A-1;5A-3AA-1A-1;5A-3A-1AA-1;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;5AA-3C-0;5A-3CA-0;28AA-3C-0;28A-3CA-0;3CC-0;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #06 -->
+  <!-- Malaysia -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 502 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;38CA-0;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;3CC-0;7AA-3AA-0;7AA-3AA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #07 -->
+  <!-- Vietnam -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 452 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #08 -->
+  <!-- Indonesia -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 510 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;40A-5AA-0;40A-5AA-1;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;5AA-3C-0;5A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;3CC-0;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #09 -->
+  <!-- Singapore -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 525 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if> <!-- RULE #09-1 M1-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_M1" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  </if> 
+	  <if> <!-- RULE #09-2 Singtel-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_Singtel" /> </cond>
+	    <then> <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;38CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  </if>
+	  <if> <!-- RULE #09-3 Starhub-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_Starhub" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #10 -->
+  <!-- Hong Kong -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 454 </location_mcc_in>
+    </cond>
+    <then>  <!-- RULE #10-1 Smartone & CSL -->
+	  <if>  
+	    <serving_plmn_in list = "ca_combo_operators_CSL_Smartone" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  <else> <!-- RULE #10-2 -->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;40CC-0;40CC-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #11 -->
+  <!-- China -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 460 </location_mcc_in>
+    </cond>
+    <then>  <!-- RULE #11-1 CMCC -->
+	  <if>  
+	    <serving_plmn_in list = "ca_combo_operators_CMCC" /> 
+	    <then> <ca_band_combos string="38CA-0;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;40CC-0;40CC-1;" /> </then>
+	  <else> <!-- RULE #11-2 -->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;5AA-1A-0;5A-1AA-0;5AA-1A-1;5A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;40A-5AA-0;40A-5AA-1;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;3CA-1A-0;3C-1AA-0;5AA-3A-1A-0;5A-3AA-1A-0;5A-3A-1AA-0;5AA-3A-1A-1;5A-3AA-1A-1;5A-3A-1AA-1;5AA-3C-0;5A-3CA-0;3CC-0;40CC-0;40CC-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #12 -->
+  <!-- Russia -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 250 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;38CA-0;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #13 -->
+  <!-- Bangladesh -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 470 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;20AA-7AA-0;20AA-7AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #14 -->
+  <!-- Kazakhstan -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 401 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;3CA-1A-0;3C-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;3CC-0;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #15 -->
+  <!-- Australia -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 505 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;5AA-1A-0;5A-1AA-0;5AA-1A-1;5A-1AA-1;7AA-1A-0;7A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;7AA-5A-0;7A-5AA-0;7AA-5A-1;7A-5AA-1;40A-5AA-0;40A-5AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;3CA-1A-0;3C-1AA-0;5AA-3A-1A-0;5A-3AA-1A-0;5A-3A-1AA-0;5AA-3A-1A-1;5A-3AA-1A-1;5A-3A-1AA-1;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;5AA-3C-0;5A-3CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-5A-3A-0;7A-5AA-3A-0;7A-5A-3AA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #16 -->
+  <!-- New Zealand -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 530 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #17 -->
+  <!-- Italy -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 222 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if> <!-- RULE #17-1 TIM-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_IT_TIM" /> </cond>
+	    <then> <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  </if> 
+	  <if> <!-- RULE #17-2 Vodafone-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_IT_Vodafone" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  </if>
+	  <if> <!-- RULE #17-3 other-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_IT_Other" /> </cond>
+	    <then> <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;38CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #18 -->
+  <!-- France -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 208 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if>   <!-- RULE #18-1 Bouygues-->
+	    <serving_plmn_in list = "ca_combo_operators_FR_Bouygues" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  <else> <!-- RULE #18 other-->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #19 -->
+  <!-- Germany -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 262 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if>   <!-- RULE #19-1 DTAG-->
+	    <serving_plmn_in list = "ca_combo_operators_DE_DTAG" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  <else> <!-- RULE #19-2 other-->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #20 -->
+  <!-- Spain_Portugal -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 214 268 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;38CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #21 -->
+  <!-- Poland_Iran_Baltics(Estonia/Latvia/Lithuania) -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 260 432 248 247 246 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #22 -->
+  <!-- Czech -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 230 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if> <!-- RULE #22-1 O2-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_O2" /> </cond>
+	    <then> <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;38CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  </if> 
+	  <if> <!-- RULE #22-2 T-Mobile-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_T_Mobile" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  </if>
+	  <if> <!-- RULE #22-3 Vodafone-->
+	    <cond> <serving_plmn_in list = "ca_combo_operators_Vodafone" /> </cond>
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #23 -->
+  <!-- Hungary -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 216 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;32A-3AA-0;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;32A-7AA-0;32A-20AA-0;32A-20AA-1;38CA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;32A-7AA-3A-0;32A-7A-3AA-0;32A-20AA-3A-0;32A-20A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #24 -->
+  <!-- Romania_Slovenia_Slovak -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 226 293 231 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #25 -->
+  <!-- Ukraine -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 255 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #26 -->
+  <!-- Netherlands -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 204 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if>   <!-- RULE #26-1 T-Mobile-->
+	    <serving_plmn_in list = "ca_combo_operators_NL_Tmobile" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" /> </then>
+	  <else> <!-- RULE #26-2 other-->
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #27 -->
+  <!-- Ireland -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 272 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if>   <!-- RULE #27-1 Vodafone-->
+	    <serving_plmn_in list = "ca_combo_operators_IE_Vodafone" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;28AA-1A-0;28A-1AA-0;28AA-1A-1;28A-1AA-1;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;28AA-7A-1A-0;28A-7AA-1A-0;28A-7A-1AA-0;28AA-7A-1A-1;28A-7AA-1A-1;28A-7A-1AA-1;28AA-7A-1A-2;28A-7AA-1A-2;28A-7A-1AA-2;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  <else> <!-- RULE #27-2 other -->
+        <ca_band_combos string="" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #28 -->
+  <!-- Turkey -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 286 </location_mcc_in>
+    </cond>
+    <then>  
+	  <if>   <!-- RULE #28-1 Turkey-Vodafone-->
+	    <serving_plmn_in list = "ca_combo_operators_TR_Vodafone" /> 
+	    <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;38CA-0;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;8AA-3A-1A-2;8A-3AA-1A-2;8A-3A-1AA-2;8AA-3A-1A-3;8A-3AA-1A-3;8A-3A-1AA-3;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;8AA-7A-1A-0;8A-7AA-1A-0;8A-7A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" /> </then>
+	  <else> <!-- RULE #28-2 other-->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;3AA-1A-1;3A-1AA-1;7AA-1A-0;7A-1AA-0;20AA-1A-0;20A-1AA-0;3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;3CA-1A-0;3C-1AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-7A-1A-0;20A-7AA-1A-0;20A-7A-1AA-0;20AA-7A-1A-1;20A-7AA-1A-1;20A-7A-1AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;20AA-3A-3A-0;20A-3AA-3A-0;20AA-3C-0;20A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;7AA-1AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;20AA-7AA-0;20AA-7AA-1;" />
+	  </else>
+	  </if>
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #29 -->
+  <!-- Nigeria -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 621 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;8AA-3A-3;8A-3AA-3;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;8AA-7A-0;8A-7AA-0;8AA-7A-1;8A-7AA-1;8AA-7A-2;8A-7AA-2;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;8AA-3A-3A-0;8A-3AA-3A-0;8AA-3A-3A-1;8A-3AA-3A-1;8AA-3C-0;8A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;8AA-7A-3A-2;8A-7AA-3A-2;8A-7A-3AA-2;3CC-0;7AA-3AA-0;7AA-3AA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #30 -->
+  <!-- Brazil -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 724 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;7AA-3A-0;7A-3AA-0;7AA-3A-1;7A-3AA-1;28AA-3A-0;28A-3AA-0;28AA-3A-1;28A-3AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;7AA-3A-3A-0;7A-3AA-3A-0;7AA-3A-3A-1;7A-3AA-3A-1;7AA-3C-0;7A-3CA-0;28AA-3C-0;28A-3CA-0;7AA-7A-3A-0;7A-7A-3AA-0;7AA-7A-3A-1;7A-7A-3AA-1;7BA-3A-0;7B-3AA-0;7CA-3A-0;7C-3AA-0;7CA-3A-1;7C-3AA-1;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;3CC-0;7AA-3AA-0;7AA-3AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #31 -->
+  <!-- Colombia -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 732 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;38CA-0;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #32 -->
+  <!-- Chile -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 730 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;28AA-7A-0;28A-7AA-0;28AA-7A-1;28A-7AA-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #33 -->
+  <!-- US -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 310 311 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41CA-2;41CA-3;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #34 -->
+  <!-- Canada -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 302 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;7AA-5A-0;7A-5AA-0;7AA-5A-1;7A-5AA-1;40A-5AA-0;40A-5AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;38CA-0;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #35 -->
+  <!-- Mexico -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 334 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;7AA-5A-0;7A-5AA-0;7AA-5A-1;7A-5AA-1;7AA-7A-0;7AA-7A-1;7AA-7A-2;7AA-7A-3;7BA-0;7CA-0;7CA-1;7CA-2;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!-- CA RULE #36 -->
+  <!-- Peru -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in> 716 </location_mcc_in>
+    </cond>
+    <then>
+        <ca_band_combos string="40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;40CC-0;40CC-1;" />
+		<continue />
+    </then>
+  </if>
+  
+  <!--NAS Rule start here, Modifier Allen_Wang-->
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <svc_mode> FULL </svc_mode>
+  <!--
+  ====================================================================
+    Rules where location info can be used.
+  ====================================================================
+  -->
+
+  <!-- RULE #2 -->
+  <!-- If we are Home, stay in TGL -->
+  <if precond="none">
+    <cond>
+      <location_mcc_in list="home_mccs" />
+    </cond>
+    <then>
+      <rat_capability base="config">
+        <exclude> WCDMA CDMA HDR </exclude>
+        </rat_capability>
+        <rf_bands list="rf_bands_home" />
+        <freq_list list="cpfl" />
+    </then>
+  </if>
+  
+  <!-- RULE #3 -->
+  <!-- If we are in RJIl with RJIl SIM, set restrict band_list -->
+  <if precond="none">
+    <cond>
+     <imsi_plmn_in list = "ca_combo_operators_RJIL" />
+     <serving_plmn_in list = "ca_combo_operators_RJIL" />
+    </cond>
+	<then>
+      <rat_capability base="config" >
+        <exclude> TDSCDMA CDMA HDR </exclude>
+      </rat_capability>
+      <rf_bands list="rf_bands_IN_RJIL" />
+	  <ca_band_combos string="3AA-3A-0;3AA-3A-1;3AA-3A-2;3CA-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;5AA-3A-3;5A-3AA-3;5AA-3A-4;5A-3AA-4;5AA-5A-0;5AA-5A-1;5BA-0;5BA-1;40A-5AA-0;40A-5AA-1;40AA-40A-0;40AA-40A-1;40CA-0;40CA-1;5AA-3C-0;5A-3CA-0;3CC-0;40CC-0;40CC-1;" />
+      <freq_list list="default" />
+    </then>
+  </if>
+  
+<!-- RULE #4 -->
+  <!-- Paull_Wang -->
+  <!-- Disable NA FCC LTE B40 -->
+  <if precond="none">
+    <cond>
+     <location_mcc_in list="FCC_MCCS" />
+    </cond>
+    <then>
+      <rat_capability base="none" >
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <rf_bands list="rf_bands_NA_FCC" />
+      <freq_list list="default" />
+    </then>
+  </if>
+  
+  <!-- RULE #5 -->
+  <!-- If we are Roaming, stay in GWL -->
+  <if precond="none">
+    <cond>
+     <true />
+    </cond>
+    <then>
+      <rat_capability base="config">
+        <exclude> TDSCDMA CDMA HDR </exclude>
+      </rat_capability>
+      <rf_bands />
+      <freq_list list="default" />
+    </then>
+  </if>
+
+</policy>

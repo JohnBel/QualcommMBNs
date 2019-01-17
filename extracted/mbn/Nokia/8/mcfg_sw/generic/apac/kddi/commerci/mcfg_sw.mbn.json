@@ -1,0 +1,708 @@
+{
+  "ImsSipConfig": {
+    "Value": "ALgLAACAPgAAaEIAALgLAAAQJwAAAAAAAAD0AQC4CwAAMHUAALgLAAAwdQAAaEIAADB1AABoQgAAECcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ImsUserAgent": {
+    "ValueString": "QCOM"
+  },
+  "QpImsPlaniConfig": {
+    "Version": 0,
+    "AccessType": 0,
+    "Lac": 0,
+    "Tac": 0,
+    "CellIdentity": 0,
+    "Sid": 0,
+    "Nid": 0,
+    "Pzid": 0,
+    "BaseId": 0,
+    "SectorIdString": "",
+    "SubnetLength": 0,
+    "TimeSeconds": 0,
+    "TimeMinutes": 0,
+    "TimeHours": 0,
+    "TimeDays": 0,
+    "TimeMonths": 0,
+    "TimeYears": 0,
+    "TimeDayOfWeek": 0,
+    "MccString": "",
+    "MncString": "",
+    "Reserved": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "AdditionalDialString": {
+    "Value1String": "*99**24#",
+    "Value2String": "0"
+  },
+  "AggressionManagement": {
+    "Value": 1
+  },
+  "AlwaysOnConfigInfo": {
+    "Field1": 1,
+    "Field2": 3,
+    "Field3": 3,
+    "Field4": 1,
+    "Field5": 32,
+    "Field6": 3,
+    "Field7": 6
+  },
+  "Backofftimel2": {
+    "Field1": 1,
+    "Field2": 5,
+    "Field3": 5,
+    "Field4": 5,
+    "Field5": 15,
+    "Field6": 60,
+    "Field7": 120,
+    "Field8": 120,
+    "Field9": 120,
+    "Field10": 120
+  },
+  "Backofftimesession": {
+    "Field1": 30,
+    "Field2": 60,
+    "Field3": 120,
+    "Field4": 240,
+    "Field5": 240,
+    "Field6": 240,
+    "Field7": 480,
+    "Field8": 480,
+    "Field9": 480,
+    "Field10": 480
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML.",
+      "$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#1 $",
+      "-->",
+      "",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 12215027 $\"",
+      "        enabled     = \"true\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"43.1.11\"",
+      ">",
+      "",
+      "  <initial>",
+      "    <actions>",
+      "",
+      "      <!-- These are the KDDI IMSI PLMNs -->",
+      "      <plmn_list name=\"unrestricted_operators\">",
+      "        440-07 440-08",
+      "        440-50 440-51 440-52 440-53 440-54 440-55 440-56",
+      "        440-70 440-71 440-72 440-73 440-74 440-75 440-76 440-77 440-78 440-79",
+      "        440-88 440-89",
+      "        441-70",
+      "      </plmn_list>",
+      "",
+      "      <!-- List of the VoLTE only MCC(s) -->",
+      "      <mcc_list name=\"pm:volte_only_mccs\"> 440 441 </mcc_list>",
+      "",
+      "      <!-- List of Japan MCC(s) -->",
+      "      <mcc_list name=\"japan_mccs\"> 440 441 </mcc_list>",
+      "",
+      "      <!-- List of China MCC(s) -->",
+      "      <mcc_list name=\"china_mccs\"> 460 </mcc_list>",
+      "",
+      "      <define_fullrat_config>",
+      "        <actions>",
+      "          <rat_capability base=\"none\">",
+      "            <include> GSM WCDMA LTE </include>",
+      "          </rat_capability>",
+      "          <svc_mode> LIMITED </svc_mode>",
+      "          <call_mode> NORMAL </call_mode>",
+      "        </actions>",
+      "      </define_fullrat_config>",
+      "",
+      "      <!-- Define e911_volte capability -->",
+      "      <boolean_define name=\"mmcp:e911_volte\" initial=\"true\" />",
+      "",
+      "      <rf_bands base=\"hardware\"/>",
+      "",
+      "      <!-- UE mode is always NORMAL -->",
+      "      <ue_mode> NORMAL </ue_mode>",
+      "",
+      "      <feature> normal </feature>",
+      "",
+      "      <volte enabled=\"true\" />",
+      "",
+      "      <!-- On first boot, set RAT capability to all RATs -->",
+      "      <rat_capability_if base=\"none\">",
+      "        <include> CDMA HDR GSM WCDMA LTE TDSCDMA </include>",
+      "      </rat_capability_if>",
+      "",
+      "    </actions>",
+      "  </initial>",
+      "",
+      "",
+      "  <!-- If not ONLINE or no location info, do nothing.",
+      "  -->",
+      "  <if precond=\"none\">",
+      "    <cond>",
+      "      <any_of>",
+      "        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "        <not> <have_location /> </not>",
+      "      </any_of>",
+      "    </cond>",
+      "    <then> <stop/> </then>",
+      "    <else>",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <continue/>",
+      "    </else>",
+      "  </if>",
+      "",
+      "  <!-- Operator cards get VOLTE in Japan, rest all cases get call mode NORMAL.",
+      "  -->",
+      "  <if precond=\"IMSI\">",
+      "    <cond>",
+      "      <location_mcc_in list=\"japan_mccs\" />",
+      "      <imsi_plmn_in list=\"unrestricted_operators\" />",
+      "    </cond>",
+      "    <then>",
+      "      <call_mode> VOLTE </call_mode>",
+      "      <continue/>",
+      "    </then>",
+      "    <else>",
+      "      <call_mode> NORMAL </call_mode>",
+      "      <continue/>",
+      "    </else>",
+      "  </if>",
+      "",
+      "  <!-- Set config based on location. Japan/China/Roam -->",
+      "  <select>",
+      "    <case>",
+      "      <location_mcc_in list=\"japan_mccs\" />",
+      "      <actions>",
+      "        <rat_capability base=\"none\">",
+      "          <include> LTE </include>",
+      "        </rat_capability>",
+      "      </actions>",
+      "    </case>",
+      "",
+      "    <case>",
+      "      <location_mcc_in list=\"china_mccs\" />",
+      "      <actions>",
+      "        <rat_capability base=\"none\">",
+      "          <include> TDSCDMA GSM WCDMA LTE </include>",
+      "        </rat_capability>",
+      "      </actions>",
+      "    </case>",
+      "",
+      "    <case>",
+      "      <true />",
+      "      <actions>",
+      "        <rat_capability base=\"none\">",
+      "          <include> GSM WCDMA LTE </include>",
+      "        </rat_capability>",
+      "      </actions>",
+      "    </case>",
+      "  </select>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "D2lresel": {
+    "Value": 1
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsApnSwitching": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;",
+      "Attach_Profile_ID:2;"
+    ]
+  },
+  "DsPppCtlPacketOnDos": {
+    "Value": 1
+  },
+  "ExcludePtmsiTypeField": {
+    "Value": 1
+  },
+  "FullJcdmaFeature": {
+    "Value": 0
+  },
+  "HdrAcqDivEnable": {
+    "Value": 1
+  },
+  "HdrAcqDivThresh0": {
+    "Value": 65438
+  },
+  "HdrAcqDivThresh1": {
+    "Value": 65431
+  },
+  "ImsEnable": {
+    "Value": 1
+  },
+  "ImsOperationMode": {
+    "Value": 1
+  },
+  "JcdmaMode": {
+    "Value": 1
+  },
+  "OneXCsfbEcbmStatus": {
+    "Value": 0
+  },
+  "OneXDataServiceTransferTimer": {
+    "Value": 22
+  },
+  "PreregBackoffTimerLcp": {
+    "Field1": 6,
+    "Field2": 0,
+    "Field3": 131073,
+    "Field4": 983048,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0,
+    "Field10": 0,
+    "Field11": 0
+  },
+  "PreregBackoffTimerVirtualConn": {
+    "Field1": 6,
+    "Field2": 983055,
+    "Field3": 1966095,
+    "Field4": 7864380,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0,
+    "Field10": 0,
+    "Field11": 0
+  },
+  "Profile1": {
+    "Values": "AgBkACUAAAAGAAAApaWlpVEqAABuMgEAAAAAAAAAAAABEAgAaW50ZXJuZXSiAAEAAqgAAQADqQABAAGtAAEAAKMAAQAA"
+  },
+  "Profile2": {
+    "Values": "AQACAEAAAAAFAAAApaWlpZUoAACVKAAAAAAAAAAAAAARAAEAAx8AAQABNQABAP82AAEAAEUAKAAFAAAACgAAABQAAAAoAAAAUAAAAKAAAABAAQAAgAIAAAAFAAAIBwAA"
+  },
+  "Profile3": {
+    "Values": "AQADAEcAAAAGAAAApaWlpekoAADpKAAAAAAAAAAAAAABEAMAaW1zEQABAAMfAAEAATUAAQAENgABAABFACgABQAAAAoAAAAUAAAAKAAAAFAAAACgAAAAQAEAAIACAAAABQAACAcAAA=="
+  },
+  "QpImsRegConfig": {
+    "RegOnModeString": "3",
+    "RegModeConfigString": "16",
+    "RegManagerPdpProfileNameString": "",
+    "RegEventPacket": 0,
+    "RegPcoeEnabled": 0,
+    "RegDhcpEnabled": 0,
+    "RegPreConfigEnabled": 0,
+    "RegManagerPreConfigServerBaseString": "",
+    "RegRatConfigString": "None",
+    "RegNvPcScfEnabled": 0,
+    "RegWlanEnabled": 0,
+    "RegUserNameImsi": 0,
+    "RegResponseForOptions": 0,
+    "RegConfigMaxDiscoveryCount": 0,
+    "RegManagerDiscoveryScheduleString": "",
+    "RegManagerCdmaPdpProfileNameString": "",
+    "RegConfigPdnRecoveryDelayTimerVal": 0,
+    "RegManagerPdpFailureScheduleString": "",
+    "RegConfigMaxIntermediatePDPRetries": 0,
+    "RegConfigEhrpdRecoveryTime": 0,
+    "RegConfigRegistrationAttempts": 0,
+    "RegConfigDelayAttemptTimer": 0,
+    "RegConfigTestMode": 0,
+    "RegPcScfPort": 0
+  },
+  "QpImsRegConfigDb": {
+    "Version": 3,
+    "Items": [
+      {
+        "Rat": 16,
+        "ApnIndex": 17,
+        "ImsServiceInfoString": "VoLte_Sms",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 20616,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 2,
+        "IpTypeInfo": 17
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      }
+    ],
+    "Items2": [
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 4096,
+        "ServicePriorityWwan": 12290
+      },
+      {
+        "RatApnFallback": 5,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 20616,
+        "ServicePriorityWwan": 0
+      }
+    ],
+    "AllowedImsSrvOnWlanString": "20992",
+    "AddAllFTs": 0,
+    "AcsPriority": 0,
+    "ISimPriority": 0,
+    "NvPriority": 0,
+    "PcoPriority": 0,
+    "ImsServiceStatus": 0,
+    "ApnNames": [
+      "",
+      "",
+      ""
+    ],
+    "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "QpImsUtConfig": {
+    "Version": 0,
+    "ApnNameString": "xcap.ims.mnc051.mcc440.pub.3gppnetwork.org:8090",
+    "DomainNameString": "",
+    "AssociatedUriString": "",
+    "ApplicationUidString": "",
+    "RatConfig": 0,
+    "IpAddrType": 0,
+    "RetryTimerValue": 0,
+    "RetryAttemptCount": 0,
+    "ApnType": 0,
+    "GbaUbType": 0,
+    "GbaUbMode": 0,
+    "BsfAddrString": "",
+    "DisableUt": 0,
+    "GbaTlsMode": 0,
+    "PdnHysTimerValue": 0,
+    "RatMaskValue": 0,
+    "Apn2IpAddrType": 0,
+    "Apn2ApnNameString": ""
+  },
+  "RefreshVoteOk": {
+    "Value": 1
+  },
+  "SerReqThrottleBehavior": {
+    "Value": 3
+  },
+  "Setpreregstatus": {
+    "Value": 3
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsPref"
+  },
+  "SmsMandatory": {
+    "Value": 1
+  },
+  "SmsOverS102": {
+    "Value": 0
+  },
+  "SmsRetyLimit": {
+    "Value": 5
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "PsOnly"
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "ThreeGpp2BackPressureRemoval": {
+    "Field1": 1,
+    "Field2": 1000
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "Zz22SelParms": {
+    "Field1": 0,
+    "Field2": 0,
+    "Field3": 8,
+    "Field4": 30,
+    "Field5": -1
+  },
+  "Zz22Thresh": {
+    "Field1": 0,
+    "Field2": -100,
+    "Field3": -128,
+    "Field4": -95,
+    "Field5": -120,
+    "Field6": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 4
+  },
+  "CdmaReceiveDiversity": {
+    "Value": 177
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "AuthenticationRequirePasswordEncryption": {
+    "Value": 1
+  },
+  "QncEnabledFlag": {
+    "Value": 0
+  },
+  "DataServiceOptionSet": {
+    "Value": 2
+  },
+  "RoamingListEnabled": {
+    "Name": 0,
+    "Enabled": 1
+  },
+  "DataMdrMode": {
+    "Value": 3
+  },
+  "PacketDataCallsOriginateString": {
+    "DigitsString": "#777"
+  },
+  "HdrScpSubtypeCustomConfig": {
+    "CustomConfigIsActive": 0,
+    "Subtype2PhysicalLayer": 0,
+    "EnhancedCcmac": 0,
+    "EnhancedAcmac": 0,
+    "EnhancedFtcmac": 0
+  },
+  "EnsEnabled": {
+    "Value": 0
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 45
+  },
+  "SmsMoRetryInterval": {
+    "Value": 10
+  },
+  "SdConfigurableItems": {
+    "Version": 3,
+    "Items": [
+      60,
+      120,
+      5,
+      1,
+      180,
+      4,
+      130,
+      3600,
+      130,
+      14,
+      0,
+      0,
+      1,
+      0,
+      60,
+      120,
+      3,
+      3600,
+      900,
+      180,
+      300,
+      300,
+      900,
+      3,
+      12
+    ]
+  },
+  "Is2000CaiRadioConfigurationRcPreference": {
+    "Value": 3
+  },
+  "TtyMode": {
+    "Value": 4
+  },
+  "CdmaSO68Enabled": {
+    "Value": 1
+  },
+  "CdmaSO70Enable": {
+    "Value": 1
+  },
+  "HdrScpForceRelease0SessionConfiguration": {
+    "Value": 0
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 1
+  },
+  "SmsMoOnTrafficChannel": {
+    "Value": 1
+  },
+  "SmsServiceOption": {
+    "Value": 1
+  },
+  "HdrEmpaSupported": {
+    "Value": 1
+  },
+  "DataServicesQcMobileIp": {
+    "Value": 0
+  },
+  "HdrScpForceAtConfiguration": {
+    "Value": 7
+  },
+  "SlotCycleIndex": {
+    "Value": 1
+  },
+  "DisableCmCallType": {
+    "Value": 0
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "ToolkitCsPsParallel": {
+    "Value": 0
+  },
+  "MgrfSupported": {
+    "Value": 1
+  },
+  "MobileCaiRevisionNumber": {
+    "Value": 9
+  },
+  "PppVsncpConfigData": {
+    "TermTimeout": 1000,
+    "AckTimeout": 3000,
+    "RegTry": 20,
+    "TermTry": 3
+  },
+  "HdrScpForceRestrictedCf": {
+    "Value": 1
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "Banner": {
+    "ValueString": "KDDI"
+  },
+  "DataCallOverEhrpdOnly": {
+    "EhrpdOnlyFlag": 1,
+    "MaxFailureCount": 3,
+    "MaxFailureTotalCount": 6,
+    "NewAttemptMaxTimer": 5
+  },
+  "PhoneLock": {
+    "Value": 0
+  },
+  "HdrReceiveDiversity": {
+    "Value": -63
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "UimFirstInstructionClass": {
+    "Value": 1
+  },
+  "JCdmaM512ModeSetting": {
+    "Value": 1
+  },
+  "PzidHysterisisActivationTimer": {
+    "Value": 0
+  },
+  "PzidHysterisisTimer": {
+    "Value": 60
+  },
+  "PacketCallDialStringLookupTable": {
+    "DialString1String": "#777",
+    "CallType1": 1,
+    "ModesPermitted1": 1,
+    "DialString2String": "#777",
+    "CallType2": 1,
+    "ModesPermitted2": 1,
+    "DialString3String": "#777",
+    "CallType3": 1,
+    "ModesPermitted3": 1,
+    "DialString4String": "#777",
+    "CallType4": 1,
+    "ModesPermitted4": 1
+  }
+}

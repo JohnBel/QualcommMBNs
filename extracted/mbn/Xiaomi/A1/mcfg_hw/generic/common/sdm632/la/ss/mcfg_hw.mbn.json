@@ -1,0 +1,35 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Device configuration file for single sim CHGWLT config",
+      "$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/DevConfig/SS/device_config.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 15931866 $\"",
+      "        policy_ver  = \"2025.1.2\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <device_configuration num_sims = \"1\" max_active = \"1\">",
+      "      <config primary=\"C H G W L T\" />",
+      "    </device_configuration>",
+      "",
+      "  </initial>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "ImsHybridEnable": {
+    "Value": 0
+  },
+  "QmiCatMode": {
+    "Value": 0
+  },
+  "UimSelectDefaultSimApplication": {
+    "Value": 0
+  }
+}

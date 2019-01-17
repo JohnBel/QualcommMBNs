@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<IWLAN_S2B_CONFIG>
+    <GENERIC_VARIANT>
+        <epdg_addr_info>
+            <fqdn>epdg.epc.mnc001.mcc250.pub.3gppnetwork.org</fqdn>
+            <pcscf_attr>
+                <v4_attr_type_val>20</v4_attr_type_val>
+                <v6_attr_type_val>21</v6_attr_type_val>
+            </pcscf_attr>
+        </epdg_addr_info>
+        <ikev2_info>
+            <self_id>
+                <id_type>ID_RFC822_ADDR</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </self_id>
+            <peer_id>
+                <id_type>ID_FQDN</id_type>
+            </peer_id>
+            <ke_payload_enabled>FALSE</ke_payload_enabled>
+			<ikev2_dh_group_list>
+                <dh_group value="14"/>
+				<dh_group value="2"/>
+                <dh_group value="5"/>
+			</ikev2_dh_group_list>
+			<dpd_timer_sec>120</dpd_timer_sec>
+			<ikev2_sa_rekey_timer>
+                <soft_sec>86400</soft_sec>
+                <hard_sec>87000</hard_sec>
+            </ikev2_sa_rekey_timer>
+			<esp_rekey_timer>
+                <soft_sec>14400</soft_sec>
+                <hard_sec>14700</hard_sec>
+            </esp_rekey_timer>
+        </ikev2_info>
+    </GENERIC_VARIANT>
+</IWLAN_S2B_CONFIG>

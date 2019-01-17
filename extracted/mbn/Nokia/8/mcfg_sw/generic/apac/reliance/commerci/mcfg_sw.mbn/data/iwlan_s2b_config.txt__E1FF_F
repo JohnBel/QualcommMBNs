@@ -1,0 +1,17 @@
+epdg_plmn_list:405874,405840,405854,405855,405856,405857,405858,405859,405860,405861,405862,405863,405864,405865,405866,405867,405868,405869,405870,405871,405872,405873;
+epdg_fqdn:vowifi.jio.com;
+international_fqdn:InternationalVoWiFi.jio.com;
+domestic_mcc_list:404,405,406;
+use_static_fqdn_for_apm_oos:TRUE;
+static_fqdn_enabled:FALSE;
+ke_payload_enabled:FALSE;
+pcscfv4_attr_type_val:16384;
+ikev2_sa_rekey_timer_soft_sec:86400;
+ikev2_sa_rekey_timer_hard_sec:86500;
+esp_rekey_timer_soft_sec:86400;
+esp_rekey_timer_hard_sec:86500;
+natt_keep_alive_timer_sec:20; 
+epdg_fqdn_impi_based:TRUE;
+ikev2_self_id_type: ID_RFC822_ADDR_MAC_IMPI_BASED;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

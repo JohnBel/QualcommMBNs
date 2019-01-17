@@ -1,0 +1,49 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Restrictions in China DSDx devices 
+$Header: //commercial/MPSS.AT.4.0.2.c2/Main/modem_proc/mmcp/policyman/configurations/Restrictions/china_dsdx/restrictions.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15945178 $"
+        policy_ver  = "4000.5.3"
+>
+
+  <initial>
+
+    <mcc_list name="restrictions:home_mccs">
+      460 455
+    </mcc_list>
+
+    <plmn_list name ="ct_imsi_plmn">
+      460-03 460-11
+    </plmn_list>
+
+  </initial>
+
+  <if>
+    <any_of>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      <not> <have_location /> </not>
+    </any_of>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <if>
+    <all_of>
+      <location_mcc_in list="restrictions:home_mccs" />
+      <any_of>
+        <imsi_mcc_in session="1x" list="restrictions:home_mccs" />
+        <imsi_plmn_in list="ct_imsi_plmn" />
+      </any_of>
+    </all_of>
+    <then>
+      <svc_mode> LIMITED </svc_mode>
+      <rat_capability base="none">
+        <include> G </include>
+      </rat_capability>
+    </then>
+  </if>
+
+</policy>

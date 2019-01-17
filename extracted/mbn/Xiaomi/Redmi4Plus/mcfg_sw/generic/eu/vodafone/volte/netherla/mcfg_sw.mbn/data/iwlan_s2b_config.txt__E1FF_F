@@ -1,0 +1,9 @@
+epdg_fqdn:epdg.epc.mnc004.mcc204.pub.3gppnetwork.org;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_sa_rekey_timer_soft_sec:86400;
+ikev2_sa_rekey_timer_hard_sec:86500;
+esp_rekey_timer_soft_sec:28800;
+esp_rekey_timer_hard_sec:28900;
+ikev2_hash_algo_list:1,2,5,12;
+ke_payload_enabled:FALSE;
+static_fqdn_enabled:FALSE;

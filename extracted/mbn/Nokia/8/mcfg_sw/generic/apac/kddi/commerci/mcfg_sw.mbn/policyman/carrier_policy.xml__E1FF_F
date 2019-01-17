@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML. 
+$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#1 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 12215027 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "43.1.11"
+>
+
+  <initial>
+    <actions>
+
+      <!-- These are the KDDI IMSI PLMNs -->
+      <plmn_list name="unrestricted_operators">
+        440-07 440-08 
+        440-50 440-51 440-52 440-53 440-54 440-55 440-56 
+        440-70 440-71 440-72 440-73 440-74 440-75 440-76 440-77 440-78 440-79 
+        440-88 440-89 
+        441-70
+      </plmn_list>
+
+      <!-- List of the VoLTE only MCC(s) -->
+      <mcc_list name="pm:volte_only_mccs"> 440 441 </mcc_list>
+
+      <!-- List of Japan MCC(s) -->
+      <mcc_list name="japan_mccs"> 440 441 </mcc_list>
+
+      <!-- List of China MCC(s) -->
+      <mcc_list name="china_mccs"> 460 </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <svc_mode> LIMITED </svc_mode>
+          <call_mode> NORMAL </call_mode>
+        </actions>
+      </define_fullrat_config>
+
+      <!-- Define e911_volte capability -->
+      <boolean_define name="mmcp:e911_volte" initial="true" />
+
+      <rf_bands base="hardware"/>
+
+      <!-- UE mode is always NORMAL -->
+      <ue_mode> NORMAL </ue_mode>
+
+      <feature> normal </feature>
+
+      <volte enabled="true" />
+
+      <!-- On first boot, set RAT capability to all RATs -->
+      <rat_capability_if base="none">
+        <include> CDMA HDR GSM WCDMA LTE TDSCDMA </include>
+      </rat_capability_if>
+
+    </actions>
+  </initial>
+
+
+  <!-- If not ONLINE or no location info, do nothing.
+  -->
+  <if precond="none">
+    <cond>
+      <any_of>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+        <not> <have_location /> </not>
+      </any_of>
+    </cond>
+    <then> <stop/> </then>
+    <else> 
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </else>
+  </if>
+ 
+  <!-- Operator cards get VOLTE in Japan, rest all cases get call mode NORMAL.
+  -->
+  <if precond="IMSI">
+    <cond> 
+      <location_mcc_in list="japan_mccs" /> 
+      <imsi_plmn_in list="unrestricted_operators" />
+    </cond>
+    <then>
+      <call_mode> VOLTE </call_mode>
+      <continue/>
+    </then>
+    <else>
+      <call_mode> NORMAL </call_mode>
+      <continue/>
+    </else>
+  </if>
+
+  <!-- Set config based on location. Japan/China/Roam -->
+  <select>
+    <case>
+      <location_mcc_in list="japan_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include> LTE </include>
+        </rat_capability>
+      </actions>
+    </case>
+
+    <case>
+      <location_mcc_in list="china_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include> TDSCDMA GSM WCDMA LTE </include>
+        </rat_capability>
+      </actions>
+    </case>
+
+    <case>
+      <true />
+      <actions>
+        <rat_capability base="none">
+          <include> GSM WCDMA LTE </include>
+        </rat_capability>
+      </actions>
+    </case>
+  </select> 
+
+</policy>

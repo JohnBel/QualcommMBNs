@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Restrictions in North America LTE band 40 41 
+$Header: //commercial/MPSS.AT.2.3.c6/Main/modem_proc/mmcp/policyman/configurations/Restrictions/china_dsdx/restrictions.xml#1 $
+-->
+
+<policy name        = "generic"
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "4100.0.2"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of US MCCs and Canada MCCs, where LTE BAND 40 and 41 should be automatically removed -->
+      <mcc_list name="na_mccs"> 302 310 311 312 313 314 315 316 330 </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rf_bands base="hardware" />
+          <svc_mode> LIMITED </svc_mode>
+       </actions>
+      </define_fullrat_config>
+   
+      <!-- Define  RF band list which excluse LTE Band 40 41-->
+      <rf_band_list name="no_b40_b41">
+        <gw_bands base="hardware" />
+        <lte_bands base="hardware">
+          <exclude> 39 40</exclude>
+        </lte_bands>
+        <tds_bands base="hardware" />
+      </rf_band_list>
+      <rf_bands_if base="hardware" />
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <!-- Wait until location is known. -->
+  <if precond="none">
+    <cond>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <have_location />
+    </cond>
+    <then>
+      <svc_mode> FULL </svc_mode>
+      <continue />
+    </then>
+    <else />
+  </if>
+
+  <!-- RULE #2 -->
+  <!-- Set configuration based on location. -->  
+    <if>
+    <cond> <location_mcc_in list="na_mccs" /> </cond>
+    <then> <rf_bands list="no_b40_b41" /> </then>
+    <else> <rf_bands base="hardware" /> </else>
+  </if>
+  
+  </policy>

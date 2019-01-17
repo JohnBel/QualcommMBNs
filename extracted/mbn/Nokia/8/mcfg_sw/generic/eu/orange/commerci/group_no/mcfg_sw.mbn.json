@@ -1,0 +1,406 @@
+{
+  "AndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>Orange Spain Policy</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>orangeworld</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                           <AccessTechnology>1</AccessTechnology>",
+      "                           <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>sos</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      "</ANDSF>",
+      ""
+    ]
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>Orange Spain Default Policy</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>orangeworld</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                           <AccessTechnology>1</AccessTechnology>",
+      "                           <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>sos</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      "</ANDSF>",
+      ""
+    ]
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      "andsf_rule_mgr_active:1;",
+      "lte_meas_alpha:50;",
+      "lte_sampling_interval:1000;",
+      "lte_avg_interval:5000;",
+      "wifi_meas_alpha:65;",
+      "wifi_sampling_interval:1000;",
+      "wifi_avg_interval:5000;",
+      "cdma_1x_meas_alpha:50;",
+      "cdma_1x_avg_interval:6000;",
+      "cdma_1x_acq_hyst_interval:3000;",
+      "cdma_1x_lost_hyst_interval:3000;",
+      "cdma_1x_sampling_interval:2000;",
+      ""
+    ]
+  },
+  "LteEmergRedial": {
+    "Version": 1,
+    "RedialOnLte": 257
+  },
+  "MidCallSrvccInfo": {
+    "Version": 1,
+    "ImsCacheExpiryDuration": 5000,
+    "MidCallSupport": 1,
+    "SrvccSyncSupport": 0,
+    "Reserved": 0
+  },
+  "WifiConfig": {
+    "Version": 0,
+    "IsWifiOnlyModeForVoice": 1,
+    "IsE911OverWifi": 1,
+    "WifiCsScanTimer": 5,
+    "Reserved": "AAAAAAAAAA=="
+  },
+  "WlanOffloadConfig": {
+    "Value": 2
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "IwlanS2bConfigTxt": {
+    "Values": [
+      "ikev2_peer_id_type:ID_FQDN;",
+      "ikev2_dh_group_list:5;",
+      "ikev2_encr_algo_list:12;",
+      "ikev2_aes_cbc_encr_key_size_list:128;",
+      "ikev2_hash_algo_list:12;",
+      "ikev2_prf_algo_list:5;",
+      "esp_encr_algo_list:3,12;",
+      "esp_aes_cbc_encr_key_size_list:128;",
+      "esp_auth_algo_list:2,5;",
+      "ikev2_eap_fra_pseudo_enabled:TRUE;",
+      "ikev2_eap_reauth_realm_enabled:TRUE;",
+      "static_fqdn_enabled:FALSE;",
+      "#esp_auth_algo_list:1,2;",
+      "#configured_ike_port:4500;"
+    ]
+  },
+  "PbmHardcodedEccConfig": {
+    "Value": 1
+  },
+  "PbmHardcodedEccList": {
+    "Items": [
+      {
+        "DigitsString": "911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "112",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "",
+        "Value": 0,
+        "CategoryLength": 0,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 0,
+        "HardcodedType": 0
+      }
+    ]
+  },
+  "Profile1": {
+    "Values": "AQABADYAAAAHAAAApaWlpTUAAADhTQIAAAAAAAAAAAABEAsAT1JBTkdFV09STEQRAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8="
+  },
+  "Profile2": {
+    "Values": "AQACABEAAAADAAAApaWlpUh2ZkNIdmZDAAAAAAAAAAABEAMASU1TEQABAAMfAAEAAQ=="
+  },
+  "Profile3": {
+    "Values": "AQADABsAAAAFAAAApaWlpf9NAgAgTgIAAAAAAAAAAAABEAMAU09TEQABAAMvAAEAAB8AAQABNgABAAE="
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "RefreshVoteOk": {
+    "Value": 1
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsNotAllowed"
+  },
+  "SmsOnly": {
+    "Value": 0
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "PsPref"
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "WcdmaRrcCsfbSkipSib11Opt": {
+    "Value": 1
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfb": {
+    "Value": 1
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
+    "Value": 2000
+  },
+  "WcdmaRrcFeature": {
+    "Value": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 31,
+    "Mode": 0
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 135
+  },
+  "SmsMoRetryInterval": {
+    "Value": 30
+  },
+  "DtmFeatureSupport": {
+    "Value": 1
+  },
+  "DtmMultislotClass": {
+    "Value": 3
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 0
+  },
+  "SmsMoOnTrafficChannel": {
+    "Value": 1
+  },
+  "NasReleaseCompliance": {
+    "Value": 3
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "MgrfSupported": {
+    "Value": 1
+  },
+  "CstoVoipFallbackTimer": {
+    "Value": 10
+  },
+  "VoipCancelRetryTimer": {
+    "Value": 10
+  },
+  "UmtsAmrCodecPreferenceConfig": {
+    "Value": 15
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "Banner": {
+    "ValueString": "ORG_nIMS_V01"
+  },
+  "AutoRedialSetting": {
+    "Enable": 1,
+    "Rings": 1
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 0
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  }
+}

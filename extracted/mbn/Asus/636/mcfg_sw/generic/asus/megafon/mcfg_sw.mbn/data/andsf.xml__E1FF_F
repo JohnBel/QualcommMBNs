@@ -1,0 +1,37 @@
+<ANDSF>
+  <Name>Megafon Policy</Name>
+  <ISRP>
+    <Home>
+      <ForServiceBased>
+        <MAPCON_1>
+          <APN>Internet</APN>
+          <RoutingRule>
+            <Node>
+              <AccessTechnology>1</AccessTechnology>
+              <AccessNetworkPriority>1</AccessNetworkPriority>
+            </Node>
+          </RoutingRule>
+          <RulePriority>1</RulePriority>
+        </MAPCON_1>
+        <MAPCON_2>
+          <APN>ims</APN>
+          <RoutingRule>
+            <Node>
+              <AccessTechnology>3</AccessTechnology>
+              <AccessNetworkPriority>1</AccessNetworkPriority>
+            </Node>
+            <Node>
+              <AccessTechnology>1</AccessTechnology>
+              <AccessNetworkPriority>2</AccessNetworkPriority>
+            </Node>
+          </RoutingRule>
+          <IsAPIOverride>1</IsAPIOverride>
+          <RulePriority>1</RulePriority>
+        </MAPCON_2>
+      </ForServiceBased>
+      <Roaming>0</Roaming>
+      <PLMN>12344</PLMN>
+      <UpdatePolicy>0</UpdatePolicy>
+    </Home>
+  </ISRP>
+</ANDSF>

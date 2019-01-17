@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for CMCC CSFB configuration with TGL Home <-> GWL roaming
+$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CMCC/openMarket/carrier_policy.xml#3 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 13741990 $"
+        schema_ver  = "1"
+        policy_ver  = "73.2.33"
+>
+
+  <initial>
+    <actions>
+      <!-- Define the Home MCCs -->
+      <mcc_list name="home_mccs">
+        240
+      </mcc_list>
+
+      <plmn_list name = "ca_combo_operators">
+        240-02 240-04
+      </plmn_list>
+
+      <boolean_define name="change_rat_order_in_full_rat" initial="true" />
+
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none">
+            <include>  G  W L </include>
+          </rat_capability>
+          <rf_bands base="hardware" />
+          <svc_mode> LIMITED </svc_mode>
+          <if>
+            <boolean_test name="change_rat_order_in_full_rat" />
+            <then> <rat_order> G W L T C H </rat_order> </then>
+          </if>
+          <freq_list list="default" />
+        </actions>
+      </define_fullrat_config>
+
+      <!-- Home RF Band list -->
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base="hardware" />
+        <!-- LTE Band: 34, 38, 39, 40, 41 are mapped to Band Bits: 33, 37, 38, 39, 40
+		LTE Band:3, 7, 8, 20, 38 are mapped to Band Bits:2, 6, 7, 19, 37
+		add  band 28 for FET -> 27
+                      respectively.
+                      Refer: sys_sband_lte_e_type in sys.h
+        -->
+        <lte_bands base="none" >
+          <include> 6, 19, 37</include>
+        </lte_bands>
+       <!--  <tds_bands base="hardware" /> -->
+      </rf_band_list>
+
+      <!-- Set initial power up capability -->
+      <rat_capability_if base="none">
+        <include> G T W L </include>
+      </rat_capability_if>
+      <rf_bands_if list="rf_bands_home" />
+
+      <ue_mode> CSFB </ue_mode>
+
+      <feature single_sim="normal"> dualmmode </feature>
+
+      <freq_list_if list="default" />
+
+      <ca_band_combos string="" />
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <!-- We Wait if we don't have location or we are not ONLINE.
+           Otherwise determine capabilities and continue evaluation.
+  -->
+  <if precond="none">
+    <all_of>
+      <have_location />
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+    </all_of>
+    <then>
+      <svc_mode> FULL </svc_mode>
+      <rat_order> L W T G C H </rat_order>
+      <boolean_set name="change_rat_order_in_full_rat" value="false" />
+      <continue />
+    </then>
+    <else> <stop /> </else>
+  </if>
+
+  <!-- RULE #2 -->
+  <rule precond="SS">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <serving_plmn_in list = "ca_combo_operators" /> </cond>
+        <then> <ca_band_combos string="38C-0;" /> </then>
+        <else>
+         <ca_band_combos string="" />
+        </else>
+      </if>
+    <continue />
+  </actions>
+  </rule>
+
+  <!--
+  ====================================================================
+    Rules where location info can be used.
+  ====================================================================
+  -->
+
+  <!-- Set config based on location(China/Japan/Roam). -->
+  <select>
+    <case>
+      <location_mcc_in list="home_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include>  G W L </include>
+        </rat_capability>
+        <rf_bands list="rf_bands_home" />
+        <freq_list list="default" />
+      </actions>
+    </case>
+
+
+    <case>
+      <true />
+      <actions>
+        <rat_capability base="none">
+          <include> G W L </include>
+        </rat_capability>
+        <rf_bands base="hardware" />
+        <freq_list list="default" />
+      </actions>
+    </case>
+  </select>
+
+</policy>

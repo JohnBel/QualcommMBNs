@@ -1,0 +1,386 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Policy for Segment loading
+$Header: //commercial/MPSS.TA.2.2.c1/Main/modem_proc/mmcp/policyman/configurations/SegLoad/segment_loading.xml#1 $
+-->
+<policy name            = "generic"
+        changelist      = "$Change: 10320468 $" 
+        schema_ver      = "1"
+        policy_ver      = "1000.2.16"
+>
+
+  <initial>
+    <actions>
+      <!-- Do several rounds of 2 minutes in each segment before starting
+           to back off the interval.
+      -->
+      <define_timer name="segload" units="min" class="backoff" persist="true" id="2">
+        2 2 2 2 10 10 20 20 30 30 60
+      </define_timer>
+
+      <!-- This is the hysteresis timer that we use to look at the state
+           of the non-mmode subscription if the mmode subscription is OOS.
+      -->
+      <define_timer name="segload:hysteresis" interval="2" units="min" id="3" />
+
+      <!-- Define the list of MCCs in which we prefer TDSCDMA to be loaded -->
+      <mcc_list name="tds_mccs">
+        460
+      </mcc_list>
+      
+      <!-- Define some booleans to make the rules easier to read -->
+      <boolean_define name="segload:mmode_svc" initial="false" />
+      <boolean_define name="segload:nonmmode_svc" initial="false" />
+    </actions>
+  </initial>
+
+
+  <!--
+  -----------------------------------------------------------------------
+  Basic rules
+  -----------------------------------------------------------------------
+  -->
+
+  <!-- RULE #1 -->
+  <!-- Stop any timers and do nothing if any of the following are true:
+        - Phone is in a call
+        - Both segments are loaded (i.e. no switching needed)
+        - Phone is in airplane mode
+  -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <in_call subs="1" />
+        <in_call subs="2" />
+        <all_of>
+          <tech_loaded> WCDMA </tech_loaded>
+          <tech_loaded> TDSCDMA </tech_loaded>
+        </all_of>
+        <phone_operating_mode> SLEEP </phone_operating_mode>
+      </any_of>
+    </conditions>
+    <actions>
+      <timer_stop name="segload" />
+      <timer_stop name="segload:hysteresis" />
+    </actions>
+  </rule>
+
+  <!-- RULE #2 -->
+  <!-- Set the service booleans based on service on mmode and non-mmode subs. -->
+  <rule precond="none">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <boolean_set name="segload:mmode_svc">
+        <service_status_in subs="mmode"> FULL LIMITED LIMITED-REGIONAL </service_status_in>
+      </boolean_set>
+      <boolean_set name="segload:nonmmode_svc">
+        <service_status_in subs="non-mmode"> FULL LIMITED LIMITED-REGIONAL </service_status_in>
+      </boolean_set>
+      <continue />
+    </actions>
+  </rule>
+
+  <!-- RULE #3 -->
+  <!-- Enforce segment swap to TDSCDMA when Full RAT is enforced.
+  -->
+  <rule precond="IMSI">
+    <conditions>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <enforce_full_rat />
+      <tech_loaded> WCDMA </tech_loaded>
+    </conditions>
+
+    <actions>
+      <exclude_tech> WCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!-- RULE #4 -->
+  <!-- Enforce segment swap to WCDMA when Full RAT is enforced.
+  -->
+  <rule precond="IMSI">
+    <conditions>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <enforce_full_rat />
+      <tech_loaded> TDSCDMA </tech_loaded>
+    </conditions>
+
+    <actions>
+      <exclude_tech> TDSCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!--
+  -----------------------------------------------------------------------
+  Stop any timers if appropriate.
+  -----------------------------------------------------------------------
+  -->
+  
+  <!-- RULE #5 -->
+  <!-- Stop the segment-loading timer if we get service on *any* subscription.
+  -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <boolean_test name="segload:mmode_svc" />
+        <boolean_test name="segload:nonmmode_svc" />
+      </any_of>
+    </conditions>
+    <actions>
+      <timer_stop name="segload" />
+      <continue />
+    </actions>
+  </rule>
+
+  <!-- RULE #6 -->
+  <!-- Stop the hysteresis timer if mmode has service -->
+  <rule precond="SS">
+    <conditions>
+      <boolean_test name="segload:mmode_svc" />
+    </conditions>
+    <actions>
+      <timer_stop name="segload:hysteresis" />
+      <continue />
+    </actions>
+  </rule>
+
+  <!-- RULE #7 -->
+  <!-- Enforce segment swap when User manually selected TDS PLMN -->
+  <rule precond="none">
+    <conditions>
+      <network_selection_mode> MANUAL </network_selection_mode>
+      <user_mcc_in list = "tds_mccs" /> 
+      <tech_loaded> WCDMA </tech_loaded>
+    </conditions>	
+    <actions>
+      <exclude_tech> WCDMA </exclude_tech>
+    </actions>
+  </rule>  
+  
+  <!-- RULE #8 -->
+  <!-- Enforce segment swap when User manually selected WCDMA PLMN -->
+    <rule precond="none">
+    <conditions>
+      <network_selection_mode> MANUAL </network_selection_mode>
+      <not>
+        <user_mcc_in list = "tds_mccs" /> 
+      </not>
+      <tech_loaded> TDSCDMA </tech_loaded>
+    </conditions>	
+    <actions>
+      <exclude_tech> TDSCDMA </exclude_tech>
+    </actions>
+  </rule>  
+  
+
+  <!--
+  -----------------------------------------------------------------------
+  If the mmode subs has service, base the loaded segment on it.
+  -----------------------------------------------------------------------
+  -->
+
+  <!-- RULE #9 -->
+  <!-- If we're in China and WCDMA is loaded, remove it -->
+  <rule precond="SS">
+    <conditions>
+      <boolean_test name="segload:mmode_svc" />
+      <any_of>
+        <serving_mcc_in subs="mmode" list="tds_mccs" />
+        <boolean_test name="home" />
+      </any_of>
+      <tech_loaded> WCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> WCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!-- RULE #10 -->
+  <!-- If we're not in China and TDSCDMA is loaded, remove it -->
+  <rule precond="SS">
+    <conditions>
+      <boolean_test name="segload:mmode_svc" />
+      <not> <serving_mcc_in subs="mmode" list="tds_mccs" /> </not>
+      <not> <boolean_test name="home" /> </not>
+      <tech_loaded> TDSCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> TDSCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!-- RULE #11 -->
+  <!-- Otherwise if we have service on the mmode subs stop rule evaluation
+       because we have the right segment loaded.
+  -->
+  <rule precond="SS">
+    <conditions>
+      <boolean_test name="segload:mmode_svc" />
+    </conditions>
+    <actions />
+  </rule>
+
+  <!--
+  -----------------------------------------------------------------------
+  If the mmode subs does not have service but the non-mmode subs does,
+  use a hysteresis timer to periodically look at the MCC of the non-mmode
+  subs and base the loaded segment on that MCC.
+  -----------------------------------------------------------------------
+  -->
+
+  <!-- RULE #12 -->
+  <!-- If the hysteresis timer expired and non-mmode subscription is in China,
+       make sure TDSCMDA is loaded.
+  -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="segload:hysteresis" />
+      <boolean_test name="segload:nonmmode_svc" />
+      <serving_mcc_in subs="non-mmode" list="tds_mccs" />
+      <tech_loaded> WCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> WCDMA </exclude_tech>
+    </actions>
+  </rule>
+  
+  <!-- RULE #13 -->
+  <!-- If the hysteresis timer expired and non-mmode subscription is not in China,
+       make sure WCMDA is loaded.
+  -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="segload:hysteresis" />
+      <boolean_test name="segload:nonmmode_svc" />
+      <not> <serving_mcc_in subs="non-mmode" list="tds_mccs" /> </not>
+      <tech_loaded> TDSCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> TDSCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!-- RULE #14 -->
+  <!-- If the timer has expired and neither of the above fired, (because the
+       proper segment was loaded) handle the timer. It may get restarted below.
+  -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="segload:hysteresis" />
+    </conditions>
+    <actions>
+      <expired_timer_handled name="segload:hysteresis" />
+      <continue />
+    </actions>
+  </rule>
+
+  <!-- RULE #15 -->
+  <!-- Start the hysteresis timer if mmode is OOS but non-mmode has service -->
+  <rule precond="none">
+    <conditions>
+      <boolean_test name="segload:nonmmode_svc" />
+    </conditions>
+    <actions>
+      <timer_start name="segload:hysteresis" />
+    </actions>
+  </rule>
+
+  <!--
+  -----------------------------------------------------------------------
+  Segment-loading timer handling - if we reach this point, there is no
+  service on either subscription.
+  -----------------------------------------------------------------------
+  -->
+
+  <!-- RULE #16 -->
+  <!-- If segload timer has expired and W is loaded, switch to T -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="segload" />
+      <tech_loaded> WCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> WCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!-- RULE #17 -->
+  <!-- If segload timer has expired and T is loaded, switch to W -->
+  <rule precond="none">
+    <conditions>
+      <timer_expired name="segload" />
+      <tech_loaded> TDSCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> TDSCDMA </exclude_tech>
+    </actions>
+  </rule>
+      
+  <!-- RULE #18 -->
+  <!-- Start the segload timer if we are online and don't have service on any
+       subscription.
+       Stop the hysteresis timer at this time, in case it's running - we may
+       have just lost service on the non-mmode subscription.
+  -->
+  <rule precond="none">
+    <conditions>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <not> <boolean_test name="segload:mmode_svc" /> </not>
+      <not> <boolean_test name="segload:nonmmode_svc" /> </not>
+    </conditions>
+    <actions>
+      <timer_start name="segload" />
+      <timer_stop name="segload:hysteresis" />
+      <continue />
+    </actions>
+  </rule>
+
+  <!--
+  -----------------------------------------------------------------------
+  Here UE location is known from elsewhere so load correct segment. Let timers run 
+  so that we can take appropriate action upon their expiry.
+  -----------------------------------------------------------------------
+  -->
+
+  <!-- RULE #19 -->
+  <!-- If modem is up and gone OOS temporarily on both SUBS then don't evaluate 
+           further rules. Timer expiry will take care of segment swap.
+  -->
+  <rule precond="SS">
+    <conditions>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <not> <boolean_test name="segload:mmode_svc" /> </not>
+      <not> <boolean_test name="segload:nonmmode_svc" /> </not>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!-- RULE #20 -->
+  <!-- If location is known to be in China and WCDMA is loaded, remove it. 
+  -->
+  <rule precond="LOCATION" >
+    <conditions>
+      <serving_mcc_in subs="mmode" list="tds_mccs" />
+      <tech_loaded> WCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> WCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+  <!-- RULE #21 -->
+  <!-- If location is known to be not in China and TDSCDMA is loaded, remove it. 
+  -->
+  <rule precond="LOCATION" >
+    <conditions>
+      <not> <serving_mcc_in subs="mmode" list="tds_mccs" /> </not>
+      <tech_loaded> TDSCDMA </tech_loaded>
+    </conditions>
+    <actions>
+      <exclude_tech> TDSCDMA </exclude_tech>
+    </actions>
+  </rule>
+
+</policy>

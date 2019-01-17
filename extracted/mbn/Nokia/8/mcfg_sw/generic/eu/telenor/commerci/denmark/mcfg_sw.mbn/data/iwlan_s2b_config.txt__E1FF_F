@@ -1,0 +1,14 @@
+epdg_fqdn:epdg.epc.mnc002.mcc238.pub.3gppnetwork.org;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_FQDN;
+pcscfv4_attr_type_val:20;
+pcscfv6_attr_type_val:21;
+ke_payload_enabled:FALSE;
+esp_rekey_timer_soft_sec:28800;
+esp_rekey_timer_hard_sec:28800;
+ikev2_sa_rekey_timer_soft_sec:86400;
+ikev2_sa_rekey_timer_hard_sec:86400;
+ikev2_dpd_timer_sec:3600;
+epdg_plmn_list:;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

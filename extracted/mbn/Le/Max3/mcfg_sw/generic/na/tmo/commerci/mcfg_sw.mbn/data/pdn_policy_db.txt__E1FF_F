@@ -1,0 +1,7 @@
+PDN_APN_String:fast.t-mobile.com;
+Supported_RAT_Priority_List:WWAN;
+PDN_APN_String:ims;
+Override_Type:API;
+Supported_RAT_Priority_List:WWAN,IWLAN;
+PDN_APN_String:tmus;
+Supported_RAT_Priority_List:IWLAN,WWAN;

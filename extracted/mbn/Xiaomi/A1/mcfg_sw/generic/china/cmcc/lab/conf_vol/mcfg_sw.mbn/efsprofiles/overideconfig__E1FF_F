@@ -1,0 +1,52 @@
+[QIPCALL:ImsMediaProfileConfig]
+#This config is required to audio codec profile list.
+*AudioProfile1 = EVS_0_126;EVS_1_127;AMR_1_99;AMR_0_97
+#*AudioProfile1 = G711_0_126;G711_2_101
+
+
+[QIPCALL:EVS_0]
+#This config is used for bit rate. (index 2)
+*BitRate = 120
+#channel aware setting (index 5)
+*ch_aw_recv = 2
+
+#This config is used for dtx (index 9)
+*Dtx_enable = 0
+
+#This config is to set EVS mode
+#enum - EVS_PRIMARY_MODE, EVS_IO_MODE
+
+#StartMode = EVS_PRIMARY_MODE
+
+#This config is used for hf only (index 7)
+*hf_only = 0
+
+*Bandwidth = 2  
+
+[QIPCALL:EVS_1]
+#This config is used for bit rate. (index 2)
+*BitRate = 120
+#channel aware setting (index 5)
+*ch_aw_recv = 2
+
+#This config is used for dtx (index 9)
+*Dtx_enable = 0
+
+#This config is to set EVS mode
+#enum - EVS_PRIMARY_MODE, EVS_IO_MODE
+
+#StartMode = EVS_PRIMARY_MODE
+
+#This config is used for hf only (index 7)
+*hf_only = 0
+
+*Bandwidth = 1  
+
+[QIPCALL:ImsVoiceSuppsConfig]
+
+#This config is required to enable the conference event package
+#subscription.
+
+*confEvtPakageEnabled = QPE_IMS_CONF_PCKG_NONE
+
+

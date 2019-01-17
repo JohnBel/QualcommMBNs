@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for CMCC CSFB configuration with TGL Home <-> GWL roaming
+$Header: //commercial/MPSS.TA.2.2.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CMCC/openMarket/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 10320468 $"
+        schema_ver  = "1"
+        policy_ver  = "73.2.23"
+>
+
+  <initial>
+    <actions>
+      <!-- Define the Home MCCs -->
+      <mcc_list name="home_mccs">
+        460
+      </mcc_list>
+
+      <mcc_list name="lw_roam_mccs"> 440 441 450 </mcc_list>
+
+      <plmn_list name = "ca_combo_operators">
+        460-00 460-02 460-07 460-08
+      </plmn_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none">
+            <include> TDSCDMA GSM WCDMA LTE </include>
+          </rat_capability>
+          <rf_bands />
+          <svc_mode> LIMITED </svc_mode>
+          <rat_order> G W L T C H </rat_order>
+          <freq_list list="cpfl" />
+        </actions>
+      </define_fullrat_config>
+
+      <!-- Home RF Band list --> 
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base="hardware" />
+        <!-- LTE Band: 34, 38, 39, 40, 41 are mapped to Band Bits: 33, 37, 38, 39, 40
+                      respectively.
+                      Refer: sys_sband_lte_e_type in sys.h
+        --> 
+        <lte_bands base="none" >
+          <include> 33 37 38 39 40 </include>
+        </lte_bands> 
+        <tds_bands base="hardware" />
+      </rf_band_list>
+
+      <!-- Boolean: should we enforce Full RAT mode ? -->
+      <boolean_define name="nas:SingleIMEI" initial="true" />
+	  
+      <!-- Set initial power up capability -->
+      <rat_capability_if base="none">
+        <include> GSM TDSCDMA LTE </include>
+      </rat_capability_if>
+      <rf_bands_if list="rf_bands_home" />
+
+      <feature single_sim="normal"> dualmmode </feature>
+
+      <ue_mode> CSFB </ue_mode>
+      <freq_list_if list="cpfl" />
+
+      <ca_band_combos string="" />
+
+    </actions>
+  </initial>
+
+  <!--
+  ====================================================================
+    Rules to handle OOS situations.
+  ====================================================================
+  -->
+
+  <!-- RULE #1 -->
+  <!-- We wait if we don't have location or we are not ONLINE. -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <not> <have_location /> </not>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      </any_of>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!-- RULE #2 -->
+  <rule precond="SS">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <serving_plmn_in list = "ca_combo_operators" /> </cond>
+        <then> <ca_band_combos string="38CA-0;41AA-41A-0;41AA-41A-1;41CA-0;41CA-1;41AA-39A-0;41A-39AA-0;40CA-0;40CA-1;40AA-40A-0;39CA-0;38CC-0;41AA-41AA-0;41AA-41AA-1;41CC-0;41CC-1;41AA-39AA-0;40CC-0;40CC-1;40AA-40AA-0;39CC-0;" /> </then>
+        <else>
+         <ca_band_combos string="" />
+        </else>
+      </if>
+    <continue />
+  </actions>
+  </rule>
+
+  <!-- RULE #3 -->
+  <!-- If we have location and ONLINE, set RAT_order, service mode and continue.
+  -->
+  <rule precond="none">
+    <conditions>
+      <true />      
+    </conditions>
+    <actions>
+      <svc_mode> FULL </svc_mode>
+      <rat_order> L W T G C H </rat_order>
+      <continue />
+    </actions>
+  </rule>
+  
+  <!--
+  ====================================================================
+    Rules where location info can be used.
+  ====================================================================
+  -->
+
+  <!-- RULE #4 -->
+  <!-- If we are Home, stay in TGL -->
+  <rule precond="none">
+    <conditions>
+     <location_mcc_in list="home_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base="config">
+        <exclude> WCDMA CDMA HDR </exclude>
+      </rat_capability>
+      <rf_bands list="rf_bands_home" />
+      <freq_list list="cpfl" />
+    </actions>
+  </rule>
+
+  <!-- RULE #5 -->
+  <!-- If in Japan/Korea, restrict to LW capability -->
+  <rule precond="none">
+    <conditions>
+      <location_mcc_in list="lw_roam_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base = "none">
+        <include> LTE WCDMA </include>
+      </rat_capability>
+      <rf_bands />
+      <freq_list list="default" />
+    </actions>
+  </rule>
+
+  <!-- RULE #6 -->
+  <!-- If we are Roaming, stay in GWL -->
+  <rule precond="none">
+    <conditions>
+     <true />
+    </conditions>
+    <actions>
+      <rat_capability base="config">
+        <exclude> TDSCDMA CDMA HDR </exclude>
+      </rat_capability>
+      <rf_bands />
+      <freq_list list="default" />
+    </actions>
+  </rule>
+
+</policy>

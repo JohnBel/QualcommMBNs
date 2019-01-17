@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier configuration file for SRLTE with CHGWL roaming 
+$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#5 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 14181480 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "29.1.16"
+>
+
+  <initial>
+
+    <!-- List of the MCCs in which SRLTE is allowed. Do NOT rename this list. -->
+    <mcc_list name="sxlte_mccs"> 310 311 312 </mcc_list>
+
+    <!-- These are the serving system PLMNs for which SRLTE will be allowed -->
+    <!-- NOTE: Proper functioning of the SXLTE policy requires that there
+         be an PLMN list named "sxlte_plmns". Do NOT rename this list.      -->
+    <plmn_list name = "sxlte_plmns" include="hplmn ehplmn">
+      311-480
+    </plmn_list>
+
+    <plmn_list name = "vzw_lte_plmns" include="hplmn ehplmn">
+        310-004 310-010 310-012 310-013 310-590 310-890 310-910 311-110 311-270 311-271 311-272 311-273 311-274 311-275 311-276 311-277 311-278 311-279 311-280 
+        311-281 311-282 311-283 311-284 311-285 311-286 311-287 311-288 311-289 311-390 311-480 311-481 311-482 311-483 311-484 311-485 311-486 311-487 311-488 311-489
+    </plmn_list>
+
+    <boolean_define name="cm:silent_redial_restricted_on_GW" initial="false" />
+
+    <boolean_define name="cm:rpm_enabled" initial="true" />
+
+    <boolean_define name="ue_mode_timer_running" initial="false" />
+
+    <define_timer name="hybr_oos" interval="1" units="min" id= "101" />
+    <define_timer name="ue_mode_timer" interval="1" units="min" id="102" />
+
+    <rat_capability base="none" >
+      <include> C H G W L </include>
+    </rat_capability>
+
+    <feature> srlte </feature>
+
+    <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+    <rf_bands base="hardware" />
+
+  </initial>
+
+  <!-- Stop if the device does not have location or is not online -->
+  <if precond="none">
+    <all_of>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <have_location />
+    </all_of>
+    <then>
+      <boolean_set name="cm:silent_redial_restricted_on_GW">
+        <serving_plmn_in list="vzw_lte_plmns" /> 
+      </boolean_set>
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </then>
+    <else> 
+      <stop /> 
+    </else>
+  </if>
+
+  <!-- The next two rules prevent us from changing UE mode for a time period
+       specified by ue_mode_timer.
+  -->
+  <if>
+    <timer_expired name="ue_mode_timer" />
+    <then>
+      <expired_timer_handled name="ue_mode_timer" />
+      <boolean_set name="ue_mode_timer_running" value="false" />
+      <continue />
+    </then>
+  </if>
+
+  <if>
+    <boolean_test name="ue_mode_timer_running" />
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <!-- At this point we're online with location and can switch UE modes if
+       necessary.  See which UE mode we should be in based on location.
+  -->
+  <if>
+    <any_of>
+      <serving_plmn_in list="sxlte_plmns" />
+      <location_mcc_in list="sxlte_mccs" />
+    </any_of>
+    <then>
+      <ue_mode> 1X_CSFB_PREF </ue_mode>
+    </then>
+    <else>
+      <!-- If we're about to switch from SRLTE to CSFB, start a timer to keep
+           from switching back to SRLTE too quickly (giving us time to attach
+           to a G or W network)
+      -->
+      <if>
+        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>
+        <then>
+          <timer_start name="ue_mode_timer" />
+          <boolean_set name="ue_mode_timer_running" value="true" />
+        </then>
+      </if>
+      <ue_mode> CSFB </ue_mode>
+    </else>
+  </if>
+
+</policy>

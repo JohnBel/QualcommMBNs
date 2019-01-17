@@ -1,0 +1,9 @@
+{
+  "Banner": {
+    "ValueString": "SW_DEFAULT"
+  },
+  "ServiceDomainPreference": {
+    "Nam": 0,
+    "ServiceDomain": 2
+  }
+}

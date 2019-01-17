@@ -1,0 +1,200 @@
+{
+  "IwlanS2bConfigXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "Profile5": {
+    "Values": "AQAFABYAAAAEAAAApaWlpd4BAADeAQAADwAAAAAAAAABEAMAU09TEQABAAMfAAEAATYAAQAB"
+  },
+  "EmmNasNvItems": {
+    "Value": "BgAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "AndsfXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      ""
+    ]
+  },
+  "UeBasedCw": {
+    "Value1": 1,
+    "Value2": 1
+  },
+  "WlanOffloadConfig": {
+    "Value": 0
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier Policy for CMCC Lab XML",
+      "$Header: //commercial/MPSS.AT.4.0.2.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CMCC/lab/carrier_policy.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 15945178 $\"",
+      "        policy_ver  = \"73.5.1\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <boolean_define name=\"pm:allow_tds_on_this_sub\" initial=\"true\" />",
+      "",
+      "  </initial>",
+      "",
+      "  <if>",
+      "    <have_location/>",
+      "    <then>",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <rat_capability base=\"none\">",
+      "        <include> C H G W L T </include>",
+      "      </rat_capability>",
+      "      <rf_bands base=\"hardware\" />",
+      "      <scan_optimization tgpp=\"disabled\" tgpp2=\"disabled\" />",
+      "    </then>",
+      "  </if>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Ehplmn": {
+    "Value": "B2TwAGTwIGTwcGTwgADxEGT2IGTwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ForcedIrat": {
+    "Value": 1
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 1,
+    "Field2": 65535
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "ImsEnable": {
+    "Value": 0
+  },
+  "LteBandpref": {
+    "Value": -51
+  },
+  "MaxValidateSimCounter": {
+    "Value": 10
+  },
+  "NasL2gSrvccSupport": {
+    "Value": 0
+  },
+  "NasSrvccSupport": {
+    "Value": 1
+  },
+  "Profile1": {
+    "Values": "AQABADUAAAAJAAAApaWlpREAAAAXBAAAAAAAAAAAAAA2AAEAAAEQAAARAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8fAAEAAQ=="
+  },
+  "Profile2": {
+    "Values": "AQACABYAAAAEAAAApaWlpTQBAAA0AQAADwAAAAAAAAABEAMAaW1zEQABAAMfAAEAATYAAQAA"
+  },
+  "Profile3": {
+    "Values": "AQADABgAAAAEAAAApaWlpYkBAACJAQAADwAAAAAAAAABEAUAQ01ORVQRAAEAAx8AAQAANgABAAA="
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "TdsBandPref": {
+    "Value": "IQAAAAAAAAA="
+  },
+  "TdscdmaOpPlmnList": {
+    "ValueString": "\u000fd? d?"
+  },
+  "TputOptParams": {
+    "Field1": 1,
+    "Field2": 0,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 58
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 2
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 2
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 0
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 7
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "Banner": {
+    "ValueString": "CMCC_C_DS_F2"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  },
+  "ServiceDomainPreference": {
+    "Nam": 0,
+    "ServiceDomain": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  }
+}

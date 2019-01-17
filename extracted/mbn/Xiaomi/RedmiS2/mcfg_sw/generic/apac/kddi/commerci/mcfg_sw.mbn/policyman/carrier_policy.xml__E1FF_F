@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML.
+$Header: //commercial/MPSS.TA.2.3.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#2 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 13376898 $"
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "43.1.11"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of the VoLTE only MCC(s) -->
+      <mcc_list name="pm:volte_only_mccs"> 440 441 </mcc_list>
+
+      <!-- List of Japan MCC(s) -->
+      <mcc_list name="japan_mccs"> 440 441 </mcc_list>
+
+      <!-- List of China MCC(s) -->
+      <mcc_list name="china_mccs"> 460 </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <svc_mode> LIMITED </svc_mode>
+          <call_mode> NORMAL </call_mode>
+        </actions>
+      </define_fullrat_config>
+
+      <!-- Define e911_volte capability -->
+      <boolean_define name="mmcp:e911_volte" initial="true" />
+
+      <rf_bands base="hardware" />
+
+      <!-- UE mode is always NORMAL -->
+      <ue_mode> NORMAL </ue_mode>
+
+      <feature single_sim="normal"> dualmmode </feature>
+
+      <volte enabled="true" />
+
+      <!-- On first boot, set RAT capability to all RATs -->
+      <rat_capability_if base="none">
+        <include> C H G W L T </include>
+      </rat_capability_if>
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <!-- If not ONLINE or no location info, do nothing.
+  -->
+  <if precond="none">
+    <cond>
+      <any_of>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+        <not> <have_location /> </not>
+      </any_of>
+    </cond>
+    <then> <stop/> </then>
+    <else>
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </else>
+  </if>
+
+  <!-- Set config based on location. Japan/China/Roam -->
+  <select>
+    <case>
+      <location_mcc_in list="japan_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include> L </include>
+        </rat_capability>
+        <call_mode> VOLTE </call_mode>
+      </actions>
+    </case>
+
+    <case>
+      <location_mcc_in list="china_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include> T G W L </include>
+        </rat_capability>
+        <call_mode> NORMAL </call_mode>
+      </actions>
+    </case>
+
+    <case>
+      <true />
+      <actions>
+        <rat_capability base="none">
+          <include> G W L </include>
+        </rat_capability>
+        <call_mode> NORMAL </call_mode>
+      </actions>
+    </case>
+  </select>
+
+</policy>

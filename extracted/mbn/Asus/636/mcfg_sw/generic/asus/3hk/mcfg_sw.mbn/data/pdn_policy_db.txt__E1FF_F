@@ -1,0 +1,9 @@
+PDN_APN_String:mobile.lte.three.com.hk; 
+Supported_RAT_Priority_List:WWAN; 
+
+PDN_APN_String:ims.lte.three.com.hk; 
+Override_Type:API; 
+Supported_RAT_Priority_List:WWAN, IWLAN; 
+ 
+PDN_APN_String:sos.lte.three.com.hk; 
+Supported_RAT_Priority_List:WWAN;

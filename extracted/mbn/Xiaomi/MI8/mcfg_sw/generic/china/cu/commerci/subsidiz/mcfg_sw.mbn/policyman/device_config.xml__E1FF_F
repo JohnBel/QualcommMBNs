@@ -1,0 +1,21 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Device configuration file for DSDS config with CHGWLT+G
+$Header: //commercial/MPSS.AT.4.0.2.c2/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+1_mode/DSDS/device_config.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15945178 $"
+        policy_ver  = "2022.1.4"
+>
+
+  <initial>
+
+    <device_configuration num_sims = "2" max_active = "1">
+      <config primary="C H G W L T" secondary="G" />
+      <e911_config primary="C H G W L T" secondary="G" />
+      <e911_config primary="C H G" secondary="G W L T" />
+    </device_configuration>
+
+  </initial>
+
+</policy>

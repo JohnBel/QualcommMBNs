@@ -1,0 +1,21 @@
+{
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "ttach_Profile_ID:1;"
+    ]
+  },
+  "TcpAckPrio": {
+    "Value": 0
+  },
+  "TputOptParams": {
+    "Field1": 0,
+    "Field2": 0,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0
+  }
+}

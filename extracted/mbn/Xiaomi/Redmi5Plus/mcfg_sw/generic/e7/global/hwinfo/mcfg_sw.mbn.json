@@ -1,0 +1,19 @@
+{
+  "RfnvTdscdmaBcConfig": {
+    "ValueString": ""
+  },
+  "LteBandpref": {
+    "Value": -35
+  },
+  "RfBandConfiguration": {
+    "Value": 562950035735424
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": 896
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": 1256
+  }
+}

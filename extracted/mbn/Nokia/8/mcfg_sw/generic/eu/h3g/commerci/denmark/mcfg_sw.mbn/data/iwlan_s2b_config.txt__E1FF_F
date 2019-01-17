@@ -1,0 +1,9 @@
+static_fqdn_enabled:FALSE;
+epdg_plmn_list:;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_FQDN;
+ke_payload_enabled:FALSE;
+pcscfv4_attr_type_val:16389;
+pcscfv6_attr_type_val:21;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

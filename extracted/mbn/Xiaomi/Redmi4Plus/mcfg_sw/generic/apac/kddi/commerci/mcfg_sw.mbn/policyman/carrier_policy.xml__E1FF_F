@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML. 
+       Power up and LPM is in Full RAT mode.
+$Header: //commercial/MPSS.TA.2.2.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#1 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 10320468 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "43.1.9"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of the HOME MCCs -->
+      <mcc_list name="pm:volte_only_mccs"> 440 441 </mcc_list>
+
+      <!-- MCCs in which to add TDSCDMA to the capabilities -->
+      <mcc_list name="tds_mccs"> 460 </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <svc_mode> LIMITED </svc_mode>
+          <call_mode> NORMAL </call_mode>
+        </actions>
+      </define_fullrat_config>
+	  
+      <!-- Define e911_volte capability -->
+      <boolean_define name="mmcp:e911_volte" initial="true" />
+
+      <rf_bands />
+
+      <!-- UE mode is always NORMAL -->
+      <ue_mode> NORMAL </ue_mode>
+
+      <feature> normal </feature>
+
+      <volte enabled="true" />
+
+      <!-- On first boot, set RAT capability to all RATs -->
+      <rat_capability_if base="config" />
+
+    </actions>
+  </initial>
+
+  <!--
+  ====================================================================
+    Rules to handle OOS situations.
+  ====================================================================
+  -->
+
+  <!-- RULE #1 -->
+  <!-- If we are not ONLINE, stop the noservice timer.
+  -->
+  <rule precond="none">
+    <conditions>
+      <any_of>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+        <not> <have_location /> </not>
+      </any_of>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!--
+  ====================================================================
+    Rules to handle KDDI VoLTE-only and roaming requirements.
+  ====================================================================
+  -->
+
+  <!-- RULE #2 -->
+  <!-- Japan.
+  -->
+  <rule>
+    <conditions>
+      <location_mcc_in list="pm:volte_only_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> LTE </include>
+      </rat_capability>
+      <call_mode> VOLTE </call_mode>
+      <svc_mode> FULL </svc_mode>
+    </actions>
+  </rule>
+  
+  <!-- RULE #3 -->
+  <!-- China.
+  -->
+  <rule>
+    <conditions>
+      <location_mcc_in list="tds_mccs" />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> TDSCDMA GSM WCDMA LTE </include>
+      </rat_capability>
+      <call_mode> NORMAL </call_mode>
+      <svc_mode> FULL </svc_mode>
+    </actions>
+  </rule>
+
+  <!-- RULE #4 -->
+  <!-- Roaming countries.
+  -->  
+  <rule>
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <call_mode> NORMAL </call_mode>
+      <svc_mode> FULL </svc_mode>
+    </actions>
+  </rule>
+
+</policy>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for Elisa configuration for CA combination
+$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/Elisa/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 13741990 $"
+        schema_ver  = "1"
+        policy_ver  = "73.2.33"
+>
+
+  <initial>
+    <actions>
+      <!-- Define the Home MCCs -->
+      
+      <plmn_list name = "ca_combo_operators">
+        244-05 244-21
+      </plmn_list>
+
+      <ca_band_combos string="" />
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <rule precond="SS">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <serving_plmn_in list = "ca_combo_operators" /> </cond>
+        <then> <ca_band_combos string="3AA-1A-0;3A-1AA-0;7AA-3A-0;7AA-3A-1;7A-3AA-0;7A-3AA-1;7AA-3AA-0;7AA-3AA-1;20AA-3A-0;20AA-3A-1;20A-3AA-0;20A-3AA-1;20AA-3AA-0;20AA-3AA-1;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;20A-7AA-3AA-0;20AA-7A-3AA-0;7AA-3A-1A-0;7A-3AA-1A-0;7A-3A-1AA-0;7AA-3AA-1A-0;" /> </then>
+        <else>
+         <ca_band_combos string="" />
+        </else>
+      </if>
+    <continue />
+  </actions>
+  </rule>
+
+</policy>

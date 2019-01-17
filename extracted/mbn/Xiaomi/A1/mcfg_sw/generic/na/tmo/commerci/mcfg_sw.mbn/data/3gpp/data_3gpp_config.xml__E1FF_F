@@ -1,0 +1,13 @@
+<data_3gpp_configuration>
+  <version>1.0</version>
+    <generic_config>
+      <ipv4_roaming_fallback>        
+        <ps_net_down_reason>
+          6001F, 60020, 60021,60022,60032, 3042D, 30405
+        </ps_net_down_reason>
+        <reset_conditions>
+          LPM_MODE,USIM_REMOVAL,PLMN_CHANGE,DETACH
+        </reset_conditions>
+      </ipv4_roaming_fallback>
+    </generic_config>
+</data_3gpp_configuration>

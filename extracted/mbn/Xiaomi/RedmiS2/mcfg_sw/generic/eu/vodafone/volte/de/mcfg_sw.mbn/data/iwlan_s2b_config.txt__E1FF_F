@@ -1,0 +1,6 @@
+static_fqdn_enabled:FALSE;
+epdg_plmn_list:;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+ikev2_peer_id_type:ID_FQDN;
+ikev2_dh_group_list:14,5,2;

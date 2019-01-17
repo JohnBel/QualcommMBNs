@@ -1,0 +1,9 @@
+ikev2_peer_id_type:ID_FQDN; 
+epdg_fqdn:epdg.epc.mnc009.mcc510.pub.3gppnetwork.org;
+epdg_tunnel_config_timer_sec:40;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+static_fqdn_enabled:FALSE;
+ikev2_dh_group_list:14,2,5;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

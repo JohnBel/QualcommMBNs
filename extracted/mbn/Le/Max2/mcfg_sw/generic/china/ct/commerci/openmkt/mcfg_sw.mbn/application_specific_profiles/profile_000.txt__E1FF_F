@@ -1,0 +1,5 @@
+APN_String:vzwinternet;
+PDN_IP_Version_Type:V4_V6;
+RAN_Type:HRPD_EHRPD;
+PDN_Inactivity_Timeout:1439;
+APN_Class:3;

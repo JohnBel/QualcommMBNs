@@ -1,0 +1,628 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Device configuration file for DSDS config with CHGWLT+G",
+      "$Header: //commercial/MPSS.TH.2.0.c1/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+1_mode/DSDS/device_config.xml#2 $",
+      "-->",
+      "<policy name        = \"device configuration\"",
+      "        changelist  = \"$Change: 9374370 $\"",
+      "        enabled     = \"true\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"2022.1.2\"",
+      ">",
+      "",
+      "  <initial>",
+      "     <actions>",
+      "",
+      "      <device_configuration num_sims = \"2\" max_active = \"1\">",
+      "        <config primary=\"C H G W L T\" secondary=\"G\" />",
+      "        <e911_config primary=\"C H G W L T\" secondary=\"G\" />",
+      "      </device_configuration>",
+      "",
+      "    </actions>",
+      "  </initial>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "Mmode1xsxLteOptimization": {
+    "Value": "AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "GetNetAutoMode": {
+    "Version": 0,
+    "Value": 1,
+    "Reserved": 0
+  },
+  "C2kSwitch2Srlte": {
+    "Value": 0
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier Policy file for SRLTE CHGWL roaming for Class A device",
+      "$Header: //commercial/MPSS.TH.2.0.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/CT/1xSRLTE/subsidized/carrier_policy.xml#2 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 9381935 $\"",
+      "        enabled     = \"true\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"23.1.21\"",
+      ">",
+      "",
+      "  <initial>",
+      "    <actions>",
+      "",
+      "      <!-- List of the MCCs in which SRLTE is allowed -->",
+      "      <mcc_list name=\"sxlte_mccs\"> 455 460 </mcc_list>",
+      "",
+      "      <!-- List of the non-SVLTE MCCs in which CDMA and HDR are allowed -->",
+      "      <mcc_list name=\"c2k_roaming_mccs\"> 440 450 </mcc_list>",
+      "",
+      "      <!-- These are the CT IMSI MCCs for legacy cards for which SRLTE is allowed -->",
+      "      <mcc_list name=\"ct_mccs\"> 455 460 </mcc_list>",
+      "",
+      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed",
+      "       -->",
+      "      <!-- NOTE: Proper functioning of the SRLTE policy requires that there",
+      "           be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
+      "      -->",
+      "      <plmn_list name = \"sxlte_plmns\">",
+      "        455-02 455-07 460-03 460-11",
+      "      </plmn_list>",
+      "",
+      "      <!-- These are the CT IMSI PLMNs for which SRLTE will be allowed -->",
+      "      <plmn_list name=\"unrestricted_operators\">",
+      "        455-02 455-07 460-03 460-11",
+      "      </plmn_list>",
+      "",
+      "      <define_fullrat_config>",
+      "        <actions>",
+      "          <ue_mode> CSFB </ue_mode>",
+      "          <rat_capability base=\"config\">",
+      "            <exclude> TDSCDMA </exclude>",
+      "          </rat_capability>",
+      "          <rf_bands />",
+      "          <svc_mode> ALL </svc_mode>",
+      "          <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "        </actions>",
+      "      </define_fullrat_config>",
+      "",
+      "      <!-- Define the 1x_oos timer with a 1 minute interval -->",
+      "      <define_timer name = \"1x_oos\" interval = \"1\" units = \"min\" id = \"100\" />",
+      "",
+      "      <!-- Define initial RAT capability as CHL-->",
+      "      <rat_capability_if base=\"none\" >",
+      "        <include> CDMA HDR LTE </include>",
+      "      </rat_capability_if>",
+      "",
+      "      <feature> srlte </feature>",
+      "",
+      "      <!-- Define Intial UE mode as 1X_CSFB_PREF -->",
+      "      <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>",
+      "",
+      "      <!-- Define a HOME RF band list that includes FDD LTE bands -->",
+      "      <rf_band_list name=\"rf_bands_home\">",
+      "        <gw_bands base = \"hardware\" />",
+      "        <lte_bands base = \"none\">",
+      "          <include> 0 2 25 37 38 39 40 </include>",
+      "        </lte_bands>",
+      "        <tds_bands base = \"none\" />",
+      "      </rf_band_list>",
+      "",
+      "      <!-- On first boot, include home bands -->",
+      "      <rf_bands_if list=\"rf_bands_home\" />",
+      "",
+      "      <!-- Boolean: Is the device at home? -->",
+      "      <boolean_define name=\"home\" initial=\"true\" />",
+      "      <boolean_set name=\"home\">",
+      "        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>",
+      "      </boolean_set>",
+      "",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "      <freq_list_if list=\"cpfl\" />",
+      "",
+      "      <!-- Boolean: Is the device in c2k_roam? -->",
+      "      <boolean_define name=\"c2k_roam\" initial=\"false\" />",
+      "",
+      "    </actions>",
+      "  </initial>",
+      "",
+      " <!--",
+      "  ====================================================================",
+      "    Stop if not a CT card.",
+      "  ====================================================================",
+      "  -->",
+      "",
+      "  <!-- RULE #1 -->",
+      "  <!-- If not a CT SIM cards do nothing -->",
+      "  <rule precond=\"IMSI\">",
+      "    <conditions>",
+      "      <not> <imsi_plmn_in list=\"unrestricted_operators\" /> </not>",
+      "      <not> <imsi_mcc_in session=\"1x\" list=\"ct_mccs\" /> </not>",
+      "    </conditions>",
+      "    <actions>",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <rat_capability base = \"none\">",
+      "        <include> GSM </include>",
+      "      </rat_capability>",
+      "      <rf_bands />",
+      "      <svc_mode> FULL </svc_mode>",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "  <!-- RULE #2 -->",
+      "  <!-- Determine UE location and continue evaluation if we have service.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <have_location />",
+      "    </conditions>",
+      "    <actions>",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <boolean_set name=\"home\">",
+      "        <location_mcc_in list=\"sxlte_mccs\" />",
+      "      </boolean_set>",
+      "      <boolean_set name=\"c2k_roam\">",
+      "        <location_mcc_in list=\"c2k_roaming_mccs\" />",
+      "      </boolean_set>",
+      "      <continue />",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "  <!-- RULE #3 -->",
+      "  <!-- We wait if we don't have location or we are not ONLINE.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <any_of>",
+      "        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "        <not> <have_location /> </not>",
+      "      </any_of>",
+      "    </conditions>",
+      "    <actions />",
+      "  </rule>",
+      "",
+      "  <!--",
+      "  ====================================================================",
+      "    Rules to implement SRLTE",
+      "  ====================================================================",
+      "  -->",
+      "",
+      "  <!-- RULE #4 -->",
+      "  <!-- If we are home, stay in SRLTE configuration with CHL.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <boolean_test name=\"home\" />",
+      "    </conditions>",
+      "    <actions>",
+      "      <rf_bands list=\"rf_bands_home\" />",
+      "      <rat_capability base = \"none\">",
+      "        <include> CDMA HDR LTE </include>",
+      "      </rat_capability>",
+      "      <ue_mode> 1X_CSFB_PREF </ue_mode>",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"disabled\" />",
+      "      <freq_list list=\"cpfl\" />",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "  <!-- RULE #5 -->",
+      "  <!-- If we are roaming in Japan/Korea, allow CHGWL.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <boolean_test name=\"c2k_roam\" />",
+      "    </conditions>",
+      "    <actions>",
+      "      <rf_bands />",
+      "      <rat_capability base=\"config\">",
+      "        <exclude> TDSCDMA </exclude>",
+      "      </rat_capability>",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "      <freq_list list=\"default\" />",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "  <!-- RULE #6 -->",
+      "  <!-- Otherwise we're in a GWL configuration",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <true />",
+      "    </conditions>",
+      "    <actions>",
+      "      <rat_capability base=\"none\">",
+      "        <include> GSM WCDMA LTE </include>",
+      "      </rat_capability>",
+      "      <rf_bands />",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "      <freq_list list=\"default\" />",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Gnss1xUpSuplEnable": {
+    "Value": 0
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 0,
+    "Field2": 65535
+  },
+  "HdrAcqDivEnable": {
+    "Value": 0
+  },
+  "HdrAcqDivThresh0": {
+    "Value": 0
+  },
+  "InternalAuth": {
+    "Value": 0
+  },
+  "LteNasTempFplmnBackoffTime": {
+    "Value": 4294967295
+  },
+  "LteRrc1xcsfbEnabled": {
+    "Value": 0
+  },
+  "MaxFbPdnFailureCount": {
+    "Value": 0
+  },
+  "MsimStandbyEsrSupport": {
+    "Field1": 1,
+    "Field2": 0
+  },
+  "OperatorName": {
+    "Value": 1
+  },
+  "PbmEccNums": {
+    "Value": "AAMDOTExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAMDMTEyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+  },
+  "PbmHardcodedEccConfig": {
+    "Value": 1
+  },
+  "PbmHardcodedEccList": {
+    "Items": [
+      {
+        "DigitsString": "*911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 1,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "#911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 1,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "000",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "08",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "110",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "999",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "118",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "119",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "120",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "122",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      }
+    ]
+  },
+  "PbmNvEccConfig": {
+    "Value": 0
+  },
+  "Profile1": {
+    "Values": "AgBkAA4AAAACAAAApaWlpSZIL0MmSC9DAAAAAAAAAAABEAUAY3RuZXSiAAEAAg=="
+  },
+  "Profile2": {
+    "Values": "AQACABgAAAAEAAAApaWlpdACAADQAgAAAAAAAAAAAAABEAUAY3R3YXARAAEAAx8AAQAANgABAAA="
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "SdssscrTimers": {
+    "Version": 1,
+    "Value": [
+      15,
+      1,
+      300,
+      2,
+      3,
+      1,
+      60,
+      0,
+      5,
+      5,
+      2
+    ]
+  },
+  "Supportfordualrxues": {
+    "Value": 1
+  },
+  "SxlteTimers": {
+    "Field1": 300,
+    "Field2": 10
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "ThreeGpp2BackPressureRemoval": {
+    "Field1": 232,
+    "Field2": 0
+  },
+  "UpdateBandRange": {
+    "ValueString": "\u0001"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "WcdmaRrcWtolCmSupport": {
+    "Value": 0
+  },
+  "Zz22SelParms": {
+    "Field1": 0,
+    "Field2": 8,
+    "Field3": 30,
+    "Field4": 255,
+    "Field5": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 13
+  },
+  "CdmaReceiveDiversity": {
+    "Value": 0
+  },
+  "AuthenticationRequirePasswordEncryption": {
+    "Value": 0
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "QncEnabledFlag": {
+    "Value": 0
+  },
+  "EvrcVoiceServiceOptions": {
+    "Nam": 1,
+    "EvrcCapabilityEnabled": 3,
+    "HomePageVoiceSo": 768,
+    "HomeOrigVoiceSo": 768,
+    "RoamOrigVoiceSo": 0
+  },
+  "PocAutoAnswer": {
+    "Value": 1
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 135
+  },
+  "SmsMoRetryInterval": {
+    "Value": 30
+  },
+  "SdConfigurableItems": {
+    "Version": 3,
+    "Items": [
+      60,
+      180,
+      4,
+      1,
+      180,
+      3600,
+      130,
+      3600,
+      130,
+      14,
+      36,
+      4,
+      1,
+      5200,
+      3000,
+      2200,
+      3,
+      253,
+      1000,
+      4,
+      300,
+      300,
+      0,
+      0,
+      0
+    ]
+  },
+  "Is2000CaiRadioConfigurationRcPreference": {
+    "Value": 0
+  },
+  "CdmaSO68Enabled": {
+    "Value": 0
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 0
+  },
+  "HdrL1DebugMask": {
+    "Field1": 72057594037927936,
+    "Field2": 0
+  },
+  "SmsServiceOption": {
+    "Value": 6
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": 903
+  },
+  "HdrScpSessionStatus": {
+    "Value": 0
+  },
+  "HSBasedPlusDialSetting": {
+    "Value": 1
+  },
+  "HdrScpForceAtConfiguration": {
+    "Value": 0
+  },
+  "SlotCycleIndex": {
+    "Value": 0
+  },
+  "DisableCmCallType": {
+    "Value": 0
+  },
+  "PreferredHybridMode": {
+    "Value": 0
+  },
+  "MobileCaiRevisionNumber": {
+    "Value": 0
+  },
+  "GpsDefaultOperatingMode": {
+    "Value": 1
+  },
+  "GpsDefaultTbf": {
+    "Value": 1
+  },
+  "HdrIs683AScanList": {
+    "Nam": 0,
+    "Band": 37,
+    "Chan": 0
+  },
+  "HdrScpForceRestrictedCf": {
+    "Value": 0
+  },
+  "UiccMode": {
+    "Value": 0
+  },
+  "Asid1Data": {
+    "SessionType": 255,
+    "Reserved": 0
+  },
+  "Asid2Data": {
+    "SessionType": 255,
+    "Reserved": 0
+  },
+  "Banner": {
+    "ValueString": "CT_RG_DS"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 2048
+  },
+  "HdrReceiveDiversity": {
+    "Value": 0
+  },
+  "ServiceDomainPreference": {
+    "Nam": 0,
+    "ServiceDomain": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "IpPppPassword": {
+    "Length": 9,
+    "ValueString": "vnet.mobi"
+  },
+  "PppUserId": {
+    "Length": 15,
+    "ValueString": "ctnet@mycdma.cn"
+  },
+  "PzidHysterisisActivationTimer": {
+    "Value": 0
+  },
+  "PzidHysterisisTimer": {
+    "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": 1279
+  }
+}

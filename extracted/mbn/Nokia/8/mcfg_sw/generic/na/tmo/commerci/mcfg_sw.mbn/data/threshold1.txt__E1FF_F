@@ -1,0 +1,4 @@
+rssi_high:-85;
+is_rssi_high_valid:1;
+rssi_low:-85;
+is_rssi_low_valid:1;

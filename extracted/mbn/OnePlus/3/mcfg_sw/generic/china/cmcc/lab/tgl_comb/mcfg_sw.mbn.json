@@ -1,0 +1,367 @@
+{
+  "Profile5": {
+    "Values": "AQAFAA8AAAADAAAApaWlpUSpvULsAQAAAAAAAAAAAAARAAEAAx8AAQABNgABAAE="
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier Policy for CMCC CSFB configuration with TWGL Home <-> GWL roaming",
+      "$Header: //commercial/MPSS.TH.2.0.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/OEM/twgl_lab/carrier_policy.xml#5 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 1 $\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"16.01.15\"",
+      ">",
+      "",
+      "  <initial>",
+      "    <actions>",
+      "      <!-- Define the Home MCCs -->",
+      "      <mcc_list name=\"home_mccs\">",
+      "        460",
+      "      </mcc_list>",
+      "",
+      "      <mcc_list name=\"test_sim_mccs\">001 </mcc_list>",
+      "",
+      "      <plmn_list name=\"test_sim_plmns\"> 460-99 </plmn_list>",
+      "",
+      "      <define_fullrat_config>",
+      "        <actions>",
+      "          <rat_capability base=\"none\">",
+      "            <include> TDSCDMA GSM WCDMA LTE </include>",
+      "          </rat_capability>",
+      "          <rf_bands />",
+      "          <svc_mode> LIMITED </svc_mode>",
+      "          <freq_list list=\"default\" />",
+      "        </actions>",
+      "      </define_fullrat_config>",
+      "",
+      "      <!-- Home RF Band list -->",
+      "      <rf_band_list name=\"rf_bands_home\">",
+      "        <gw_bands base=\"hardware\" />",
+      "        <lte_bands base=\"hardware\" />",
+      "        <tds_bands base=\"hardware\" />",
+      "      </rf_band_list>",
+      "",
+      "      <!-- Boolean: should we enforce Full RAT mode ? -->",
+      "      <boolean_define name=\"nas:SingleIMEI\" initial=\"true\" />",
+      "",
+      "      <!-- Set initial power up capability -->",
+      "      <rat_capability_if base=\"none\">",
+      "        <include> GSM TDSCDMA WCDMA LTE </include>",
+      "      </rat_capability_if>",
+      "      <rf_bands_if list=\"rf_bands_home\" />",
+      "",
+      "      <rf_band_list name=\"test_sim_all_rf_band\">",
+      "        <gw_bands  base=\"hardware\" />",
+      "        <lte_bands base=\"hardware\" />",
+      "        <tds_bands base=\"hardware\" />",
+      "      </rf_band_list>",
+      "",
+      "      <feature single_sim=\"normal\"> dualmmode </feature>",
+      "",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <freq_list_if list=\"default\" />",
+      "",
+      "      <ca_band_combos string=\"\" />",
+      "",
+      "    </actions>",
+      "  </initial>",
+      "",
+      "  <!--",
+      "  ===========================================================================",
+      "    Rules to handle OOS situations.",
+      "  ===========================================================================",
+      "  -->",
+      "",
+      "  <!-- RULE #1 -->",
+      "  <!-- We wait if we don't have location or we are not ONLINE.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <not><imsi_mcc_in list=\"test_sim_mccs\" /></not>",
+      "      <not><imsi_plmn_in list=\"test_sim_plmns\" /></not>",
+      "      <any_of>",
+      "        <not> <have_location /> </not>",
+      "        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "      </any_of>",
+      "    </conditions>",
+      "    <actions />",
+      "  </rule>",
+      "",
+      "  <!--",
+      "  ===========================================================================",
+      "    Rules where location info can be used.",
+      "  ===========================================================================",
+      "  -->",
+      "",
+      "  <!-- RULE #2 -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <not><imsi_mcc_in list=\"test_sim_mccs\" /></not>",
+      "     <not><imsi_plmn_in list=\"test_sim_plmns\" /></not>",
+      "    </conditions>",
+      "    <actions>",
+      "      <if>",
+      "        <cond> <location_mcc_in list=\"home_mccs\" /> </cond>",
+      "        <then>",
+      "          <rf_bands list=\"rf_bands_home\" />",
+      "          <svc_mode> FULL </svc_mode>",
+      "          <freq_list list=\"default\" />",
+      "        </then>",
+      "        <else>",
+      "          <rf_bands list=\"rf_bands_home\" />",
+      "          <svc_mode> FULL </svc_mode>",
+      "          <freq_list list=\"default\" />",
+      "        </else>",
+      "      </if>",
+      "  </actions>",
+      "  </rule>",
+      "<!--#endif VENDOR_EDIT -->",
+      "",
+      "  <!-- RULE #3 -->",
+      "  <!-- Add for factory test with test sim -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <any_of>",
+      "        <imsi_mcc_in list=\"test_sim_mccs\" />",
+      "        <imsi_plmn_in list=\"test_sim_plmns\" />",
+      "      </any_of>",
+      "    </conditions>",
+      "    <actions>",
+      "      <rat_capability base=\"config\">",
+      "        <include> WCDMA CDMA HDR GSM LTE TDSCDMA </include>",
+      "      </rat_capability>",
+      "      <rat_order> L C W T G H </rat_order>",
+      "      <rf_bands list=\"test_sim_all_rf_band\" />",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <freq_list list=\"default\" />",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "</policy>"
+    ]
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Ehplmn": {
+    "Value": "B2TwAGTwIGTwcGTwgADxEGT2IGTwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ForcedIrat": {
+    "Value": 1
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 1,
+    "Field2": 65535
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "MaxValidateSimCounter": {
+    "Value": 10
+  },
+  "NasL2gSrvccSupport": {
+    "Value": 0
+  },
+  "NasSrvccSupport": {
+    "Value": 1
+  },
+  "PbmEccNums": {
+    "Value": "AAMDOTExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAMDMTEyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+  },
+  "PbmHardcodedEccConfig": {
+    "Value": 1
+  },
+  "PbmHardcodedEccList": {
+    "Items": [
+      {
+        "DigitsString": "*911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 1,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "#911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 1,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "000",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "08",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "110",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "999",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "118",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "119",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "120",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "122",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      }
+    ]
+  },
+  "PbmNvEccConfig": {
+    "Value": 0
+  },
+  "Profile1": {
+    "Values": "AQABADUAAAAJAAAApaWlpREAAAAXBAAAAAAAAAAAAAA2AAEAAAEQAAARAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8fAAEAAQ=="
+  },
+  "Profile2": {
+    "Values": "AQACABYAAAAEAAAApaWlpcKovULCqL1CAAAAAAAAAAABEAMASU1TEQABAAMfAAEAATYAAQAA"
+  },
+  "Profile3": {
+    "Values": "AQADAHEAAAARAAAApaWlpc34oEJBBAAAAAAAAAAAAAAlAAEAAxIAAQAAEwABAAAoABAAAAAAAAAAAAAAAAAAAAAAACYAAQAAJwABAAAgAAEAAC0AAQAAEQABAAMVAAQAAAAAABYABAAAAAAAHgAEAAAAAAAvAAEAADUAAQD/NgABAAABEAUAQ01ORVQfAAEAAA=="
+  },
+  "RatAcqOrder": {
+    "Version": 1,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "Auto"
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "TdsBandPref": {
+    "Value": "IQAAAAAAAAA="
+  },
+  "TdscdmaOpPlmnList": {
+    "ValueString": "\u000fd? d?"
+  },
+  "TputOptParams": {
+    "Field1": 1,
+    "Field2": 0,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 58
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 0
+  },
+  "EDtmFeatureSupport": {
+    "Value": 0
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 7
+  },
+  "Banner": {
+    "ValueString": "CMCC_C_DS_F2"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  }
+}

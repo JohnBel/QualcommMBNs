@@ -1,0 +1,1092 @@
+
+[SIPConfig:GeoLocation]
+
+#enable or disable location info inclusion in regular calls
+
+iDisableLocInfoInNormalCall = 0
+
+
+[QIPCALL:H264_2]
+
+#This config is to specify the profile for H264. Only use value 1
+
+profile = 1
+
+#Preffered resolution. Possible values:
+#INVALID_RESOLUTION = 0,
+#PORTRAIT_SQCIF_RESOLUTION,    // 1
+#LANDSCAPE_SQCIF_RESOLUTION,   // 2
+#PORTRAIT_QQVGA_RESOLUTION,    // 3
+#LANDSCAPE_QQVGA_RESOLUTION,   // 4
+#PORTRAIT_QCIF_RESOLUTION,     // 5
+#LANDSCAPE_QCIF_RESOLUTION,    // 6
+#PORTRAIT_QVGA_RESOLUTION,     // 7
+#LANDSCAPE_QVGA_RESOLUTION,    // 8
+#PORTRAIT_CIF_RESOLUTION,      // 9
+#LANDSCAPE_CIF_RESOLUTION,     // 10
+#PORTRAIT_VGA_RESOLUTION,      // 11
+#LANDSCAPE_VGA_RESOLUTION,     // 12
+#PORTRAIT_HD_720_RESOLUTION,   // 13
+#LANDSCAPE_HD_720_RESOLUTION,  // 14
+
+resolution_preferred = 8
+
+#Preffered Framerate
+
+framerate_preferred = 15
+
+#payload type for packetization mode 0. number above 96
+
+payload_type_packetization_mode0 = 0
+
+#Codec level. possible values:
+#INVALID_LEVEL = 0x00,
+#Level 1 = 0x01,
+#Level 1B = 0x02,
+#Level 11 = 0x03,
+#Level 12 = 0x04,
+#Level 13 = 0x05,
+#Level 2 = 0x06,
+#Level 21 = 0x07,
+#Level 22 = 0x08,
+#Level 3 = 0x09,
+#Level 31 = 0x0A,
+#Level 32 = 0x0B,
+#Level 4 = 0x0C,
+#Level 41 = 0x0D,
+#Level 42 = 0x0E,
+#Level 5 = 0x0F,
+#Level 51 = 0x10
+
+level = 4
+
+#payload type for packetization mode 1. number above 96 and
+#different from packetization mode 0
+
+payload_type_packetization_mode1 = 0
+
+#AS value if IPv6 is used
+
+ipv6_AS_value = 0
+
+#Max Bitrate
+
+bitrate_max = 335
+
+#Preffered bitrate
+
+bitrate_preferred = 335
+
+#Min Bitrate
+
+bitrate_min = 64
+
+#Max Framerate
+
+framerate_max = 15
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+#Min Framerate
+
+framerate_min = 7
+
+#Supported resolution
+
+resolutions_supported = 0
+
+#AS value if IPv4 is used
+
+ipv4_AS_value = 0
+
+
+[QIPCALL:H264_1]
+
+#This config is to specify the profile for H264. Only use value 1
+
+profile = 1
+
+#Preffered resolution. Possible values:
+#INVALID_RESOLUTION = 0,
+#PORTRAIT_SQCIF_RESOLUTION,    // 1
+#LANDSCAPE_SQCIF_RESOLUTION,   // 2
+#PORTRAIT_QQVGA_RESOLUTION,    // 3
+#LANDSCAPE_QQVGA_RESOLUTION,   // 4
+#PORTRAIT_QCIF_RESOLUTION,     // 5
+#LANDSCAPE_QCIF_RESOLUTION,    // 6
+#PORTRAIT_QVGA_RESOLUTION,     // 7
+#LANDSCAPE_QVGA_RESOLUTION,    // 8
+#PORTRAIT_CIF_RESOLUTION,      // 9
+#LANDSCAPE_CIF_RESOLUTION,     // 10
+#PORTRAIT_VGA_RESOLUTION,      // 11
+#LANDSCAPE_VGA_RESOLUTION,     // 12
+#PORTRAIT_HD_720_RESOLUTION,   // 13
+#LANDSCAPE_HD_720_RESOLUTION,  // 14
+
+resolution_preferred = 8
+
+#Preffered Framerate
+
+framerate_preferred = 15
+
+#payload type for packetization mode 0. number above 96
+
+payload_type_packetization_mode0 = 0
+
+#Codec level. possible values:
+#INVALID_LEVEL = 0x00,
+#Level 1 = 0x01,
+#Level 1B = 0x02,
+#Level 11 = 0x03,
+#Level 12 = 0x04,
+#Level 13 = 0x05,
+#Level 2 = 0x06,
+#Level 21 = 0x07,
+#Level 22 = 0x08,
+#Level 3 = 0x09,
+#Level 31 = 0x0A,
+#Level 32 = 0x0B,
+#Level 4 = 0x0C,
+#Level 41 = 0x0D,
+#Level 42 = 0x0E,
+#Level 5 = 0x0F,
+#Level 51 = 0x10
+
+level = 4
+
+#payload type for packetization mode 1. number above 96 and
+#different from packetization mode 0
+
+payload_type_packetization_mode1 = 0
+
+#AS value if IPv6 is used
+
+ipv6_AS_value = 0
+
+#Max Bitrate
+
+bitrate_max = 335
+
+#Preffered bitrate
+
+bitrate_preferred = 335
+
+#Min Bitrate
+
+bitrate_min = 64
+
+#Max Framerate
+
+framerate_max = 15
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+#Min Framerate
+
+framerate_min = 7
+
+#Supported resolution
+
+resolutions_supported = 0
+
+#AS value if IPv4 is used
+
+ipv4_AS_value = 0
+
+
+[QIPCALL:H264_0]
+
+#This config is to specify the profile for H264. Only use value 1
+
+profile = 1
+
+#Preffered resolution. Possible values:
+#INVALID_RESOLUTION = 0,
+#PORTRAIT_SQCIF_RESOLUTION,    // 1
+#LANDSCAPE_SQCIF_RESOLUTION,   // 2
+#PORTRAIT_QQVGA_RESOLUTION,    // 3
+#LANDSCAPE_QQVGA_RESOLUTION,   // 4
+#PORTRAIT_QCIF_RESOLUTION,     // 5
+#LANDSCAPE_QCIF_RESOLUTION,    // 6
+#PORTRAIT_QVGA_RESOLUTION,     // 7
+#LANDSCAPE_QVGA_RESOLUTION,    // 8
+#PORTRAIT_CIF_RESOLUTION,      // 9
+#LANDSCAPE_CIF_RESOLUTION,     // 10
+#PORTRAIT_VGA_RESOLUTION,      // 11
+#LANDSCAPE_VGA_RESOLUTION,     // 12
+#PORTRAIT_HD_720_RESOLUTION,   // 13
+#LANDSCAPE_HD_720_RESOLUTION,  // 14
+
+resolution_preferred = 7
+
+#Preffered Framerate
+
+framerate_preferred = 15
+
+#payload type for packetization mode 0. number above 96
+
+payload_type_packetization_mode0 = 0
+
+#Codec level. possible values:
+#INVALID_LEVEL = 0x00,
+#Level 1 = 0x01,
+#Level 1B = 0x02,
+#Level 11 = 0x03,
+#Level 12 = 0x04,
+#Level 13 = 0x05,
+#Level 2 = 0x06,
+#Level 21 = 0x07,
+#Level 22 = 0x08,
+#Level 3 = 0x09,
+#Level 31 = 0x0A,
+#Level 32 = 0x0B,
+#Level 4 = 0x0C,
+#Level 41 = 0x0D,
+#Level 42 = 0x0E,
+#Level 5 = 0x0F,
+#Level 51 = 0x10
+
+level = 4
+
+#payload type for packetization mode 1. number above 96 and
+#different from packetization mode 0
+
+payload_type_packetization_mode1 = 0
+
+#AS value if IPv6 is used
+
+ipv6_AS_value = 0
+
+#Max Bitrate
+
+bitrate_max = 384
+
+#Preffered bitrate
+
+bitrate_preferred = 384
+
+#Min Bitrate
+
+bitrate_min = 64
+
+#Max Framerate
+
+framerate_max = 15
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+#Min Framerate
+
+framerate_min = 7
+
+#Supported resolution
+
+resolutions_supported = 0
+
+#AS value if IPv4 is used
+
+ipv4_AS_value = 0
+
+
+[QIPCALL:EVS_0]
+
+#channel aware setting
+
+ch_aw_recv = -1
+
+#This config is bandwidth.
+#enum - BW_NB, BW_WB, BW_SWB, BW_FB, BW_NB_WB, BW_NB_SWB, BW_NB_FWB,
+
+Bandwidth = BandWidth_SWB
+
+#This config is used for bit rate. It has to be in DECIMAL format.
+
+BitRate = 120
+
+
+[QIPCALL:EVS_1]
+
+#channel aware setting
+
+ch_aw_recv = 2
+
+#This config is bandwidth.
+#enum - BW_NB, BW_WB, BW_SWB, BW_FB, BW_NB_WB, BW_NB_SWB, BW_NB_FWB,
+
+Bandwidth = BandWidth_SWB
+
+#This config is used for bit rate.
+
+BitRate = 120
+
+
+[QIPCALL:EVS_2]
+
+#channel aware setting
+
+ch_aw_recv = -1
+
+#This config is bandwidth.
+#enum - BW_NB, BW_WB, BW_SWB, BW_FB, BW_NB_WB, BW_NB_SWB, BW_NB_FWB,
+
+Bandwidth = BandWidth_WB
+
+#This config is used for bit rate.
+
+BitRate = 120
+
+
+[QIPCALL:EVS_3]
+
+#channel aware setting
+
+ch_aw_recv = 2
+
+#This config is bandwidth.
+#enum - BW_NB, BW_WB, BW_SWB, BW_FB, BW_NB_WB, BW_NB_SWB, BW_NB_FWB,
+
+Bandwidth = BandWidth_WB
+
+#This config is used for bit rate.
+
+BitRate = 120
+
+
+[QIPCALL:H265_2]
+
+#payload type for packetization mode 0. number above 96
+
+payload_type = 0
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+
+[Registration:RegistrationTimers]
+
+#This config item controls the time in seconds to wait for WLAN RAT in wifi preferred mode
+
+wlanGaurdTimer = 7
+
+#This config item controls the Register configuration for the network-initiated De reg Timer value.
+
+networkInitiatedDeRegistrationTimer = 0
+
+#This config item controls the Retry timer for permanent PDP failures
+
+pdnRetryLongTimer = 10
+
+#This config item controls the time in seconds to wait for WWAN RAT in cellular preferred mode
+
+wwanGaurdTimer = 7
+
+#This config item controls the  Retry timer for temporary failures
+
+pdnRetryShortTimer = 60
+
+
+[QIPCALL:H265_0]
+
+#payload type for packetization mode 0. number above 96
+
+payload_type = 0
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+
+[QIPCALL:H265_1]
+
+#payload type for packetization mode 0. number above 96
+
+payload_type = 0
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+
+[Ut:UtConfiguration]
+
+#This config item controls the media element type for Call Barring Service. 0:No media tag support, 1:One media tag per media type, 2: include both audio and video tags
+
+mediaElementSupportForCB = 0
+
+#This config item controls the time for which the PDN needs to be kept Active after a SS request is completed
+
+pdnHysTimerValue = 0
+
+#This config item controls the Maximum time within which a Response should be sent to UI
+
+maxResponseTimerValue = 0
+
+#This config item controls the action item when there is no SIB value for CB request. 0:Default, 1:Reject, 2:Audio Only, 3:Both Audio and Video
+
+emptySIBUsageForCB = 0
+
+#This config item controls the action item. When a rule id is not present in a server xml, a request is not allowed. It is used on VDF-Portugal only now. 0:Not to check a rule ID(Default),  1:Block a request when rule ID is not present in a server xml
+
+blockIfRuleIDAbsent = 0
+
+
+[SIPConfig:FeatureFlags]
+
+#enable or disable sip instance inclusion in contact header
+
+IsSipInstanceNeeded = 0
+
+#enable or disable header compact form
+
+IsCompactFormEnabled = 0
+
+#enable or disable iEnableLastCellID feature
+
+iEnableLastCellID = 0
+
+#enable or disable IsImsiNeededForContactHeader
+
+IsImsiNeededForContactHeader = 0
+
+
+[QIPCALL:ImsVoiceSrvccConfig]
+
+#This config is required to enable bSRVCC.
+
+bSrvccEnabled = 1
+
+#This config is required to enable aSRVCC.
+
+aSrvccEnabled = 1
+
+#This config is required to enable mid call SRVCC.
+
+midcallSrvccEnabled = 1
+
+
+[QIPCALL:ImsRtcpConfig]
+
+#This config is required to configure the RR bandwidth for Video.
+
+rrForVideo = 2000
+
+#This config is required to configure the timer for RTCP
+#monitoring.
+
+rtcpLinkAlivenessTimer = 20
+
+#This config is required to configure the RS bandwidth for Audio.
+
+rsForAudio = 600
+
+#This config is required to disbale/enable the RTCP monitoring.
+
+disableRTCPMonitoring = 0
+
+#This config is required to configure the timer for RTCP
+#Reporting in VT call.
+
+rtcpReportingIntervalInVideo = 1
+
+#This config is required to configure the RS bandwidth for Video.
+
+rsForVideo = 600
+
+#This config is required to configure the RR bandwidth for Audio.
+
+rrForAudio = 2000
+
+
+[QIPCALL:AMR_4]
+
+#This config is bandwidth.
+#enum - BW_NW, BW_WB
+
+BandWidth = BandWidth_WB
+
+#This config is modeset.
+
+ModeSet = 0
+
+#This config is mode.
+#enum - AMR_MODE_BE, AMR_MODE_OA
+
+Mode = AMR_MODE_OA
+
+
+[QIPCALL:G711_2]
+
+#This config is dtx.
+#0 - dtx disable
+#1 - dtx enable
+
+Dtx_enable = 1
+
+#This config is to set G711 mode
+#enum - G711_MODE_PCMU, G711_MODE_PCMA
+
+Mode = G711_MODE_PCMA
+
+
+[QIPCALL:G711_1]
+
+#This config is dtx.
+#0 - dtx disable
+#1 - dtx enable
+
+Dtx_enable = 1
+
+#This config is to set G711 mode
+#enum - G711_MODE_PCMU, G711_MODE_PCMA
+
+Mode = G711_MODE_PCMU
+
+
+[QIPCALL:G711_0]
+
+#This config is dtx.
+#0 - dtx disable
+#1 - dtx enable
+
+Dtx_enable = 1
+
+#This config is to set G711 mode
+#enum - G711_MODE_PCMU, G711_MODE_PCMA
+
+Mode = G711_MODE_PCMU
+
+
+[QIPCALL:AMR_0]
+
+#This config is bandwidth.
+#enum - BW_NW, BW_WB
+
+BandWidth = BandWidth_NB
+
+#This config is modeset.
+
+ModeSet = 0
+
+#This config is mode.
+#enum - AMR_MODE_BE, AMR_MODE_OA
+
+Mode = AMR_MODE_BE
+
+
+[QIPCALL:AMR_1]
+
+#This config is bandwidth.
+#enum - BW_NW, BW_WB
+
+BandWidth = BandWidth_WB
+
+#This config is modeset.
+
+ModeSet = 0
+
+#This config is mode.
+#enum - AMR_MODE_BE, AMR_MODE_OA
+
+Mode = AMR_MODE_BE
+
+
+[QIPCALL:AMR_2]
+
+#This config is bandwidth.
+#enum - BW_NW, BW_WB
+
+BandWidth = BandWidth_NB
+
+#This config is modeset.
+
+ModeSet = 0
+
+#This config is mode.
+#enum - AMR_MODE_BE, AMR_MODE_OA
+
+Mode = AMR_MODE_OA
+
+
+[QIPCALL:AMR_3]
+
+#This config is bandwidth.
+#enum - BW_NW, BW_WB
+
+BandWidth = BandWidth_NB
+
+#This config is modeset.
+
+ModeSet = 0
+
+#This config is mode.
+#enum - AMR_MODE_BE, AMR_MODE_OA
+
+Mode = AMR_MODE_BE
+
+
+[QIPCALL:ImsVoiceQoSConfig]
+
+#This config is required to enable sending SDP answer in PRACK
+#for 183 if the local qos is granted before 183 response is recvd by
+#the UE.
+
+qosOptimization = 0
+
+#This config is required to configure the timer for dedicated
+#bearer allocation.
+
+qosReservationTimer = 8000
+
+#This config is required to enable set the desired qos strength
+#for local and remote UEs.
+
+qosDesiredStrength = 1
+
+#This config is required to enable 183 for Reneg
+
+qosMc183 = 0
+
+#This config is required to configure if the UE must wait for
+#video dedicated bearer allocation during call setup.
+
+localQosResReqVideo = 1
+
+#This config is required to enable Qos MC precondition negotiation
+#in SDP.
+
+qosMcPreconditionsEnabled = 0
+
+#This config is required to configure the early QoS timer for video dedicated
+#bearer allocation.
+
+earlyQosReservationTimer = 0
+
+#This config is required to enable Qos precondition negotiation
+#in SDP.
+
+qosPreconditionsEnabled = 1
+
+#This config is required to configure the MBR threshold.
+
+iMBRthresholdValue = 0
+
+#This config is required to configure if the UE must wait for
+#audio dedicated bearer allocation during call setup.
+
+localQosResReqAudio = 1
+
+#This config is required to configure if the initial SDP
+#directionality should be inactive in REINVITE when preconditions are
+#used
+
+reinviteSdpDirInactive = 0
+
+#This config is required to enable MBR check for video bearer.
+
+qosMbrVideoCheckReqEnabled = 1
+
+#This config is required to configure if the initial SDP
+#directionality should be inactive when preconditions are used.
+
+inviteSdpDirInactive = 0
+
+#This config is required to enable MBR check for audio bearer.
+
+qosMbrAudioCheckReqEnabled = 0
+
+#This config is required to enable mid-call precondition for Call Hold/Resume
+
+qosMcHold = 0
+
+
+[Ut:XCAPCommonHC]
+
+#This config item controls the configuration of BSF server address
+
+bsfServerAddress = ""
+
+#This config item controls whether GBA_U is enabled or not
+
+useGBAMEOnly = 0
+
+#This config item controls whether BSF server supports TLS
+
+bsfServerTlsSupport = 0
+
+
+[QIPCALL:ImsVoiceSessionTimerConfig]
+
+#This config is required to configure the session refresher shall
+#be UAC/UAS.
+
+sessionRefresherType = QP_CONFIG_SES_REFRESHER_UAC
+
+#This config is required to enable session timer support.
+
+sessionTimerEnabled = 1
+
+#This config is required to enable Stand Alone Session Expiry
+#negotiation.
+
+standAloneEnabled = 1
+
+#This config is required to enable Sesssion Expiry timer
+#negotiation.
+
+allowSeNegotiation = 0
+
+#This config is required to configure the method for session
+#referesh shall be REINVITE/UPDATE.
+
+sessionRefresherMethod = QP_CONFIG_SES_REFRESH_UPDATE
+
+
+[QIPCALL:ImsVoiceConfig]
+
+#This config is required to disable early media timer.
+
+disableEarlyMediaTimer = 0
+
+#This config is required to set error code for CT submode.
+
+sessionEndResponseTimeout = 0
+
+#This config is required to enable 380 response validation as per
+#3GPP.
+
+enableAlternateSrvRspCheck = 1
+
+#This config is required to configure the default URI type
+#(SIP/TEL) for MO calls.
+
+*uriType = QPE_IMS_URI_SIP
+
+#This config is required to include MTT USSD feature tag into IMS registration.
+
+ussdAcceptContact = "g.3gpp.nw-init-ussi"
+
+#This config is required to enable PEM header in 183.
+
+enablePEMHeaderIn183 = 0
+
+#This config is required to stop rtp inactivity timer for starhub and singtel
+
+blockPDNonWLAN = 0
+
+#This config is required to enable the MT USSI.
+
+enableMTUSSI = 1
+
+#This config is required to configure the default invite retry counter.
+
+inviteRetryCounter = 2
+
+#This config is required to enable emergency call operation in CS-only mode.
+
+emergCallCSOnly = 0
+
+#This config is required to register with both wlan and LTE for emerg call
+
+e911RegisterLTEplusWLAN = 0
+
+#This config is required to configure the privacy type. Set 0: for none, 1: for id, 2: for header.
+
+privacyType = 2
+
+#This config is required to enable VoWIFI Call Continuity to LTE NonVOPS.
+
+enableVCCtoLTENonVOPS = 0
+
+#This config is required to configure the ignoring of AS value
+
+ignoreASValidation = 0
+
+#This config is required to configure the terminating identity presentation or restriction type.
+
+terminatingIdentityService = 2
+
+
+[Registration:RegistrationDefaultParams]
+
+#This config item will be used to configure default UserName to register with Network
+
+userName = ""
+
+#This config item will be used to configure default authType to register with Network
+
+authType = ""
+
+#This config item will be used to configure default Display Name to register with Network
+
+displayName = ""
+
+#This config item will be used to configure default DomainName to register with Network
+
+domainName = ""
+
+#This config item will be used to configure default authSecertKey
+
+authSecertKey = "465b5ce8b199b49faa5f0a2ee238a6bc"
+
+#This config item will be used to configure default Private URI to register with Network
+
+privateURI = ""
+
+#This config item will be used to configure default is3GPP
+
+is3GPP = 0
+
+#This config item will be used to configure default Realm to register with Network
+
+realm = ""
+
+#This config item will be used to configure default public URI to register with Network
+
+publicURI = ""
+
+#This config item will be used to configure default Password to register with Network
+
+password = ""
+
+
+[QIPCALL:ImsVoiceSuppsConfig]
+
+#This config is required to configure the timer for Notify
+#response to Refer.
+
+notifyReferRspTimer = 20
+
+#This config is required to end the conference call automatically
+#when all other participants left the call.
+
+endConfCallUponNoParticipant = 1
+
+#This config is required to enable presentation of the call to
+#the user when UE is already in two calls (active and held).
+
+presentThirdCalltoUser = 0
+
+#This config is required to configure the conference event
+#package subscription timer.
+
+confEvtSubTimer = 3600
+
+#This config is required to configure the dialog for the
+#conference event subscribe request.
+
+confEvtSubOutOfDialog = 1
+
+#This config is required to configure the three party conf URI
+#for KDDI.
+
+threePartyConfFactoryUri = ""
+
+#This config is required to enable the conference event package
+#subscription.
+
+confEvtPakageEnabled = QPE_IMS_CONF_PCKG_ORIGINATOR_ONLY
+
+
+[QIPCALL:ImsRtcpXRConfig]
+
+#This config is required to enable RTCP-XR support.
+
+rtcpXrEnabled = 0
+
+
+[SMSDAN:DANSettings]
+
+#This config item controls QIPCall 1x SMS and Voice Enabled (0:DAN SMS can be sent only if there is no voice call.
+#1:Enabled; DAN and MO SMS can be sent even when a voice call is up).
+
+smsAndVoiceOver1x = 0
+
+#This NV item is used for configuring the transport channel preference on which DAN is to be sent.
+
+channelPreference = 0
+
+#This config item controls the DAN Retry Timer Interval Duration (In ms)
+
+retryTimer = 0
+
+#This config item controls the DAN Max Retry Counter
+
+maxRetryCount = 0
+
+#This NV item is used for controlling DAN Hysterisis Timer Duration
+
+hysterisisTimer = 0
+
+
+[QIPCALL:H263_0]
+
+#payload type number above 96
+
+payload_type = 0
+
+#This config is to ensure if the configuration is included in the
+#offer
+
+exclude_config_from_offer = '0'
+
+
+[Registration:RegistrationCounters]
+
+#This config item controls the Immediate  Retry timer for failures
+
+maxPDNIntermediateRetries = 1
+
+
+[SIPConfig:Transport]
+
+#above this size choose TCP and value 0 means disable tcp port open on UE
+
+TCPThresholdValue = 1230
+
+#enable or disable TCP Static threshold
+
+TCPEnableStaticThreshold = 0
+
+
+[SIPConfig:StandardTimers]
+
+#sip registration expires value
+
+SipRegValue = 0
+
+#sip reg subscription expires value
+
+SipSubscribeValue = 0
+
+
+[SIPConfig:IPSec]
+
+#integrity scheme for ipsec sip messages
+
+IntScheme = 3
+
+#encryption algo for ipsec sip messages
+
+EncAlgo = 7
+
+
+[SMSDAN:SMSSettings]
+
+#This config item controls the SMS Feature tag
+
+smsAcceptContact = "+g.3gpp.smsip"
+
+
+[MEDIA:MediaCommon]
+
+#This config item specifies maximum mtu size for the rtp packet
+
+mtuSize = 1400
+
+
+[Registration:RegistrationSettings]
+
+#This config item controls Reregistration over WIFI during Activate 3G call
+
+BlockRegOverWifiWhileActiveCSCall = 1
+
+#This config item controls PCSCF IP fallback feature
+
+pcscfBasedIPFallback = 0
+
+#This config item controls Registration over IWLAN in airplane mode
+
+enableRegistrationInLPM = 2
+
+#This config item controls Reregistration over WIFI during Activate 1x call
+
+BlockRegOverWifiWhileActive1XCall = 0
+
+
+[Ut:XcapHCConfigUserProfile]
+
+#This config item controls the configured user name
+
+configUserName = ""
+
+#This config item controls the configured user name
+
+configUserPassword = ""
+
+
+[DPL:Common]
+
+#This config item determines usage to read the SIM card parameters (ISIM, USIM ) etc
+#Possible INTEGER values for override are as follows:
+#QPE_CONFIG_IMS_FILE_READ              = 0 --> File Read Param Source
+#QPE_CONFIG_IMS_NV_READ                = 1 --> NV Read Param Source
+#QPE_CONFIG_IMS_CARD_READ              = 2 --> Card Read Param Source to read from ISIM
+#QPE_CONFIG_IMS_FILE_READ_AUTH_ENABLED = 3 --> File Read Param Auth enabled (ONLY for testing)
+#QPE_CONFIG_IMS_USIM_FB_MODE_ENABLED   = 4 --> USIM fallback enabled
+
+ParamSrc = QPE_CONFIG_IMS_USIM_FB_MODE_ENABLED
+
+
+[QIPCALL:ImsMediaProfileConfig]
+
+#This config is required to video codec profile list on 4G.
+
+VideoProfile1 = "H264_0"
+
+#This config is required to audio codec profile list.
+
+AudioProfile1 = "AMR_1_104;AMR_0_102"
+
+
+[QIPCALL:ImsVoWifiConfig]
+
+#This config is required to configure the wifi connectivity
+#backoff timer.
+
+wifiConnectivityBackoffTimer = 0
+
+
+[MEDIA:MediaDscp]
+
+#This config item specifies dscp value for audio
+
+audio = 46
+
+#This config item specifies dscp value for video
+
+video = 46
+
+
+[QIPCALL:ImsVideoModifyConfig]
+
+#This config is required to configure the timer in msecs for
+#waiting on user response to the incoming upgrade req.
+
+localUpgradeAcceptTimer = 20000
+
+#This config is required to configure the timer in secs for
+#response from the peer to the sent upgrade req.
+
+remoteUpgradeRejectTimer = 40
+
+
+[SIPConfig:CustomTimers]
+
+#reliable response retry timer cap
+
+TRelResponseRetry = 0
+
+

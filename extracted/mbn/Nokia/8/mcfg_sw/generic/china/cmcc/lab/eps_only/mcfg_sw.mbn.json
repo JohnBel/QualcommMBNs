@@ -1,0 +1,123 @@
+{
+  "Profile5": {
+    "Values": "AQAFABYAAAAEAAAApaWlpd4BAADeAQAADwAAAAAAAAABEAMAU09TEQABAAMfAAEAATYAAQAB"
+  },
+  "UeBasedCw": {
+    "Value1": 1,
+    "Value2": 1
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Ehplmn": {
+    "Value": "B2TwAGTwIGTwcGTwgADxEGT2IGTwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ForcedIrat": {
+    "Value": 1
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "MaxValidateSimCounter": {
+    "Value": 10
+  },
+  "NasL2gSrvccSupport": {
+    "Value": 0
+  },
+  "NasSrvccSupport": {
+    "Value": 1
+  },
+  "Profile1": {
+    "Values": "AQABADUAAAAJAAAApaWlpREAAAAXBAAAAAAAAAAAAAA2AAEAAAEQAAARAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8fAAEAAQ=="
+  },
+  "Profile2": {
+    "Values": "AQACABYAAAAEAAAApaWlpTQBAAA0AQAADwAAAAAAAAABEAMAaW1zEQABAAMfAAEAATYAAQAA"
+  },
+  "Profile3": {
+    "Values": "AQADABgAAAAEAAAApaWlpYkBAACJAQAADwAAAAAAAAABEAUAQ01ORVQRAAEAAx8AAQAANgABAAA="
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "TdscdmaOpPlmnList": {
+    "ValueString": "\u000fd? d?"
+  },
+  "TputOptParams": {
+    "Field1": 1,
+    "Field2": 0,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 0,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0
+  },
+  "UeUsageSetting": {
+    "ValueString": "DataCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 58
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 2
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 2
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 0
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 7
+  },
+  "Banner": {
+    "ValueString": "CMCC_C_DS_F1"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  },
+  "ServiceDomainPreference": {
+    "Nam": 0,
+    "ServiceDomain": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  }
+}

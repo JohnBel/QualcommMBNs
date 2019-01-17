@@ -1,0 +1,12 @@
+static_fqdn_enabled:TRUE;
+ke_payload_enabled:FALSE;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_KEY_ID;
+pcscfv4_attr_type_val:16389;
+pcscfv6_attr_type_val:16390;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;
+pcscfv4_attr_type_val:16389;
+pcscfv6_attr_type_val:16390;
+ikev2_sa_rekey_timer_soft_sec:86400
+ikev2_sa_rekey_timer_hard_sec:86400

@@ -1,0 +1,14 @@
+static_fqdn_enabled:TRUE;
+epdg_fqdn:primgw.vowifina.spcsdns.net;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+ikev2_peer_id_type:ID_FQDN;
+ikev2_dh_group_list:2,5,14;
+ikev2_encr_algo_list:2,3,11,12;
+ikev2_hash_algo_list:1,2,5,12;
+ikev2_prf_algo_list:2,4,5;
+esp_encr_algo_list:2,3,11,12;
+esp_auth_algo_list:1,2,5,12;
+ikev2_dpd_timer_sec:600;
+pcscfv6_attr_type_val:21;
+pcscfv4_attr_type_val:20;

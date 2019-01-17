@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for ROW Voice Domain Configuration
+$Header: //commercial/MPSS.AT.2.0.c4.6/Main/modem_proc/mmcp/policyman/configurations/Carrier/ROW/carrier_policy.xml#1 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 13635509 $"
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "10.1.4"
+>
+
+  <initial>
+      <!-- List of the Poland operator in which us cs voice only domain -->
+      <plmn_list name = "pluso-plmn">
+        260-01
+      </plmn_list>
+      <!-- List of the 3macau operator -->
+      <plmn_list name="3macau-plmn">
+        455-03
+      </plmn_list>
+      <!-- Define the TDS MCCs -->
+      <mcc_list name="tds_mccs">
+        460
+      </mcc_list>
+	  <!-- define test sim card plmn -->
+      <plmn_list name = "test-plmn">
+        001-01
+      </plmn_list>
+	  
+	  <boolean_define name="pm:allow_tds_on_this_sub" initial="true" />
+	  
+  </initial>
+
+  <!-- RULE #1 --> 
+  <!-- Use test sim card --> 
+  <if> 
+    <imsi_plmn_in list = "test-plmn" /> 
+  <then> 
+    <rat_capability base="none"> 
+       <include> T G W L C H </include> 
+    </rat_capability> 
+    <rat_order> L W T G C H </rat_order> 
+  </then> 
+  </if> 
+  <!-- RULE #2 -->
+  <!-- Set voice domain to TRUE upon seeing US MCCs  -->
+  <rule>
+    <conditions>
+      <serving_plmn_in list = "pluso-plmn" />
+    </conditions>
+
+    <actions>
+      <voice_domain_pref mandatory="true"> CS_ONLY </voice_domain_pref>
+    </actions>
+  </rule>
+
+</policy>

@@ -1,0 +1,333 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Device configuration file for DSDS config with CHGWLT+G",
+      "$Header: //commercial/MPSS.AT.4.0.2.c2/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+1_mode/DSDS/device_config.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 15945178 $\"",
+      "        policy_ver  = \"2022.1.4\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <device_configuration num_sims = \"2\" max_active = \"1\">",
+      "      <config primary=\"C H G W L T\" secondary=\"G\" />",
+      "      <e911_config primary=\"C H G W L T\" secondary=\"G\" />",
+      "      <e911_config primary=\"C H G\" secondary=\"G W L T\" />",
+      "    </device_configuration>",
+      "",
+      "  </initial>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "IwlanS2bConfigXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "Profile5": {
+    "Values": "AQAFABsAAAAFAAAApaWlpTheAgCAXgIAAAAAAAAAAAABEAMAU09TEQABAAMvAAEAAB8AAQABNgABAAE="
+  },
+  "SuppressAddUpdateParam": {
+    "Value": 1
+  },
+  "EmmNasNvItems": {
+    "Value": "BgAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "AndsfXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      ""
+    ]
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      ""
+    ]
+  },
+  "WlanOffloadConfig": {
+    "Value": 0
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier Policy for CU",
+      "$Header: //commercial/MPSS.AT.4.0.2.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/CU/CSFB/subsidized/carrier_policy.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 15945178 $\"",
+      "        policy_ver  = \"40.1.15\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <mcc_list name=\"home_mccs\">",
+      "      460",
+      "    </mcc_list>",
+      "",
+      "    <plmn_list name=\"ca_combo_networks\">",
+      "      460-01 460-06 460-09",
+      "    </plmn_list>",
+      "",
+      "    <plmn_list name=\"unrestricted_operators\">",
+      "      460-01 460-06 460-09",
+      "    </plmn_list>",
+      "",
+      "    <define_fullrat_config >",
+      "      <rf_bands base=\"hardware\" />",
+      "      <rat_capability base=\"none\">",
+      "        <include> G W L </include>",
+      "      </rat_capability>",
+      "    </define_fullrat_config>",
+      "",
+      "    <rf_band_list name=\"rf_bands_home\">",
+      "      <!-- GSM Band mapping: GSM bands are",
+      "              B7->GSM_DCS_1800->Bit-7,",
+      "              B8->GSM_EGSM_900->Bit-8",
+      "              B9->GSM_PGSM_900->Bit-9.",
+      "              B19->GSM_850 -> Bit-19,",
+      "              B21->GSM_PCS_1900-> Bit-21",
+      "                   WCDMA Band mapping: WCDMA bands are",
+      "              B22-> SYS_SBAND_WCDMA_I_IMT_2000",
+      "              B49->SYS_SBAND_WCDMA_VIII_900",
+      "           Refer: sys_sband_e_type in sys.h",
+      "      -->",
+      "      <gw_bands base=\"none\">",
+      "        <include> 7 8 9 19 21 22 49 </include>",
+      "      </gw_bands>",
+      "      <!-- LTE Band: 1, 3, 8, 40 and 41 are mapped to Band Bit: 0, 2, 7, 39 and 40 respectively.",
+      "                    Refer: sys_sband_lte_e_type in sys.h",
+      "      -->",
+      "      <lte_bands base=\"none\">",
+      "        <include> 0 2 7 39 40 </include>",
+      "      </lte_bands>",
+      "      <tds_bands base=\"none\" />",
+      "    </rf_band_list>",
+      "",
+      "    <rf_band_list name=\"rf_bands_roam\">",
+      "      <!-- GSM Band mapping: GSM bands are",
+      "              B7->GSM_DCS_1800->Bit-7,",
+      "              B8->GSM_EGSM_900->Bit-8",
+      "              B9->GSM_PGSM_900->Bit-9.",
+      "              B19->GSM_850 -> Bit-19,",
+      "              B21->GSM_PCS_1900-> Bit-21",
+      "                   WCDMA Band mapping: WCDMA bands are",
+      "              B22-> SYS_SBAND_WCDMA_I_IMT_2000",
+      "              B23->SYS_SBAND_WCDMA_II_PCS_1900",
+      "              B26->SYS_SBAND_WCDMA_V_850",
+      "              B49->SYS_SBAND_WCDMA_VIII_900",
+      "           Refer: sys_sband_e_type in sys.h",
+      "      -->",
+      "      <gw_bands base=\"none\">",
+      "        <include> 7 8 9 19 21 22 23 26 49 </include>",
+      "      </gw_bands>",
+      "      <lte_bands base=\"hardware\" />",
+      "      <tds_bands base=\"none\" />",
+      "    </rf_band_list>",
+      "",
+      "    <rat_capability base=\"none\">",
+      "      <include> G W L </include>",
+      "    </rat_capability>",
+      "    <rf_bands_if list=\"rf_bands_home\" />",
+      "",
+      "    <feature> normal </feature>",
+      "",
+      "  </initial>",
+      "",
+      "  <if>",
+      "    <all_of>",
+      "      <have_imsi />",
+      "      <imsi_mcc_in list=\"home_mccs\" />",
+      "      <not> <imsi_plmn_in list = \"unrestricted_operators\" /> </not>",
+      "    </all_of>",
+      "    <then>",
+      "      <rat_capability base=\"none\">",
+      "        <include> G </include>",
+      "      </rat_capability>",
+      "      <rf_bands base=\"hardware\" />",
+      "      <svc_mode> FULL </svc_mode>",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <if>",
+      "    <any_of>",
+      "      <not> <have_location /> </not>",
+      "      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "    </any_of>",
+      "    <then>",
+      "      <stop />",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <!-- Beyond this point, the device is ONLINE and has a location. -->",
+      "  <svc_mode> FULL </svc_mode>",
+      "  <rat_capability base=\"none\">",
+      "    <include> G W L </include>",
+      "  </rat_capability>",
+      "",
+      "  <if>",
+      "    <have_serving_system />",
+      "    <then>",
+      "      <if>",
+      "        <serving_plmn_in list=\"ca_combo_networks\" />",
+      "        <then>",
+      "          <ca_band_combos string=\"3AA-1A-0;3AA-1A-1;3A-1AA-0;3A-1AA-1;3AA-1AA-0;3AA-1AA-1;8AA-1A-0;8AA-1A-1;8AA-1A-2;8A-1AA-0;8A-1AA-1;8A-1AA-2;8AA-1AA-0;8AA-1AA-1;8AA-1AA-2;41A-1AA-0;8AA-3A-0;8AA-3A-1;8AA-3A-2;8AA-3A-3;8A-3AA-0;8A-3AA-1;8A-3AA-2;8A-3AA-3;8AA-3AA-0;8AA-3AA-1;8AA-3AA-2;8AA-3AA-3;41A-3AA-0;41A-3AA-1;3CA-0;3CC-0;3CA-1A-0;3C-1AA-0;8AA-3C-0;8A-3CA-0;8AA-3A-1A-0;8AA-3A-1A-1;8AA-3A-1A-2;8AA-3A-1A-3;8A-3AA-1A-0;8A-3AA-1A-1;8A-3AA-1A-2;8A-3AA-1A-3;8A-3A-1AA-0;8A-3A-1AA-1;8A-3A-1AA-2;8A-3A-1AA-3;\" />",
+      "        </then>",
+      "        <else>",
+      "         <ca_band_combos string=\"\" />",
+      "        </else>",
+      "      </if>",
+      "      <continue />",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <if>",
+      "    <location_mcc_in list=\"home_mccs\" />",
+      "    <then>",
+      "      <rf_bands list=\"rf_bands_home\" />",
+      "    </then>",
+      "    <else>",
+      "      <rf_bands list=\"rf_bands_roam\" />",
+      "    </else>",
+      "  </if>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Ehplmn": {
+    "Value": "BGTwAGTwIGTwcGTwgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 1,
+    "Field2": 65535
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "ImsEnable": {
+    "Value": 0
+  },
+  "LteBandpref": {
+    "Value": -51
+  },
+  "OperatorName": {
+    "Value": 2
+  },
+  "PbmEccNums": {
+    "Value": "AAMDOTExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAMDMTEyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+  },
+  "Profile1": {
+    "Values": "AQABADAAAAAHAAAApaWlpXrHvULfXQIAAAAAAAAAAAABEAUAM0dORVQRAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8="
+  },
+  "Profile2": {
+    "Values": "AQACADAAAAAHAAAApaWlpY/HvUL5XQIAAAAAAAAAAAABEAUAM0dXQVARAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8="
+  },
+  "Profile3": {
+    "Values": "AQADABMAAAADAAAApaWlpSZeAgAmXgIAAAAAAAAAAAABEAUAV09ORVQRAAEAAy8AAQAA"
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "WcdmaRrcFeature": {
+    "Value": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 31
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 2
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 2
+  },
+  "AGpsDefaultQosTime": {
+    "Value": 64
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "EdgeMultislotClass": {
+    "Value": 33
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 180
+  },
+  "SmsMoRetryInterval": {
+    "Value": 45
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 3
+  },
+  "WcdmaRxDiversityControl": {
+    "Value": 3
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "Banner": {
+    "ValueString": "CU_DS_CSFB_G"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 2
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -16385
+  }
+}

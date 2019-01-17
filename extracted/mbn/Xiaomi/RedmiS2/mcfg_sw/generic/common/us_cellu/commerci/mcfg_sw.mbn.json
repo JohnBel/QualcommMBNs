@@ -1,0 +1,319 @@
+{
+  "AttachProfile": {
+    "Value": 1
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- USCC Carrier configuration file for SRLTE with CHGWL roaming for USCC",
+      "     $Header: //commercial/MPSS.TA.2.3.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/USCC/subsidized/carrier_policy.xml#4 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 12244582 $\"",
+      "        policy_ver  = \"56.1.5\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <mcc_list name=\"sxlte_mccs\"> 310 311 312 330 </mcc_list>",
+      "",
+      "    <rat_capability base=\"none\" >",
+      "      <include> C H G W L </include>",
+      "    </rat_capability>",
+      "",
+      "    <rf_bands base=\"hardware\" />",
+      "",
+      "    <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>",
+      "",
+      "    <feature> srlte </feature>",
+      "",
+      "  </initial>",
+      "",
+      "  <if>",
+      "    <any_of>",
+      "      <not> <have_location /> </not>",
+      "      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "    </any_of>",
+      "    <then>",
+      "      <stop />",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <svc_mode> FULL </svc_mode>",
+      "",
+      "  <if>",
+      "    <location_mcc_in list=\"sxlte_mccs\" />",
+      "    <then> <ue_mode> 1X_CSFB_PREF </ue_mode> </then>",
+      "    <else> <ue_mode> CSFB </ue_mode> </else>",
+      "  </if>",
+      "",
+      "</policy>",
+      ""
+    ]
+  },
+  "HdrAcqDivEnable": {
+    "Value": 0
+  },
+  "HdrAcqDivThresh0": {
+    "Value": 0
+  },
+  "HdrAcqDivThresh1": {
+    "Value": 0
+  },
+  "ImsEnable": {
+    "Value": 0
+  },
+  "LteDisableDuration": {
+    "Value": 720
+  },
+  "LteNasTempFplmnBackoffTime": {
+    "Value": 0
+  },
+  "MaxFbPdnFailureCount": {
+    "Value": 0
+  },
+  "NMaxSIB8": {
+    "Value": 3
+  },
+  "OneXAdvancedCapability": {
+    "Value": 0
+  },
+  "OneXCsfbNMaxRegRetryCnt": {
+    "Value": 0
+  },
+  "OneXCsfbTMaxNoC2kParam": {
+    "Value": 0
+  },
+  "OneXCsfbTMaxNoVoice": {
+    "Value": 0
+  },
+  "ProfilePdnTypeOverride": {
+    "Value": 1
+  },
+  "SdssscrTimers": {
+    "Version": 1,
+    "Value": [
+      15,
+      0,
+      300,
+      2,
+      3,
+      1,
+      60,
+      0,
+      5,
+      5,
+      2
+    ]
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsNotAllowed"
+  },
+  "So73Cop0Supported": {
+    "Value": 0
+  },
+  "Supportfordualrxues": {
+    "Value": 1
+  },
+  "SxlteTimers": {
+    "Field1": 300,
+    "Field2": 10
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "Zz22SelParms": {
+    "Field1": 0,
+    "Field2": 8,
+    "Field3": 30,
+    "Field4": 255,
+    "Field5": 0
+  },
+  "Zz22Thresh": {
+    "Field1": 156,
+    "Field2": -128,
+    "Field3": -24065,
+    "Field4": -120,
+    "Field5": 255,
+    "Field6": 0
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 4,
+    "Mode": 0
+  },
+  "CdmaReceiveDiversity": {
+    "Value": 27793
+  },
+  "VoicePrivacy": {
+    "Value": 0
+  },
+  "DiagDebugControl": {
+    "Value": 5
+  },
+  "DiagDebugDetail": {
+    "Value": -1
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "TraceFilesSavedEFS": {
+    "Value": 1
+  },
+  "HomeSidNidList": {
+    "Nam": 0,
+    "Sid1": 4112,
+    "Nid1": 65535,
+    "Sid2": 0,
+    "Nid2": 0,
+    "Sid3": 0,
+    "Nid3": 0,
+    "Sid4": 0,
+    "Nid4": 0,
+    "Sid5": 0,
+    "Nid5": 0,
+    "Sid6": 0,
+    "Nid6": 0,
+    "Sid7": 0,
+    "Nid7": 0,
+    "Sid8": 0,
+    "Nid8": 0,
+    "Sid9": 0,
+    "Nid9": 0,
+    "Sid10": 0,
+    "Nid10": 0,
+    "Sid11": 0,
+    "Nid11": 0,
+    "Sid12": 0,
+    "Nid12": 0,
+    "Sid13": 0,
+    "Nid13": 0,
+    "Sid14": 0,
+    "Nid14": 0,
+    "Sid15": 0,
+    "Nid15": 0,
+    "Sid16": 0,
+    "Nid16": 0,
+    "Sid17": 0,
+    "Nid17": 0,
+    "Sid18": 0,
+    "Nid18": 0,
+    "Sid19": 0,
+    "Nid19": 0,
+    "Sid20": 0,
+    "Nid20": 0
+  },
+  "HdrScpSubtypeCustomConfig": {
+    "CustomConfigIsActive": 0,
+    "Subtype2PhysicalLayer": 0,
+    "EnhancedCcmac": 0,
+    "EnhancedAcmac": 0,
+    "EnhancedFtcmac": 0
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 135
+  },
+  "SmsMoRetryInterval": {
+    "Value": 5
+  },
+  "SdConfigurableItems": {
+    "Version": 3,
+    "Items": [
+      60,
+      180,
+      5,
+      1,
+      180,
+      3600,
+      130,
+      3600,
+      130,
+      14,
+      0,
+      0,
+      60,
+      120,
+      180,
+      3600,
+      3,
+      253,
+      900,
+      180,
+      300,
+      300,
+      900,
+      3,
+      12
+    ]
+  },
+  "CdmaSO68Enabled": {
+    "Value": 0
+  },
+  "HdrScpForceRelease0SessionConfiguration": {
+    "Value": 0
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 0
+  },
+  "SmsMoOnTrafficChannel": {
+    "Value": 1
+  },
+  "HdrL1DebugMask": {
+    "Field1": 72057594037927936,
+    "Field2": 0
+  },
+  "DsMobileIpDeregistrationRetries": {
+    "Value": 2
+  },
+  "DetectHWReset": {
+    "Value": 1
+  },
+  "DataServicesQcMobileIp": {
+    "Value": 2
+  },
+  "HdrScpSessionStatus": {
+    "Value": 0
+  },
+  "HdrScpForceAtConfiguration": {
+    "Value": 0
+  },
+  "SlotCycleIndex": {
+    "Value": 0
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "MobileCaiRevisionNumber": {
+    "Value": 0
+  },
+  "UiccMode": {
+    "Value": 0
+  },
+  "Banner": {
+    "ValueString": "USCC"
+  },
+  "CdmaSo73Enabled": {
+    "Value": 0
+  },
+  "HdrReceiveDiversity": {
+    "Value": 0
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "FatalErrorOption": {
+    "Value": 0
+  }
+}

@@ -1,0 +1,10 @@
+epdg_ipv4_address:217.31.250.134;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+ikev2_peer_id_type:ID_FQDN;
+static_fqdn_enabled:FALSE;
+ikev2_dh_group_list:5,1;
+pcscfv4_attr_type_val:20;
+pcscfv6_attr_type_val:21;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

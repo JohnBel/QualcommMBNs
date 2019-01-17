@@ -1,0 +1,8 @@
+static_fqdn_enabled:FALSE;
+epdg_fqdn:wlan.three.com.hk;
+ke_payload_enabled:FALSE;
+ikev2_peer_id_type:ID_FQDN;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_dh_group_list:2;
+#esp_auth_algo_list:1,2;
+#configured_ike_port:4500;

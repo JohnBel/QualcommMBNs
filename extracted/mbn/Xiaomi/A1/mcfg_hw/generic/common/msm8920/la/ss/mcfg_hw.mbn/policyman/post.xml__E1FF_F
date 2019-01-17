@@ -1,0 +1,58 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Post Policy for US location
+$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/GenericUSA/post.xml#3 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 15948605 $"
+        policy_ver  = "1101.2.3"
+>
+
+  <initial>
+
+    <mcc_list name="post:us_mccs" ns="global"> 310 311 312 313 314 315 316 </mcc_list>
+
+    <rf_band_list ns="global" name="post:fcc_compliant_bands">
+      <gw_bands  base="current" />
+      <lte_bands base="current">
+        <exclude> 6 37 </exclude>
+      </lte_bands>
+      <tds_bands base="current" />
+    </rf_band_list>
+
+    <rf_band_list ns="global" name="post:default_bands">
+      <gw_bands  base="current" />
+      <lte_bands base="current" />
+      <tds_bands base="current" />
+    </rf_band_list>
+
+    <define_fullrat_config is_post="true">
+      <rf_bands list="post:default_bands" />
+    </define_fullrat_config>
+
+  </initial>
+
+  <if>
+    <any_of>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      <not> <have_location /> </not>
+      <boolean_test name="ue_mode_timer_running" />
+    </any_of>
+    <then> 
+      <stop />
+    </then>
+  </if>
+
+  <svc_mode> FULL </svc_mode>
+
+  <if>
+    <location_mcc_in list="post:us_mccs" />
+    <then>
+      <rf_bands list="post:fcc_compliant_bands" />
+    </then>
+    <else>
+      <rf_bands list="post:default_bands" />
+    </else>
+  </if>
+
+</policy>
