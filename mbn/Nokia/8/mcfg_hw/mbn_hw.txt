@@ -1,0 +1,14 @@
+../../build/ms/mcfg_hw.mbn
+mcfg_hw/generic/common/fih_hw/fih/mcfg_hw.mbn
+mcfg_hw/generic/common/mdm9x55/7+5_mode/dr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/mdm9x55/7+5_mode/sr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/mdm9x55/ss/mcfg_hw.mbn
+mcfg_hw/generic/common/mdm9x55_/7+5_mode/dr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/mdm9x55_/7+5_mode/sr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/mdm9x55_/ss/mcfg_hw.mbn
+mcfg_hw/generic/common/msm8998/la/7+5_mode/dr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/msm8998/la/7+5_mode/sr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/msm8998/la/ss/mcfg_hw.mbn
+mcfg_hw/generic/common/msm8998/wp8/7+5_mode/dr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/msm8998/wp8/7+5_mode/sr_dsds/mcfg_hw.mbn
+mcfg_hw/generic/common/msm8998/wp8/ss/mcfg_hw.mbn
