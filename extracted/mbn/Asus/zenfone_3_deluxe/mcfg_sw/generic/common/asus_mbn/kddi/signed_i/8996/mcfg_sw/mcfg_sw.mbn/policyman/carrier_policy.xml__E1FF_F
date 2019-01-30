@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML. 
+       Power up and LPM is in Full RAT mode.
+$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#5 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 10262256 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "43.1.13"
+>
+
+  <initial>
+    <actions>
+
+      <mcc_list name="ca_BR_operators"> 
+        724
+      </mcc_list>
+
+      <mcc_list name="ca_JP_operators"> 
+        440 441
+      </mcc_list>
+
+      <mcc_list name="ca_HKCN_operators"> 
+        454 460
+      </mcc_list>
+
+      <mcc_list name="ca_NA_operators"> 
+        302 310 311 312 313 314 315 316
+      </mcc_list>
+	  
+      <mcc_list name="ca_MA_operators"> 
+        502
+      </mcc_list>
+
+        <!-- These are the contry of FT test -->
+      <mcc_list name="ca_ASUS_FT_operators"> 
+        466 404 405 452 515 525 520 250 510 222 208 286
+      </mcc_list>
+
+      <plmn_list name = "sxlte_plmns">
+        455-02 455-07 460-03 460-05 460-11 440-50
+      </plmn_list>
+ 
+      <plmn_list name = "ca_TWW_operators">
+        466-01 466-92 466-97 
+      </plmn_list>
+
+      <!-- These are the KDDI IMSI PLMNs -->
+      <plmn_list name="unrestricted_operators">
+        440-07 440-08 
+        440-50 440-51 440-52 440-53 440-54 440-55 440-56 
+        440-70 440-71 440-72 440-73 440-74 440-75 440-76 440-77 440-78 440-79 
+        440-88 440-89 
+        441-70
+      </plmn_list>
+
+      <!-- List of the VoLTE only MCC(s) -->
+      <mcc_list name="pm:volte_only_mccs"> 440 441 </mcc_list>
+
+      <!-- List of Japan MCC(s) -->
+      <mcc_list name="japan_mccs"> 440 441 </mcc_list>
+
+      <!-- List of China MCC(s) -->
+      <mcc_list name="china_mccs"> 460 </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <svc_mode> LIMITED </svc_mode>
+          <call_mode> NORMAL </call_mode>
+        </actions>
+      </define_fullrat_config>
+	  
+      <!-- Define e911_volte capability -->
+      <boolean_define name="mmcp:e911_volte" initial="true" />
+
+      <rf_bands />
+
+      <!-- UE mode is always NORMAL -->
+      <ue_mode> NORMAL </ue_mode>
+
+      <feature> srlte </feature>
+
+      <volte enabled="true" />
+
+      <!-- On first boot, set RAT capability to all RATs -->
+      <rat_capability_if base="none">
+        <include> CDMA HDR GSM WCDMA LTE TDSCDMA </include>
+      </rat_capability_if>
+
+    </actions>
+  </initial>
+
+
+  <!-- If not ONLINE or no location info, do nothing.
+  -->
+  <if precond="none">
+    <cond>
+      <any_of>
+        <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+        <not> <have_location /> </not>
+      </any_of>
+    </cond>
+    <then> <stop/> </then>
+    <else> 
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </else>
+  </if>
+ 
+  <!-- Operator cards get VOLTE in Japan, rest all cases get call mode NORMAL.
+  -->
+   <if precond="IMSI"> 
+    <cond> 
+      <location_mcc_in list="japan_mccs" /> 
+      <imsi_plmn_in list="unrestricted_operators" />
+    </cond>
+    <then>
+      <call_mode> VOLTE </call_mode>
+      <continue/>
+    </then>
+    <else>
+      <call_mode> NORMAL </call_mode>
+      <continue/>
+    </else>
+  </if>
+
+<!-- RULE #kddi -->
+  <if>
+    <cond> 
+      <location_mcc_in list="japan_mccs" /> 
+      <imsi_plmn_in list="unrestricted_operators" />
+      <sim_type> CSIM </sim_type>
+    </cond>
+    <then> <ue_mode> 1X_CSFB_PREF </ue_mode> <continue/> </then>
+    <else> <ue_mode> NORMAL </ue_mode> <continue/> </else>
+  </if>
+
+  <!-- Set config based on location. Japan/China/Roam -->
+  <select>
+    <case>
+      <location_mcc_in list="japan_mccs" />
+      <actions>
+       <if>
+       <cond>
+          <sim_type> CSIM </sim_type>
+         </cond>
+          <then>
+           <rat_capability base="none">
+            <include> CDMA HDR LTE </include>
+          </rat_capability>
+          </then>
+          <else>
+        <rat_capability base="none">
+          <include> LTE </include>
+        </rat_capability>
+        </else>
+      </if>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;28AA-3A-0;28A-3AA-0;38A-3AA-0;7AA-3C-0;7A-3CA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7CA-3A-0;7C-3AA-0;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;41A-3AA-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;8AA-7A-0;8A-7AA-0;28AA-7A-0;28A-7AA-0;38CC-0;38CA-0;18AA-1A-0;18A-1AA-0;18AA-1A-1;18A-1AA-1;19AA-1A-0;19A-1AA-0;19AA-3A-0;19A-3AA-0;41A-3AA-0;41CC-0;41CA-0;41CC-1;41CA-1;41DC-0;41DA-0;41AA-41A-0;41AA-41A-1;" /> 
+      </actions>
+    </case>
+
+    <case>
+       <serving_plmn_in list = "sxlte_plmns" />
+        <actions>
+          <rat_capability base="none">
+            <include> TDSCDMA GSM WCDMA LTE </include>
+          </rat_capability>
+          <ca_band_combos string="3AA-1A-0;3A-1AA-0;3CA-1A-0;3C-1AA-0;3CA-0;3AA-3A-0;40A-3AA-0;41A-3AA-0;38CC-0;38CA-0;40CC-0;40CA-0;40CC-1;40CA-1;40DC-0;40DA-0;41CC-0;41CA-0;41CC-1;41CA-1;41DC-0;41DA-0;41AA-41A-0;41AA-41A-1;39CC-0;39CA-0;41AA-39A-0;41A-39AA-0;" /> 
+        </actions>
+    </case>
+
+    <case>
+      <location_mcc_in list="china_mccs" />
+      <actions>
+        <rat_capability base="none">
+          <include> TDSCDMA GSM WCDMA LTE </include>
+        </rat_capability>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;40A-3AA-0;7AA-3C-0;7A-3CA-0;7CA-3A-0;7C-3AA-0;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;41A-3AA-0;40A-5AA-0;40A-5AA-1;7CA-0;7CA-1;7BA-0;7AA-7A-0;8AA-7A-0;8A-7AA-0;38CC-0;38CA-0;40CC-0;40CA-0;40CC-1;40CA-1;40DC-0;40DA-0;41CC-0;41CA-0;41CC-1;41CA-1;41DC-0;41DA-0;41AA-41A-0;41AA-41A-1;39CC-0;39CA-0;41AA-39A-0;41A-39AA-0;" /> 
+      </actions>
+    </case>
+
+<!--<case>
+      <true />
+      <actions>
+        <rat_capability base="none">
+          <include> GSM WCDMA LTE </include>
+        </rat_capability>
+      </actions>
+    </case>
+-->
+      <!-- RULE #4-->
+    <case>
+        <location_mcc_in list = "ca_BR_operators" />
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <ca_band_combos string="2CA-0;2AA-2A-0;4AA-2A-0;4A-2AA-0;4AA-2A-1;4A-2AA-1;4AA-2A-2;4A-2AA-2;5AA-2A-0;5A-2AA-0;5AA-2A-2A-0;5A-2AA-2A-0;5AA-4A-2A-0;5A-4AA-2A-0;5A-4A-2AA-0;4AA-4A-0;4AA-4A-1;5AA-4A-0;5A-4AA-0;5AA-4A-1;5A-4AA-1;5AA-4A-4A-0;5A-4AA-4A-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;3AA-1A-0;3A-1AA-0;3CA-1A-0;3C-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;28AA-3A-0;28A-3AA-0;7AA-3C-0;7A-3CA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7CA-3A-0;7C-3AA-0;28AA-7A-0;28A-7AA-0;" /> 
+        </actions>
+    </case>
+
+      <!-- RULE #7-->
+    <case>
+        <location_mcc_in list = "ca_NA_operators" />
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <ca_band_combos string="2CA-0;2AA-2A-0;4AA-2A-0;4A-2AA-0;4AA-2A-1;4A-2AA-1;4AA-2A-2;4A-2AA-2;5AA-2A-0;5A-2AA-0;12AA-2A-0;12A-2AA-0;12AA-2A-1;12A-2AA-1;17AA-2A-0;17A-2AA-0;29A-2AA-0;29A-2AA-1;29A-2AA-2;30AA-2A-0;30A-2AA-0;5AA-2A-2A-0;5A-2AA-2A-0;30AA-12A-2A-0;30A-12AA-2A-0;30A-12A-2AA-0;12AA-2A-2A-0;12A-2AA-2A-0;12AA-4A-2A-0;12A-4AA-2A-0;12A-4A-2AA-0;29A-4AA-2A-0;29A-4A-2AA-0;5AA-4A-2A-0;5A-4AA-2A-0;5A-4A-2AA-0;30AA-29A-2A-0;30A-29A-2AA-0;30AA-5A-2A-0;30A-5AA-2A-0;30A-5A-2AA-0;4AA-4A-0;4AA-4A-1;5AA-4A-0;5A-4AA-0;5AA-4A-1;5A-4AA-1;12AA-4A-0;12A-4AA-0;12AA-4A-1;12A-4AA-1;12AA-4A-2;12A-4AA-2;12AA-4A-3;12A-4AA-3;12AA-4A-4;12A-4AA-4;29A-4AA-0;29A-4AA-1;29A-4AA-2;17AA-4A-0;17A-4AA-0;30AA-4A-0;30A-4AA-0;30AA-12A-4A-0;30A-12AA-4A-0;30A-12A-4AA-0;30AA-29A-4A-0;30A-29A-4AA-0;30AA-5A-4A-0;30A-5AA-4A-0;30A-5A-4AA-0;12AA-4A-4A-0;12A-4AA-4A-0;5AA-4A-4A-0;5A-4AA-4A-0;12BA-4A-0;12B-4AA-0;30AA-5A-0;30A-5AA-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;30AA-12A-0;30A-12AA-0;30AA-29A-0;" /> 
+        </actions>
+    </case>
+
+      <!-- RULE #8 -->
+    <case>
+        <location_mcc_in list = "ca_MA_operators" />
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <ca_band_combos string="3CA-0;3AA-3A-0;7AA-3A-0;7A-3AA-0;7AA-3C-0;7A-3CA-0;7CA-3A-0;7C-3AA-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;" /> 
+        </actions>
+    </case>
+
+      <!-- RULE #9 -->
+      <!-- WW/TW /FT test-->
+    <case>
+        <location_mcc_in list = "ca_ASUS_FT_operators" />
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;20AA-1A-0;20A-1AA-0;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;38A-3AA-0;40A-3AA-0;7AA-3C-0;7A-3CA-0;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7CA-3A-0;7C-3AA-0;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;40A-5AA-0;40A-5AA-1;7CA-0;7CA-1;7BA-0;7AA-7A-0;8AA-7A-0;8A-7AA-0;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;38CC-0;38CA-0;40CC-0;40CA-0;40CC-1;40CA-1;40DC-0;40DA-0;" /> 
+        </actions>
+    </case>
+
+      <!-- RULE #10 -->
+      <!-- WW/TW -->
+    <case>
+        <true/>
+        <actions>
+          <rat_capability base="none">
+            <include> GSM WCDMA LTE </include>
+          </rat_capability>
+          <ca_band_combos string="3AA-1A-0;" /> 
+        </actions>
+    </case>
+
+  </select> 
+
+</policy>

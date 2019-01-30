@@ -1,0 +1,16 @@
+epdg_fqdn:epdg.epc.mnc030.mcc234.pub.3gppnetwork.org;
+static_fqdn_enabled:FALSE;
+epdg_plmn_list:23430;
+ke_payload_enabled:FALSE;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_retransmit_timer_sec:3;
+ikev2_max_retries:6;
+#configured_ike_port:4500;
+#esp_auth_algo_list:1,2;
+esp_rekey_timer_soft_sec:1200;
+esp_rekey_timer_hard_sec:1500;
+ikev2_sa_rekey_timer_soft_sec:3000;
+ikev2_sa_rekey_timer_hard_sec:3600;
+pdn_throttling_series_default_values:0,0,60+RAND,120,480,900;
+pdn_throttling_series_1_values:10,30,60,120,300;
+pdn_throttling_series_1_cause_codes:24;

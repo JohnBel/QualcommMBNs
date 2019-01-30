@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy file for SRLTE in open market with GWL roaming (class C)
+$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/openMarket/carrier_policy.xml#2 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 9995784 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "74.2.23"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of the MCCs in which SRLTE is allowed -->
+      <mcc_list name="sxlte_mccs"> 455 460 </mcc_list>
+
+      <!-- These are the serving system PLMNs for which SRLTE will be allowed 
+       -->
+      <!-- NOTE: Proper functioning of the SRLTE policy requires that there
+           be an PLMN list named "sxlte_plmns". Do NOT rename this list.
+      -->
+      <plmn_list name = "sxlte_plmns">
+        455-02 455-07 460-03 460-05 460-11
+      </plmn_list>
+
+      <mcc_list name="ca_Test_operators"> 
+        001 
+      </mcc_list>
+
+      <mcc_list name="ca_BR_operators"> 
+        724
+      </mcc_list>
+
+      <mcc_list name="ca_JP_operators"> 
+        440 441
+      </mcc_list>
+
+      <mcc_list name="ca_HKCN_operators"> 
+        454 460
+      </mcc_list>
+
+      <mcc_list name="ca_NA_operators"> 
+        302 310 311 312 313 314 315 316
+      </mcc_list>
+	  
+      <mcc_list name="ca_MA_operators"> 
+        502
+      </mcc_list>
+	  
+      <!-- These are the contry of FT test -->
+    <mcc_list name="ca_ASUS_FT_operators"> 
+      466 404 405 452 515 525 520 250 510 222 208 286
+    </mcc_list>
+
+      <plmn_list name = "ca_TWW_operators">
+        466-01 466-92 466-97 
+      </plmn_list>
+
+      <!-- These are the Test IMSI PLMNs -->
+      <plmn_list name="test_imsi">
+        001-01
+      </plmn_list>
+	  
+      <define_fullrat_config>
+        <actions>
+          <ue_mode> CSFB </ue_mode>
+          <rat_capability base="none">
+            <include> CDMA HDR GSM WCDMA LTE </include>
+          </rat_capability>
+          <rf_bands />
+          <svc_mode> ALL </svc_mode>
+          <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+          <freq_list list="cpfl" />
+        </actions>
+      </define_fullrat_config>
+
+      <!-- Define the 1x_oos timer with a 1 minute interval -->
+      <define_timer name = "1x_oos" interval = "1" units = "min" id = "100" />
+
+      <!-- Define a HOME RF band list that include GW and LTE bands -->
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base = "hardware" />
+        <lte_bands base = "none">
+          <include> 0 2 4 25 37 38 39 40 </include>
+        </lte_bands>
+        <tds_bands base = "none" />
+      </rf_band_list>
+
+      <!-- Define initial RAT capability as CHL -->
+      <rat_capability_if base="none" >
+        <include> CDMA HDR LTE </include>
+      </rat_capability_if>
+
+      <!-- Define Intial UE mode as 1X_CSFB_PREF -->
+      <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+      <!-- On first boot, include Home bands -->
+      <rf_bands_if list="rf_bands_home" />
+
+      <!-- Boolean: Is the device at home? -->
+      <boolean_define name="home" initial="true" />
+      <boolean_set name="home">
+        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>
+      </boolean_set>
+
+      <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+      <freq_list_if list="cpfl" />
+      
+      <feature single_sim="srlte"> dualmmode </feature>
+      
+
+     <ca_band_combos string="" />
+
+    </actions>
+  </initial>
+  
+  <!-- RULE #1 -->
+  <rule precond="none">
+    <conditions>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!-- RULE #2 -->
+  <!-- Determine UE location and continue evaluation if we have service.
+  -->
+  <rule precond="none">
+    <conditions>
+      <have_location />
+    </conditions>
+    <actions>
+      <svc_mode> FULL </svc_mode>
+      <boolean_set name="home">
+        <location_mcc_in list="sxlte_mccs" />
+      </boolean_set>
+      <continue />
+    </actions>
+  </rule>
+
+<!-- RULE #3 -->
+  <!-- We wait if we don't have location or we are not ONLINE.
+  -->
+  <rule precond="none">
+    <conditions>
+      <not> <have_location /> </not>
+    </conditions>
+    <actions />
+  </rule>
+
+  <!--
+  ====================================================================
+    Rules where location info can be used. Rules to implement SRLTE
+  ====================================================================
+  -->
+
+  <!-- RULE #4 -->
+  <!-- If we are home, stay in SRLTE configuration with CHL.
+  -->
+  <rule precond="none">
+    <conditions>
+      <boolean_test name="home" />
+    </conditions>
+    <actions>
+      <rat_capability base = "none">
+        <include> CDMA HDR LTE </include>
+      </rat_capability>
+      <ue_mode> 1X_CSFB_PREF </ue_mode>
+      <scan_optimization tgpp="no_auto_camp_only" tgpp2="disabled" />
+      <freq_list list="cpfl" />
+      <ca_band_combos string="3AA-1A-0;3A-1AA-0;3CA-1A-0;3C-1AA-0;3CA-0;3AA-3A-0;40A-3AA-0;41A-3AA-0;38CC-0;38CA-0;40CC-0;40CA-0;40CC-1;40CA-1;40DC-0;40DA-0;41CC-0;41CA-0;41CC-1;41CA-1;41DC-0;41DA-0;41AA-41A-0;41AA-41A-1;39CC-0;39CA-0;41AA-39A-0;41A-39AA-0;" /> 
+    </actions>
+  </rule>
+  
+  <!-- RULE #5 -->
+  <!-- Otherwise we're in a GWL configuration
+  -->
+  <rule precond="none">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+      <rf_bands />
+      <ue_mode> CSFB </ue_mode>
+      <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+      <freq_list list="default" />
+      <continue />
+    </actions>
+  </rule>
+  
+  <!-- RULE #6-->
+  <rule precond="SS">
+    <conditions>
+        <location_mcc_in list = "ca_BR_operators" />
+    </conditions>
+    <actions>
+        <ca_band_combos string="2CA-0;2AA-2A-0;4AA-2A-0;4A-2AA-0;4AA-2A-1;4A-2AA-1;4AA-2A-2;4A-2AA-2;5AA-2A-0;5A-2AA-0;5AA-2A-2A-0;5A-2AA-2A-0;5AA-4A-2A-0;5A-4AA-2A-0;5A-4A-2AA-0;4AA-4A-0;4AA-4A-1;5AA-4A-0;5A-4AA-0;5AA-4A-1;5A-4AA-1;5AA-4A-4A-0;5A-4AA-4A-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;3AA-1A-0;3A-1AA-0;3CA-1A-0;3C-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;28AA-3A-0;28A-3AA-0;7AA-3C-0;7A-3CA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7CA-3A-0;7C-3AA-0;28AA-7A-0;28A-7AA-0;" /> 
+    </actions>
+  </rule>
+
+
+  <!-- RULE #7-->
+  <rule precond="SS">
+    <conditions>
+        <location_mcc_in list = "ca_JP_operators" />
+    </conditions>
+    <actions>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;28AA-3A-0;28A-3AA-0;38A-3AA-0;7AA-3C-0;7A-3CA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7CA-3A-0;7C-3AA-0;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;41A-3AA-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;8AA-7A-0;8A-7AA-0;28AA-7A-0;28A-7AA-0;38CC-0;38CA-0;18AA-1A-0;18A-1AA-0;18AA-1A-1;18A-1AA-1;19AA-1A-0;19A-1AA-0;19AA-3A-0;19A-3AA-0;41A-3AA-0;41CC-0;41CA-0;41CC-1;41CA-1;41DC-0;41DA-0;41AA-41A-0;41AA-41A-1;" /> 
+    </actions>
+  </rule>
+
+
+  <!-- RULE #8-->
+  <rule precond="SS">
+    <conditions>
+        <location_mcc_in list = "ca_HKCN_operators" />
+    </conditions>
+    <actions>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;40A-3AA-0;7AA-3C-0;7A-3CA-0;7CA-3A-0;7C-3AA-0;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;41A-3AA-0;40A-5AA-0;40A-5AA-1;7CA-0;7CA-1;7BA-0;7AA-7A-0;8AA-7A-0;8A-7AA-0;38CC-0;38CA-0;40CC-0;40CA-0;40CC-1;40CA-1;40DC-0;40DA-0;41CC-0;41CA-0;41CC-1;41CA-1;41DC-0;41DA-0;41AA-41A-0;41AA-41A-1;39CC-0;39CA-0;41AA-39A-0;41A-39AA-0;" /> 
+    </actions>
+  </rule>
+
+ 
+  <!-- RULE #9-->
+  <rule precond="SS">
+    <conditions>
+        <location_mcc_in list = "ca_NA_operators" />
+    </conditions>
+    <actions>
+        <ca_band_combos string="2CA-0;2AA-2A-0;4AA-2A-0;4A-2AA-0;4AA-2A-1;4A-2AA-1;4AA-2A-2;4A-2AA-2;5AA-2A-0;5A-2AA-0;12AA-2A-0;12A-2AA-0;12AA-2A-1;12A-2AA-1;17AA-2A-0;17A-2AA-0;29A-2AA-0;29A-2AA-1;29A-2AA-2;30AA-2A-0;30A-2AA-0;5AA-2A-2A-0;5A-2AA-2A-0;30AA-12A-2A-0;30A-12AA-2A-0;30A-12A-2AA-0;12AA-2A-2A-0;12A-2AA-2A-0;12AA-4A-2A-0;12A-4AA-2A-0;12A-4A-2AA-0;29A-4AA-2A-0;29A-4A-2AA-0;5AA-4A-2A-0;5A-4AA-2A-0;5A-4A-2AA-0;30AA-29A-2A-0;30A-29A-2AA-0;30AA-5A-2A-0;30A-5AA-2A-0;30A-5A-2AA-0;4AA-4A-0;4AA-4A-1;5AA-4A-0;5A-4AA-0;5AA-4A-1;5A-4AA-1;12AA-4A-0;12A-4AA-0;12AA-4A-1;12A-4AA-1;12AA-4A-2;12A-4AA-2;12AA-4A-3;12A-4AA-3;12AA-4A-4;12A-4AA-4;29A-4AA-0;29A-4AA-1;29A-4AA-2;17AA-4A-0;17A-4AA-0;30AA-4A-0;30A-4AA-0;30AA-12A-4A-0;30A-12AA-4A-0;30A-12A-4AA-0;30AA-29A-4A-0;30A-29A-4AA-0;30AA-5A-4A-0;30A-5AA-4A-0;30A-5A-4AA-0;12AA-4A-4A-0;12A-4AA-4A-0;5AA-4A-4A-0;5A-4AA-4A-0;12BA-4A-0;12B-4AA-0;30AA-5A-0;30A-5AA-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;30AA-12A-0;30A-12AA-0;30AA-29A-0;" /> 
+    </actions>
+  </rule>
+
+  <!-- RULE #10-->
+  <rule precond="SS">
+    <conditions>
+        <location_mcc_in list = "ca_MA_operators" />
+    </conditions>
+    <actions>
+        <ca_band_combos string="3CA-0;3AA-3A-0;7AA-3A-0;7A-3AA-0;7AA-3C-0;7A-3CA-0;7CA-3A-0;7C-3AA-0;7CA-0;7CA-1;7BA-0;7AA-7A-0;" /> 
+    </actions>
+  </rule>
+
+  <!-- RULE #11 -->
+  <!-- WW/TW/FT tested Contry
+  -->
+  <rule precond="SS">
+    <conditions>
+        <location_mcc_in list = "ca_ASUS_FT_operators" />
+    </conditions>
+    <actions>
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8A-1AA-0;8AA-1A-1;8A-1AA-1;8AA-1A-2;8A-1AA-2;20AA-1A-0;20A-1AA-0;3CA-1A-0;3C-1AA-0;8AA-3A-1A-0;8A-3AA-1A-0;8A-3A-1AA-0;8AA-3A-1A-1;8A-3AA-1A-1;8A-3A-1AA-1;20AA-3A-1A-0;20A-3AA-1A-0;20A-3A-1AA-0;28AA-3A-1A-0;28A-3AA-1A-0;28A-3A-1AA-0;3CA-0;3AA-3A-0;5AA-3A-0;5A-3AA-0;5AA-3A-1;5A-3AA-1;5AA-3A-2;5A-3AA-2;7AA-3A-0;7A-3AA-0;8AA-3A-0;8A-3AA-0;8AA-3A-1;8A-3AA-1;8AA-3A-2;8A-3AA-2;20AA-3A-0;20A-3AA-0;20AA-3A-1;20A-3AA-1;28AA-3A-0;28A-3AA-0;38A-3AA-0;40A-3AA-0;7AA-3C-0;7A-3CA-0;20AA-7A-3A-0;20A-7AA-3A-0;20A-7A-3AA-0;28AA-7A-3A-0;28A-7AA-3A-0;28A-7A-3AA-0;7CA-3A-0;7C-3AA-0;8AA-7A-3A-0;8A-7AA-3A-0;8A-7A-3AA-0;8AA-7A-3A-1;8A-7AA-3A-1;8A-7A-3AA-1;40A-5AA-0;40A-5AA-1;7CA-0;7CA-1;7BA-0;7AA-7A-0;8AA-7A-0;8A-7AA-0;20AA-7A-0;20A-7AA-0;20AA-7A-1;20A-7AA-1;28AA-7A-0;28A-7AA-0;38CC-0;38CA-0;40CC-0;40CA-0;40CC-1;40CA-1;40DC-0;40DA-0;" /> 
+    </actions>
+  </rule>
+
+    <!-- RULE #12-->
+  <!-- WW/TW
+  -->
+  <rule precond="SS">
+    <conditions>
+        <true/>
+    </conditions>
+    <actions>
+        <ca_band_combos string="3AA-1A-0;" /> 
+    </actions>
+  </rule>
+
+</policy>

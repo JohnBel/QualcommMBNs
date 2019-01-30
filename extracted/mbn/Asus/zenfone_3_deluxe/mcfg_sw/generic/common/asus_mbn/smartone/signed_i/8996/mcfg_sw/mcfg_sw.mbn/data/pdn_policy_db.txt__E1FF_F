@@ -1,0 +1,7 @@
+PDN_APN_String:smartone; 
+Default:TRUE;
+Supported_RAT_Priority_List:WLAN_LB, WWAN, IWLAN;
+
+PDN_APN_String:ims;
+Override_Type:API; 
+Supported_RAT_Priority_List:WWAN, IWLAN;

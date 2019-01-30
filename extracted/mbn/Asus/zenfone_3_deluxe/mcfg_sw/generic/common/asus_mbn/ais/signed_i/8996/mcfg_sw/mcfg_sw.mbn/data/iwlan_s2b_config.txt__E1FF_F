@@ -1,0 +1,7 @@
+epdg_fqdn:epdg.epc.mnc003.mcc520.pub.3gppnetwork.org;
+ke_payload_enabled:FALSE; 
+ikev2_dh_group_list:2,5,14; 
+pcscfv4_attr_type_val:16384; 
+pcscfv6_attr_type_val:16390; 
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_KEY_ID;

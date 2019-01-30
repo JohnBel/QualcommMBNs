@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier configuration file for SRLTE with CHGWL roaming 
+$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 9413867 $" 
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "29.1.10"
+>
+
+  <initial>
+    <actions>
+
+      <!-- List of the MCCs in which SRLTE is allowed -->
+      <mcc_list name="sxlte_mccs"> 310 311 312 </mcc_list>
+
+      <!-- These are the serving system PLMNs for which SRLTE will be allowed 
+       -->
+      <!-- NOTE: Proper functioning of the SXLTE policy requires that there
+           be an PLMN list named "sxlte_plmns". Do NOT rename this list.
+      -->
+      <plmn_list name = "sxlte_plmns">
+        311-480
+      </plmn_list>
+
+      <boolean_define name="cm:rpm_enabled" initial="true" />
+      
+      <!-- Define the hybr_oos timer with a 1 minute interval -->
+      <define_timer name = "hybr_oos" interval = "1" units = "min" id = "101" />
+
+      <!-- Define initial RAT capability as CHL for SUBS1-->
+      <rat_capability base="none" >
+        <include> CDMA HDR GSM WCDMA LTE </include>
+      </rat_capability>
+
+      <feature> srlte </feature>
+
+      <!-- Define Intial UE mode as 1X_CSFB_PREF -->
+      <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+      <rf_bands>
+        <gw_bands base="hardware" />
+        <lte_bands base="hardware" />
+        <tds_bands base="none" />
+      </rf_bands>
+      
+      <!-- Boolean: Is the device at home? -->
+      <boolean_define name="home" initial="true" />
+      <boolean_set name="home">
+        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>
+      </boolean_set>
+
+    </actions>
+  </initial>
+
+<!--
+  ====================================================================
+    Rules to handle OOS situations and timers.
+  ====================================================================
+  -->
+
+  <!-- RULE #1 -->
+  <!-- Determine location if we have service.
+  -->
+  <rule precond="none">
+    <conditions>
+      <have_service />
+    </conditions>
+    <actions>
+      <boolean_set name="home">
+        <location_mcc_in list="sxlte_mccs" />
+      </boolean_set>
+      <svc_mode> FULL </svc_mode>
+      <continue />
+    </actions>
+  </rule>
+
+  <!-- RULE #2 -->
+  <!-- If we have no service do not continue to other rules.
+  -->
+  <rule precond="none">
+    <conditions>
+      <not> <have_service /> </not>
+    </conditions>
+    <actions/>
+  </rule>
+
+<!--
+  ====================================================================
+    Rules to implement SRLTE
+  ====================================================================
+  -->
+
+  <!-- RULE #3 -->
+  <!-- If conditions allow, operate as SRLTE otherwise CSFB.
+  -->  
+  <if>
+    <cond> <boolean_test name="home" /> </cond>
+    <then> <ue_mode> 1X_CSFB_PREF </ue_mode> </then>
+    <else> <ue_mode> CSFB </ue_mode> </else>
+  </if>
+       
+</policy>

@@ -1,0 +1,5 @@
+epdg_fqdn:epdg.epc.mnc002.mcc262.pub.3gppnetwork.org;
+ikev2_self_id_type:ID_RFC822_ADDR;
+ke_payload_enabled:FALSE;
+ikev2_peer_id_type:ID_FQDN;
+static_fqdn_enabled:FALSE;

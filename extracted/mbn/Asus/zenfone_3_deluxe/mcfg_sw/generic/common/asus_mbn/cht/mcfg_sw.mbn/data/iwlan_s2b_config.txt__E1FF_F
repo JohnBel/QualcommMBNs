@@ -1,0 +1,15 @@
+epdg_fqdn:epdg.epc.mnc092.mcc466.pub.3gppnetwork.org; 
+ikev2_dh_group_list:2,5,14; 
+pcscfv4_attr_type_val:16384; 
+pcscfv6_attr_type_val:16386; 
+ikev2_self_id_type:ID_RFC822_ADDR;
+ikev2_peer_id_type:ID_KEY_ID;
+natt_enabled:TRUE;
+natt_keep_alive_timer_sec:20;
+ikev2_dpd_timer_sec:600;
+ikev2_sa_rekey_timer_soft_sec:3600;
+ikev2_sa_rekey_timer_hard_sec:4200;
+esp_rekey_timer_soft_sec:7200;
+esp_rekey_timer_hard_sec:7500;
+ikev2_retransmit_timer_sec:5;
+ikev2_max_retries:3;

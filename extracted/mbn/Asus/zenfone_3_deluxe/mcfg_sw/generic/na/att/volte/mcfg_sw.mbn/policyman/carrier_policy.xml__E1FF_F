@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy
+$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/ATT/carrier_policy.xml#5 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 10180820 $"
+        schema_ver  = "1"
+        policy_ver  = "96.1.2"
+>
+
+  <initial>
+    <actions>
+
+      <!-- Define the Home MCCs -->
+      <mcc_list name="home_mccs"> 310 311 312 313 314 315 316 330 </mcc_list>
+
+      <define_fullrat_config>
+        <actions>
+          <rf_bands base="hardware" />
+          <svc_mode> LIMITED </svc_mode>
+        </actions>
+      </define_fullrat_config>
+
+      <!-- Home RF Band list -->
+      <rf_band_list name="rf_bands_home">
+        <gw_bands base="none" >
+          <include> 7 8 9 19 20 21 22 23 26 49 </include>
+        </gw_bands>
+        <lte_bands base="none" >
+          <include> 0 1 2 3 4 5 6 9 11 13 16 19 28 29 65 </include>
+        </lte_bands>
+        <tds_bands base="none" />
+      </rf_band_list>
+
+      <!-- Set initial power up capability -->
+      <rat_capability base="none">
+        <include> GSM WCDMA LTE </include>
+      </rat_capability>
+
+      <rf_bands_if list="rf_bands_home" />
+
+    </actions>
+  </initial>
+
+ <!-- RULE #1 -->
+  <!-- We Wait if we don't have location or we are not ONLINE.
+  -->
+  <if precond="none">
+    <cond>
+      <have_location />
+    </cond>
+    <then>
+      <svc_mode> FULL </svc_mode>
+      <continue />
+    </then>
+    <else>
+      <stop />
+    </else>
+  </if>
+
+  <!-- RULE #2 -->
+  <if>
+    <cond>
+      <location_mcc_in list="home_mccs" />
+    </cond>
+    <then>
+      <rf_bands list="rf_bands_home" />
+    </then>
+    <else>
+      <rf_bands base="hardware" />
+    </else>
+  </if>
+
+  </policy>

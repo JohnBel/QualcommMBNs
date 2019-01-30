@@ -1,0 +1,118 @@
+Logging to /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/signed_image_8996pro/SecImage_log.txt
+
+
+    SecImage launched as: "dist/sectools secimage -c config/8996/8996pro_secimage.xml -g mcfg_sw -i /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/mcfg_sw.mbn -o /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/signed_image_8996pro -s"
+
+Config path is set to: /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/config/8996/8996pro_secimage.xml
+Output dir is set to: /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/signed_image_8996pro
+Openssl v1.0.1 or greater is available at: "/usr/bin/openssl"
+------------------------------------------------------
+Processing 1/1: /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/mcfg_sw.mbn
+
+l1_file_name = /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Encryption/Unified/8996/l1_key.bin
+l2_file_name = /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Encryption/Unified/8996/l2_key.bin
+l3_file_name = /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Encryption/Unified/8996/l3_key.bin
+Clear L1 key, clear L2 key, and clear L3 keys were provided locally.
+Signing image: /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/mcfg_sw.mbn
+attestation_certificate_extensions = /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/General_Assets/Signing/openssl/v3_attest.ext
+ca_certificate_extensions = /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/General_Assets/Signing/openssl/v3.ext
+openssl_configfile = /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/General_Assets/Signing/openssl/opensslroot.cfg
+Using QC HMAC for hash segment
+Using PKCS RSA padding
+Using a predefined Root certificate and a predefined key
+Key Used: /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Signing/Local/asus_fdc_8996_certs-key2048_exp3/apsa_rootca.key
+Certificate Used: /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Signing/Local/asus_fdc_8996_certs-key2048_exp3/apsa_rootca.cer
+Using a predefined Attestation CA certificate and a predefined key
+Key Used: /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Signing/Local/asus_fdc_8996_certs-key2048_exp3/apsa_attestca.key
+Certificate Used: /usr/Qualcomm_SignTool/8937_8996/qualcomm_sectools/resources/data_prov_assets/Signing/Local/asus_fdc_8996_certs-key2048_exp3/apsa_attestca.cer
+Generating new Attestation certificate and a random key
+
+Attestation Certificate Properties:
+| SW_ID     | 0x0000000000000002  |
+| HW_ID     | 0x0005F0E110438996  |
+| DEBUG     | 0x0000000000000002  |
+| OEM_ID    | 0x1043              |
+| SW_SIZE   | 136                 |
+| MODEL_ID  | 0x8996              |
+| SHA256    | True                |
+| APP_ID    | None                |
+| CRASH_DUMP| None                |
+| ROT_EN    | None                |
+| Exponent  | 3                   |
+| TCG_MIN   | None                |
+| TCG_MAX   | None                |
+| FID_MIN   | None                |
+| FID_MAX   | None                |
+
+Signed image is stored at /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/signed_image_8996pro/8996/mcfg_sw/mcfg_sw.mbn
+
+Base Properties: 
+| Integrity Check                 | True  |
+| Signed                          | True  |
+| Encrypted                       | False |
+| Size of signature               | 256   |
+| Size of one cert                | 2048  |
+| Num of certs in cert chain      | 3     |
+| Number of root certs            | 1     |
+| Hash Page Segments as segments  | False |
+| Cert chain size                 | 6144  |
+
+ELF Properties: 
+Elf Header: 
+| Magic                      | ELF                           |
+| Class                      | ELF32                          |
+| Data                       | 2's complement, little endian  |
+| Version                    | 1 (Current)                    |
+| OS/ABI                     | No extensions or unspecified   |
+| ABI Version                | 0                              |
+| Type                       | EXEC (Executable file)         |
+| Machine                    | No machine                     |
+| Version                    | 0x1                            |
+| Entry address              | 0x00000000                     |
+| Program headers offset     | 0x00000034                     |
+| Section headers offset     | 0x00000000                     |
+| Flags                      | 0x00000005                     |
+| ELF header size            | 52                             |
+| Program headers size       | 32                             |
+| Number of program headers  | 1                              |
+| Section headers size       | 40                             |
+| Number of section headers  | 0                              |
+| String table section index | 0                              |
+
+Elf Program Headers: 
+| S.No | Type | Offset | VirtAddr | PhysAddr | FileSize | MemSize | Flags | Align |
+|------|------|--------|----------|----------|----------|---------|-------|-------|
+|  1   | LOAD | 0x3000 |   0x0    |   0x0    |  0x5884  |  0x5884 |  0x6  | 0x4   |
+
+Hash Segment Properties: 
+| Header Size  | 40B  |
+
+Header: 
+| cert_chain_ptr  | 0x00006188  |
+| cert_chain_size | 0x00001800  |
+| code_size       | 0x00000060  |
+| data_is_none    | 0x00000000  |
+| flash_parti_ver | 0x00000003  |
+| image_dest_ptr  | 0x00006028  |
+| image_id        | 0x00000000  |
+| image_size      | 0x00001960  |
+| image_src       | 0x00000000  |
+| sig_ptr         | 0x00006088  |
+| sig_size        | 0x00000100  |
+
+SecElf Properties: 
+| image_type        | 0     |
+| max_elf_segments  | 100   |
+| testsig_serialnum | None  |
+
+------------------------------------------------------
+
+SUMMARY:
+Following actions were performed: "sign"
+Output is saved at: /home/freddy_chiu/Release/201010701_19.0.0_M11_180329/ASUS_8996_M_20012503/modem_proc/mcfg/configs/mcfg_sw/generic/common/ASUS_MBNs/Reliance/signed_image_8996pro
+
+| Idx | SignId | Parse | Integrity | Sign | Encrypt |              Validate              |
+|     |        |       |           |      |         | Parse | Integrity | Sign | Encrypt |
+|-----|--------|-------|-----------|------|---------|-------|-----------|------|---------|
+|  1. |mcfg_sw |   T   |     NA    |  T   |    NA   |   NA  |     NA    |  NA  |    NA   |
+

@@ -1,0 +1,12 @@
+andsf_rule_mgr_active:1;
+lte_meas_alpha:50;
+lte_sampling_interval:1000;
+lte_avg_interval:5000;
+wifi_meas_alpha:65;
+wifi_sampling_interval:1000;
+wifi_avg_interval:5000;
+cdma_1x_meas_alpha:50;
+cdma_1x_avg_interval:6000;
+cdma_1x_acq_hyst_interval:3000;
+cdma_1x_lost_hyst_interval:3000;
+cdma_1x_sampling_interval:2000;

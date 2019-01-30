@@ -1,0 +1,138 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 7+5 mode Device configuration file for CMCC subsidized devices
+$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/DevConfig/7+5_mode/1x+L/device_config.xml#3 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 9522096 $"
+        schema_ver  = "1"
+        policy_ver  = "2029.1.2"
+>
+
+  <initial>
+    <actions>
+
+      <!-- Define device configuration as DSDS -->
+      <device_configuration num_sims="2" max_active_voice="1" max_active_data="1">
+        <config primary="C H G W L T" secondary="G" />
+        <config primary="C H G" secondary="G W L T" />
+        <e911_config primary="C H G W L T" secondary="G" />
+        <e911_config primary="C H G" secondary="G W L T" />
+      </device_configuration>
+
+      <!-- These are the CMCC IMSI PLMNs -->
+      <plmn_list name= "cmcc_imsi">
+        460-00 460-02 460-07 460-08
+      </plmn_list>
+
+      <!-- These are the CT IMSI MCCs -->
+      <mcc_list name="ct_mccs">
+        455 460
+      </mcc_list>
+
+      <boolean_define name="cm:1xdata_allowed" initial="false" />
+
+    </actions>
+  </initial>
+
+  <!-- RULE #1 -->
+  <!-- 1x data is not allowed for CT+non-CT combination. 
+       Rest all combinations it is allowed.
+  -->
+  <if precond="none">
+    <cond> <true /> </cond>
+    <then>
+      <boolean_set name="cm:1xdata_allowed">
+        <any_of>
+
+          <!-- Either: all subscriptions are CT -->
+          <all_of>
+            <imsi_mcc_in session="1x" list="ct_mccs" />
+            <any_of>
+              <num_subs> 1 </num_subs>
+              <imsi_mcc_in subs="other" session="1x" list="ct_mccs" />
+            </any_of>
+          </all_of>
+
+          <!-- Or: none of the subscriptions are CT -->
+          <all_of>
+            <not> <imsi_mcc_in session="1x" list="ct_mccs" /> </not>
+            <any_of>
+              <num_subs> 1 </num_subs>
+              <not> <imsi_mcc_in subs="other" session="1x" list="ct_mccs" /> </not>
+            </any_of>
+          </all_of>
+          
+        </any_of>
+      </boolean_set>
+      <continue/>
+    </then>
+  </if>
+
+  <!-- RULE #2 -->
+  <!-- If two CMCC cards, the one with DDS gets most capability -->
+  <if precond="none">
+    <cond>
+      <imsi_plmn_in subs="this" list="cmcc_imsi" />
+      <imsi_plmn_in subs="other" list="cmcc_imsi" />
+    </cond>
+    <then>
+      <if>
+       <cond> <is_subs_dds /> </cond>
+       <then> <select_config index="0" /> </then>
+       <else> <select_config index="1" /> </else>
+      </if>
+    </then>
+  </if>
+
+  <!-- If only one CMCC card it gets max capability -->
+  <!-- RULE #3 -->
+  <if precond="none">
+    <cond> <imsi_plmn_in subs="this" list="cmcc_imsi" /> </cond>
+    <then> <select_config index="0" /> </then>
+  </if>
+
+  <!-- RULE #4 -->
+  <if precond="none">
+    <cond> <imsi_plmn_in subs="other" list="cmcc_imsi" /> </cond>
+    <then> <select_config index="1" /> </then>
+  </if>
+
+  <!-- If two foreign cards, the one with DDS gets most capability -->
+  <!-- RULE #5 -->
+  <if precond="none">
+    <cond>
+      <not> <imsi_mcc_in subs="this" list="home_mccs" /> </not>
+      <not> <imsi_mcc_in subs="other" list="home_mccs" /> </not>
+    </cond>
+    <then>
+      <if>
+       <cond> <is_subs_dds /> </cond>
+       <then> <select_config index="0" /> </then>
+       <else> <select_config index="1" /> </else>
+      </if>
+    </then>
+  </if>
+
+  <!-- If only one foreign card, it gets max capability. Otherwise, max cap follows DDS -->
+  <!-- RULE #6 -->
+  <if precond="none">
+    <cond> <not> <imsi_mcc_in subs="this" list="home_mccs" /> </not> </cond>
+    <then> <select_config index="0" /> </then>
+  </if>
+
+  <!-- RULE #7 -->
+  <if precond="none">
+    <cond> <not> <imsi_mcc_in subs="other" list="home_mccs" /> </not> </cond>
+    <then> <select_config index="1" /> </then>
+  </if>
+
+  <!-- Otherwise follow normal DDS rules -->
+  <!-- RULE #8 -->
+  <if precond="none">
+    <cond> <true /> </cond>
+    <then> <select_config index="-1" /> </then>
+  </if>
+
+</policy>
