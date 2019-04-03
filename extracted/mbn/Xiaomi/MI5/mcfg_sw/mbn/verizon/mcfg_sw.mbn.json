@@ -287,8 +287,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Node>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -372,8 +371,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -389,8 +387,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsRatHoConfig": {
@@ -472,11 +469,11 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Carrier configuration file for SRLTE with CHGWL roaming",
+      "<!-- Carrier configuration file for SRLTE with CHGWL roaming ",
       "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 10156175 $\"",
+      "        changelist  = \"$Change: 10156175 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"29.1.10\"",
@@ -488,7 +485,7 @@
       "      <!-- List of the MCCs in which SRLTE is allowed -->",
       "      <mcc_list name=\"sxlte_mccs\"> 310 311 312 </mcc_list>",
       "",
-      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed",
+      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed ",
       "       -->",
       "      <!-- NOTE: Proper functioning of the SXLTE policy requires that there",
       "           be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
@@ -498,7 +495,7 @@
       "      </plmn_list>",
       "",
       "      <boolean_define name=\"cm:rpm_enabled\" initial=\"true\" />",
-      "",
+      "      ",
       "      <!-- Define the hybr_oos timer with a 1 minute interval -->",
       "      <define_timer name = \"hybr_oos\" interval = \"1\" units = \"min\" id = \"101\" />",
       "",
@@ -517,7 +514,7 @@
       "        <lte_bands base=\"hardware\" />",
       "        <tds_bands base=\"none\" />",
       "      </rf_bands>",
-      "",
+      "      ",
       "      <!-- Boolean: Is the device at home? -->",
       "      <boolean_define name=\"home\" initial=\"true\" />",
       "      <boolean_set name=\"home\">",
@@ -567,15 +564,14 @@
       "",
       "  <!-- RULE #3 -->",
       "  <!-- If conditions allow, operate as SRLTE otherwise CSFB.",
-      "  -->",
+      "  -->  ",
       "  <if>",
       "    <cond> <boolean_test name=\"home\" /> </cond>",
       "    <then> <ue_mode> 1X_CSFB_PREF </ue_mode> </then>",
       "    <else> <ue_mode> CSFB </ue_mode> </else>",
       "  </if>",
-      "",
-      "</policy>",
-      ""
+      "       ",
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -701,7 +697,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AABvcAIGAAAgTgAA2NYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQJxAkAAAAAPAABAABgABcAAAAAAAAAIE4AAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanChannelPreference": {
@@ -867,7 +863,7 @@
     "RegDhcpEnabled": 0,
     "RegPreConfigEnabled": 0,
     "RegManagerPreConfigServerBaseString": "",
-    "RegRatConfigString": "12",
+    "RegRatConfigString": "Epc",
     "RegNvPcScfEnabled": 0,
     "RegWlanEnabled": 0,
     "RegUserNameImsi": 0,
@@ -1258,6 +1254,9 @@
     "Field5": 255,
     "Field6": 0
   },
+  "ChgUsbNvdisable": {
+    "Value": 0
+  },
   "DigitalAnalogModePreference": {
     "Nam": 0,
     "Mode": 4
@@ -1397,7 +1396,7 @@
   "SmsMoOnTrafficChannel": {
     "Value": 1
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 1
   },
   "HdrL1DebugMask": {

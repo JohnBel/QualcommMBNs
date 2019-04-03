@@ -9,11 +9,11 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Device configuration file for SRLTE with CHGWL roaming",
+      "<!-- Device configuration file for SRLTE with CHGWL roaming ",
       "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/Sprint/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#2 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 10532472 $\"",
+      "        changelist  = \"$Change: 10532472 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"28.1.8\"",
@@ -25,7 +25,7 @@
       "      <!-- List of the MCCs in which SRLTE is allowed -->",
       "      <mcc_list name=\"sxlte_mccs\"> 310 311 312 313 314 315 316 330</mcc_list>",
       "",
-      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed",
+      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed ",
       "       -->",
       "      <!-- NOTE: Proper functioning of the SXLTE policy requires that there",
       "           be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
@@ -70,8 +70,7 @@
       "    <else> <ue_mode> CSFB </ue_mode> </else>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {

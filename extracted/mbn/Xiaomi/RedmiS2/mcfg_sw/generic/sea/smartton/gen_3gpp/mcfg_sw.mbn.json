@@ -44,8 +44,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "AndsfXml": {
@@ -236,8 +235,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "GnssLppEnable": {
@@ -296,7 +294,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAgTgAAIE4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {

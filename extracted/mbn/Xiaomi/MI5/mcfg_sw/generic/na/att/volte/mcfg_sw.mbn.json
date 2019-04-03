@@ -59,8 +59,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -120,8 +119,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -137,8 +135,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "MmgsdiRefreshVoteOk": {
@@ -244,8 +241,51 @@
       "esp_aes_cbc_encr_key_size_list:128;"
     ]
   },
-  "LteBandpref": {
-    "Value": -33
+  "LteBandPref": {
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": true,
+    "B13": true,
+    "B14": true,
+    "B15": false,
+    "B16": false,
+    "B17": true,
+    "B18": true,
+    "B19": true,
+    "B20": true,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": true,
+    "B26": true,
+    "B27": false,
+    "B28": true,
+    "B29": true,
+    "B30": true,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": false,
+    "B39": false,
+    "B40": true,
+    "B41": false,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "MmodelteDisableDuration": {
     "Value": 0
@@ -288,7 +328,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAADgkwQAIE4AAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {
@@ -871,7 +911,7 @@
   "EDtmFeatureSupport": {
     "Value": 0
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 0
   },
   "CpuBasedFlowControl": {

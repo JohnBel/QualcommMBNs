@@ -91,7 +91,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwP//YgBhAGUAZABjAGYACAAAAHBaX3MAAAAAAcQJAADECQAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {
@@ -492,6 +492,12 @@
   },
   "VoiceDomainPref": {
     "StringValue": "ImsPsVoicePreferred"
+  },
+  "LteBcConfig": {
+    "Value": [
+      133,
+      0
+    ]
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

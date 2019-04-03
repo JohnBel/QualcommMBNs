@@ -164,7 +164,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -186,8 +186,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "ALGO_FLAVOR = 0;",
-      ""
+      "ALGO_FLAVOR = 0;"
     ]
   },
   "ImsUserAgent": {
@@ -1224,7 +1223,6 @@
       "",
       "TRelResponseRetry = 0",
       "",
-      "",
       ""
     ]
   },
@@ -1287,7 +1285,6 @@
       "pcscfv4_attr_type_val:16384;",
       "pcscfv6_attr_type_val:16386;",
       "natt_keep_alive_timer_sec:10;",
-      "",
       ""
     ]
   },

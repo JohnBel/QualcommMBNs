@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       ""
@@ -66,7 +78,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -129,7 +140,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -146,8 +156,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "Mmode1xsxLteOptimization": {
@@ -210,13 +219,13 @@
       "    <freq_list_if list=\"cpfl\" />",
       "",
       "    <feature single_sim=\"srlte\"> dualmmode </feature>",
-      "",
+      "      ",
       "    <boolean_define name=\"cm:L1x_before_GW_in_e911\" initial=\"true\" />",
-      "",
+      "\t",
       "    <boolean_set name=\"cm:L1x_before_GW_in_e911\">",
       "      <current_mcc_in list=\"sxlte_mccs\" />",
       "    </boolean_set>",
-      "",
+      "      ",
       "  </initial>",
       "",
       "  <if>",
@@ -279,8 +288,7 @@
       "    </case>",
       "  </select>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {

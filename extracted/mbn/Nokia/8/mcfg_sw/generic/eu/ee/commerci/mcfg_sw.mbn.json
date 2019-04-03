@@ -66,8 +66,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -138,7 +137,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -155,8 +153,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -198,7 +195,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -220,8 +217,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "ALGO_FLAVOR = 0;",
-      ""
+      "ALGO_FLAVOR = 0;"
     ]
   },
   "ImsUserAgent": {
@@ -1292,7 +1288,6 @@
       "",
       "TRelResponseRetry = 0",
       "",
-      "",
       ""
     ]
   },
@@ -1368,7 +1363,6 @@
       "pdn_throttling_series_default_values:0,0,60+RAND,120,480,900;",
       "pdn_throttling_series_1_values:10,30,60,120,300;",
       "pdn_throttling_series_1_cause_codes:24;",
-      "",
       ""
     ]
   },

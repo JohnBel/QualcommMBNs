@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       "<?xml version=\"1.0\" ?>",
@@ -39,8 +51,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "EmmNasNvItems": {
@@ -105,7 +116,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -168,7 +178,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -185,8 +194,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -265,7 +273,7 @@
       "  <initial>",
       "",
       "    <mcc_list name=\"sxlte_mccs\"> 455 460 </mcc_list>",
-      "",
+      "\t",
       "\t<!-- List of US MCCs and Canada MCCs, where LTE BAND 40 and 41 should be automatically removed -->",
       "    <mcc_list name=\"na_mccs\"> 302 310 311 312 313 314 315 316 330 </mcc_list>",
       "",
@@ -274,7 +282,7 @@
       "    </plmn_list>",
       "",
       "    <boolean_define name=\"pm:carrier_uses_1x_in_china\" initial=\"true\" />",
-      "",
+      "\t",
       "\t<!-- Define  RF band list which excluse LTE Band 40 41-->",
       "      <rf_band_list name=\"no_b40_b41\">",
       "        <gw_bands base=\"hardware\" />",
@@ -318,7 +326,7 @@
       "    <feature single_sim=\"srlte\"> dualmmode </feature>",
       "",
       "    <boolean_define name=\"cm:L1x_before_GW_in_e911\" initial=\"true\" />",
-      "",
+      "\t",
       "    <boolean_set name=\"cm:L1x_before_GW_in_e911\">",
       "      <current_mcc_in list=\"sxlte_mccs\" />",
       "    </boolean_set>",
@@ -390,7 +398,7 @@
       "        <boolean_set name=\"cm:L1x_before_GW_in_e911\" value=\"true\" />",
       "      </then>",
       "    </case>",
-      "",
+      "\t",
       "\t<case>",
       "      <location_mcc_in list=\"na_mccs\" />",
       "      <actions>",
@@ -419,8 +427,7 @@
       "    </case>",
       "  </select>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {
@@ -453,8 +460,51 @@
   "InternalAuth": {
     "Value": 0
   },
-  "LteBandpref": {
-    "Value": 21
+  "LteBandPref": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": false,
+    "B5": true,
+    "B6": false,
+    "B7": false,
+    "B8": false,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": false,
+    "B39": false,
+    "B40": true,
+    "B41": true,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "LteNasTempFplmnBackoffTime": {
     "Value": 0

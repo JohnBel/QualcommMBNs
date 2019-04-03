@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       "<?xml version=\"1.0\" ?>",
@@ -64,8 +76,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "EmmNasNvItems": {
@@ -109,7 +120,7 @@
       "                    <Node>",
       "                        <AccessTechnology>1</AccessTechnology>",
       "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
-      "                    </Node>",
+      "                    </Node>                    \t",
       "                    <Node>",
       "                        <AccessTechnology>3</AccessTechnology>",
       "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
@@ -123,8 +134,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -165,7 +175,7 @@
       "                    <Node>",
       "                        <AccessTechnology>1</AccessTechnology>",
       "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
-      "                    </Node>",
+      "                    </Node>                    \t",
       "                    <Node>",
       "                        <AccessTechnology>3</AccessTechnology>",
       "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
@@ -179,8 +189,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -196,8 +205,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -233,7 +241,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 60;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -293,7 +301,7 @@
       "UTRAN_RSCP_Single_in = -113;",
       "UTRAN_ECIO_Single_out = -17;",
       "UTRAN_ECIO_Single_in = -12;",
-      "GERAN_RSSI_Single_out = -103;",
+      "GERAN_RSSI_Single_out = -103;  ",
       "GERAN_RSSI_Single_in = -98;",
       "GERAN_BER_Single_out = 7;",
       "GERAN_BER_Single_in = 6;",
@@ -343,8 +351,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "GnssLppEnable": {
@@ -356,8 +363,51 @@
   "ImsOperationMode": {
     "Value": 2
   },
-  "LteBandpref": {
-    "Value": -33
+  "LteBandPref": {
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": true,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": true,
+    "B18": false,
+    "B19": false,
+    "B20": true,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": false,
+    "B40": false,
+    "B41": false,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "Profile1": {
     "Values": "AQABAFQAAAAMAAAApaWlpREAAAB8AgAAAAAAAAAAAAABEBAAaW50ZXJuZXQudGVsZWtvbREAAQADFQAEAAAAAAAWAAQAAAAAAB4ABAAAAAAALwABAAA1AAEA/x8AAQAANgABAAA+AAEAAEEAAQAAQgABAAA="

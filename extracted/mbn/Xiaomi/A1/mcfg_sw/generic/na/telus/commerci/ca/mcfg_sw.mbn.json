@@ -60,8 +60,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "AndsfXml": {
@@ -121,18 +120,17 @@
       "                        <Node>",
       "                            <AccessTechnology>3</AccessTechnology>",
       "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
-      "                        </Node>",
+      "                        </Node>                        ",
       "                    </RoutingRule>",
       "                    <RulePriority>1</RulePriority>",
-      "                </Node>",
+      "                </Node>                           ",
       "            </ForServiceBased>",
       "            <Roaming>0</Roaming>",
       "            <PLMN>12344</PLMN>",
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -192,18 +190,17 @@
       "                        <Node>",
       "                            <AccessTechnology>3</AccessTechnology>",
       "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
-      "                        </Node>",
+      "                        </Node>                        ",
       "                    </RoutingRule>",
       "                    <RulePriority>1</RulePriority>",
-      "                </Node>",
+      "                </Node>                           ",
       "            </ForServiceBased>",
       "            <Roaming>0</Roaming>",
       "            <PLMN>12344</PLMN>",
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -303,8 +300,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "GnssLppEnable": {

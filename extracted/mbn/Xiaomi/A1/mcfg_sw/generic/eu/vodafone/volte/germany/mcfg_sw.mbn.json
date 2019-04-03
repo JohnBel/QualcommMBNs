@@ -38,8 +38,8 @@
       "                <enabled>TRUE</enabled>",
       "            </pcscf_reselection_info>",
       "            <dpd_info>",
-      "                <liveness_check_enabled>TRUE</liveness_check_enabled>",
-      "            </dpd_info>",
+      "                <liveness_check_enabled>TRUE</liveness_check_enabled> ",
+      "            </dpd_info>            ",
       "        </ikev2_info>",
       "        <err_code_info>",
       "            <pdn_throttling>",
@@ -75,8 +75,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "EmmNasNvItems": {
@@ -134,8 +133,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -190,8 +188,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -207,8 +204,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -274,8 +270,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "ImsEnable": {

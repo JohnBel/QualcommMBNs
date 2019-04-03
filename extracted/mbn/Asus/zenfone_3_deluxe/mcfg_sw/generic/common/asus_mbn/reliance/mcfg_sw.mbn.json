@@ -51,8 +51,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -107,8 +106,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -124,8 +122,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsRatHoConfig": {
@@ -294,8 +291,7 @@
       "epdg_fqdn_impi_based:TRUE;",
       "ikev2_self_id_type:ID_RFC822_ADDR_MAC_IMPI_BASED;",
       "#esp_auth_algo_list:1,2;",
-      "#configured_ike_port:4500;",
-      ""
+      "#configured_ike_port:4500;"
     ]
   },
   "Profile1": {
@@ -336,7 +332,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAmDoAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {
@@ -769,8 +765,7 @@
   },
   "RmnetConfigTxt": {
     "Values": [
-      "<config><instance_1><instance>1</instance><link_prot>IP </link_prot><qos>disabled</qos><ul_tlp>disabled</ul_tlp><autoconnect>disabled</autoconnect><ip_type>IPV4</ip_type><3gpp_profile>3</3gpp_profile><3gpp2_profile>000</3gpp2_profile></instance_1></config>",
-      "",
+      "<config><instance_1><instance>1</instance><link_prot>IP </link_prot><qos>disabled</qos><ul_tlp>disabled</ul_tlp><autoconnect>disabled</autoconnect><ip_type>IPV4</ip_type><3gpp_profile>3</3gpp_profile><3gpp2_profile>000</3gpp2_profile></instance_1></config> ",
       "",
       ""
     ]
@@ -840,7 +835,7 @@
   "SmsMoRetryInterval": {
     "Value": 0
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 0
   },
   "VoipRegistrationMode": {

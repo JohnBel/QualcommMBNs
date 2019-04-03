@@ -21,8 +21,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "Gsm": {
@@ -30,21 +29,20 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "epdg_fqdn:EPDG.epc.mnc002.mcc262.pub.3gppnetwork.org;",
-      "esp_rekey_timer_soft_sec:80000;",
-      "esp_rekey_timer_hard_sec:86400;",
-      "ikev2_sa_rekey_timer_soft_sec:3000;",
-      "ikev2_sa_rekey_timer_hard_sec:3600;",
-      "ikev2_dpd_timer_sec:4200;",
-      "ikev2_self_id_type:ID_RFC822_ADDR;",
-      "ke_payload_enabled:TRUE;",
-      "ikev2_retransmit_timer_sec:2;",
-      "ikev2_max_retries:3;",
-      "#configured_ike_port:4500;",
-      "#ikev2_peer_id_type:ID_FQDN",
-      "#pcscfv4_attr_type_val:16384;",
-      "pcscfv6_attr_type_val:16390;",
-      ""
+      "epdg_fqdn:EPDG.epc.mnc002.mcc262.pub.3gppnetwork.org;\r",
+      "esp_rekey_timer_soft_sec:80000;\r",
+      "esp_rekey_timer_hard_sec:86400;\r",
+      "ikev2_sa_rekey_timer_soft_sec:3000;\r",
+      "ikev2_sa_rekey_timer_hard_sec:3600;\r",
+      "ikev2_dpd_timer_sec:4200;\r",
+      "ikev2_self_id_type:ID_RFC822_ADDR;\r",
+      "ke_payload_enabled:TRUE;\r",
+      "ikev2_retransmit_timer_sec:2;\r",
+      "ikev2_max_retries:3;\r",
+      "#configured_ike_port:4500;\r",
+      "#ikev2_peer_id_type:ID_FQDN\r",
+      "#pcscfv4_attr_type_val:16384;\r",
+      "pcscfv6_attr_type_val:16390;\r"
     ]
   },
   "PbmHardcodedEccConfig": {
@@ -178,6 +176,9 @@
   },
   "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
     "Value": 2000
+  },
+  "C0Bc0Lna1OffsetVsFreq": {
+    "Value": null
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

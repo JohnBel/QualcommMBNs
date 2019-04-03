@@ -175,8 +175,7 @@
       "    </case>",
       "  </select>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "D2lresel": {
@@ -309,7 +308,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAAARmFjdG9yeSBVUkkgb2YgMyBwYXJ0eSBjYWxsOiBQbGVhc2UgY29uZmlndXJlIGl0IGFjY29yZGluZ2x5LgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanChannelPreference": {
@@ -876,7 +875,7 @@
   "SmsMoOnTrafficChannel": {
     "Value": 1
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 1
   },
   "VoipRegistrationMode": {

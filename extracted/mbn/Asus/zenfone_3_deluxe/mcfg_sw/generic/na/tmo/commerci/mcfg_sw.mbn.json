@@ -64,8 +64,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -130,8 +129,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -147,8 +145,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsRatHoConfig": {
@@ -303,8 +300,7 @@
       "    </else>",
       "  </if>",
       "",
-      "  </policy>",
-      ""
+      "  </policy>"
     ]
   },
   "Ds3gppMtu": {
@@ -335,8 +331,7 @@
       "ikev2_self_id_type:ID_RFC822_ADDR;",
       "ikev2_peer_id_type:ID_FQDN;",
       "ikev2_dh_group_list:14,2,5;",
-      "multiple_ip_addr_support:TRUE;",
-      ""
+      "multiple_ip_addr_support:TRUE;"
     ]
   },
   "MmodelteDisableDuration": {
@@ -380,7 +375,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAgTgAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {

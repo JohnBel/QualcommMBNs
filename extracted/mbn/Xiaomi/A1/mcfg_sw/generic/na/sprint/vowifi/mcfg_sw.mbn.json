@@ -61,8 +61,7 @@
       "            <dpd_timer_sec>600</dpd_timer_sec>",
       "        </ikev2_info>",
       "    </GENERIC_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "AndsfXml": {
@@ -123,8 +122,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -185,8 +183,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -202,8 +199,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -262,7 +258,7 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Device configuration file for SRLTE with CHGWL roaming",
+      "<!-- Device configuration file for SRLTE with CHGWL roaming ",
       "$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/Sprint/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
@@ -303,8 +299,7 @@
       "    <else> <ue_mode> CSFB </ue_mode> </else>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -316,8 +311,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "ExcludePtmsiTypeField": {

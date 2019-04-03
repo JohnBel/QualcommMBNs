@@ -60,7 +60,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>"
+      "</IWLAN_S2B_CONFIG>    "
     ]
   },
   "Profile5": {
@@ -134,7 +134,6 @@
       "        </Node>",
       "    </ISRP>",
       "</ANDSF>",
-      "",
       ""
     ]
   },
@@ -206,14 +205,12 @@
       "        </Node>",
       "    </ISRP>",
       "</ANDSF>",
-      "",
       ""
     ]
   },
   "DsAndsfConfigTxt": {
     "Values": [
-      "andsf_rule_mgr_active:1;lte_meas_alpha:50;lte_sampling_interval:1000;lte_avg_interval:5000;wifi_meas_alpha:65;wifi_sampling_interval:1000;wifi_avg_interval:5000;cdma_1x_meas_alpha:50;cdma_1x_avg_interval:6000;cdma_1x_acq_hyst_interval:3000;cdma_1x_lost_hyst_interval:3000;cdma_1x_sampling_interval:2000;",
-      ""
+      "andsf_rule_mgr_active:1;lte_meas_alpha:50;lte_sampling_interval:1000;lte_avg_interval:5000;wifi_meas_alpha:65;wifi_sampling_interval:1000;wifi_avg_interval:5000;cdma_1x_meas_alpha:50;cdma_1x_avg_interval:6000;cdma_1x_acq_hyst_interval:3000;cdma_1x_lost_hyst_interval:3000;cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -309,7 +306,7 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML.",
+      "<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML. ",
       "$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#1 $",
       "-->",
       "",
@@ -321,10 +318,10 @@
       "  <initial>",
       "",
       "    <plmn_list name=\"unrestricted_operators\">",
-      "      440-07 440-08",
-      "      440-50 440-51 440-52 440-53 440-54 440-55 440-56",
-      "      440-70 440-71 440-72 440-73 440-74 440-75 440-76 440-77 440-78 440-79",
-      "      440-88 440-89",
+      "      440-07 440-08 ",
+      "      440-50 440-51 440-52 440-53 440-54 440-55 440-56 ",
+      "      440-70 440-71 440-72 440-73 440-74 440-75 440-76 440-77 440-78 440-79 ",
+      "      440-88 440-89 ",
       "      441-70",
       "    </plmn_list>",
       "",
@@ -404,10 +401,9 @@
       "        <call_mode> NORMAL </call_mode>",
       "      </then>",
       "    </case>",
-      "  </select>",
+      "  </select> ",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "D2lresel": {

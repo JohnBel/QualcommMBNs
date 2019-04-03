@@ -54,8 +54,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "SuppressAddUpdateParam": {
@@ -116,8 +115,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -172,8 +170,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -189,8 +186,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -242,7 +238,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 60;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -339,22 +335,22 @@
       "      <plmn_list name = \"test-plmn\">",
       "        001-01",
       "      </plmn_list>",
-      "",
+      "\t  ",
       "\t  <boolean_define name=\"pm:allow_tds_on_this_sub\" initial=\"true\" />",
-      "",
+      "\t  ",
       "  </initial>",
       "",
-      "  <!-- RULE #1 -->",
-      "  <!-- Use test sim card -->",
-      "  <if>",
-      "    <imsi_plmn_in list = \"test-plmn\" />",
-      "  <then>",
-      "    <rat_capability base=\"none\">",
-      "       <include> T G W L C H </include>",
-      "    </rat_capability>",
-      "    <rat_order> L W T G C H </rat_order>",
-      "  </then>",
-      "  </if>",
+      "  <!-- RULE #1 --> ",
+      "  <!-- Use test sim card --> ",
+      "  <if> ",
+      "    <imsi_plmn_in list = \"test-plmn\" /> ",
+      "  <then> ",
+      "    <rat_capability base=\"none\"> ",
+      "       <include> T G W L C H </include> ",
+      "    </rat_capability> ",
+      "    <rat_order> L W T G C H </rat_order> ",
+      "  </then> ",
+      "  </if> ",
       "  <!-- RULE #2 -->",
       "  <!-- Set voice domain to TRUE upon seeing US MCCs  -->",
       "  <rule>",
@@ -367,8 +363,7 @@
       "    </actions>",
       "  </rule>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {

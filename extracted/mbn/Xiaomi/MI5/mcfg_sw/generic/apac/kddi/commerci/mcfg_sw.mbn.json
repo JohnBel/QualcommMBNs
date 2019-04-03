@@ -69,13 +69,13 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML.",
+      "<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML. ",
       "       Power up and LPM is in Full RAT mode.",
       "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#2 $",
       "-->",
       "",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 10532472 $\"",
+      "        changelist  = \"$Change: 10532472 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"43.1.7\"",
@@ -249,8 +249,7 @@
       "    </actions>",
       "  </rule>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "D2lresel": {
@@ -380,7 +379,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": null
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanChannelPreference": {
@@ -854,7 +853,7 @@
   "SmsMoOnTrafficChannel": {
     "Value": 1
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 1
   },
   "VoipRegistrationMode": {

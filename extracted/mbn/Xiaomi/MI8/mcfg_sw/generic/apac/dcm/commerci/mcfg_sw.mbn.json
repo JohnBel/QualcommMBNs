@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       ""
@@ -127,8 +139,7 @@
       "    </else>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {

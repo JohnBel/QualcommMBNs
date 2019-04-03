@@ -104,7 +104,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAIE4AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanChannelPreference": {
@@ -276,7 +276,7 @@
     "RegDhcpEnabled": 0,
     "RegPreConfigEnabled": 0,
     "RegManagerPreConfigServerBaseString": "155.165.125.199:5060",
-    "RegRatConfigString": "12",
+    "RegRatConfigString": "Epc",
     "RegNvPcScfEnabled": 0,
     "RegWlanEnabled": 0,
     "RegUserNameImsi": 0,

@@ -38,8 +38,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -80,8 +79,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -97,8 +95,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "MidCallSrvccInfo": {
@@ -162,8 +159,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "Gsm": {
@@ -189,8 +185,7 @@
       "ikev2_peer_id_type:ID_FQDN;",
       "static_fqdn_enabled:FALSE;ikev2_dh_group_list:5,1;",
       "pcscfv4_attr_type_val:20;",
-      "pcscfv6_attr_type_val:21;",
-      ""
+      "pcscfv6_attr_type_val:21;"
     ]
   },
   "PbmHardcodedEccConfig": {
@@ -325,7 +320,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {
@@ -794,6 +789,9 @@
   },
   "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
     "Value": 2000
+  },
+  "C0Bc0Lna1OffsetVsFreq": {
+    "Value": null
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

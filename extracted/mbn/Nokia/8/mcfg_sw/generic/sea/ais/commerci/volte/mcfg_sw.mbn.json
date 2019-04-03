@@ -40,8 +40,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -82,8 +81,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -99,8 +97,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -150,7 +147,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -172,8 +169,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "ALGO_FLAVOR = 0;",
-      ""
+      "ALGO_FLAVOR = 0;"
     ]
   },
   "ImsUserAgent": {
@@ -236,8 +232,8 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "epdg_fqdn:epdg.epc.mnc003.mcc520.pub.3gppnetwork.org;",
-      "static_fqdn_enabled:FALSE;",
+      "epdg_fqdn:epdg.epc.mnc003.mcc520.pub.3gppnetwork.org; ",
+      "static_fqdn_enabled:FALSE; ",
       "ke_payload_enabled:FALSE;",
       "ikev2_self_id_type:ID_RFC822_ADDR;",
       "pcscfv4_attr_type_val:20;",
@@ -251,8 +247,7 @@
       "esp_aes_cbc_encr_key_size_list:128;",
       "esp_auth_algo_list:2;",
       "#esp_auth_algo_list:1,2;",
-      "#configured_ike_port:4500;",
-      ""
+      "#configured_ike_port:4500;"
     ]
   },
   "LteDisableDuration": {

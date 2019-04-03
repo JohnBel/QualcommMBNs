@@ -1267,7 +1267,6 @@
       "",
       "TRelResponseRetry = 0",
       "",
-      "",
       ""
     ]
   },
@@ -1305,8 +1304,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:5;",
-      ""
+      "Attach_Profile_ID:5;"
     ]
   },
   "ImsEnable": {

@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      0,
+      4,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "Profile5": {
     "Values": "AQAFAHcAAAANAAAApaWlpc8CAACdEgAAAAAAAAAAAABBAAEAAkIAAQACRQAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAwAdnp3ZW1lcmdlbmN5EQABAAMfAAEAATEAAQAANgABAAE3AAIAAP84AAIANwE5AAMA4AEBPgABAAA/AAEAAA=="
   },
@@ -333,8 +345,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Node>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -414,8 +425,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -431,8 +441,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -461,7 +470,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -483,7 +492,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "MAX_1x_samples = 5;",
+      "MAX_1x_samples = 5; ",
       "LTE_MONITOR_TIME_SEC = 2;",
       "ALGO_FLAVOR = 1;"
     ]
@@ -534,11 +543,11 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Carrier configuration file for SRLTE with CHGWL roaming",
+      "<!-- Carrier configuration file for SRLTE with CHGWL roaming ",
       "$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#5 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 14181480 $\"",
+      "        changelist  = \"$Change: 14181480 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"29.1.16\"",
@@ -557,7 +566,7 @@
       "    </plmn_list>",
       "",
       "    <plmn_list name = \"vzw_lte_plmns\" include=\"hplmn ehplmn\">",
-      "        310-004 310-010 310-012 310-013 310-590 310-890 310-910 311-110 311-270 311-271 311-272 311-273 311-274 311-275 311-276 311-277 311-278 311-279 311-280",
+      "        310-004 310-010 310-012 310-013 310-590 310-890 310-910 311-110 311-270 311-271 311-272 311-273 311-274 311-275 311-276 311-277 311-278 311-279 311-280 ",
       "        311-281 311-282 311-283 311-284 311-285 311-286 311-287 311-288 311-289 311-390 311-480 311-481 311-482 311-483 311-484 311-485 311-486 311-487 311-488 311-489",
       "    </plmn_list>",
       "",
@@ -590,13 +599,13 @@
       "    </all_of>",
       "    <then>",
       "      <boolean_set name=\"cm:silent_redial_restricted_on_GW\">",
-      "        <serving_plmn_in list=\"vzw_lte_plmns\" />",
+      "        <serving_plmn_in list=\"vzw_lte_plmns\" /> ",
       "      </boolean_set>",
       "      <svc_mode> FULL </svc_mode>",
       "      <continue/>",
       "    </then>",
-      "    <else>",
-      "      <stop />",
+      "    <else> ",
+      "      <stop /> ",
       "    </else>",
       "  </if>",
       "",
@@ -646,8 +655,7 @@
       "    </else>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -721,8 +729,7 @@
       "#esp_auth_algo_list:1,2;",
       "#configured_ike_port:4500;",
       "ikev2_self_id_type: ID_RFC822_ADDR_MAC_IMPI_BASED;",
-      "multiple_ip_addr_support:TRUE;",
-      ""
+      "multiple_ip_addr_support:TRUE;"
     ]
   },
   "LteDisableDuration": {

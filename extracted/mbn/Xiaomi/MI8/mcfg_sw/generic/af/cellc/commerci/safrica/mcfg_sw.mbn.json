@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       "<?xml version=\"1.0\" ?>",
@@ -37,8 +49,7 @@
       "            <configured_ike_port>4500</configured_ike_port>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "SuppressAddUpdateParam": {
@@ -78,15 +89,14 @@
       "                    </RoutingRule>",
       "                    <IsAPIOverride>1</IsAPIOverride>",
       "                    <RulePriority>1</RulePriority>",
-      "                </Node>",
+      "                </Node>                                 ",
       "            </ForServiceBased>",
       "            <Roaming>0</Roaming>",
       "            <PLMN>12344</PLMN>",
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -120,15 +130,14 @@
       "                    </RoutingRule>",
       "                    <IsAPIOverride>1</IsAPIOverride>",
       "                    <RulePriority>1</RulePriority>",
-      "                </Node>",
+      "                </Node>                                 ",
       "            </ForServiceBased>",
       "            <Roaming>0</Roaming>",
       "            <PLMN>12344</PLMN>",
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -188,7 +197,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 60;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -248,7 +257,7 @@
       "UTRAN_RSCP_Single_in = -113;",
       "UTRAN_ECIO_Single_out = -17;",
       "UTRAN_ECIO_Single_in = -12;",
-      "GERAN_RSSI_Single_out = -103;",
+      "GERAN_RSSI_Single_out = -103;  ",
       "GERAN_RSSI_Single_in = -98;",
       "GERAN_BER_Single_out = 7;",
       "GERAN_BER_Single_in = 6;",
@@ -328,22 +337,22 @@
       "      <plmn_list name = \"test-plmn\">",
       "        001-01",
       "      </plmn_list>",
-      "",
+      "\t  ",
       "\t  <boolean_define name=\"pm:allow_tds_on_this_sub\" initial=\"true\" />",
-      "",
+      "\t  ",
       "  </initial>",
       "",
-      "  <!-- RULE #1 -->",
-      "  <!-- Use test sim card -->",
-      "  <if>",
-      "    <imsi_plmn_in list = \"test-plmn\" />",
-      "  <then>",
-      "    <rat_capability base=\"none\">",
-      "       <include> T G W L C H </include>",
-      "    </rat_capability>",
-      "    <rat_order> L W T G C H </rat_order>",
-      "  </then>",
-      "  </if>",
+      "  <!-- RULE #1 --> ",
+      "  <!-- Use test sim card --> ",
+      "  <if> ",
+      "    <imsi_plmn_in list = \"test-plmn\" /> ",
+      "  <then> ",
+      "    <rat_capability base=\"none\"> ",
+      "       <include> T G W L C H </include> ",
+      "    </rat_capability> ",
+      "    <rat_order> L W T G C H </rat_order> ",
+      "  </then> ",
+      "  </if> ",
       "  <!-- RULE #2 -->",
       "  <!-- Set voice domain to TRUE upon seeing US MCCs  -->",
       "  <rule>",
@@ -356,8 +365,7 @@
       "    </actions>",
       "  </rule>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -372,8 +380,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "GnssLppEnable": {

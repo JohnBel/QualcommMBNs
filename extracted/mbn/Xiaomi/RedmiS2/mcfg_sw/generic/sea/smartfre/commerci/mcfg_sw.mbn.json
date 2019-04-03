@@ -180,8 +180,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "GnssLppEnable": {
@@ -201,7 +200,7 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "ikev2_peer_id_type:ID_FQDN;",
+      "ikev2_peer_id_type:ID_FQDN; ",
       "epdg_fqdn:epdg.epc.mnc009.mcc510.pub.3gppnetwork.org;",
       "epdg_tunnel_config_timer_sec:40;",
       "ikev2_self_id_type:ID_RFC822_ADDR;",
@@ -259,7 +258,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAIE4AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanChannelPreference": {
@@ -431,7 +430,7 @@
     "RegDhcpEnabled": 0,
     "RegPreConfigEnabled": 0,
     "RegManagerPreConfigServerBaseString": "155.165.125.199:5060",
-    "RegRatConfigString": "12",
+    "RegRatConfigString": "Epc",
     "RegNvPcScfEnabled": 0,
     "RegWlanEnabled": 0,
     "RegUserNameImsi": 0,

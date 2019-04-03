@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      0,
+      4,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "Profile5": {
     "Values": "AQAFAHcAAAANAAAApaWlpc8CAACdEgAAAAAAAAAAAABBAAEAAkIAAQACRQAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAwAdnp3ZW1lcmdlbmN5EQABAAMfAAEAATEAAQAANgABAAE3AAIAAP84AAIANwE5AAMA4AEBPgABAAA/AAEAAA=="
   },
@@ -333,8 +345,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Node>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -414,8 +425,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -431,8 +441,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -458,7 +467,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -480,7 +489,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "MAX_1x_samples = 5;",
+      "MAX_1x_samples = 5; ",
       "LTE_MONITOR_TIME_SEC = 2;",
       "ALGO_FLAVOR = 1;"
     ]
@@ -528,24 +537,23 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Carrier Policy for Verizon RPM property",
+      "<!-- Carrier Policy for Verizon RPM property ",
       "$Header:  $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change:  $\"",
+      "        changelist  = \"$Change:  $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"54.1.0\"",
       ">",
       "  <initial>",
       "    <actions>",
-      "",
+      "\t",
       "      <boolean_define name=\"cm:rpm_enabled\" initial=\"true\" />",
-      "",
+      "    ",
       "    </actions>",
       "  </initial>",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -610,8 +618,7 @@
       "#esp_auth_algo_list:1,2;",
       "#configured_ike_port:4500;",
       "ikev2_self_id_type: ID_RFC822_ADDR_MAC_IMPI_BASED;",
-      "multiple_ip_addr_support:TRUE;",
-      ""
+      "multiple_ip_addr_support:TRUE;"
     ]
   },
   "LteDisableDuration": {

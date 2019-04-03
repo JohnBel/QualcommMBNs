@@ -43,7 +43,7 @@
       "",
       "  <!-- reject 1x Data if either of cards is CMCC",
       "  -->",
-      "",
+      "  ",
       "  <boolean_set name=\"cm:reject_1xdata\">",
       "    <any_of>",
       "      <imsi_plmn_in subs=\"this\" list=\"cmcc_imsi\" />",
@@ -116,8 +116,7 @@
       "    </case>",
       "  </select>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "Profile5": {

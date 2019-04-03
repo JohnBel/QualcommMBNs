@@ -159,6 +159,12 @@
     "MbrThreshold": 0,
     "QosOptimization": 0
   },
+  "TdscdmaBcConfigDiv": {
+    "Value": 0
+  },
+  "TdscdmaBcConfig": {
+    "Value": 0
+  },
   "VoipPrfrdCodec": {
     "Value": 0
   },
@@ -190,8 +196,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "GnssLppEnable": {
@@ -209,12 +214,9 @@
   "Ip6DefaultMtu": {
     "Value": 1430
   },
-  "RfnvTdscdmaBcConfig": {
-    "ValueString": ""
-  },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "ikev2_peer_id_type:ID_FQDN;",
+      "ikev2_peer_id_type:ID_FQDN; ",
       "epdg_fqdn:epdg.epc.mnc009.mcc510.pub.3gppnetwork.org;",
       "epdg_tunnel_config_timer_sec:40;",
       "ikev2_self_id_type:ID_RFC822_ADDR;",
@@ -225,8 +227,51 @@
       "#configured_ike_port:4500;"
     ]
   },
-  "LteBandpref": {
-    "Value": -35
+  "LteBandPref": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": true,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": false,
+    "B40": true,
+    "B41": false,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "LteDisableDuration": {
     "Value": 0
@@ -275,7 +320,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAIE4AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanChannelPreference": {
@@ -785,6 +830,15 @@
   },
   "WcdmaRrcFastReturnToLteAfterCsfb": {
     "Value": 1
+  },
+  "LteBcConfig": {
+    "Value": [
+      687195291869,
+      0
+    ]
+  },
+  "RfBcConfigDiv": {
+    "Value": 562950025249664
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

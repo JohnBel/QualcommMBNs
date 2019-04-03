@@ -37,7 +37,7 @@
       "                    <Node>",
       "                        <AccessTechnology>1</AccessTechnology>",
       "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
-      "                    </Node>",
+      "                    </Node>                    \t",
       "                    <Node>",
       "                        <AccessTechnology>3</AccessTechnology>",
       "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
@@ -51,8 +51,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -93,7 +92,7 @@
       "                    <Node>",
       "                        <AccessTechnology>1</AccessTechnology>",
       "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
-      "                    </Node>",
+      "                    </Node>                    \t",
       "                    <Node>",
       "                        <AccessTechnology>3</AccessTechnology>",
       "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
@@ -107,8 +106,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -124,8 +122,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -167,7 +164,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -189,8 +186,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "ALGO_FLAVOR = 0;",
-      ""
+      "ALGO_FLAVOR = 0;"
     ]
   },
   "ImsUserAgent": {
@@ -235,8 +231,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "ImsEnable": {
@@ -266,8 +261,7 @@
       "pcscfv6_attr_type_val:21;",
       "pcscfv4_attr_type_val:20;",
       "#esp_auth_algo_list:1,2;",
-      "#configured_ike_port:4500;",
-      ""
+      "#configured_ike_port:4500;"
     ]
   },
   "Profile1": {

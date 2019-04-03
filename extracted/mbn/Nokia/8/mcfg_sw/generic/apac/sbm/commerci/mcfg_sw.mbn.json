@@ -69,7 +69,7 @@
       "        </gw_bands>",
       "        <lte_bands base=\"none\" >",
       "          <include> 0 1 2 3 6 7 16 24 25 27 37 38 39 40 41 </include>",
-      "        </lte_bands>",
+      "        </lte_bands> ",
       "        <tds_bands base=\"none\" />",
       "      </rf_band_list>",
       "",
@@ -140,8 +140,7 @@
       "    </else>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {

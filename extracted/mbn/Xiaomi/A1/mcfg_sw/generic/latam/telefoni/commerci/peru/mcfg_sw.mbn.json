@@ -44,8 +44,7 @@
       "            </esp_auth_algo_list>",
       "        </ikev2_info>",
       "    </WP_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "EmmNasNvItems": {

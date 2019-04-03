@@ -36,7 +36,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 60;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -96,7 +96,7 @@
       "UTRAN_RSCP_Single_in = -113;",
       "UTRAN_ECIO_Single_out = -17;",
       "UTRAN_ECIO_Single_in = -12;",
-      "GERAN_RSSI_Single_out = -103;",
+      "GERAN_RSSI_Single_out = -103;  ",
       "GERAN_RSSI_Single_in = -98;",
       "GERAN_BER_Single_out = 7;",
       "GERAN_BER_Single_in = 6;",
@@ -1333,7 +1333,6 @@
       "",
       "TRelResponseRetry = 0",
       "",
-      "",
       ""
     ]
   },
@@ -1366,8 +1365,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:5;",
-      ""
+      "Attach_Profile_ID:5;"
     ]
   },
   "ImsEnable": {

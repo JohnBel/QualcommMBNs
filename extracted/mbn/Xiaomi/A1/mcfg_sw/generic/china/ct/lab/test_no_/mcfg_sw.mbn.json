@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       ""
@@ -66,7 +78,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -129,7 +140,6 @@
       "        </Node>",
       "    </ISRP>",
       " </ANDSF>",
-      "",
       ""
     ]
   },
@@ -146,8 +156,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "Mmode1xsxLteOptimization": {
@@ -179,16 +188,16 @@
       "  <initial>",
       "",
       "    <mcc_list name=\"sxlte_mccs\"> 455 460 </mcc_list>",
-      "",
+      "\t",
       "\t<mcc_list name=\"na_mccs\"> 302 310 311 312 313 314 315 316 330 </mcc_list>",
       "",
       "    <plmn_list name = \"sxlte_plmns\">",
       "      455-02 455-07 460-03 460-11",
       "    </plmn_list>",
-      "",
+      "\t",
       "",
       "    <boolean_define name=\"pm:carrier_uses_1x_in_china\" initial=\"true\" />",
-      "",
+      "\t",
       "\t<!-- Define  RF band list which excluse LTE Band 40 41-->",
       "      <rf_band_list name=\"no_b40_b41\">",
       "        <gw_bands base=\"hardware\" />",
@@ -230,13 +239,13 @@
       "    <freq_list_if list=\"cpfl\" />",
       "",
       "    <feature single_sim=\"srlte\"> dualmmode </feature>",
-      "",
+      "      ",
       "    <boolean_define name=\"cm:L1x_before_GW_in_e911\" initial=\"true\" />",
-      "",
+      "\t",
       "    <boolean_set name=\"cm:L1x_before_GW_in_e911\">",
       "      <current_mcc_in list=\"sxlte_mccs\" />",
       "    </boolean_set>",
-      "",
+      "      ",
       "  </initial>",
       "",
       "  <if>",
@@ -286,7 +295,7 @@
       "        <boolean_set name=\"cm:L1x_before_GW_in_e911\" value=\"true\" />",
       "      </then>",
       "    </case>",
-      "",
+      "\t",
       "\t<case>",
       "      <location_mcc_in list=\"na_mccs\" />",
       "      <actions>",
@@ -315,8 +324,7 @@
       "    </case>",
       "  </select>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {

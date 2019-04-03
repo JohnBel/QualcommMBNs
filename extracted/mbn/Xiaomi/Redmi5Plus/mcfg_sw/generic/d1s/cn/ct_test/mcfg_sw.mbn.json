@@ -57,8 +57,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -119,8 +118,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -136,8 +134,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsRatHoConfig": {
@@ -186,6 +183,12 @@
     "MbrThreshold": 0,
     "QosOptimization": 0
   },
+  "TdscdmaBcConfigDiv": {
+    "Value": 33
+  },
+  "TdscdmaBcConfig": {
+    "Value": 33
+  },
   "UeBasedCw": {
     "Value1": 0,
     "Value2": 1
@@ -221,7 +224,7 @@
       "$Header: //commercial/MPSS.TA.2.3.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/openMarket/volte/carrier_policy.xml#3 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 15100486 $\"",
+      "        changelist  = \"$Change: 15100486 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"112.2.2\"",
@@ -232,7 +235,7 @@
       "    <!-- List of the MCCs in which SRLTE is allowed -->",
       "    <mcc_list name=\"sxlte_mccs\"> 455 460 </mcc_list>",
       "",
-      "    <!-- These are the serving system PLMNs for which SRLTE will be allowed",
+      "    <!-- These are the serving system PLMNs for which SRLTE will be allowed ",
       "     -->",
       "    <!-- NOTE: Proper functioning of the SRLTE policy requires that there",
       "         be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
@@ -282,7 +285,7 @@
       "    <feature single_sim=\"srlte\"> dualmmode </feature>",
       "",
       "    <boolean_define name=\"cm:L1x_before_GW_in_e911\" initial=\"true\" />",
-      "",
+      "\t",
       "    <boolean_set name=\"cm:L1x_before_GW_in_e911\">",
       "      <current_mcc_in list=\"sxlte_mccs\" />",
       "    </boolean_set>",
@@ -297,7 +300,7 @@
       "      <phone_operating_mode> ONLINE </phone_operating_mode>",
       "      <have_location />",
       "    </all_of>",
-      "    <then>",
+      "    <then> ",
       "      <svc_mode> FULL </svc_mode>",
       "      <continue/>",
       "    </then>",
@@ -354,7 +357,7 @@
       "        <boolean_set name=\"cm:L1x_before_GW_in_e911\" value=\"false\" />",
       "      </actions>",
       "    </case>",
-      "  </select>",
+      "  </select> ",
       "",
       "</policy>"
     ]
@@ -398,9 +401,6 @@
   "InternalAuth": {
     "Value": 0
   },
-  "RfnvTdscdmaBcConfig": {
-    "ValueString": "!"
-  },
   "IwlanS2bConfigTxt": {
     "Values": [
       "static_fqdn_enabled:FALSE;",
@@ -411,12 +411,54 @@
       "ikev2_peer_id_type:ID_FQDN;",
       "ikev2_dh_group_list:14,2,5;",
       "#esp_auth_algo_list:1,2;",
-      "#configured_ike_port:4500;",
-      ""
+      "#configured_ike_port:4500;"
     ]
   },
-  "LteBandpref": {
-    "Value": -43
+  "LteBandPref": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": false,
+    "B5": true,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": true,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": true,
+    "B40": true,
+    "B41": true,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "LteNasTempFplmnBackoffTime": {
     "Value": 0
@@ -435,7 +477,6 @@
     "Value": 1
   },
   "PbmEccNums": {
-    "Value": "AAMDOTExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAMDMTEyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
     "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
   },
   "PbmHardcodedEccConfig": {
@@ -576,7 +617,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAIE4AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdAHWAJwF0AfHgcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {
@@ -1084,6 +1125,15 @@
     "Field3": 30,
     "Field4": 255,
     "Field5": 0
+  },
+  "LteBcConfig": {
+    "Value": [
+      2070174236885,
+      0
+    ]
+  },
+  "RfBcConfigDiv": {
+    "Value": 562950025249667
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

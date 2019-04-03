@@ -99,7 +99,6 @@
       "ikev2_retransmit_timer_sec:3;",
       "ikev2_max_retries:6;",
       "",
-      "",
       ""
     ]
   },
@@ -244,7 +243,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAIE4AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {
@@ -776,7 +775,7 @@
   "SmsMoOnTrafficChannel": {
     "Value": 1
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 0
   },
   "VoipRegistrationMode": {

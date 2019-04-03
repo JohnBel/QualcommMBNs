@@ -23,15 +23,14 @@
       "        <e911_config primary=\"C H G W L T\" secondary=\"G W\" />",
       "        <e911_config primary=\"C H G W\" secondary=\"G W L T\" />",
       "      </device_configuration>",
-      "",
+      "\t  ",
       "      <feature subs=\"this\">  dualmmode </feature>",
       "      <feature subs=\"other\"> dualmmode </feature>",
-      "",
+      "\t  ",
       "    </actions>",
       "  </initial>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "Banner": {

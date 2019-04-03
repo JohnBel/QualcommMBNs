@@ -63,8 +63,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "Gsm": {
@@ -97,8 +96,7 @@
       "#configured_ike_port:4500;",
       "#ikev2_peer_id_type:ID_FQDN",
       "#pcscfv4_attr_type_val:16384;",
-      "pcscfv6_attr_type_val:16390;",
-      ""
+      "pcscfv6_attr_type_val:16390;"
     ]
   },
   "PbmHardcodedEccConfig": {
@@ -233,7 +231,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {
@@ -711,6 +709,9 @@
   },
   "WcdmaRrcFeature": {
     "Value": 0
+  },
+  "C0Bc0Lna1OffsetVsFreq": {
+    "Value": null
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

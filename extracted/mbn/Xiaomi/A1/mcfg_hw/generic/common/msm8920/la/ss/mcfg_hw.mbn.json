@@ -3,7 +3,7 @@
     "Values": [
       "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Device configuration file for single sim CHGWLT config",
+      "<!-- Device configuration file for single sim CHGWLT config ",
       "$Header: //commercial/MPSS.TA.3.0.c1/Main/modem_proc/mmcp/policyman/configurations/DevConfig/SS/device_config.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
@@ -19,8 +19,7 @@
       "",
       "  </initial>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "ImsHybridEnable": {

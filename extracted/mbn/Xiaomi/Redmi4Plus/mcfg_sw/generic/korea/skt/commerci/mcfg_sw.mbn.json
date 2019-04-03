@@ -102,7 +102,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": null
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {
@@ -503,6 +503,9 @@
   },
   "VoiceDomainPref": {
     "StringValue": "CsVoiceOnly"
+  },
+  "LteBcConfig": {
+    "Value": null
   },
   "DigitalAnalogModePreference": {
     "Nam": 35,

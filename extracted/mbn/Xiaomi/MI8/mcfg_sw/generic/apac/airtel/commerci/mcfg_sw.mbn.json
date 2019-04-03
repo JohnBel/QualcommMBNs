@@ -1,4 +1,16 @@
 {
+  "DisableCapIes": {
+    "Value": [
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
   "IwlanS2bConfigXml": {
     "Values": [
       ""
@@ -50,7 +62,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -95,8 +107,7 @@
       "WCDMA_SamplingTimer = 500;",
       "WWAN_GUARD_TIMER = 7;",
       "WLAN_GUARD_TIMER = 7;",
-      "WCDMA_Count_Suspended_State = 10;",
-      ""
+      "WCDMA_Count_Suspended_State = 10;"
     ]
   },
   "ImsUserAgent": {
@@ -371,8 +382,7 @@
       "#This config is required to enable 380 response validation as per",
       "#3GPP.",
       "",
-      "*enableAlternateSrvRspCheck = 0",
-      ""
+      "*enableAlternateSrvRspCheck = 0"
     ]
   },
   "QpImsPlaniConfig": {
@@ -418,8 +428,51 @@
   "ImsOperationMode": {
     "Value": 2
   },
-  "LteBandpref": {
-    "Value": 21
+  "LteBandPref": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": false,
+    "B5": true,
+    "B6": false,
+    "B7": false,
+    "B8": false,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": false,
+    "B39": false,
+    "B40": true,
+    "B41": true,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "Profile1": {
     "Values": "AQABABcAAAACAAAApaWlpRgAAAAYAAAAAAAAAAAAAAABEA4AYWlydGVsZ3Bycy5jb20RAAEAAw=="

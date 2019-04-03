@@ -172,8 +172,7 @@
       "    </actions>",
       "  </rule>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "HdrAcqDivEnable": {
@@ -277,6 +276,9 @@
     "Field4": -120,
     "Field5": 255,
     "Field6": 0
+  },
+  "ChgUsbNvdisable": {
+    "Value": 0
   },
   "DigitalAnalogModePreference": {
     "Nam": 4,

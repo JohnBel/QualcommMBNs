@@ -18,7 +18,7 @@
       "$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/openMarket/carrier_policy.xml#2 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 9995784 $\"",
+      "        changelist  = \"$Change: 9995784 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"74.2.22\"",
@@ -30,7 +30,7 @@
       "      <!-- List of the MCCs in which SRLTE is allowed -->",
       "      <mcc_list name=\"sxlte_mccs\"> 455 460 </mcc_list>",
       "",
-      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed",
+      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed ",
       "       -->",
       "      <!-- NOTE: Proper functioning of the SRLTE policy requires that there",
       "           be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
@@ -38,7 +38,7 @@
       "      <plmn_list name = \"sxlte_plmns\">",
       "        455-02 455-07 460-03 460-11",
       "      </plmn_list>",
-      "",
+      "\t  ",
       "      <define_fullrat_config>",
       "        <actions>",
       "          <ue_mode> CSFB </ue_mode>",
@@ -83,12 +83,12 @@
       "",
       "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
       "      <freq_list_if list=\"cpfl\" />",
-      "",
+      "      ",
       "      <feature single_sim=\"srlte\"> dualmmode </feature>",
-      "",
+      "      ",
       "    </actions>",
       "  </initial>",
-      "",
+      "  ",
       "  <!-- RULE #1 -->",
       "  <rule precond=\"none\">",
       "    <conditions>",
@@ -146,7 +146,7 @@
       "      <freq_list list=\"cpfl\" />",
       "    </actions>",
       "  </rule>",
-      "",
+      "  ",
       "  <!-- RULE #5 -->",
       "  <!-- Otherwise we're in a GWL configuration",
       "  -->",
@@ -164,9 +164,8 @@
       "      <freq_list list=\"default\" />",
       "    </actions>",
       "  </rule>",
-      "",
-      "</policy>",
-      ""
+      "  ",
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {
@@ -210,7 +209,6 @@
     "Value": 1
   },
   "PbmEccNums": {
-    "Value": "AAMDOTExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAMDMTEyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
     "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
   },
   "PbmHardcodedEccConfig": {

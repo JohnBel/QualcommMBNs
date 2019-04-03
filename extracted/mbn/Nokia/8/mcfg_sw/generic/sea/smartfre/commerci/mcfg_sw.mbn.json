@@ -52,8 +52,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -109,8 +108,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -126,8 +124,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsSipConfig": {
@@ -158,7 +155,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -180,8 +177,7 @@
       "DeltaMediaDLJitterAcceptable = -19;",
       "DeltaMediaDLQDJSpeechBad = -1;",
       "DeltaMediaDLQDJSilenceBad = -8;",
-      "ALGO_FLAVOR = 0;",
-      ""
+      "ALGO_FLAVOR = 0;"
     ]
   },
   "ImsUserAgent": {
@@ -224,11 +220,11 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Carrier Policy file for SRLTE+G DSDS with CHGWL roaming",
+      "<!-- Carrier Policy file for SRLTE+G DSDS with CHGWL roaming ",
       "$Header: //commercial/MPSS.AT.2.0.c4/Main/modem_proc/mmcp/policyman/configurations/Carrier/SmartFren/subsidized/carrier_policy.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 12215027 $\"",
+      "        changelist  = \"$Change: 12215027 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"71.1.2\"",
@@ -240,7 +236,7 @@
       "      <!-- List of the MCCs in which SRLTE is allowed -->",
       "      <mcc_list name=\"sxlte_mccs\"> 510 </mcc_list>",
       "",
-      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed",
+      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed ",
       "       -->",
       "      <!-- NOTE: Proper functioning of the SXLTE policy requires that there",
       "           be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
@@ -263,7 +259,7 @@
       "",
       "      <!-- Define Intial UE mode as 1X_CSFB_PREF -->",
       "      <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>",
-      "",
+      "      ",
       "      <feature> srlte </feature>",
       "",
       "      <!-- Boolean: Is the device at home? -->",
@@ -298,7 +294,7 @@
       "  </rule>",
       "",
       "  <!-- RULE #2 -->",
-      "  <!-- If we have no service on the multimode subscription and we are ONLINE",
+      "  <!-- If we have no service on the multimode subscription and we are ONLINE ",
       "           do not continue to other rules.",
       "  -->",
       "  <rule precond=\"none\">",
@@ -319,13 +315,12 @@
       "  <!-- If conditions allow operate as SRLTE, otherwise stay in CSFB.",
       "  -->",
       "  <if>",
-      "    <cond> <boolean_test name=\"home\" /> </cond>",
+      "    <cond> <boolean_test name=\"home\" /> </cond>    ",
       "    <then> <ue_mode> 1X_CSFB_PREF </ue_mode> </then>",
       "    <else> <ue_mode> CSFB </ue_mode> </else>",
       "  </if>",
-      "",
-      "</policy>",
-      ""
+      "       ",
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -354,7 +349,7 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "ikev2_peer_id_type:ID_FQDN;",
+      "ikev2_peer_id_type:ID_FQDN; ",
       "epdg_fqdn:epdg.epc.mnc009.mcc510.pub.3gppnetwork.org;",
       "epdg_tunnel_config_timer_sec:40;",
       "ikev2_self_id_type:ID_RFC822_ADDR;",
@@ -362,8 +357,7 @@
       "static_fqdn_enabled:FALSE;",
       "ikev2_dh_group_list:14,2,5;",
       "#esp_auth_algo_list:1,2;",
-      "#configured_ike_port:4500;",
-      ""
+      "#configured_ike_port:4500;"
     ]
   },
   "OneXAdvancedCapability": {

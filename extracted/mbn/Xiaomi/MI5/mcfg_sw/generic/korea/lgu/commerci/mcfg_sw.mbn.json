@@ -82,7 +82,7 @@
       "      <mcc_list name=\"home_mccs\"> 450 </mcc_list>",
       "",
       "      <define_fullrat_config>",
-      "        <actions>",
+      "        <actions>   ",
       "          <rf_bands />",
       "          <rat_capability base=\"none\">",
       "            <include> LTE </include>",
@@ -92,7 +92,7 @@
       "       </actions>",
       "      </define_fullrat_config>",
       "",
-      "      <!-- Home RF Band list -->",
+      "      <!-- Home RF Band list --> ",
       "      <rf_band_list name=\"rf_bands_home\">",
       "        <!-- LTE Band: 1, 5, 7",
       "        -->",
@@ -101,7 +101,7 @@
       "        </lte_bands>",
       "        <tds_bands base=\"none\" />",
       "      </rf_band_list>",
-      "",
+      "\t  ",
       "      <!-- Set initial power up capability -->",
       "      <rat_capability_if base=\"none\">",
       "        <include> LTE </include>",
@@ -152,8 +152,7 @@
       "    </else>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "DsDsdAttachProfileTxt": {
@@ -305,7 +304,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADSBNgEZABhAGAAYgBrAGUACAAAAeYE5gRoAGYAAcQJAADECQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {

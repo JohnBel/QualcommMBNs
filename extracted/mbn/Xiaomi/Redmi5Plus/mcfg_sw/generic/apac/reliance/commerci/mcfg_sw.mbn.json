@@ -51,8 +51,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -107,8 +106,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -124,8 +122,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsRatHoConfig": {
@@ -246,7 +243,7 @@
       "$Header: //components/rel/mmcp.mpss/8.0.2/policyman/configurations/Carrier/OpenMarket/7+5_mode/RJIL/carrier_policy.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 12070021 $\"",
+      "        changelist  = \"$Change: 12070021 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"116.2.0\"",
@@ -266,21 +263,21 @@
       "    <boolean_define name=\"RJILnotActive\" initial=\"true\" />",
       "    <boolean_define name=\"PreviousRoam\" initial=\"false\" />",
       "",
-      "    <boolean_define name=\"PrevGSMinModePref\" initial=\"false\" />",
+      "    <boolean_define name=\"PrevGSMinModePref\" initial=\"false\" />  ",
       "    <boolean_set name=\"PrevGSMinModePref\">",
       "      <user_mode_pref_contains> GSM </user_mode_pref_contains>",
       "    </boolean_set>",
-      "",
-      "    <boolean_define name=\"PrevWCDMAinModePref\" initial=\"false\" />",
+      "  ",
+      "    <boolean_define name=\"PrevWCDMAinModePref\" initial=\"false\" />  ",
       "    <boolean_set name=\"PrevWCDMAinModePref\">",
       "      <user_mode_pref_contains> WCDMA </user_mode_pref_contains>",
       "    </boolean_set>",
       "",
       "    <!-- Define the GW_timer timer with a 1 minute interval -->",
       "    <define_timer name = \"GW_timer\" interval = \"720\" units = \"min\" id = \"1005\" />",
-      "",
+      "      ",
       "  </initial>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
       "    <then>",
@@ -293,7 +290,7 @@
       "      <stop />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <boolean_test name=\"previousLPM\" />",
       "    <then>",
@@ -305,7 +302,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <num_subs> 1 </num_subs>",
@@ -316,7 +313,7 @@
       "      <stop />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <num_subs> 2 </num_subs>",
@@ -331,7 +328,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <num_subs> 1 </num_subs>",
@@ -346,7 +343,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <boolean_test name=\"PrevGSMinModePref\" />",
@@ -361,7 +358,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <user_mode_pref_contains> GSM </user_mode_pref_contains>",
@@ -376,7 +373,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <boolean_test name=\"PrevWCDMAinModePref\" />",
@@ -391,7 +388,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <user_mode_pref_contains> WCDMA </user_mode_pref_contains>",
@@ -406,7 +403,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <timer_expired name=\"GW_timer\" />",
@@ -419,7 +416,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <not> <boolean_test name=\"pm:scanCompleted\" /> </not>",
@@ -429,7 +426,7 @@
       "      <stop />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <any_of>",
@@ -448,7 +445,7 @@
       "",
       "  <if precond=\"none\">",
       "        <all_of>",
-      "          <have_location />",
+      "          <have_location /> ",
       "          <not> <location_mcc_in list=\"home_mccs\" /> </not>",
       "        </all_of>",
       "    <then>",
@@ -460,7 +457,7 @@
       "      <boolean_set name=\"PreviousRoam\" value=\"true\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <all_of>",
       "      <any_of>",
@@ -493,7 +490,7 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <boolean_test name=\"pm:scanCompleted\" />",
       "    <then>",
@@ -503,7 +500,7 @@
       "      <timer_start name=\"GW_timer\" />",
       "    </then>",
       "  </if>",
-      "",
+      "  ",
       "  <if precond=\"none\">",
       "    <true/>",
       "    <then>",
@@ -513,9 +510,8 @@
       "      <boolean_set name=\"pm:scanCompleted\" value=\"false\" />",
       "    </then>",
       "  </if>",
-      "",
-      "</policy>",
-      ""
+      "  ",
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {
@@ -526,8 +522,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "ExcludePtmsiTypeField": {
@@ -581,8 +576,7 @@
       "epdg_fqdn_impi_based:TRUE;",
       "ikev2_self_id_type:ID_RFC822_ADDR_MAC_IMPI_BASED;",
       "#esp_auth_algo_list:1,2;",
-      "#configured_ike_port:4500;",
-      ""
+      "#configured_ike_port:4500;"
     ]
   },
   "Profile1": {
@@ -623,7 +617,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAmDoAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {
@@ -1053,8 +1047,7 @@
   },
   "RmnetConfigTxt": {
     "Values": [
-      "<config><instance_1><instance>1</instance><link_prot>IP </link_prot><qos>disabled</qos><ul_tlp>disabled</ul_tlp><autoconnect>disabled</autoconnect><ip_type>IPV4</ip_type><3gpp_profile>3</3gpp_profile><3gpp2_profile>000</3gpp2_profile></instance_1></config>",
-      "",
+      "<config><instance_1><instance>1</instance><link_prot>IP </link_prot><qos>disabled</qos><ul_tlp>disabled</ul_tlp><autoconnect>disabled</autoconnect><ip_type>IPV4</ip_type><3gpp_profile>3</3gpp_profile><3gpp2_profile>000</3gpp2_profile></instance_1></config> ",
       "",
       ""
     ]
@@ -1141,7 +1134,7 @@
   "SmsMoRetryInterval": {
     "Value": 30
   },
-  "VoipPreferredUri": {
+  "VoipPreferredUr": {
     "Value": 0
   },
   "VoipRegistrationMode": {

@@ -1,36 +1,35 @@
 {
   "IwlanS2bConfigXml": {
     "Values": [
-      "<?xml version=\"1.0\" ?>",
-      "<IWLAN_S2B_CONFIG>",
-      "    <GENERIC_VARIANT>",
-      "        <epdg_addr_info>",
-      "            <fqdn>wlan.three.com.hk</fqdn>",
-      "            <pcscf_attr>",
-      "                <v4_attr_type_val>16384</v4_attr_type_val>",
-      "                <v6_attr_type_val>16386</v6_attr_type_val>",
-      "            </pcscf_attr>",
-      "        </epdg_addr_info>",
-      "        <ikev2_info>",
-      "            <self_id>",
-      "                <id_type>ID_RFC822_ADDR</id_type>",
-      "                <mac_enabled>FALSE</mac_enabled>",
-      "                <identifier/>",
-      "            </self_id>",
-      "            <peer_id>",
-      "                <id_type>ID_FQDN</id_type>",
-      "            </peer_id>",
-      "            <ke_payload_enabled>FALSE</ke_payload_enabled>",
-      "            <retransmit_timer_sec>6</retransmit_timer_sec>",
-      "            <ikev2_dh_group_list>",
-      "                <dh_group value=\"2\"/>",
-      "\t\t\t\t<dh_group value=\"5\"/>",
-      "                <dh_group value=\"14\"/>",
-      "\t\t\t\t</ikev2_dh_group_list>",
-      "        </ikev2_info>",
-      "    </GENERIC_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "<?xml version=\"1.0\" ?>\r",
+      "<IWLAN_S2B_CONFIG>\r",
+      "    <GENERIC_VARIANT>\r",
+      "        <epdg_addr_info>\r",
+      "            <fqdn>wlan.three.com.hk</fqdn>\r",
+      "            <pcscf_attr>\r",
+      "                <v4_attr_type_val>16384</v4_attr_type_val>\r",
+      "                <v6_attr_type_val>16386</v6_attr_type_val>\r",
+      "            </pcscf_attr>\r",
+      "        </epdg_addr_info>\r",
+      "        <ikev2_info>\r",
+      "            <self_id>\r",
+      "                <id_type>ID_RFC822_ADDR</id_type>\r",
+      "                <mac_enabled>FALSE</mac_enabled>\r",
+      "                <identifier/>\r",
+      "            </self_id>\r",
+      "            <peer_id>\r",
+      "                <id_type>ID_FQDN</id_type>\r",
+      "            </peer_id>\r",
+      "            <ke_payload_enabled>FALSE</ke_payload_enabled>\r",
+      "            <retransmit_timer_sec>6</retransmit_timer_sec>\r",
+      "            <ikev2_dh_group_list>\r",
+      "                <dh_group value=\"2\"/>\r",
+      "\t\t\t\t<dh_group value=\"5\"/>\r",
+      "                <dh_group value=\"14\"/>\r",
+      "\t\t\t\t</ikev2_dh_group_list>\r",
+      "        </ikev2_info>\r",
+      "    </GENERIC_VARIANT>\r",
+      "</IWLAN_S2B_CONFIG>\r"
     ]
   },
   "Profile5": {
@@ -98,8 +97,7 @@
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -157,15 +155,14 @@
       "                </Node>",
       "            </RoutingRule>",
       "            <RulePriority>1</RulePriority>",
-      "        </MAPCON_4>",
+      "        </MAPCON_4>\t\t",
       "      </ForServiceBased>",
       "      <Roaming>0</Roaming>",
       "      <PLMN>12344</PLMN>",
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -218,7 +215,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 60;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -278,7 +275,7 @@
       "UTRAN_RSCP_Single_in = -113;",
       "UTRAN_ECIO_Single_out = -17;",
       "UTRAN_ECIO_Single_in = -12;",
-      "GERAN_RSSI_Single_out = -103;",
+      "GERAN_RSSI_Single_out = -103;  ",
       "GERAN_RSSI_Single_in = -98;",
       "GERAN_BER_Single_out = 7;",
       "GERAN_BER_Single_in = 6;",
@@ -1508,7 +1505,6 @@
       "",
       "TRelResponseRetry = 0",
       "",
-      "",
       ""
     ]
   },
@@ -1551,8 +1547,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:5;",
-      ""
+      "Attach_Profile_ID:5;"
     ]
   },
   "ImsEnable": {

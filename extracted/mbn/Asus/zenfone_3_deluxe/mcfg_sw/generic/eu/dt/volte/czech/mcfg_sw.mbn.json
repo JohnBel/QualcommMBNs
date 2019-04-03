@@ -47,8 +47,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -99,8 +98,7 @@
       "            <UpdatePolicy>0</UpdatePolicy>",
       "        </Node>",
       "    </ISRP>",
-      " </ANDSF>",
-      ""
+      " </ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -116,8 +114,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "MidCallSrvccInfo": {
@@ -180,8 +177,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "ttach_Profile_ID:1;",
-      ""
+      "ttach_Profile_ID:1;"
     ]
   },
   "Gsm": {
@@ -218,8 +214,51 @@
       "static_fqdn_enabled:FALSE;"
     ]
   },
-  "LteBandpref": {
-    "Value": -33
+  "LteBandPref": {
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": true,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": true,
+    "B18": false,
+    "B19": false,
+    "B20": true,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": false,
+    "B40": false,
+    "B41": false,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "PbmHardcodedEccConfig": {
     "Value": 0
@@ -356,7 +395,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": null
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {
@@ -839,6 +878,9 @@
   },
   "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
     "Value": 0
+  },
+  "C0Bc0Lna1OffsetVsFreq": {
+    "Value": null
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,

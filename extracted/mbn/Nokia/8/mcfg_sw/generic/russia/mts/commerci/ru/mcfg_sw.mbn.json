@@ -157,7 +157,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -202,8 +202,7 @@
       "WCDMA_SamplingTimer = 500;",
       "WWAN_GUARD_TIMER = 7;",
       "WLAN_GUARD_TIMER = 7;",
-      "WCDMA_Count_Suspended_State = 10;",
-      ""
+      "WCDMA_Count_Suspended_State = 10;"
     ]
   },
   "ImsUserAgent": {
@@ -269,18 +268,18 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "epdg_fqdn:epdg.epc.mnc001.mcc250.pub.3gppnetwork.org;",
-      "ke_payload_enabled:FALSE;",
-      "ikev2_dh_group_list:14,2,5;",
-      "pcscfv4_attr_type_val:20;",
-      "pcscfv6_attr_type_val:21;",
-      "ikev2_self_id_type:ID_RFC822_ADDR;",
-      "ikev2_peer_id_type:ID_FQDN;",
-      "ikev2_dpd_timer_sec:120;",
-      "ikev2_sa_rekey_timer_soft_sec:86400;",
-      "ikev2_sa_rekey_timer_hard_sec:87000;",
-      "esp_rekey_timer_soft_sec:14400;",
-      "esp_rekey_timer_hard_sec:14700;"
+      "epdg_fqdn:epdg.epc.mnc001.mcc250.pub.3gppnetwork.org; ",
+      "ke_payload_enabled:FALSE; ",
+      "ikev2_dh_group_list:14,2,5; ",
+      "pcscfv4_attr_type_val:20; ",
+      "pcscfv6_attr_type_val:21; ",
+      "ikev2_self_id_type:ID_RFC822_ADDR; ",
+      "ikev2_peer_id_type:ID_FQDN; ",
+      "ikev2_dpd_timer_sec:120; ",
+      "ikev2_sa_rekey_timer_soft_sec:86400; ",
+      "ikev2_sa_rekey_timer_hard_sec:87000; ",
+      "esp_rekey_timer_soft_sec:14400; ",
+      "esp_rekey_timer_hard_sec:14700; "
     ]
   },
   "LteDisableDuration": {

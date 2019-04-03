@@ -68,7 +68,7 @@
       "#This config is used for hf only (index 7)",
       "*hf_only = 0",
       "",
-      "*Bandwidth = 2",
+      "*Bandwidth = 2  ",
       "",
       "[QIPCALL:EVS_1]",
       "#This config is used for bit rate. (index 2)",
@@ -87,7 +87,7 @@
       "#This config is used for hf only (index 7)",
       "*hf_only = 0",
       "",
-      "*Bandwidth = 1",
+      "*Bandwidth = 1  ",
       "",
       "[QIPCALL:ImsVoiceSuppsConfig]",
       "",
@@ -95,7 +95,6 @@
       "#subscription.",
       "",
       "*confEvtPakageEnabled = QPE_IMS_CONF_PCKG_NONE",
-      "",
       "",
       ""
     ]
@@ -160,8 +159,7 @@
       "    </then>",
       "  </if>",
       "",
-      "</policy>",
-      ""
+      "</policy>"
     ]
   },
   "CustomEmergInfo": {
@@ -198,8 +196,51 @@
   "ImsOperationMode": {
     "Value": 2
   },
-  "LteBandpref": {
-    "Value": -59
+  "LteBandPref": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": false,
+    "B5": false,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": true,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": true,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": true,
+    "B40": true,
+    "B41": true,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "MaxValidateSimCounter": {
     "Value": 10

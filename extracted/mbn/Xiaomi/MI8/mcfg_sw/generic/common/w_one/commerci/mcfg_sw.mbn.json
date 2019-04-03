@@ -11,10 +11,9 @@
       "            <self_id>",
       "                <id_type>ID_RFC822_ADDR</id_type>",
       "            </self_id>",
-      "        </ikev2_info>",
+      "        </ikev2_info>        ",
       "    </GENERIC_VARIANT>",
-      "</IWLAN_S2B_CONFIG>",
-      ""
+      "</IWLAN_S2B_CONFIG>"
     ]
   },
   "Profile5": {

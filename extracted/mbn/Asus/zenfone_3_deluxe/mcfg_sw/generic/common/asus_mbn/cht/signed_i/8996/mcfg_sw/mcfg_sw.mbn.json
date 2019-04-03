@@ -50,15 +50,14 @@
       "            </Node>",
       "          </RoutingRule>",
       "          <RulePriority>1</RulePriority>",
-      "        </MAPCON_3>",
+      "        </MAPCON_3>\t\t",
       "      </ForServiceBased>",
       "      <Roaming>0</Roaming>",
       "      <PLMN>12344</PLMN>",
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DefaultAndsfXml": {
@@ -106,15 +105,14 @@
       "            </Node>",
       "          </RoutingRule>",
       "          <RulePriority>1</RulePriority>",
-      "        </MAPCON_3>",
+      "        </MAPCON_3>\t\t\t\t",
       "      </ForServiceBased>",
       "      <Roaming>0</Roaming>",
       "      <PLMN>12344</PLMN>",
       "      <UpdatePolicy>0</UpdatePolicy>",
       "    </Home>",
       "  </ISRP>",
-      "</ANDSF>",
-      ""
+      "</ANDSF>"
     ]
   },
   "DsAndsfConfigTxt": {
@@ -130,8 +128,7 @@
       "cdma_1x_avg_interval:6000;",
       "cdma_1x_acq_hyst_interval:3000;",
       "cdma_1x_lost_hyst_interval:3000;",
-      "cdma_1x_sampling_interval:2000;",
-      ""
+      "cdma_1x_sampling_interval:2000;"
     ]
   },
   "ImsRatHoConfig": {
@@ -184,8 +181,7 @@
   },
   "DsDsdAttachProfileTxt": {
     "Values": [
-      "Attach_Profile_ID:1;",
-      ""
+      "Attach_Profile_ID:1;"
     ]
   },
   "ImsEnable": {
@@ -199,10 +195,10 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "epdg_fqdn:epdg.epc.mnc092.mcc466.pub.3gppnetwork.org;",
-      "ikev2_dh_group_list:2,5,14;",
-      "pcscfv4_attr_type_val:16384;",
-      "pcscfv6_attr_type_val:16386;",
+      "epdg_fqdn:epdg.epc.mnc092.mcc466.pub.3gppnetwork.org; ",
+      "ikev2_dh_group_list:2,5,14; ",
+      "pcscfv4_attr_type_val:16384; ",
+      "pcscfv6_attr_type_val:16386; ",
       "ikev2_self_id_type:ID_RFC822_ADDR;",
       "ikev2_peer_id_type:ID_KEY_ID;",
       "natt_enabled:TRUE;",
@@ -257,7 +253,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 0
   },
   "QipcallDanEnable": {

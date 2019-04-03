@@ -22,7 +22,7 @@
       "",
       "    <feature subs=\"this\">  dualmmode </feature>",
       "    <feature subs=\"other\"> dualmmode </feature>",
-      "",
+      " ",
       "  </initial>",
       "",
       "</policy>"

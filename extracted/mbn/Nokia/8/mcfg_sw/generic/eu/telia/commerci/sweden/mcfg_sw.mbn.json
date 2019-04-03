@@ -154,7 +154,7 @@
       "MediaULFrameLossAcceptable = 3;",
       "MediaULFrameLossFair = 20;",
       "MediaULFrameLossBad = 50;",
-      "MediaDL95JitterGood = 4;",
+      "MediaDL95JitterGood = 4; ",
       "MediaDL95JitterAcceptable = 40;",
       "MediaDL95JitterFair = 6;",
       "MediaDL95JitterBad = 7;",
@@ -199,8 +199,7 @@
       "WCDMA_SamplingTimer = 500;",
       "WWAN_GUARD_TIMER = 7;",
       "WLAN_GUARD_TIMER = 7;",
-      "WCDMA_Count_Suspended_State = 10;",
-      ""
+      "WCDMA_Count_Suspended_State = 10;"
     ]
   },
   "ImsUserAgent": {
@@ -1236,7 +1235,6 @@
       "#reliable response retry timer cap",
       "",
       "TRelResponseRetry = 0",
-      "",
       "",
       ""
     ]

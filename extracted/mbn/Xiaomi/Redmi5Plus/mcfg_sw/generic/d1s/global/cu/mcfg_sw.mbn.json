@@ -40,6 +40,12 @@
     "MbrThreshold": 0,
     "QosOptimization": 0
   },
+  "TdscdmaBcConfigDiv": {
+    "Value": 0
+  },
+  "TdscdmaBcConfig": {
+    "Value": 0
+  },
   "UeBasedCw": {
     "Value1": 1,
     "Value2": 1
@@ -68,7 +74,7 @@
     "Values": [
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
-      "<!-- Policy for CU CSFB+G DSDS",
+      "<!-- Policy for CU CSFB+G DSDS ",
       "$Header: //commercial/MPSS.TA.2.3.c1/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CU/openMarket/carrier_policy.xml#2 $",
       "-->",
       "<policy name        = \"generic\"",
@@ -83,7 +89,7 @@
       "      <mcc_list name=\"home_mccs\">",
       "        460",
       "      </mcc_list>",
-      "",
+      "\t  ",
       "      <define_fullrat_config>",
       "        <actions>",
       "          <rat_capability base=\"none\" >",
@@ -95,7 +101,7 @@
       "        </actions>",
       "      </define_fullrat_config>",
       "",
-      "      <!-- HOME RF bands list -->",
+      "      <!-- HOME RF bands list --> ",
       "      <rf_band_list name=\"rf_bands_home\">",
       "        <!-- GSM Band mapping: GSM bands are",
       "                B7->GSM_DCS_1800->Bit-7,",
@@ -110,17 +116,17 @@
       "        -->",
       "        <gw_bands base=\"none\" >",
       "          <include> 7 8 9 19 21 22 49 </include>",
-      "        </gw_bands>",
+      "        </gw_bands> ",
       "        <!-- LTE Band: 1, 3, 8, 40 and 41 are mapped to Band Bit: 0, 2, 7, 39 and 40 respectively.",
       "                      Refer: sys_sband_lte_e_type in sys.h",
-      "        -->",
+      "        --> ",
       "        <lte_bands base=\"none\" >",
       "          <include> 0 2 7 39 40 </include>",
-      "        </lte_bands>",
+      "        </lte_bands> ",
       "        <tds_bands base=\"none\" />",
       "      </rf_band_list>",
       "",
-      "      <!-- ROAM RF bands list -->",
+      "      <!-- ROAM RF bands list --> ",
       "      <rf_band_list name=\"rf_bands_roam\">",
       "        <!-- GSM Band mapping: GSM bands are",
       "                B7->GSM_DCS_1800->Bit-7,",
@@ -137,7 +143,7 @@
       "        -->",
       "        <gw_bands base=\"none\" >",
       "          <include> 7 8 9 19 21 22 23 26 49 </include>",
-      "        </gw_bands>",
+      "        </gw_bands> ",
       "        <lte_bands base=\"hardware\" />",
       "        <tds_bands base=\"none\" />",
       "      </rf_band_list>",
@@ -151,7 +157,7 @@
       "      <freq_list_if list=\"cpfl\" />",
       "",
       "      <feature single_sim=\"normal\"> dualmmode </feature>",
-      "",
+      "      ",
       "    </actions>",
       "  </initial>",
       "",
@@ -184,16 +190,15 @@
       "    <cond> <location_mcc_in list=\"home_mccs\" /> </cond>",
       "    <then>",
       "      <rf_bands list=\"rf_bands_home\" />",
-      "      <freq_list list=\"cpfl\" />",
+      "      <freq_list list=\"cpfl\" />      ",
       "    </then>",
       "    <else>",
       "      <rf_bands list=\"rf_bands_roam\" />",
       "      <freq_list list=\"default\" />",
       "    </else>",
       "  </if>",
-      "",
-      "</policy>",
-      ""
+      "  ",
+      "</policy>"
     ]
   },
   "DiffFddTddFgiEnable": {
@@ -226,11 +231,51 @@
   "ImsScrAmrWbEnabled": {
     "Value": 1
   },
-  "RfnvTdscdmaBcConfig": {
-    "ValueString": ""
-  },
-  "LteBandpref": {
-    "Value": -33
+  "LteBandPref": {
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": true,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": false,
+    "B40": true,
+    "B41": false,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
   "NasSrvccSupport": {
     "Value": 1
@@ -239,7 +284,6 @@
     "Value": 2
   },
   "PbmEccNums": {
-    "Value": "AAMDOTExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAMDMTEyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
     "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
   },
   "PbmHardcodedEccConfig": {
@@ -377,7 +421,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAgTgAA2NYAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdAHWAJwF0AfAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUri": {
+  "QipcallConfrdUr": {
     "Value": 1
   },
   "QipcallDanEnable": {
@@ -843,6 +887,15 @@
   },
   "WcdmaRrcFeature": {
     "Value": 0
+  },
+  "LteBcConfig": {
+    "Value": [
+      687195291871,
+      0
+    ]
+  },
+  "RfBcConfigDiv": {
+    "Value": 562950035735424
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,
