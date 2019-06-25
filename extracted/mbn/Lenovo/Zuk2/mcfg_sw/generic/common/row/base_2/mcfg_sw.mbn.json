@@ -1,0 +1,18 @@
+{
+  "Ehplmn": {
+    "Value": null
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 58
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "Banner": {
+    "ValueString": "Base_2"
+  }
+}

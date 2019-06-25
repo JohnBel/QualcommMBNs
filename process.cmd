@@ -4,8 +4,8 @@ set EfsTools=.\utils\EfsTools\EfsTools.exe
 %EfsTools% version
 echo .
 
-call :Log "Extracting MBNs..."
-for /r %%f in ("*.mbn") do call :Extract %%f
+rem call :Log "Extracting MBNs..."
+rem for /r %%f in ("*.mbn") do call :Extract %%f
 
 call :Log "Generating modem configs..."
 for /r %%f in ("*.mbn") do call :GenerateModemConfigs %%f

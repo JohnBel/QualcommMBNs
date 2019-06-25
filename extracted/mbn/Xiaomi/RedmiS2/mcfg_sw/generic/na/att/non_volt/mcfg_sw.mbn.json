@@ -199,7 +199,7 @@
       "esp_aes_cbc_encr_key_size_list:128;"
     ]
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": true,
     "B2": true,
     "B3": true,
@@ -383,7 +383,7 @@
   "EDtmFeatureSupport": {
     "Value": 0
   },
-  "VoipPreferredUr": {
+  "VoipPreferredUrl": {
     "Value": 0
   },
   "CpuBasedFlowControl": {

@@ -8,7 +8,7 @@
   "Lte3gppReleaseVer": {
     "StringValue": "Rel9Sep10"
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": false,
     "B2": true,
     "B3": true,

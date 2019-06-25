@@ -160,7 +160,7 @@
     "Value1": 1,
     "Value2": 0
   },
-  "VoipPrfrdCodec": {
+  "VoipPreferredCodec": {
     "Value": 0
   },
   "WifiConfig": {
@@ -227,7 +227,7 @@
       "#configured_ike_port:4500;\r"
     ]
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": true,
     "B2": true,
     "B3": true,
@@ -285,11 +285,26 @@
   "QipcallCalleridMode": {
     "Value": 16
   },
-  "QipcallCodecModeSet": {
-    "Value": 0
+  "QipcallCodecModeSetAmrNb": {
+    "Enable_4_75kbps": false,
+    "Enable_5_15kbps": false,
+    "Enable_5_9kbps": false,
+    "Enable_6_17kbps": false,
+    "Enable_7_4kbps": false,
+    "Enable_7_95kbps": false,
+    "Enable_10_2kbps": false,
+    "Enable_12_2kbps": false
   },
   "QipcallCodecModeSetAmrWb": {
-    "Value": 0
+    "Enable_6_60kbps": false,
+    "Enable_8_85kbps": false,
+    "Enable_12_65kbps": false,
+    "Enable_14_25kbps": false,
+    "Enable_15_85kbps": false,
+    "Enable_18_25kbps": false,
+    "Enable_19_85kbps": false,
+    "Enable_23_05kbps": false,
+    "Enable_23_85kbps": false
   },
   "QipcallConfigItems": {
     "Version": 25,
@@ -311,7 +326,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUr": {
+  "QipcallConfrdUri": {
     "Value": 0
   },
   "QipcallDanEnable": {

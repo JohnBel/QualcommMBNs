@@ -1,0 +1,11 @@
+PDN_APN_String:IMS;
+Override_Type:API;
+Supported_RAT_Priority_List:WWAN, IWLAN;
+
+PDN_APN_String:internet.telekom;
+Supported_RAT_Priority_List:WWAN;
+
+PDN_APN_String:HOS;
+Override_Type:API;
+Supported_RAT_Priority_List:IWLAN;
+

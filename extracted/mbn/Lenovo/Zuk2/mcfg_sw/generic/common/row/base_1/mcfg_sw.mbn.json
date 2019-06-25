@@ -1,0 +1,30 @@
+{
+  "Ehplmn": {
+    "Value": null
+  },
+  "Bc0Gps1RfDelay": {
+    "Value": 2668
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 13
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "AGpsDefaultQosTime": {
+    "Value": 64
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 775
+  },
+  "Banner": {
+    "ValueString": "Base_1"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 6656
+  }
+}

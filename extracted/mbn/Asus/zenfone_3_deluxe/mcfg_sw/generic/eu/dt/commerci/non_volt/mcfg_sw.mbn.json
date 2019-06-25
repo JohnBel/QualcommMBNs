@@ -151,7 +151,7 @@
       "static_fqdn_enabled:FALSE;"
     ]
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": true,
     "B2": true,
     "B3": true,

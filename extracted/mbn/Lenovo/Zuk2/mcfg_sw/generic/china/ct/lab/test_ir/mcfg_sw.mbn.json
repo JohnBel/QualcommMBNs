@@ -1,0 +1,294 @@
+{
+  "Mmode1xsxLteOptimization": {
+    "Value": "AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "GetNetAutoMode": {
+    "Version": 0,
+    "Value": 1,
+    "Reserved": 0
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier Policy file for SRLTE in open market with GWL roaming (class C)",
+      "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/openMarket/carrier_policy.xml#2 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 10532472 $\" ",
+      "        enabled     = \"true\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"74.2.22\"",
+      ">",
+      "",
+      "  <initial>",
+      "    <actions>",
+      "",
+      "      <!-- List of the MCCs in which SRLTE is allowed -->",
+      "      <mcc_list name=\"sxlte_mccs\"> 455 460 </mcc_list>",
+      "",
+      "      <!-- These are the serving system PLMNs for which SRLTE will be allowed ",
+      "       -->",
+      "      <!-- NOTE: Proper functioning of the SRLTE policy requires that there",
+      "           be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.",
+      "      -->",
+      "      <plmn_list name = \"sxlte_plmns\">",
+      "        455-02 455-07 460-03 460-11",
+      "      </plmn_list>",
+      "\t  ",
+      "      <define_fullrat_config>",
+      "        <actions>",
+      "          <ue_mode> CSFB </ue_mode>",
+      "          <rat_capability base=\"none\">",
+      "            <include> CDMA HDR GSM WCDMA LTE </include>",
+      "          </rat_capability>",
+      "          <rf_bands />",
+      "          <svc_mode> ALL </svc_mode>",
+      "          <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "          <freq_list list=\"cpfl\" />",
+      "        </actions>",
+      "      </define_fullrat_config>",
+      "",
+      "      <!-- Define the 1x_oos timer with a 1 minute interval -->",
+      "      <define_timer name = \"1x_oos\" interval = \"1\" units = \"min\" id = \"100\" />",
+      "",
+      "      <!-- Define a HOME RF band list that include GW and LTE bands -->",
+      "      <rf_band_list name=\"rf_bands_home\">",
+      "        <gw_bands base = \"hardware\" />",
+      "        <lte_bands base = \"none\">",
+      "          <include> 0 2 4 25 37 38 39 40 </include>",
+      "        </lte_bands>",
+      "        <tds_bands base = \"none\" />",
+      "      </rf_band_list>",
+      "",
+      "      <!-- Define initial RAT capability as CHL -->",
+      "      <rat_capability_if base=\"none\" >",
+      "        <include> CDMA HDR LTE </include>",
+      "      </rat_capability_if>",
+      "",
+      "      <!-- Define Intial UE mode as 1X_CSFB_PREF -->",
+      "      <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>",
+      "",
+      "      <!-- On first boot, include Home bands -->",
+      "      <rf_bands_if list=\"rf_bands_home\" />",
+      "",
+      "      <!-- Boolean: Is the device at home? -->",
+      "      <boolean_define name=\"home\" initial=\"true\" />",
+      "      <boolean_set name=\"home\">",
+      "        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>",
+      "      </boolean_set>",
+      "",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "      <freq_list_if list=\"cpfl\" />",
+      "      ",
+      "      <feature single_sim=\"srlte\"> dualmmode </feature>",
+      "      ",
+      "    </actions>",
+      "  </initial>",
+      "  ",
+      "  <!-- RULE #1 -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "    </conditions>",
+      "    <actions />",
+      "  </rule>",
+      "",
+      "  <!-- RULE #2 -->",
+      "  <!-- Determine UE location and continue evaluation if we have service.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <have_location />",
+      "    </conditions>",
+      "    <actions>",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <boolean_set name=\"home\">",
+      "        <location_mcc_in list=\"sxlte_mccs\" />",
+      "      </boolean_set>",
+      "      <continue />",
+      "    </actions>",
+      "  </rule>",
+      "",
+      "  <!-- RULE #3 -->",
+      "  <!-- We wait if we don't have location or we are not ONLINE.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <not> <have_location /> </not>",
+      "    </conditions>",
+      "    <actions />",
+      "  </rule>",
+      "",
+      "  <!--",
+      "  ====================================================================",
+      "    Rules where location info can be used. Rules to implement SRLTE",
+      "  ====================================================================",
+      "  -->",
+      "",
+      "  <!-- RULE #4 -->",
+      "  <!-- If we are home, stay in SRLTE configuration with CHL.",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <boolean_test name=\"home\" />",
+      "    </conditions>",
+      "    <actions>",
+      "      <rf_bands list=\"rf_bands_home\" />",
+      "      <rat_capability base = \"none\">",
+      "        <include> CDMA HDR LTE </include>",
+      "      </rat_capability>",
+      "      <ue_mode> 1X_CSFB_PREF </ue_mode>",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"disabled\" />",
+      "      <freq_list list=\"cpfl\" />",
+      "    </actions>",
+      "  </rule>",
+      "  ",
+      "  <!-- RULE #5 -->",
+      "  <!-- Otherwise we're in a GWL configuration",
+      "  -->",
+      "  <rule precond=\"none\">",
+      "    <conditions>",
+      "      <true />",
+      "    </conditions>",
+      "    <actions>",
+      "      <rat_capability base=\"none\">",
+      "        <include> GSM WCDMA LTE </include>",
+      "      </rat_capability>",
+      "      <rf_bands />",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <scan_optimization tgpp=\"no_auto_camp_only\" tgpp2=\"wrlf\" />",
+      "      <freq_list list=\"default\" />",
+      "    </actions>",
+      "  </rule>",
+      "  ",
+      "</policy>"
+    ]
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Gnss1xUpSuplEnable": {
+    "Value": 0
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 1,
+    "Field2": 65535
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "OperatorName": {
+    "Value": 1
+  },
+  "Profile1": {
+    "Values": "AgBkAA4AAAACAAAApaWlpSZIL0MmSC9DAAAAAAAAAAABEAUAY3RuZXSiAAEAAg=="
+  },
+  "Profile2": {
+    "Values": "AQACABgAAAAEAAAApaWlpdACAADQAgAAAAAAAAAAAAABEAUAY3R3YXARAAEAAx8AAQAANgABAAA="
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": [
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv",
+      "NoSrv"
+    ]
+  },
+  "ScanScopeRule": {
+    "Value": 0
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "WcdmaRrcWtolCmSupport": {
+    "Value": 0
+  },
+  "Bc0Gps1RfDelay": {
+    "Value": 2668
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "Mode": 13
+  },
+  "AGpsDefaultQosTime": {
+    "Value": 64
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 775
+  },
+  "SdConfigurableItems": {
+    "Version": 3,
+    "Items": [
+      60,
+      180,
+      5,
+      1,
+      180,
+      3600,
+      130,
+      3600,
+      130,
+      14,
+      36,
+      4,
+      1,
+      5200,
+      3000,
+      2200,
+      3,
+      253,
+      1000,
+      4,
+      300,
+      300,
+      0,
+      0,
+      0
+    ]
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 0
+  },
+  "DisableCmCallType": {
+    "Value": 0
+  },
+  "GpsDefaultOperatingMode": {
+    "Value": 1
+  },
+  "GpsDefaultTbf": {
+    "Value": 1
+  },
+  "Banner": {
+    "ValueString": "CT_RG_DS_IR"
+  },
+  "GnssOemFeatureMask": {
+    "Value": 6656
+  },
+  "AutoAnswerSetting": {
+    "Enable": 1,
+    "Rings": 3
+  },
+  "IpPppPassword": {
+    "Length": 9,
+    "ValueString": "vnet.mobi"
+  },
+  "PppUserId": {
+    "Length": 15,
+    "ValueString": "ctnet@mycdma.cn"
+  },
+  "PzidHysterisisActivationTimer": {
+    "Value": 0
+  },
+  "PzidHysterisisTimer": {
+    "Value": 0
+  }
+}

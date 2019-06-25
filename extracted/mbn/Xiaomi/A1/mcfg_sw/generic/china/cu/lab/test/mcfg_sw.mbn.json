@@ -46,7 +46,7 @@
   "ImsEnable": {
     "Value": 0
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": true,
     "B2": false,
     "B3": true,

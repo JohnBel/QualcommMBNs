@@ -40,7 +40,7 @@
   "ImsHybridEnable": {
     "Value": 0
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": true,
     "B2": true,
     "B3": true,

@@ -304,7 +304,7 @@
   "Ip6DefaultMtu": {
     "Value": 1430
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": true,
     "B2": false,
     "B3": true,

@@ -50,7 +50,7 @@
     "MbrThreshold": 0,
     "QosOptimization": 0
   },
-  "VoipPrfrdCodec": {
+  "VoipPreferredCodec": {
     "Value": 0
   },
   "QpImsWifiConfig": {
@@ -101,11 +101,26 @@
   "QipcallCalleridMode": {
     "Value": 16
   },
-  "QipcallCodecModeSet": {
-    "Value": 511
+  "QipcallCodecModeSetAmrNb": {
+    "Enable_4_75kbps": true,
+    "Enable_5_15kbps": true,
+    "Enable_5_9kbps": true,
+    "Enable_6_17kbps": true,
+    "Enable_7_4kbps": true,
+    "Enable_7_95kbps": true,
+    "Enable_10_2kbps": true,
+    "Enable_12_2kbps": true
   },
   "QipcallCodecModeSetAmrWb": {
-    "Value": 511
+    "Enable_6_60kbps": true,
+    "Enable_8_85kbps": true,
+    "Enable_12_65kbps": true,
+    "Enable_14_25kbps": true,
+    "Enable_15_85kbps": true,
+    "Enable_18_25kbps": true,
+    "Enable_19_85kbps": true,
+    "Enable_23_05kbps": true,
+    "Enable_23_85kbps": true
   },
   "QipcallConfigItems": {
     "Version": 25,
@@ -127,7 +142,7 @@
     "VideoFeatureTagString": "",
     "ReservedBytes": "AAAAAAAAAAAgTgAA2NYAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdAHWAJwF0AfAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
   },
-  "QipcallConfrdUr": {
+  "QipcallConfrdUri": {
     "Value": 1
   },
   "QipcallDanEnable": {

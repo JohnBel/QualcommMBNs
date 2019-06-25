@@ -373,7 +373,7 @@
   "ImsOperationMode": {
     "Value": 2
   },
-  "LteBandPref": {
+  "LteBandPreference": {
     "B1": false,
     "B2": false,
     "B3": false,

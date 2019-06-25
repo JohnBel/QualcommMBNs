@@ -1,0 +1,7 @@
+[pa]
+thermal_zone pa
+sampling 1000 1000 1000 1000
+thresholds 70 75 80 528
+thresholds_clr -273 68 73 78
+actions mitigate mitigate mitigate mitigate
+action_info 0 1 2 3
