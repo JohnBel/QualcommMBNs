@@ -1,0 +1,12 @@
+<config>
+<instance_1>
+<instance>1</instance>
+<link_prot>IP </link_prot>
+<qos>disabled</qos>
+<ul_tlp>disabled</ul_tlp>
+<autoconnect>enabled</autoconnect>
+<ip_type>IPV4V6</ip_type>
+<3gpp_profile>1</3gpp_profile>
+<3gpp2_profile>000</3gpp2_profile>
+</instance_1>
+</config>

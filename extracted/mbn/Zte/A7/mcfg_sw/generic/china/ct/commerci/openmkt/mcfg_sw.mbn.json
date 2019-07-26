@@ -15,13 +15,13 @@
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
       "<!-- Carrier Policy file for SRLTE in open market with GWL roaming (class C)",
-      "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/openMarket/carrier_policy.xml#3 $",
+      "$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/OpenMarket/7+5_mode/CT/1xSRLTE/openMarket/carrier_policy.xml#2 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 11703632 $\" ",
+      "        changelist  = \"$Change: 9995784 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
-      "        policy_ver  = \"74.2.23\"",
+      "        policy_ver  = \"74.2.22\"",
       ">",
       "",
       "  <initial>",
@@ -59,7 +59,7 @@
       "      <rf_band_list name=\"rf_bands_home\">",
       "        <gw_bands base = \"hardware\" />",
       "        <lte_bands base = \"none\">",
-      "          <include> 0 2 4 25 37 38 39 40 </include>",
+      "          <include> 0 2 25 37 38 39 40 </include>",
       "        </lte_bands>",
       "        <tds_bands base = \"none\" />",
       "      </rf_band_list>",
@@ -205,14 +205,108 @@
     "Field1": 1,
     "Field2": 0
   },
-  "OneXAdvancedCapability": {
-    "Value": 1
-  },
   "OperatorName": {
     "Value": 1
   },
   "PbmEccNums": {
     "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+  },
+  "PbmHardcodedEccConfig": {
+    "Value": 1
+  },
+  "PbmHardcodedEccList": {
+    "Items": [
+      {
+        "DigitsString": "*911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 1,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "#911",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 1,
+        "HardcodedType": 0
+      },
+      {
+        "DigitsString": "000",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "08",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "110",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "999",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "118",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "119",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "120",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      },
+      {
+        "DigitsString": "122",
+        "Value": 0,
+        "CategoryLength": 1,
+        "EmergencyCategory": 0,
+        "Reserved": 0,
+        "EmergencyMode": 2,
+        "HardcodedType": 1
+      }
+    ]
   },
   "PbmNvEccConfig": {
     "Value": 0
@@ -238,9 +332,9 @@
     "Version": 1,
     "Value": [
       15,
-      0,
+      1,
       300,
-      3,
+      2,
       3,
       1,
       60,
@@ -249,9 +343,6 @@
       5,
       2
     ]
-  },
-  "So73Cop0Supported": {
-    "Value": 1
   },
   "Supportfordualrxues": {
     "Value": 1
@@ -270,9 +361,6 @@
   "VoiceDomainPref": {
     "StringValue": "CsVoiceOnly"
   },
-  "WcdmaRrcWtolCmSupport": {
-    "Value": 0
-  },
   "Zz22SelParms": {
     "Field1": 0,
     "Field2": 8,
@@ -284,11 +372,8 @@
     "Nam": 0,
     "Mode": 13
   },
-  "GsmAmrCallConfiguration": {
-    "Value": 1
-  },
-  "VoicePrivacy": {
-    "Value": 1
+  "CdmaReceiveDiversity": {
+    "Value": 0
   },
   "AuthenticationRequirePasswordEncryption": {
     "Value": 0
@@ -306,9 +391,6 @@
     "HomeOrigVoiceSo": 768,
     "RoamOrigVoiceSo": 0
   },
-  "PocAutoAnswer": {
-    "Value": 1
-  },
   "SmsMoRetryPeriod": {
     "Value": 135
   },
@@ -322,27 +404,27 @@
       180,
       5,
       1,
-      5,
-      600,
-      30,
-      5,
-      30,
-      14,
-      30,
-      0,
-      1,
-      1,
-      60,
-      120,
-      5,
-      3600,
-      300,
       180,
-      300,
-      300,
-      600,
+      3600,
+      130,
+      3600,
+      130,
+      14,
+      36,
+      4,
+      1,
+      5200,
+      3000,
+      2200,
       3,
-      12
+      253,
+      1000,
+      4,
+      300,
+      300,
+      0,
+      0,
+      0
     ]
   },
   "Is2000CaiRadioConfigurationRcPreference": {
@@ -361,9 +443,9 @@
   "SmsServiceOption": {
     "Value": 6
   },
-  "RoamingPreference": {
+  "BandClassPreference": {
     "Nam": 0,
-    "Roam": 255
+    "Band": 903
   },
   "HdrScpSessionStatus": {
     "Value": 0
@@ -400,9 +482,6 @@
   "HdrScpForceRestrictedCf": {
     "Value": 0
   },
-  "UmtsAmrCodecPreferenceConfig": {
-    "Value": 15
-  },
   "UiccMode": {
     "Value": 0
   },
@@ -420,8 +499,8 @@
   "GnssOemFeatureMask": {
     "Value": 2048
   },
-  "CdmaSo73Enabled": {
-    "Value": 1
+  "HdrReceiveDiversity": {
+    "Value": 0
   },
   "RrcIntegrityEnabled": {
     "Value": 1
@@ -445,5 +524,9 @@
   },
   "PzidHysterisisTimer": {
     "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": 1279
   }
 }

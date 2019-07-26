@@ -25,11 +25,7 @@
                             <AccessTechnology>1</AccessTechnology>
                             <AccessNetworkPriority>1</AccessNetworkPriority>
                         </Node>
-                        <Node>
-                            <AccessTechnology>3</AccessTechnology>
-                            <AccessNetworkPriority>2</AccessNetworkPriority>
-                        </Node>
-                    </RoutingRule>
+                        </RoutingRule>
                     <RulePriority>1</RulePriority>
                 </Node>
                 <Node>

@@ -250,6 +250,55 @@
           <IsAPIOverride>1</IsAPIOverride>
           <RulePriority>2</RulePriority>
         </MAPCON_7>
+      <Node>
+            <APN>vzwadmin</APN>
+            <RoutingRule>
+                <Node>
+                    <AccessTechnology>1</AccessTechnology>
+                    <AccessNetworkPriority>1</AccessNetworkPriority>
+                </Node>
+            </RoutingRule>
+            <RulePriority>1</RulePriority>
+        </Node>
+        <Node>
+            <APN>vzwinternet</APN>
+            <RoutingRule>
+                <Node>
+                    <AccessTechnology>1</AccessTechnology>
+                    <AccessNetworkPriority>1</AccessNetworkPriority>
+                </Node>
+            </RoutingRule>
+            <RulePriority>1</RulePriority>
+        </Node>
+        <Node>
+            <APN>vzwapp</APN>
+            <RoutingRule>
+                <Node>
+                    <AccessTechnology>1</AccessTechnology>
+                    <AccessNetworkPriority>1</AccessNetworkPriority>
+                </Node>
+                <Node>
+                    <AccessTechnology>3</AccessTechnology>
+                    <AccessNetworkPriority>2</AccessNetworkPriority>
+                </Node>
+            </RoutingRule>
+            <RulePriority>1</RulePriority>
+        </Node>
+        <Node>
+            <APN>vzwemergency</APN>
+            <RoutingRule>
+                <Node>
+                    <AccessTechnology>1</AccessTechnology>
+                    <AccessNetworkPriority>1</AccessNetworkPriority>
+                </Node>
+                <Node>
+                    <AccessTechnology>3</AccessTechnology>
+                    <AccessNetworkPriority>2</AccessNetworkPriority>
+                </Node>
+            </RoutingRule>
+            <IsAPIOverride>1</IsAPIOverride>
+            <RulePriority>1</RulePriority>
+         </Node>
       </ForServiceBased>
       <ForCSBased>
         <Home>

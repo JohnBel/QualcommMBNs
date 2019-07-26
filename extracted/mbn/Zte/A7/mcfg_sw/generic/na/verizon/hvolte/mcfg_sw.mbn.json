@@ -259,6 +259,55 @@
       "          <IsAPIOverride>1</IsAPIOverride>",
       "          <RulePriority>2</RulePriority>",
       "        </MAPCON_7>",
+      "      <Node>",
+      "            <APN>vzwadmin</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <RulePriority>1</RulePriority>",
+      "        </Node>",
+      "        <Node>",
+      "            <APN>vzwinternet</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <RulePriority>1</RulePriority>",
+      "        </Node>",
+      "        <Node>",
+      "            <APN>vzwapp</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <AccessTechnology>3</AccessTechnology>",
+      "                    <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <RulePriority>1</RulePriority>",
+      "        </Node>",
+      "        <Node>",
+      "            <APN>vzwemergency</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <AccessTechnology>3</AccessTechnology>",
+      "                    <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <IsAPIOverride>1</IsAPIOverride>",
+      "            <RulePriority>1</RulePriority>",
+      "         </Node>",
       "      </ForServiceBased>",
       "      <ForCSBased>",
       "        <Home>",
@@ -319,11 +368,7 @@
       "                            <AccessTechnology>1</AccessTechnology>",
       "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
       "                        </Node>",
-      "                        <Node>",
-      "                            <AccessTechnology>3</AccessTechnology>",
-      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
-      "                        </Node>",
-      "                    </RoutingRule>",
+      "                        </RoutingRule>",
       "                    <RulePriority>1</RulePriority>",
       "                </Node>",
       "                <Node>",
@@ -398,7 +443,7 @@
     "ImsHoEnabled": 0
   },
   "Mmode1xsxLteOptimization": {
-    "Value": null
+    "Value": "AAAAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
   "GetNetAutoMode": {
     "Version": 0,
@@ -457,7 +502,7 @@
     "RssiAvgTimerOnCamp": 6
   },
   "WlanOffloadConfig": {
-    "Value": 2
+    "StringValue": "IWlanS2b"
   },
   "AllowInfiniteThrot": {
     "Value": 1
@@ -470,10 +515,10 @@
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
       "<!-- Carrier configuration file for SRLTE with CHGWL roaming ",
-      "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $",
+      "$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 10156175 $\" ",
+      "        changelist  = \"$Change: 9413867 $\" ",
       "        enabled     = \"true\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"29.1.10\"",
@@ -584,9 +629,6 @@
   "Ds3gppMtu": {
     "Value": 1428
   },
-  "Ds707EhrpdMtu": {
-    "Value": 1428
-  },
   "DsApnSwitching": {
     "Value": 1
   },
@@ -628,7 +670,33 @@
   },
   "IwlanS2bConfigTxt": {
     "Values": [
-      "epdg_fqdn:wo.vzwwo.com;"
+      "epdg_fqdn:wo.vzwwo.com;",
+      "ikev2_sa_rekey_timer_soft_sec:86400;",
+      "ikev2_sa_rekey_timer_hard_sec:86500;",
+      "esp_rekey_timer_soft_sec:86400;",
+      "esp_rekey_timer_hard_sec:86500;",
+      "natt_keep_alive_timer_sec:20;",
+      "ikev2_retransmit_timer_sec:1;",
+      "ikev2_max_retries:4;",
+      "ikev2_encr_algo_list:12;",
+      "ikev2_aes_cbc_encr_key_size_list:256;",
+      "ikev2_hash_algo_list:2;",
+      "ikev2_prf_algo_list:2;",
+      "esp_encr_algo_list:12;",
+      "esp_aes_cbc_encr_key_size_list:128,256;",
+      "esp_auth_algo_list:2;",
+      "pdn_throttling_series_default_values:0,0,60+RAND,120,480,900;",
+      "pdn_throttling_series_1_values:0,0,0,INF;",
+      "pdn_throttling_series_1_cause_codes:24,9000-9050,11000-11050;",
+      "pdn_throttling_series_2_values:3600;",
+      "pdn_throttling_series_2_cause_codes:10500-10550;",
+      "pdn_throttling_series_3_values:INF;",
+      "pdn_throttling_series_3_cause_codes:8192;",
+      "#esp_auth_algo_list:1,2;",
+      "#configured_ike_port:4500;",
+      "ikev2_self_id_type:ID_RFC822_ADDR_MAC_IMPI_BASED;",
+      "ke_payload_enabled:FALSE;",
+      "multiple_ip_addr_support:TRUE;"
     ]
   },
   "LteNasTempFplmnBackoffTime": {
@@ -772,9 +840,6 @@
   "QipcallSignalStrengthThreshold": {
     "Value": 0
   },
-  "QmiCatMode": {
-    "Value": 2
-  },
   "QpImsConfig": {
     "Version": 5,
     "TipTirMode": 0,
@@ -825,7 +890,7 @@
     "Qmin": 60,
     "TxSystemDelay": 0,
     "RxSystemDelay": 0,
-    "Reserved": "AAAAAAIAAC4AAAAuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    "Reserved": "AAAAAAMAAC4AAAAuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
   },
   "QpImsPresenceConfig": {
     "PublishTimer": 1200,
@@ -1068,7 +1133,7 @@
     "TimerT4Value": 17000,
     "TimerTfValue": 30000,
     "TimerTJValue": 30000,
-    "TcpThresholdValue": 1300,
+    "TcpThresholdValue": 1220,
     "CompactFormEnabled": 1,
     "SigCompEnabled": 0,
     "IsSipInstanceNeeded": 0,
@@ -1219,7 +1284,8 @@
       5,
       2,
       0,
-      0
+      0,
+      120
     ]
   },
   "SmsDomainPref": {
@@ -1235,8 +1301,8 @@
     "Value": 1
   },
   "SxlteTimers": {
-    "Field1": 300,
-    "Field2": 10
+    "Field1": 0,
+    "Field2": 0
   },
   "TcpAckPrio": {
     "Value": 1
@@ -1299,6 +1365,9 @@
   "GsmUmtsCellBroadcastSmsUserPreference": {
     "Value": 2
   },
+  "CdmaReceiveDiversity": {
+    "Value": 0
+  },
   "VoicePrivacy": {
     "Value": 0
   },
@@ -1341,19 +1410,6 @@
     "Name": 0,
     "Enabled": 1
   },
-  "EvrcVoiceServiceOptions": {
-    "Nam": 0,
-    "EvrcCapabilityEnabled": 1,
-    "HomePageVoiceSo": 3,
-    "HomeOrigVoiceSo": 3,
-    "RoamOrigVoiceSo": 3
-  },
-  "DataMdrMode": {
-    "Value": 3
-  },
-  "PacketDataCallsOriginateString": {
-    "DigitsString": "#777"
-  },
   "HdrScpSubtypeCustomConfig": {
     "CustomConfigIsActive": 0,
     "Subtype2PhysicalLayer": 0,
@@ -1363,9 +1419,6 @@
   },
   "EnsEnabled": {
     "Value": 0
-  },
-  "CdmaRxChainSelectThreshold": {
-    "Value": null
   },
   "SmsMoRetryPeriod": {
     "Value": 135
@@ -1391,7 +1444,7 @@
       14,
       30,
       0,
-      60,
+      1,
       1,
       120,
       120,
@@ -1440,41 +1493,17 @@
   "SmsServiceOption": {
     "Value": 1
   },
-  "UimSelectDefaultSimApplication": {
-    "Value": 1
-  },
   "DetectHWReset": {
     "Value": 1
   },
-  "RoamingPreference": {
+  "BandClassPreference": {
     "Nam": 0,
-    "Roam": 255
+    "Band": -1
   },
   "HdrEmpaSupported": {
     "Value": 0
   },
-  "DataServicesQcMobileIp": {
-    "Value": 1
-  },
-  "DataServicesMobileIpRegistrationRetries": {
-    "Value": 2
-  },
-  "DataServicesMobileIpRegistrationRetriesInitialInterval": {
-    "Value": 3
-  },
-  "DataServicesMobileIpRegistrationExpirationAttemptReregistration": {
-    "Value": 9
-  },
-  "DataServicesMobileIpNumberProfiles": {
-    "Value": 1
-  },
-  "DataServicesMobileIpCurrentlyActiveProfiles": {
-    "Value": 0
-  },
   "MipHandoffOptimizationEnabled": {
-    "Value": 1
-  },
-  "HSBasedPlusDialSetting": {
     "Value": 1
   },
   "HdrScpForceAtConfiguration": {
@@ -1493,7 +1522,7 @@
     "Value": 0
   },
   "MgrfSupported": {
-    "Value": 1
+    "Value": 0
   },
   "MobileCaiRevisionNumber": {
     "Value": 0
@@ -1514,6 +1543,9 @@
     "ValueString": "Vzw_hVoLTE"
   },
   "PhoneLock": {
+    "Value": 0
+  },
+  "HdrReceiveDiversity": {
     "Value": 0
   },
   "RrcIntegrityEnabled": {
@@ -1539,5 +1571,9 @@
   },
   "PzidHysterisisTimer": {
     "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -16385
   }
 }

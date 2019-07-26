@@ -53,9 +53,6 @@
       "Attach_Profile_ID:1;"
     ]
   },
-  "Ehplmn": {
-    "Value": "B2TwAGTwIGTwcGTwgADxEGT2IGTwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
-  },
   "ForcedIrat": {
     "Value": 1
   },
@@ -703,11 +700,8 @@
   "TcpAckPrio": {
     "Value": 1
   },
-  "TdsBandPref": {
-    "Value": "IQAAAAAAAAA="
-  },
   "TdscdmaOpPlmnList": {
-    "ValueString": "\u000fd? d?"
+    "ValueString": "\u000ed? d?"
   },
   "TputOptParams": {
     "Field1": 1,

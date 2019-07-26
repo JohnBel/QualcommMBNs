@@ -1,4 +1,7 @@
 {
+  "SuppressAddUpdateParam": {
+    "Value": 1
+  },
   "DiffFddTddFgiEnable": {
     "Value": 1
   },
@@ -60,108 +63,8 @@
     "B43": false,
     "B44": false
   },
-  "PbmEccNums": {
-    "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
-  },
-  "PbmHardcodedEccConfig": {
-    "Value": 1
-  },
-  "PbmHardcodedEccList": {
-    "Items": [
-      {
-        "DigitsString": "*911",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 1,
-        "HardcodedType": 0
-      },
-      {
-        "DigitsString": "#911",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 1,
-        "HardcodedType": 0
-      },
-      {
-        "DigitsString": "000",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "08",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "110",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "999",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "118",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "119",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "120",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "122",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      }
-    ]
-  },
-  "PbmNvEccConfig": {
-    "Value": 0
+  "OperatorName": {
+    "Value": 2
   },
   "Profile1": {
     "Values": "AQABAA4AAAACAAAApaWlpULEvUJcx71CAAAAAAAAAAABEAUAM0dORVQRAAEAAw=="
@@ -180,9 +83,12 @@
       "NoSrv"
     ]
   },
+  "WcdmaRrcFeature": {
+    "Value": 0
+  },
   "DigitalAnalogModePreference": {
     "Nam": 0,
-    "Mode": 4
+    "Mode": 58
   },
   "GsmAmrCallConfiguration": {
     "Value": 1

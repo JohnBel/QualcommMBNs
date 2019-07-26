@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Carrier configuration file for SRLTE with CHGWL roaming 
-$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $
+$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $
 -->
 <policy name        = "generic"
-        changelist  = "$Change: 10156175 $" 
+        changelist  = "$Change: 9413867 $" 
         enabled     = "true"
         schema_ver  = "1"
         policy_ver  = "29.1.10"

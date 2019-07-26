@@ -7,10 +7,10 @@
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
       "",
       "<!-- Policy for CU CSFB+G DSDS ",
-      "$Header: //commercial/MPSS.TH.2.0.c1.9/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CU/openMarket/carrier_policy.xml#1 $",
+      "$Header: //components/rel/mmcp.mpss/7.4/policyman/configurations/Carrier/OpenMarket/7+5_mode/CU/openMarket/carrier_policy.xml#1 $",
       "-->",
       "<policy name        = \"generic\"",
-      "        changelist  = \"$Change: 10156175 $\"",
+      "        changelist  = \"$Change: 9413867 $\"",
       "        schema_ver  = \"1\"",
       "        policy_ver  = \"75.2.14\"",
       ">",
@@ -156,111 +156,54 @@
   "GnssNvEfsSmE911Config": {
     "Value": 1
   },
-  "MaxValidateSimCounter": {
-    "Value": 30
+  "LteBandPreference": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": false,
+    "B5": false,
+    "B6": false,
+    "B7": true,
+    "B8": false,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": true,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": false,
+    "B39": false,
+    "B40": true,
+    "B41": true,
+    "B42": false,
+    "B43": false,
+    "B44": false
   },
-  "PbmEccNums": {
-    "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
-  },
-  "PbmHardcodedEccConfig": {
-    "Value": 1
-  },
-  "PbmHardcodedEccList": {
-    "Items": [
-      {
-        "DigitsString": "*911",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 1,
-        "HardcodedType": 0
-      },
-      {
-        "DigitsString": "#911",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 1,
-        "HardcodedType": 0
-      },
-      {
-        "DigitsString": "000",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "08",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "110",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "999",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "118",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "119",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "120",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      },
-      {
-        "DigitsString": "122",
-        "Value": 0,
-        "CategoryLength": 1,
-        "EmergencyCategory": 0,
-        "Reserved": 0,
-        "EmergencyMode": 2,
-        "HardcodedType": 1
-      }
-    ]
-  },
-  "PbmNvEccConfig": {
-    "Value": 0
+  "OperatorName": {
+    "Value": 2
   },
   "Profile1": {
     "Values": "AQABAA4AAAACAAAApaWlpULEvUJcx71CAAAAAAAAAAABEAUAM0dORVQRAAEAAw=="
@@ -279,14 +222,8 @@
       "NoSrv"
     ]
   },
-  "T3245Timer": {
-    "Value": 60
-  },
-  "WcdmaRrcFastReturnToLteAfterCsfb": {
-    "Value": 1
-  },
-  "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
-    "Value": 2000
+  "WcdmaRrcFeature": {
+    "Value": 0
   },
   "DigitalAnalogModePreference": {
     "Nam": 0,
@@ -298,12 +235,6 @@
   "GsmUmtsCellBroadcastSmsUserPreference": {
     "Value": 2
   },
-  "ForceUesgSnrGsmR99Version": {
-    "Value": 2
-  },
-  "ForceUemsCrGsmR99Version": {
-    "Value": 2
-  },
   "GsmAmrCallConfiguration": {
     "Value": 1
   },
@@ -311,7 +242,7 @@
     "Value": 64
   },
   "AGpsPositioningModesSupported": {
-    "Value": 1
+    "Value": 65407
   },
   "AGpsEmergencyServicesSupport": {
     "Value": 2
@@ -337,8 +268,12 @@
   "EdaFeatureSupport": {
     "Value": 1
   },
-  "UmtsAmrCodecPreferenceConfig": {
-    "Value": 15
+  "WcdmaRxDiversityControl": {
+    "Value": 3
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
   },
   "Banner": {
     "ValueString": "CU_DS_CSFB_G"
@@ -368,6 +303,10 @@
   },
   "GprsMultiSlotClass": {
     "Value": 33
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -16385
   },
   "GprsEnableAniteGcf51010": {
     "Value": 0
