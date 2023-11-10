@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc2_whitelist version="1">
+  <plmn id="FFF2FF">
+     <band id="41">
+    </band>
+  </plmn>
+</pc2_whitelist>

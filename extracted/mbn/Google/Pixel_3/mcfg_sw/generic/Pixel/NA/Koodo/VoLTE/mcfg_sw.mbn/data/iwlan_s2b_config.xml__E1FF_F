@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<IWLAN_S2B_CONFIG>
+    <GENERIC_VARIANT>
+        <epdg_addr_info>
+            <static_fqdn_enabled>TRUE</static_fqdn_enabled>
+            <fqdn>epdg.epc.mnc220.mcc302.pub.3gppnetwork.org</fqdn>
+        </epdg_addr_info>
+        <ikev2_info>
+            <self_id>
+                <id_type>ID_RFC822_ADDR</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </self_id>
+            <peer_id>
+                <id_type>ID_FQDN</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </peer_id>
+            <ke_payload_enabled>FALSE</ke_payload_enabled>
+            <ikev2_encr_algo_list>
+                <encr_algo value="12">
+                    <key_size>128</key_size>
+                </encr_algo>
+            </ikev2_encr_algo_list>
+            <esp_encr_algo_list>
+                <encr_algo value="12">
+                    <key_size>128</key_size>
+                </encr_algo>
+            </esp_encr_algo_list>
+            <ikev2_hash_algo_list>
+                <algo value="2"/>
+            </ikev2_hash_algo_list>
+            <ikev2_prf_algo_list>
+                <prf_algo value="5"/>
+            </ikev2_prf_algo_list>
+            <ikev2_dh_group_list>
+                <dh_group value="14"/>
+            </ikev2_dh_group_list>
+            <esp_auth_algo_list>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <ikev2_sa_rekey_timer>
+                <soft_sec>71000</soft_sec>
+                <hard_sec>71100</hard_sec>
+            </ikev2_sa_rekey_timer>
+            <esp_rekey_timer>
+                <soft_sec>14400</soft_sec>
+                <hard_sec>14500</hard_sec>
+            </esp_rekey_timer>
+        </ikev2_info>
+        <err_code_info>
+            <pdn_throttling>
+                <throttling_series>
+                    <throttling_values>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds>3</seconds>
+                        <seconds random="TRUE">60</seconds>
+                    </throttling_values>
+                    <throttling_cause_codes>
+                        <cause_code>24</cause_code>
+                    </throttling_cause_codes>
+                </throttling_series>
+            </pdn_throttling>
+        </err_code_info>
+    </GENERIC_VARIANT>
+    <WP_VARIANT>
+        <ikev2_info>
+            <esp_auth_algo_list>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <configured_ike_port>4500</configured_ike_port>
+        </ikev2_info>
+    </WP_VARIANT>
+</IWLAN_S2B_CONFIG>

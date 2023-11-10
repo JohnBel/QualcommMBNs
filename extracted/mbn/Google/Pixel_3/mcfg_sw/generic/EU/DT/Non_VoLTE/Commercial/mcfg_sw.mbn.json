@@ -1,0 +1,366 @@
+{
+  "AndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>DT Policy</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>internet.telekom</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>hos</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>                    \t",
+      "                    <Node>",
+      "                        <AccessTechnology>3</AccessTechnology>",
+      "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      " </ANDSF>"
+    ]
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>Default DT Policy</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>internet.telekom</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>hos</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>                    \t",
+      "                    <Node>",
+      "                        <AccessTechnology>3</AccessTechnology>",
+      "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      " </ANDSF>"
+    ]
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      "andsf_rule_mgr_active:1;",
+      "lte_meas_alpha:50;",
+      "lte_sampling_interval:1000;",
+      "lte_avg_interval:5000;",
+      "wifi_meas_alpha:65;",
+      "wifi_sampling_interval:1000;",
+      "wifi_avg_interval:5000;",
+      "cdma_1x_meas_alpha:50;",
+      "cdma_1x_avg_interval:6000;",
+      "cdma_1x_acq_hyst_interval:3000;",
+      "cdma_1x_lost_hyst_interval:3000;",
+      "cdma_1x_sampling_interval:2000;"
+    ]
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;\n"
+    ]
+  },
+  "EmmNasNvItems": {
+    "Value": "BgAAAAABAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "ImsEnable": {
+    "Value": 0
+  },
+  "IwlanS2bConfigXml": {
+    "Values": [
+      "<?xml version=\"1.0\" ?>",
+      "<IWLAN_S2B_CONFIG>",
+      "    <GENERIC_VARIANT>",
+      "        <epdg_addr_info>",
+      "            <static_fqdn_enabled>FALSE</static_fqdn_enabled>",
+      "            <plmn_list/>",
+      "            <natt_info>",
+      "                <keep_alive_timer_sec>20</keep_alive_timer_sec>",
+      "            </natt_info>",
+      "            <pcscf_attr>",
+      "                <v6_attr_type_val>21</v6_attr_type_val>",
+      "                <v4_attr_type_val>20</v4_attr_type_val>",
+      "            </pcscf_attr>",
+      "        </epdg_addr_info>",
+      "        <ikev2_info>",
+      "            <self_id>",
+      "                <id_type>ID_RFC822_ADDR</id_type>",
+      "                <mac_enabled>FALSE</mac_enabled>",
+      "                <identifier/>",
+      "            </self_id>",
+      "            <ke_payload_enabled>FALSE</ke_payload_enabled>",
+      "            <retransmit_timer_sec>3</retransmit_timer_sec>",
+      "            <max_retries>6</max_retries>",
+      "            <peer_id>",
+      "                <id_type>ID_FQDN</id_type>",
+      "                <mac_enabled>FALSE</mac_enabled>",
+      "                <identifier/>",
+      "            </peer_id>",
+      "            <ikev2_dh_group_list>",
+      "                <dh_group value=\"2\"/>",
+      "            </ikev2_dh_group_list>",
+      "            <ikev2_encr_algo_list>",
+      "                <encr_algo value=\"12\">",
+      "                    <key_size>256</key_size>",
+      "                </encr_algo>",
+      "            </ikev2_encr_algo_list>",
+      "            <ikev2_hash_algo_list>",
+      "                <algo value=\"2\"/>",
+      "            </ikev2_hash_algo_list>",
+      "            <ikev2_prf_algo_list>",
+      "                <prf_algo value=\"2\"/>",
+      "            </ikev2_prf_algo_list>",
+      "            <esp_encr_algo_list>",
+      "                <encr_algo value=\"12\">",
+      "                    <key_size>256</key_size>",
+      "                </encr_algo>",
+      "            </esp_encr_algo_list>",
+      "            <esp_auth_algo_list>",
+      "                <algo value=\"2\"/>",
+      "            </esp_auth_algo_list>",
+      "        </ikev2_info>",
+      "    </GENERIC_VARIANT>",
+      "    <WP_VARIANT>",
+      "        <ikev2_info>",
+      "            <esp_auth_algo_list>",
+      "                <algo value=\"1\"/>",
+      "                <algo value=\"2\"/>",
+      "            </esp_auth_algo_list>",
+      "            <configured_ike_port>4500</configured_ike_port>",
+      "        </ikev2_info>",
+      "    </WP_VARIANT>",
+      "</IWLAN_S2B_CONFIG>"
+    ]
+  },
+  "LteBandPreference": {
+    "B1": false,
+    "B2": false,
+    "B3": false,
+    "B4": true,
+    "B5": false,
+    "B6": false,
+    "B7": false,
+    "B8": false,
+    "B9": true,
+    "B10": false,
+    "B11": false,
+    "B12": true,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": false,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": true,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": false,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": false,
+    "B39": false,
+    "B40": false,
+    "B41": false,
+    "B42": false,
+    "B43": false,
+    "B44": false,
+    "B45": false,
+    "B46": false,
+    "B47": false,
+    "B48": false
+  },
+  "LteEmergRedial": {
+    "Version": 1,
+    "RedialOnLte": 257
+  },
+  "Profile1": {
+    "Values": "AQABAGAAAAANAAAApaWlpREAAAB8AgAAAAAAAAAAAAABEBAAaW50ZXJuZXQudGVsZWtvbREAAQADFQAEAAAAAAAWAAQAAAAAAB4ABAAAAAAALwABAAA1AAEA/x8AAQAANgABAAA+AAEAAEEAAQAAQgABAAAHEAgAAQAAAAAAAAA="
+  },
+  "Profile2": {
+    "Values": "AQACAE4AAAAMAAAApaWlpVIz2EJlAAAAAAAAAAAAAAABEAMAaW1zEQABAAMVAAQAAAAAABYABAAAAAAAHgAEAAAAAAAvAAEAADUAAQD/HwABAAE2AAEAACIAAQABBxAIAAIAAAAAAAAAPgABAAA="
+  },
+  "Profile3": {
+    "Values": "AQADAEcAAAAMAAAApaWlpe0z2ELaAgAAAAAAAAAAAAABEAMAaG9zEQABAAMVAAQAAAAAABYABAAAAAAAHgAEAAAAAAAvAAEAADUAAQD/HwABAAA2AAEAAD4AAQAAQQABAABCAAEAAA=="
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": []
+  },
+  "RefreshVoteOk": {
+    "Value": 1
+  },
+  "SmsMandatory": {
+    "Value": 1
+  },
+  "SmsOnly": {
+    "Value": 0
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "Auto"
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfb": {
+    "Value": 1
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
+    "Value": 2000
+  },
+  "WlanOffloadConfig": {
+    "StringValue": "IWlanS2b"
+  },
+  "SmsRetryLimit": {
+    "Value": 1
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 0
+  },
+  "AutoRedialSetting": {
+    "Enable": 1,
+    "Rings": 1
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "CstoVoipFallbackTimer": {
+    "Value": 10
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "StringMode": "Automatic"
+  },
+  "DtmFeatureSupport": {
+    "Value": 1
+  },
+  "DtmMultislotClass": {
+    "Value": 3
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  },
+  "MgrfSupported": {
+    "Value": 1
+  },
+  "NasReleaseCompliance": {
+    "Value": 3
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "UmtsAmrCodecPreferenceConfig": {
+    "Value": 15
+  },
+  "VoipCancelRetryTimer": {
+    "Value": 10
+  },
+  "GprsGeaAlgorithmsSupported": {
+    "Value": 7
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "AndsfXml": {
+    "Values": []
+  },
+  "DefaultAndsfXml": {
+    "Values": []
+  },
+  "DsAndsfConfigTxt": {
+    "Values": []
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": []
+  },
+  "IwlanS2bConfigXml": {
+    "Values": []
+  },
+  "LteDisableDuration": {
+    "Value": 0
+  },
+  "Profile1": {
+    "Values": "AQABAG0AAAANAAAApaWlpT8CAAA/AgAAAAAAAAAAAAABEBQAaW50ZXJuZXQuaXRlbGNlbC5jb20lAAEAAREAAQADEgABAAATAAEAAB4ABAAAAAAAKAAQAAAAAAAAAAAAAAAAAAAAAAAmAAEAACcAAQAAIAABAAAtAAEAADYAAQAABxAIAAEAAAAAAAAA"
+  },
+  "Profile2": {
+    "Values": ""
+  },
+  "Profile3": {
+    "Values": ""
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": []
+  },
+  "SmsOnly": {
+    "Value": 0
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "CsOnly"
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "WcdmaRrcFeature": {
+    "Value": 29
+  },
+  "WcdmaRrcWtolCmSupport": {
+    "Value": 1
+  },
+  "WifiConfig": {
+    "Version": 0,
+    "IsWifiOnlyModeForVoice": 1,
+    "IsE911OverWifi": 0,
+    "WifiCsScanTimer": 5,
+    "Reserved": "AAAAAAAAAA=="
+  },
+  "WlanOffloadConfig": null,
+  "WcdmaRrcDormancySupport": {
+    "Value": 2
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 0
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": 896
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "StringMode": "GWL"
+  },
+  "DisableCmCallType": {
+    "Value": 2
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": 1272
+  },
+  "GsmA5AlgorithmsSupported": {
+    "Value": 5
+  },
+  "GsmAmrCallConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  },
+  "HsdpaCategory": {
+    "Value": 24
+  },
+  "NasReleaseCompliance": {
+    "Value": 3
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "SmsMoRetryInterval": {
+    "Value": 45
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 180
+  },
+  "UimFirstInstructionClass": {
+    "Value": 1
+  },
+  "WcdmaHsupaCmController": {
+    "Value": 1
+  },
+  "WcdmaRxDiversityControl": {
+    "Value": 3
+  },
+  "BandPref3263": {
+    "Nam": 0,
+    "Band": 4294967295
+  },
+  "DarpFeatureSupport": {
+    "Value": 1
+  },
+  "GprsGeaAlgorithmsSupported": {
+    "Value": 7
+  }
+}

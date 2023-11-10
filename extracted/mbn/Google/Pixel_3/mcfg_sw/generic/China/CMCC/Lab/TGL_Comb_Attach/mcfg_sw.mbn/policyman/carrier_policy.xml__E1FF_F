@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for CMCC Lab XML
+$Header: //commercial/MPSS.AT.4.0.c2.17/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CMCC/lab/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 16923482 $"
+        policy_ver  = "73.5.1"
+>
+
+  <initial>
+
+    <boolean_define name="pm:allow_tds_on_this_sub" initial="true" />
+
+  </initial>
+
+  <if>
+    <have_location/>
+    <then>
+      <svc_mode> FULL </svc_mode>
+      <rat_capability base="none">
+        <include> C H G W L T </include>
+      </rat_capability>
+      <rf_bands base="hardware" />
+      <scan_optimization tgpp="disabled" tgpp2="disabled" />
+    </then>
+  </if>
+
+</policy>

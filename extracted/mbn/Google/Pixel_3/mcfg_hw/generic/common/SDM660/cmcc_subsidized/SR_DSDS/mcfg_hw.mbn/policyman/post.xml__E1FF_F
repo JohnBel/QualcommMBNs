@@ -1,0 +1,257 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Policy for CMCC configuration for post processing and subsidized restrictions.
+$Header: //commercial/MPSS.AT.4.0.c2.17/Main/modem_proc/mmcp/policyman/configurations/Carrier/OpenMarket/7+5_mode/CMCC/post/post.xml#1 $
+-->
+<policy name              = "generic"
+        changelist        = "$Change: 16923482 $"
+        policy_ver        = "1100.1.8"
+        continueByDefault = "true"
+>
+
+  <initial>
+
+    <mcc_list name="post:home_mccs" ns="global"> 460 </mcc_list>
+
+    <plmn_list name="post:cmcc_imsi" ns="global"> 460-00 460-02 460-04 460-07 460-08 460-13 </plmn_list>
+
+    <mcc_list name="post:china_hk_mccs" ns="global"> 454 460 </mcc_list>
+
+    <mcc_list name="post:macao_mccs" ns="global"> 455 </mcc_list>
+
+    <mcc_list name="post:us_mccs" ns="global"> 310 311 312 313 314 315 316 </mcc_list>
+
+    <rf_band_list ns="global" name="post:fcc_compliant_bands">
+      <gw_bands  base="current" />
+      <lte_bands base="current">
+        <exclude> 6 37 </exclude>
+      </lte_bands>
+      <tds_bands base="current" />
+    </rf_band_list>
+
+    <rf_band_list ns="global" name="post:default_bands">
+      <gw_bands  base="current" />
+      <lte_bands base="current" />
+      <tds_bands base="current" />
+    </rf_band_list>
+
+    <boolean_define name="post:change_rat_order_in_full_rat" ns="global" initial="true" />
+    <boolean_define name="post:in_subsidized_behavior" ns="global" initial="false" />
+    <boolean_define name="post:non_cmcc_in_home" ns="global" initial="false" />
+    <boolean_define name="cm:reject_dds_change" ns="global" initial="false" />
+    <boolean_define name="cm:reject_1xdata" ns="global" initial="true" />
+    <boolean_define name="cm:start_ps_sub" ns="global" initial="false" />
+
+    <define_fullrat_config is_post="true">
+      <if>
+        <boolean_test name="post:in_subsidized_behavior" />
+        <then>
+
+          <select>
+
+            <!-- non-CMCC 3GPP2 card -->
+            <case>
+              <any_of>
+                <not> <imsi_plmn_in list="post:cmcc_imsi" /> </not>
+                <sim_type> CSIM </sim_type>
+                <sim_type> RUIM </sim_type>
+              </any_of>
+              <then>
+                <rat_capability base="none">
+                  <include> C H G W </include>
+                </rat_capability>
+                <rf_bands base="hardware" />
+                <scan_optimization tgpp="no_auto_camp_only" tgpp2="wrlf" />
+              </then>
+            </case>
+
+            <!-- non-CMCC 3GPP card  -->
+            <case>
+              <not> <imsi_plmn_in list="post:cmcc_imsi" /> </not>
+              <then>
+                <rat_capability base="none">
+                  <include> G W </include>
+                </rat_capability>
+                <rf_bands base="hardware" />
+                <scan_optimization tgpp="disabled" tgpp2="disabled" />
+              </then>
+            </case>
+
+          </select>
+
+        </then>
+      </if>
+    </define_fullrat_config>
+
+  </initial>
+
+  <boolean_set name="cm:reject_1xdata">
+    <any_of>
+      <imsi_plmn_in subs="1" list="post:cmcc_imsi" />
+      <imsi_plmn_in subs="2" list="post:cmcc_imsi" />
+    </any_of>
+  </boolean_set>
+
+  <boolean_set name="cm:reject_dds_change">
+    <any_of>
+
+      <all_of>
+        <is_subs_dds subs="1" />
+        <imsi_plmn_in subs="1" list="post:cmcc_imsi" />
+        <imsi_mcc_in subs="2" session="1x" list="post:china_hk_mccs" />
+      </all_of>
+
+      <all_of>
+        <is_subs_dds subs="2" />
+        <imsi_plmn_in subs="2" list="post:cmcc_imsi" />
+        <imsi_mcc_in subs="1" session="1x" list="post:china_hk_mccs" />
+      </all_of>
+
+    </any_of>
+  </boolean_set>
+
+  <boolean_set name="cm:start_ps_sub">
+    <any_of>
+      <imsi_plmn_in subs="1" list="post:cmcc_imsi" />
+      <imsi_plmn_in subs="2" list="post:cmcc_imsi" />
+    </any_of>
+  </boolean_set>
+
+  <boolean_set name="post:in_subsidized_behavior">
+    <all_of>
+      <subs_is_active subs="this" />
+      <subs_is_active subs="other" />
+      <any_of>
+        <!-- CMCC + non-CMCC -->
+        <all_of>
+          <imsi_plmn_in list="post:cmcc_imsi" />
+          <not> <imsi_plmn_in subs="other" list="post:cmcc_imsi" /> </not>
+        </all_of>
+        <!-- non-CMCC + CMCC --> 
+        <all_of>
+          <imsi_plmn_in subs="other" list="post:cmcc_imsi" />
+          <not> <imsi_plmn_in list="post:cmcc_imsi" /> </not>
+        </all_of>
+      </any_of>
+    </all_of>
+  </boolean_set>
+
+  <!-- Remove LTE on non-CMCC card for CMCC Subsidized. -->
+  <if>
+    <all_of>
+      <boolean_test name="post:in_subsidized_behavior" />
+      <not> <imsi_plmn_in list="post:cmcc_imsi" /> </not>
+    </all_of>
+    <then>
+      <rat_capability base="current">
+        <exclude> L </exclude>
+      </rat_capability>
+    </then>
+  </if>
+
+  <!-- Wait if conditions aren't met -->
+  <if>
+    <all_of>
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <have_location />
+      <not> <boolean_test name="ue_mode_timer_running" /> </not>
+    </all_of>
+    <then>
+      <continue />
+    </then>
+    <else>
+      <stop />
+    </else>
+  </if>
+
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+
+  <boolean_set name="post:non_cmcc_in_home">
+    <all_of>
+      <location_mcc_in list="post:home_mccs" />
+      <not> <imsi_plmn_in list="post:cmcc_imsi" /> </not>
+    </all_of>
+  </boolean_set>
+
+  <select>
+
+    <!-- not in subsidized behavior -->
+    <case>
+      <not> <boolean_test name="post:in_subsidized_behavior" /> </not>
+      <then>
+        <svc_mode> FULL </svc_mode>
+        <scan_optimization tgpp="disabled" tgpp2="disabled" />
+        <rf_bands_if base="hardware" method="ITEMSET" />
+        <rat_capability_if base="none" method="ITEMSET">
+          <include> C H G W L T </include>
+        </rat_capability_if>
+      </then>
+    </case>
+
+    <!-- non-CMCC 3GPP2 card in China -->
+    <case>
+      <all_of>
+        <any_of>
+          <boolean_test name="post:non_cmcc_in_home" />
+          <location_mcc_in list="post:macao_mccs" />
+        </any_of>
+        <any_of>
+          <sim_type> CSIM </sim_type>
+          <sim_type> RUIM </sim_type>
+          <boolean_test name="pm:carrier_uses_1x_in_china" />
+        </any_of>
+      </all_of>
+      <then>
+        <rat_capability base="none">
+          <include> C </include>
+        </rat_capability>
+        <rf_bands base="hardware" />
+      </then>
+    </case>
+
+    <!-- non-CMCC 3GPP card in China -->
+    <case>
+      <boolean_test name="post:non_cmcc_in_home" />
+      <then>
+        <rat_capability base="none">
+          <include> G </include>
+        </rat_capability>
+        <rf_bands base="hardware" />
+      </then>
+    </case>
+
+    <!-- CT card elsewhere -->
+    <case>
+      <imsi_mcc_in session="1x" list="post:china_hk_mccs" />
+      <then>
+        <rat_capability base="none">
+          <include> G W </include>
+        </rat_capability>
+        <rf_bands base="hardware" />
+      </then>
+    </case>
+
+    <!-- non-CMCC card elsewhere -->
+    <case>
+      <not> <imsi_plmn_in list="post:cmcc_imsi" /> </not>
+      <then>
+        <rat_capability base="none">
+          <include> C H G W </include>
+        </rat_capability>
+        <rf_bands base="hardware" />
+      </then>
+    </case>
+
+  </select>
+
+  <if>
+    <cond>
+      <location_mcc_in list="post:us_mccs" />
+    </cond>
+    <then>
+      <rf_bands list="post:fcc_compliant_bands" />
+    </then>
+  </if>
+
+
+</policy>

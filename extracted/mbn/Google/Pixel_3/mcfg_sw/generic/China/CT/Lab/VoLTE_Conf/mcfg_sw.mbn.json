@@ -1,0 +1,804 @@
+{
+  "AndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>CT Profile</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>ctnet</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>ctwap</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>sos</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      " </ANDSF>",
+      ""
+    ]
+  },
+  "CustomEmergInfo": {
+    "Version": 0,
+    "IsEcbmRequired": 0,
+    "HoldConcurrentVoiceCallDuringEmergency": 1,
+    "IsAlternateRedialAlgorithm": 0,
+    "Reserved": 0
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>CT Profile</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>ctnet</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>ctwap</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>sos</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      " </ANDSF>",
+      ""
+    ]
+  },
+  "DiffFddTddFgiEnable": {
+    "Value": 1
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      "andsf_rule_mgr_active:1;",
+      "lte_meas_alpha:50;",
+      "lte_sampling_interval:1000;",
+      "lte_avg_interval:5000;",
+      "wifi_meas_alpha:65;",
+      "wifi_sampling_interval:1000;",
+      "wifi_avg_interval:5000;",
+      "cdma_1x_meas_alpha:50;",
+      "cdma_1x_avg_interval:6000;",
+      "cdma_1x_acq_hyst_interval:3000;",
+      "cdma_1x_lost_hyst_interval:3000;",
+      "cdma_1x_sampling_interval:2000;"
+    ]
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "Ehplmn": {
+    "Value": "B2TwAGTwIGTwcGTwgADxEGT2IGTwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "EmmNasNvItems": {
+    "Value": "BgAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "ForcedIrat": {
+    "Value": 1
+  },
+  "GnssAgpsRatPrefConfig": {
+    "Field1": 1,
+    "Field2": 65535
+  },
+  "GnssNvEfsSmE911Config": {
+    "Value": 1
+  },
+  "ImsEnable": {
+    "Value": 1
+  },
+  "ImsHandoverConfig": {
+    "Values": [
+      "Adding Comments LTE RSRQ Src LTE SNR Destination",
+      "Some Comments",
+      "Ignore these commenrs",
+      "@@@",
+      "LTEDLSRATMonitorTime = 2;",
+      "LTEDLTRATMonitorTime = 2;",
+      "MediaULJitterGood = 10;",
+      "Alpha_media = 65;",
+      "MediaULJitterAcceptable = 40;",
+      "MediaULJitterFair = 40;",
+      "MediaULJitterBad = 50;",
+      "MediaULFrameLossGood = 5;",
+      "MediaULFrameLossAcceptable = 3;",
+      "MediaULFrameLossFair = 20;",
+      "MediaULFrameLossBad = 50;",
+      "MediaDL95JitterGood = 4; ",
+      "MediaDL95JitterAcceptable = 60;",
+      "MediaDL95JitterFair = 6;",
+      "MediaDL95JitterBad = 7;",
+      "MediaDLJitterGood = 10;",
+      "MediaDLJitterAcceptable = 40;",
+      "MediaDLJitterFair = 40;",
+      "MediaDLJitterBad = 50;",
+      "MediaDLFrameLossGood = 5;",
+      "MediaDLFrameLossAcceptable = 3;",
+      "MediaDLFrameLossFair = 20;",
+      "MediaDLFrameLossBad = 50;",
+      "MediaDLQDJSpeechBad = 3;",
+      "MediaDLQDJSilenceBad = 24;",
+      "MediaDLQDJSpeechAcceptable = 2;",
+      "MediaDLQDJSilenceAcceptable = 16;",
+      "MediaTimerInterval = 1;",
+      "MediaMetricsDisabled = 0;",
+      "DeltaMediaULJitterAcceptable = -24;",
+      "DeltaMediaDLJitterAcceptable = -24;",
+      "DeltaMediaDLQDJSpeechBad = -1;",
+      "DeltaMediaDLQDJSilenceBad = -8;",
+      "ALGO_FLAVOR = 0;",
+      "2G3GMeasurementsFeatureEnabled = 1;",
+      "2G3GReselectionTimer = 1;",
+      "DISABLE_CS_REPOINT = 1;",
+      "GERAN_RXLEV_ALPHA = 0.65;",
+      "GERAN_SNR_ALPHA = 0.65;",
+      "GERAN_RXQUAL_ALPHA = 0.95;",
+      "monitor2GTimeInSec = 2;",
+      "GERAN_SRAT_RSSI_THRESHOLD = -100;",
+      "GERAN_TRAT_RSSI_THRESHOLD = -95;",
+      "GERAN_SRAT_SNR_Threshold = 7;",
+      "GERAN_TRAT_SNR_Threshold = 10;",
+      "GERAN_SRAT_BER_Threshold = 6;",
+      "GERAN_TRAT_BER_Threshold = 5;",
+      "GRAN_SamplingTimer = 500;",
+      "GERAN_Count_Suspended_State = 50;",
+      "WCDMA_ECIO_ALPHA = 0.65;",
+      "WCDMA_RSCP_ALPHA = 0.65;",
+      "monitor3GTimeInSec = 2;",
+      "WCDMA_SRAT_ECIO_Threshold = -15;",
+      "WCDMA_TRAT_ECIO_Threshold = -10;",
+      "WCDMA_SRAT_RSCP_Threshold = -115;",
+      "WCDMA_TRAT_RSCP_Threshold = -110;",
+      "WCDMA_SamplingTimer = 500;",
+      "WWAN_GUARD_TIMER = 7;",
+      "WLAN_GUARD_TIMER = 7;",
+      "WCDMA_Count_Suspended_State = 10;",
+      "SingleRatFeatureEnable = 1;",
+      "LTE_RSRP_single_out = -125;",
+      "LTE_RSRP_Single_in = -118;",
+      "LTE_RSRQ_Single_out = -200;",
+      "LTE_RSRQ_Single_in = -170;",
+      "LTE_SNR_Single_out = 75;",
+      "LTE_SNR_Single_in = 85;",
+      "UTRAN_RSCP_Single_out = -118;",
+      "UTRAN_RSCP_Single_in = -113;",
+      "UTRAN_ECIO_Single_out = -17;",
+      "UTRAN_ECIO_Single_in = -12;",
+      "GERAN_RSSI_Single_out = -103;  ",
+      "GERAN_RSSI_Single_in = -98;",
+      "GERAN_BER_Single_out = 7;",
+      "GERAN_BER_Single_in = 6;",
+      "GERAN_SNR_Single_out = 5;",
+      "GERAN_SNR_Single_in = 8;"
+    ]
+  },
+  "ImsOperationMode": {
+    "Value": 2
+  },
+  "ImsSipConfig": {
+    "Value": "ANAHAACAPgAAaEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMHUAAAAAAAAAAAAAAAAAADB1AAAAAAAAcBcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ImsUserAgent": {
+    "ValueString": ""
+  },
+  "InternalAuth": {
+    "Value": 1
+  },
+  "IwlanS2bConfigXml": {
+    "Values": [
+      "<?xml version=\"1.0\" ?>",
+      "<IWLAN_S2B_CONFIG>",
+      "    <GENERIC_VARIANT>",
+      "        <epdg_addr_info>",
+      "            <static_fqdn_enabled>FALSE</static_fqdn_enabled>",
+      "            <pcscf_attr>",
+      "                <v4_attr_type_val>16384</v4_attr_type_val>",
+      "                <v6_attr_type_val>16386</v6_attr_type_val>",
+      "            </pcscf_attr>",
+      "        </epdg_addr_info>",
+      "        <ikev2_info>",
+      "            <ke_payload_enabled>FALSE</ke_payload_enabled>",
+      "            <self_id>",
+      "                <id_type>ID_RFC822_ADDR</id_type>",
+      "                <mac_enabled>FALSE</mac_enabled>",
+      "                <identifier/>",
+      "            </self_id>",
+      "            <peer_id>",
+      "                <id_type>ID_FQDN</id_type>",
+      "                <mac_enabled>FALSE</mac_enabled>",
+      "                <identifier/>",
+      "            </peer_id>",
+      "            <ikev2_dh_group_list>",
+      "                <dh_group value=\"14\"/>",
+      "                <dh_group value=\"2\"/>",
+      "                <dh_group value=\"5\"/>",
+      "            </ikev2_dh_group_list>",
+      "        </ikev2_info>",
+      "    </GENERIC_VARIANT>",
+      "    <WP_VARIANT>",
+      "        <ikev2_info>",
+      "            <esp_auth_algo_list>",
+      "                <algo value=\"1\"/>",
+      "                <algo value=\"2\"/>",
+      "            </esp_auth_algo_list>",
+      "            <configured_ike_port>4500</configured_ike_port>",
+      "        </ikev2_info>",
+      "    </WP_VARIANT>",
+      "</IWLAN_S2B_CONFIG>"
+    ]
+  },
+  "LteBandPreference": {
+    "B1": true,
+    "B2": false,
+    "B3": true,
+    "B4": false,
+    "B5": false,
+    "B6": false,
+    "B7": true,
+    "B8": true,
+    "B9": false,
+    "B10": false,
+    "B11": false,
+    "B12": false,
+    "B13": false,
+    "B14": false,
+    "B15": false,
+    "B16": false,
+    "B17": true,
+    "B18": false,
+    "B19": false,
+    "B20": false,
+    "B21": false,
+    "B22": false,
+    "B23": false,
+    "B24": false,
+    "B25": false,
+    "B26": false,
+    "B27": false,
+    "B28": false,
+    "B29": false,
+    "B30": false,
+    "B31": false,
+    "B32": false,
+    "B33": false,
+    "B34": true,
+    "B35": false,
+    "B36": false,
+    "B37": false,
+    "B38": true,
+    "B39": true,
+    "B40": true,
+    "B41": true,
+    "B42": false,
+    "B43": false,
+    "B44": false,
+    "B45": false,
+    "B46": false,
+    "B47": false,
+    "B48": false
+  },
+  "MaxFbPdnFailureCount": {
+    "Value": 1
+  },
+  "MaxValidateSimCounter": {
+    "Value": 10
+  },
+  "MidCallSrvccInfo": {
+    "Version": 1,
+    "ImsCacheExpiryDuration": 5000,
+    "MidCallSupport": 1,
+    "SrvccSyncSupport": 0,
+    "Reserved": 0
+  },
+  "NasL2gSrvccSupport": {
+    "Value": 1
+  },
+  "NasSrvccSupport": {
+    "Value": 1
+  },
+  "OperatorName": {
+    "Value": 3
+  },
+  "OverideConfig": {
+    "Values": [
+      "[QIPCALL:ImsVoiceSuppsConfig]",
+      "",
+      "#This config is required not to send out unsubscribe to NW",
+      "#when conference call is end.",
+      "",
+      "*isUnsubcribeDisabled = 1",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "PbmEccNums": {
+    "ValueString": "\\0\u0003\u0003911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0003112\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+  },
+  "PbmNvEccConfig": {
+    "Value": 0
+  },
+  "Profile1": {
+    "Values": "AQABAAAAAAAAAAAApaWlpcn710YAAAAAAAAAAAAAAAA="
+  },
+  "Profile2": {
+    "Values": "AQACAEQAAAAKAAAApaWlpdACAAAQAQAAAAAAAAAAAAA2AAEAAB8AAQABARADAElNUxEAAQADFQAEAAAAAAAWAAQAAAAAAB4ABAAAAAAALwABAAA1AAEA/wcQCAACAAAAAAAAAA=="
+  },
+  "Profile3": {
+    "Values": "AQADABMAAAADAAAApaWlpY4FAACOBQAAAAAAAAAAAAABEAUAY3R3YXARAAEAAy8AAQAA"
+  },
+  "Profile4": {
+    "Values": "AQAEACcAAAAGAAAApaWlpZwFAADwBQAAAAAAAAAAAAABEAMAc29zEQABAAMvAAEAAB8AAQABNgABAAEHEAgAAAIAAAAAAAA="
+  },
+  "Profile5": {
+    "Values": "AQAFAC8AAAAHAAAApaWlpY4FAACEHQAAAAAAAAAAAAABEAQAeGNhcBEAAQADFQAEAAAAAAAWAAQAAAAAAB4ABAAAAAAALwABAAA1AAEA/w=="
+  },
+  "QpImsPlaniConfig": {
+    "Version": 0,
+    "AccessType": 0,
+    "Lac": 0,
+    "Tac": 0,
+    "CellIdentity": 0,
+    "Sid": 0,
+    "Nid": 0,
+    "Pzid": 0,
+    "BaseId": 0,
+    "SectorIdString": "",
+    "SubnetLength": 0,
+    "TimeSeconds": 0,
+    "TimeMinutes": 0,
+    "TimeHours": 0,
+    "TimeDays": 0,
+    "TimeMonths": 0,
+    "TimeYears": 0,
+    "TimeDayOfWeek": 0,
+    "MccString": "",
+    "MncString": ""
+  },
+  "QpImsRegConfigDb": {
+    "Version": 4,
+    "Items": [
+      {
+        "Rat": 16,
+        "ApnIndex": 17,
+        "ImsServiceInfoString": "VoLte_Vt_Sms",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 20616,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "1792",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 26368,
+        "ApnIndex": 6,
+        "ImsServiceInfoString": "17",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 34816,
+        "ApnIndex": 80,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      }
+    ],
+    "Items2": [
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      }
+    ],
+    "AllowedImsSrvOnWlanString": "None",
+    "AddAllFTs": 0,
+    "AcsPriority": 0,
+    "ISimPriority": 0,
+    "NvPriority": 0,
+    "PcoPriority": 0,
+    "ImsServiceStatus": 0,
+    "ApnNames": [
+      "",
+      "",
+      ""
+    ],
+    "ReservedBytes": "AAAiAAAAogAAALIAAAAAAAAAAAAAAAAAAAIDAQcA4AdpbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "RatAcqOrder": {
+    "Version": -6397,
+    "Values": []
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsPref"
+  },
+  "SmsMandatory": {
+    "Value": 0
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "PsPref"
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "TdsBandPref": {
+    "Value": "IQAAAAAAAAA="
+  },
+  "ThreeGpp2BackPressureRemoval": {
+    "Field1": 1,
+    "Field2": 1000
+  },
+  "UeBasedCw": {
+    "Value1": 1,
+    "Value2": 1
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "WlanOffloadConfig": {
+    "StringValue": "Disabled"
+  },
+  "PbmFeaturesStatusList": {
+    "Value": 1
+  },
+  "RrcDsdaConcurrencyExtended": {
+    "Value": 1
+  },
+  "AGpsEmergencyServicesSupport": {
+    "Value": 2
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 65407
+  },
+  "AuthenticationRequirePasswordEncryption": {
+    "Value": 1
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "StringMode": "TdscmaGsmWcdmaAndLteOnly"
+  },
+  "DtmFeatureSupport": {
+    "Value": 0
+  },
+  "DtmMultislotClass": {
+    "Value": 0
+  },
+  "ForceUemsCrGsmR99Version": {
+    "Value": 2
+  },
+  "ForceUesgSnrGsmR99Version": {
+    "Value": 2
+  },
+  "GnssOemFeatureMask": {
+    "Value": 4608
+  },
+  "IpPppPassword": {
+    "Length": 9,
+    "ValueString": "vnet.mobi"
+  },
+  "PppUserId": {
+    "Length": 15,
+    "ValueString": "ctnet@mycdma.cn"
+  },
+  "PzidHysterisisActivationTimer": {
+    "Value": 0
+  },
+  "PzidHysterisisTimer": {
+    "Value": 60
+  },
+  "QncEnabledFlag": {
+    "Value": 0
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "ServiceDomainPreference": {
+    "Nam": 0,
+    "ServiceDomain": 0
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 1
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 135
+  },
+  "TtyMode": {
+    "Value": 3
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "WcdmaHsupaCategory": {
+    "Value": 7
+  },
+  "Gps1Lock": {
+    "Value": 0
+  },
+  "Gps1SeedposOption": {
+    "Value": 65535
+  },
+  "AagpsUseTransportSecurity": {
+    "Value": 1
+  },
+  "Gps1XtraEnabled": {
+    "Value": 1
+  },
+  "Gps1XtraDownloadInterval": {
+    "Value": 24
+  },
+  "Gps1XtraNumDownloadAttempts": {
+    "Value": 3
+  },
+  "Gps1XtraTimeBetweenAttempts": {
+    "Value": 10
+  },
+  "Gps1XtraAutoDownloadEnabled": {
+    "Value": 0
+  },
+  "Ds707GoNullTimer1x": {
+    "Value": 0
+  },
+  "Ds707GoNullTimerDo": {
+    "Value": 0
+  },
+  "CgpsUmtsPdeServerAddrUrl": {
+    "Value": [
+      "畳",
+      "汰",
+      "朮",
+      "潯",
+      "汧",
+      "⹥",
+      "潣",
+      "㩭",
+      "㈷",
+      "㔷",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000",
+      "\u0000"
+    ]
+  },
+  "CgpsMoMethod": {
+    "Value": 1
+  },
+  "Gps1XtraTimeInfoEnabled": {
+    "Value": 1
+  },
+  "GnssSuplVersion": {
+    "Value": 131072
+  }
+}

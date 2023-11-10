@@ -1,0 +1,36 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Device configuration file for single SIM CHGWLT configuration",
+      "$Header: //commercial/MPSS.AT.4.0.c2.17/Main/modem_proc/mmcp/policyman/configurations/DevConfig/SS/WP/device_config.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 16923482 $\"",
+      "        policy_ver  = \"2038.1.0\"",
+      ">",
+      "  <initial>",
+      "",
+      "    <device_configuration num_sims = \"1\" max_active = \"1\">",
+      "      <config primary=\"C H G W L T\" />",
+      "    </device_configuration>",
+      "    ",
+      "    <ims_config allowed=\"true\" subs=\"this\" />",
+      "    ",
+      "    <boolean_define name=\"pm:ims_only_from_xml\" ns=\"global\" initial=\"true\" />",
+      "   ",
+      "  </initial>",
+      "",
+      "</policy>"
+    ]
+  },
+  "DeviceMode": null,
+  "ImsHybridEnable": null,
+  "QmiCatMode": null,
+  "GsmRxDiversity": {
+    "GSMRxDivCtlFlag": 0
+  },
+  "DualStandbyConfigItems": null,
+  "UimSelectDefaultSimApplication": null
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for Verizon RPM property 
+$Header: //commercial/MPSS.AT.4.0.c2.17/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/RPM/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 16923482 $"
+        policy_ver  = "54.1.1"
+>
+  <initial>
+
+    <boolean_define name="cm:rpm_enabled" initial="true" />
+
+  </initial>
+
+</policy>

@@ -1,0 +1,149 @@
+{
+  "AndsfXml": {
+    "Values": []
+  },
+  "DefaultAndsfXml": {
+    "Values": []
+  },
+  "DsAndsfConfigTxt": {
+    "Values": []
+  },
+  "DsApnSwitching": {
+    "Value": 0
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;"
+    ]
+  },
+  "EmmNasNvItems": {
+    "Value": "BgAAAAABAAEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "IwlanS2bConfigXml": {
+    "Values": []
+  },
+  "LteEmergRedial": {
+    "Version": 1,
+    "RedialOnLte": 257
+  },
+  "MidCallSrvccInfo": {
+    "Version": 1,
+    "ImsCacheExpiryDuration": 5000,
+    "MidCallSupport": 1,
+    "SrvccSyncSupport": 0,
+    "Reserved": 0
+  },
+  "Profile1": {
+    "Values": "AQABAEQAAAAIAAAApaWlpYduAgC2bgIAAAAAAAAAAAABEA0AdGVsZWZvbmljYS5lcxEAAQADFQAEAAAAAAAWAAQAAAAAAB4ABAAAAAAALwABAAA1AAEA/wcQCAABAAAAAAAAAA=="
+  },
+  "Profile2": {
+    "Values": "AQACABkAAAADAAAApaWlpcNuAgDDbgIAAAAAAAAAAAABEAsAbW92aXN0YXIuZXMRAAEAAy8AAQAA"
+  },
+  "Profile3": {
+    "Values": ""
+  },
+  "RatAcqOrder": {
+    "Version": 0,
+    "Values": []
+  },
+  "RefreshVoteOk": {
+    "Value": 1
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsNotAllowed"
+  },
+  "SmsOnly": {
+    "Value": 0
+  },
+  "SupplementServiceDomainPref": {
+    "StringValue": "Auto"
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "CsVoiceOnly"
+  },
+  "WcdmaRrcCsfbSkipSib11Opt": {
+    "Value": 1
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfb": {
+    "Value": 0
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfbTimer": {
+    "Value": 2000
+  },
+  "WlanOffloadConfig": {
+    "StringValue": "IWlanS2b"
+  },
+  "AcquisitionOrderPreference": {
+    "Nam": 0,
+    "Value": 0
+  },
+  "AutoRedialSetting": {
+    "Enable": 1,
+    "Rings": 1
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "CstoVoipFallbackTimer": {
+    "Value": 10
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "StringMode": "GWL"
+  },
+  "DtmFeatureSupport": {
+    "Value": 1
+  },
+  "DtmMultislotClass": {
+    "Value": 3
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  },
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "MgrfSupported": {
+    "Value": 1
+  },
+  "NasReleaseCompliance": {
+    "Value": 3
+  },
+  "NetworkSelectionModePreference": {
+    "Nam": 0,
+    "NetSelMode": 0
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "UmtsAmrCodecPreferenceConfig": {
+    "Value": 15
+  },
+  "VoipCancelRetryTimer": {
+    "Value": 10
+  }
+}

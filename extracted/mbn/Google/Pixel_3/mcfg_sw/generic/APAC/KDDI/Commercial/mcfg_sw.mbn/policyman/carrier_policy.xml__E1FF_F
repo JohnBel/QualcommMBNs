@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for KDDI with LTE in Home and G/W/L in Roam. VoLTE is always assumed ON for this XML.
+$Header: //commercial/MPSS.AT.4.0.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/KDDI/subsidized/carrier_policy.xml#1 $
+-->
+
+<policy name        = "generic"
+        changelist  = "$Change: 14679233 $"
+        policy_ver  = "43.1.16"
+>
+
+  <initial>
+    <plmn_list name="unrestricted_operators">
+      001-01 440-07 440-08
+      440-50 440-51 440-52 440-53 440-54 440-55 440-56
+      440-70 440-71 440-72 440-73 440-74 440-75 440-76 440-77 440-78 440-79
+      440-88 440-89
+      441-70
+    </plmn_list>
+    <mcc_list name="pm:volte_only_mccs"> 001 440 441 </mcc_list>
+    <mcc_list name="japan_mccs"> 001 440 441 </mcc_list>
+    <mcc_list name="china_mccs"> 460 </mcc_list>
+    <define_fullrat_config>
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <call_mode> NORMAL </call_mode>
+    </define_fullrat_config>
+    <boolean_define name="mmcp:e911_volte" initial="true" />
+    <rf_band_list name="rf_bands">
+     <gw_bands base="hardware"/>
+     <lte_bands base="hardware"/>
+     <tds_bands base="none"/>
+    </rf_band_list>
+    <ue_mode> NORMAL </ue_mode>
+    <feature single_sim="normal"> dualmmode </feature>
+    <volte enabled="true" />
+    <rat_capability_if base="none">
+      <include> G W L </include>
+    </rat_capability_if>
+    <rf_bands list="rf_bands"/>
+  </initial>
+  <if>
+    <any_of>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      <not> <have_location /> </not>
+      <not> <have_imsi /> </not>
+    </any_of>
+    <then>
+      <stop />
+    </then>
+  </if>
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <svc_mode> FULL </svc_mode>
+  <select>
+    <case>
+      <all_of>
+        <imsi_plmn_in list="unrestricted_operators" />
+        <location_mcc_in list="japan_mccs" />
+      </all_of>
+      <then>
+        <rat_capability base="none">
+          <include> L </include>
+        </rat_capability>
+        <call_mode> VOLTE </call_mode>
+        <ca_band_combos string="18AA-1A-0;18AA-1A-1;18A-1AA-0;18A-1AA-1;26AA-1A-0;26AA-1A-1;26A-1AA-0;26A-1AA-1;28AA-1A-0;28AA-1A-1;28A-1AA-0;28A-1AA-1;41A-1AA-0;42A-1AA-0;42AA-41A-0;42A-41AA-0;41CA-0;41CA-1;41CA-2;41CA-3;42CA-0;42CA-1;" />
+      </then>
+    </case>
+    <case>
+      <location_mcc_in list="japan_mccs" />
+      <then>
+        <rat_capability base="none">
+          <include> L </include>
+        </rat_capability>
+        <call_mode> NORMAL </call_mode>
+        <ca_band_combos string="18AA-1A-0;18AA-1A-1;18A-1AA-0;18A-1AA-1;26AA-1A-0;26AA-1A-1;26A-1AA-0;26A-1AA-1;28AA-1A-0;28AA-1A-1;28A-1AA-0;28A-1AA-1;41A-1AA-0;42A-1AA-0;42AA-41A-0;42A-41AA-0;41CA-0;41CA-1;41CA-2;41CA-3;42CA-0;42CA-1;" />
+      </then>
+    </case>
+    <case>
+      <true />
+      <then>
+        <rat_capability base="none">
+          <include> G W L </include>
+        </rat_capability>
+        <call_mode> NORMAL </call_mode>
+      </then>
+    </case>
+  </select>
+</policy>

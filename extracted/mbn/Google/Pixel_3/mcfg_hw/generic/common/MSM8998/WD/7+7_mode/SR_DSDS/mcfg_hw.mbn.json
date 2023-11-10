@@ -1,0 +1,55 @@
+{
+  "DeviceConfigXml": {
+    "Values": [
+      "?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- 7+7 mode Device configuration file for open Market DSDS with L+L support",
+      "$Header: //commercial/MPSS.AT.4.0.c2.17/Main/modem_proc/mmcp/policyman/configurations/DevConfig/7+7_mode/L+L/device_config.xml#1 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 16923482 $\"",
+      "        policy_ver  = \"2036.1.7\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <device_configuration num_sims=\"2\" max_active_voice=\"1\" max_active_data=\"2\">",
+      "      <config primary=\"C H G W L T\" secondary=\"G W L T\" />",
+      "      <config primary=\"G W L T\" secondary=\"C H G W L T\" />",
+      "      <e911_config primary=\"C H G W L T\" secondary=\"G W L T\" />",
+      "      <e911_config primary=\"G W L T\" secondary=\"C H G W L T\" />",
+      "    </device_configuration>",
+      "",
+      "    <feature subs=\"this\">  dualmmode </feature>",
+      "    <feature subs=\"other\"> dualmmode </feature>",
+      "",
+      "    <mcc_list name=\"disable_5dlca_mccs\" ns=\"global\"> 460 </mcc_list>",
+      " ",
+      "  </initial>",
+      "",
+      "  <lte_feature subs=\"this\" name=\"5DLCA\">",
+      "    <not> <location_mcc_in subs=\"this\" list=\"disable_5dlca_mccs\" /> </not>",
+      "  </lte_feature>",
+      "",
+      "  <lte_feature subs=\"other\" name=\"5DLCA\">",
+      "    <not> <location_mcc_in subs=\"other\" list=\"disable_5dlca_mccs\" /> </not>",
+      "  </lte_feature>",
+      "",
+      "</policy>"
+    ]
+  },
+  "DeviceMode": null,
+  "QmiCatMode": null,
+  "ScanScopeRule": {
+    "Value": 62
+  },
+  "UeUsageSetting": null,
+  "Banner": {
+    "ValueString": ""
+  },
+  "DualStandbyConfigItems": null,
+  "TrmConfiguration": {
+    "Config": 0,
+    "Mask": 0
+  }
+}

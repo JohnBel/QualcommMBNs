@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier policy XML for SBM with SRLTE roaming and excluding LTE B41 for VOLTE calls.
+ Based on SBM Requirement OTR-PLMN-200001.
+$Header: //commercial/MPSS.AT.4.0.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/SBM/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 14679233 $"
+        policy_ver  = "108.1.9"
+>
+  <initial>
+
+    <mcc_list name="pm:exclude_bands_mccs"> 440 441 </mcc_list>
+
+    <boolean_define name="full_rat_at_powerup" initial="true" />
+    <boolean_define name="full_rat_from_acqfail" initial="true" />
+
+    <rf_band_list name="rf_bands_home">
+      <gw_bands base="hardware"/>
+      <lte_bands base="hardware">
+        <exclude_for_volte> 41 </exclude_for_volte>
+      </lte_bands>
+      <tds_bands base="none" />
+    </rf_band_list>
+
+    <define_fullrat_config timer_secs = "1800" scan_fail_cnt = "0">
+      <rf_bands base="hardware" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <ue_mode> CSFB </ue_mode>
+    </define_fullrat_config>
+
+    <rat_capability_if base="none">
+      <include> L W </include>
+    </rat_capability_if>
+
+    <rf_bands>
+        <gw_bands base="hardware"/>
+        <lte_bands base="hardware"/>
+        <tds_bands base="none"/>
+    </rf_bands>
+
+    <feature single_sim="srlte"> dualmmode </feature>
+    <ue_mode_if> CSFB </ue_mode_if>
+
+  </initial>
+
+  <!-- Determine Full RAT at power up -->
+  <if>
+    <all_of>
+      <boolean_test name="full_rat_at_powerup" />
+      <enforce_full_rat />
+    </all_of>
+    <then>
+      <boolean_set name="full_rat_at_powerup" value="false" />
+      <fullrat_enter />
+    </then>
+  </if>
+
+  <!-- Determine Full RAT after ONLINE -->
+  <if>
+    <all_of>
+      <boolean_test name="full_rat_from_acqfail" />
+      <phone_operating_mode> ONLINE </phone_operating_mode>
+      <time_in_lpm> 1800 </time_in_lpm>
+      <oos_scan_cnt test=">=" value="1" />
+    </all_of>
+    <then>
+      <boolean_set name="full_rat_from_acqfail" value="false" />
+      <fullrat_enter />
+    </then>
+  </if>
+
+  <!-- Set the boolean and wait if UE is not ONLINE  -->
+  <if>
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    <then>
+      <boolean_set name="full_rat_from_acqfail" value="true" />
+      <stop />
+    </then>
+  </if>
+
+  <!-- Wait if location is unknown  -->
+  <if>
+    <not> <have_location /> </not>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <svc_mode> FULL </svc_mode>
+  <boolean_set name="full_rat_at_powerup" value="false" />
+  <boolean_set name="full_rat_from_acqfail" value="false" />
+
+  <!-- Determine configuration based on location -->
+  <select>
+
+    <case>
+      <location_mcc_in list="pm:exclude_bands_mccs" />
+      <actions>
+        <rf_bands list="rf_bands_home" />
+        <ue_mode> CSFB </ue_mode>
+        <rat_capability base="none">
+          <include> L W </include>
+        </rat_capability>
+        <!-- default ca_band_combos -->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8AA-1A-1;8AA-1A-2;8A-1AA-0;8A-1AA-1;8A-1AA-2;8AA-3A-1A-0;8AA-3A-1A-1;8AA-3A-1A-2;8AA-3A-1A-3;8A-3AA-1A-0;8A-3AA-1A-1;8A-3AA-1A-2;8A-3AA-1A-3;8A-3A-1AA-0;8A-3A-1AA-1;8A-3A-1AA-2;8A-3A-1AA-3;28AA-3A-0;28A-3AA-0;41A-3AA-0;42A-3AA-0;8AA-3A-0;8AA-3A-1;8AA-3A-2;8AA-3A-3;8A-3AA-0;8A-3AA-1;8A-3AA-2;8A-3AA-3;41A-28AA-3A-0;41A-28A-3AA-0;42A-28AA-3A-0;42A-28A-3AA-0;42A-41A-3AA-0;41C-3AA-0;42C-3AA-0;42A-41A-28AA-3A-0;42A-41A-28A-3AA-0;41C-28AA-3A-0;41C-28A-3AA-0;42C-28AA-3A-0;42C-28A-3AA-0;42C-41A-3AA-0;42A-41C-3AA-0;42C-41A-28AA-3A-0;42C-41A-28A-3AA-0;42A-41C-28AA-3A-0;42A-41C-28A-3AA-0;41A-28AA-0;42A-28AA-0;42A-41A-28AA-0;41C-28AA-0;42C-28AA-0;42C-41A-28AA-0;42A-41C-28AA-0;42C-41C-28AA-0;42AA-41A-0;42A-41AA-0;41CA-0;41CA-1;41CA-2;41CA-3;42CA-41A-0;42C-41AA-0;42AA-41C-0;42A-41CA-0;42CA-41C-0;42C-41CA-0;42CA-0;42C-41C-3AA-0;" />
+      </actions>
+    </case>
+
+    <case>
+      <true />
+      <actions>
+        <rf_bands base="hardware" />
+        <ue_mode> CSFB </ue_mode>
+        <rat_capability base="none">
+          <include> G W L </include>
+        </rat_capability>
+        <!-- default ca_band_combos -->
+        <ca_band_combos string="3AA-1A-0;3A-1AA-0;8AA-1A-0;8AA-1A-1;8AA-1A-2;8A-1AA-0;8A-1AA-1;8A-1AA-2;8AA-3A-1A-0;8AA-3A-1A-1;8AA-3A-1A-2;8AA-3A-1A-3;8A-3AA-1A-0;8A-3AA-1A-1;8A-3AA-1A-2;8A-3AA-1A-3;8A-3A-1AA-0;8A-3A-1AA-1;8A-3A-1AA-2;8A-3A-1AA-3;28AA-3A-0;28A-3AA-0;41A-3AA-0;42A-3AA-0;8AA-3A-0;8AA-3A-1;8AA-3A-2;8AA-3A-3;8A-3AA-0;8A-3AA-1;8A-3AA-2;8A-3AA-3;41A-28AA-3A-0;41A-28A-3AA-0;42A-28AA-3A-0;42A-28A-3AA-0;42A-41A-3AA-0;41C-3AA-0;42C-3AA-0;42A-41A-28AA-3A-0;42A-41A-28A-3AA-0;41C-28AA-3A-0;41C-28A-3AA-0;42C-28AA-3A-0;42C-28A-3AA-0;42C-41A-3AA-0;42A-41C-3AA-0;42C-41A-28AA-3A-0;42C-41A-28A-3AA-0;42A-41C-28AA-3A-0;42A-41C-28A-3AA-0;41A-28AA-0;42A-28AA-0;42A-41A-28AA-0;41C-28AA-0;42C-28AA-0;42C-41A-28AA-0;42A-41C-28AA-0;42C-41C-28AA-0;42AA-41A-0;42A-41AA-0;41CA-0;41CA-1;41CA-2;41CA-3;42CA-41A-0;42C-41AA-0;42AA-41C-0;42A-41CA-0;42CA-41C-0;42C-41CA-0;42CA-0;42C-41C-3AA-0;" />
+      </actions>
+    </case>
+
+  </select>
+
+</policy>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<policy name        = "generic"
+        changelist  = "$Change: 10180820 $"
+        schema_ver  = "1"
+        policy_ver  = "96.1.2"
+>
+    <initial>
+        <boolean_define name="pm:allow_tds_on_this_sub" initial="true" />
+        <actions>
+            <!-- Set initial power up capability -->
+            <rat_capability base="none">
+                <include> CDMA HDR GSM WCDMA LTE TDSCDMA </include>
+            </rat_capability>
+            <ue_mode> NORMAL </ue_mode>
+            <feature> normal </feature>
+        </actions>
+    </initial>
+    <rule precond="none">
+        <conditions>
+            <true />
+        </conditions>
+        <actions>
+            <ca_band_combos string=""/>
+        </actions>
+    </rule>
+</policy>

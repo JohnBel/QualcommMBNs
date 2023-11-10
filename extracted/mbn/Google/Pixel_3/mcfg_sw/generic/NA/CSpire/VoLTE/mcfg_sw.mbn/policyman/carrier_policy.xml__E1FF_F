@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier configuration file for SRLTE with CHGWL roaming
+$Header: //commercial/MPSS.AT.4.0.c2/Main/modem_config/mcfg_common/pixel_mcfg/NA/CSpire/efs/carrier_policy.xml $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 16091850 $"
+        policy_ver  = "19.3.6"
+>
+
+  <initial>
+
+    <!-- List of the MCCs in which SRLTE is allowed. Do NOT rename this list. -->
+    <mcc_list name="sxlte_mccs"> 310 311 312 313 314 315 316 330 </mcc_list>
+
+    <!-- List of the MCCs that have CDMA roaming -->
+    <mcc_list name="cdma_and_ca_mccs" include="hplmn ehplmn"> 302 310 311 312 313 314 315 316 330 334 376 001</mcc_list>
+
+    <define_fullrat_config>
+      <ue_mode> CSFB </ue_mode>
+      <rf_bands base="hardware" />
+    </define_fullrat_config>
+
+    <boolean_define name="ue_mode_timer_running" initial="false" />
+
+    <define_timer name="hybr_oos" interval="1" units="min" id= "101" />
+    <define_timer name="ue_mode_timer" interval="1" units="min" id="102" />
+
+    <rat_capability base="none" >
+      <include> C H G W L </include>
+    </rat_capability>
+
+    <feature single_sim="srlte"> dualmmode </feature>
+
+    <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+    <rf_bands base="hardware" />
+
+    <ca_band_combos string="" />
+  </initial>
+
+  <if>
+    <timer_expired name="ue_mode_timer" />
+    <then>
+      <expired_timer_handled name="ue_mode_timer" />
+      <boolean_set name="ue_mode_timer_running" value="false" />
+      <continue />
+    </then>
+  </if>  
+  
+  <!-- Stop if the device does not have location or is not online -->
+  <if precond="none">
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    <then>
+      <rat_capability base="none">
+        <include> C H G W L  </include>
+      </rat_capability>
+      <stop />
+    </then>
+  </if>
+
+  <if precond="none">
+    <not> <have_location /> </not>
+    <then> <stop /> </then>
+    <else>
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </else>
+  </if>
+
+
+  <if precond="none">
+    <location_mcc_in list="cdma_and_ca_mccs" />
+    <then>
+      <ca_band_combos string="2AA-2A-0;5A-2AA-0;5A-2AA-1;5AA-2A-0;5AA-2A-1;12A-2AA-0;12A-2AA-1;12AA-2A-0;12AA-2A-1;5BA-0;25AA-25A-0;25AA-25A-1;41A-25AA-0;41A-25AA-1;41AA-25A-0;41AA-25A-1;41CA-0;41CA-1;41CA-2;41CA-3;41AA-41A-0;41AA-41A-1;41DA-0;41CA-25A-0;41CA-25A-1;41CA-25A-2;41CA-25A-3;41CA-25AA-0;41CA-25AA-1;41CA-25AA-2;41CA-25AA-3;" />
+      <!-- Remove LTE on non-DDS when VoLTE is disabled in home. -->
+      <if>
+        <all_of>
+        <not> <is_subs_dds /> </not>
+        <not> <volte_enabled /> </not>
+        <location_mcc_in list="sxlte_mccs" />
+        </all_of>
+        <then>
+          <rat_capability base="none">
+            <include> C H G W </include>
+          </rat_capability>
+          <continue/>
+        </then>
+        <else>
+          <rat_capability base="none">
+            <include> C H G W L </include>
+          </rat_capability>
+          <continue/>
+        </else>
+      </if>
+    </then>
+    <else>
+      <!-- Choose an CA band that is not supported by HW, CA will be disabled by doing this -->
+      <ca_band_combos string="41AA-39A-0;" />
+      <rat_capability base="none">
+        <include> G W L </include>
+      </rat_capability>
+      <continue/>
+    </else>
+  </if>
+
+
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <if>
+    <boolean_test name="ue_mode_timer_running" />
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <if>
+      <location_mcc_in list="sxlte_mccs" />
+    <then>
+      <ue_mode> 1X_CSFB_PREF </ue_mode>
+    </then>
+    <else>
+      <if>
+        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>
+        <then>
+          <timer_start name="ue_mode_timer" />
+          <boolean_set name="ue_mode_timer_running" value="true" />
+        </then>
+      </if>
+      <ue_mode> CSFB </ue_mode>
+    </else>
+  </if>
+
+</policy>

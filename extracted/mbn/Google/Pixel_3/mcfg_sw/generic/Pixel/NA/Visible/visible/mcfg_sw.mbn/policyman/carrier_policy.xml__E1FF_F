@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier configuration file for Visible
+$Header: $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 16091850 $"
+        policy_ver  = "30.1.1"
+>
+
+  <initial>
+
+    <!-- List of the MCCs that have CDMA roaming -->
+    <mcc_list name="cdma_and_ca_mccs" include="hplmn ehplmn"> 302 310 311 312 330 334 376 001</mcc_list>
+
+    <plmn_list name = "vzw_lte_plmns" include="hplmn ehplmn">
+        310-004 310-010 310-012 310-013 310-590 310-890 310-910 311-110 311-270 311-271 311-272 311-273 311-274 311-275 311-276 311-277 311-278 311-279 311-280
+        311-281 311-282 311-283 311-284 311-285 311-286 311-287 311-288 311-289 311-390 311-480 311-481 311-482 311-483 311-484 311-485 311-486 311-487 311-488 311-489
+    </plmn_list>
+
+    <define_fullrat_config>
+      <ue_mode> CSFB </ue_mode>
+      <rf_bands base="hardware" />
+    </define_fullrat_config>
+
+    <boolean_define name="cm:silent_redial_restricted_on_GW" initial="false" />
+
+    <boolean_define name="cm:rpm_enabled" initial="true" />
+
+    <define_timer name="hybr_oos" interval="1" units="min" id= "101" />
+
+    <rat_capability base="none" >
+      <include> L </include>
+    </rat_capability>
+
+    <ue_mode_if> CSFB </ue_mode_if>
+
+    <rf_bands base="hardware" />
+
+    <ca_band_combos string="" />
+  </initial>
+
+
+  <!-- Stop if the device does not have location or is not online -->
+  <if precond="none">
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <if precond="none">
+    <not> <have_location /> </not>
+    <then> <stop /> </then>
+    <else>
+      <boolean_set name="cm:silent_redial_restricted_on_GW">
+        <serving_plmn_in list = "vzw_lte_plmns" />
+      </boolean_set>
+      <svc_mode> FULL </svc_mode>
+      <continue/>
+    </else>
+  </if>
+
+
+  <if precond="none">
+    <location_mcc_in list="cdma_and_ca_mccs" />
+    <then>
+      <ca_band_combos string="2AA-2A-0;4A-2AA-0;4A-2AA-1;4A-2AA-2;5A-2AA-0;5A-2AA-1;66A-2AA-0;66A-2AA-1;66A-2AA-2;13A-2AA-0;13A-2AA-1;4AA-2A-0;4AA-2A-1;4AA-2A-2;4AA-4A-0;4AA-4A-1;5A-4AA-0;5A-4AA-1;13A-4AA-0;13A-4AA-1;5AA-2A-0;5AA-2A-1;5AA-4A-0;5AA-4A-1;66A-5AA-0;13AA-2A-0;13AA-2A-1;13AA-4A-0;13AA-4A-1;66A-13AA-0;66AA-2A-0;66AA-2A-1;66AA-2A-2;66AA-5A-0;66AA-13A-0;66AA-66A-0;66BA-0;66CA-0;4A-2AA-2A-0;4AA-2A-2A-0;5A-2AA-2A-0;5AA-2A-2A-0;13A-2AA-2A-0;13AA-2A-2A-0;66A-2AA-2A-0;66AA-2A-2A-0;4AA-4A-2A-0;4A-4A-2AA-0;5AA-4A-2A-0;5A-4AA-2A-0;5A-4A-2AA-0;13AA-4A-2A-0;13A-4AA-2A-0;13A-4A-2AA-0;66AA-5A-2A-0;66A-5AA-2A-0;66A-5A-2AA-0;66AA-13A-2A-0;66A-13AA-2A-0;66A-13A-2AA-0;66AA-66A-2A-0;66A-66A-2AA-0;66BA-2A-0;66B-2AA-0;66CA-2A-0;66C-2AA-0;5AA-4A-4A-0;5A-4AA-4A-0;13AA-4A-4A-0;13A-4AA-4A-0;66AA-66A-5A-0;66A-66A-5AA-0;66BA-5A-0;66B-5AA-0;66CA-5A-0;66C-5AA-0;66AA-66A-13A-0;66A-66A-13AA-0;66BA-13A-0;66B-13AA-0;66CA-13A-0;66C-13AA-0;66CA-66A-0;66C-66AA-0;4AA-4A-2A-2A-0;4A-4A-2AA-2A-0;5AA-4A-2A-2A-0;5A-4AA-2A-2A-0;5A-4A-2AA-2A-0;66AA-5A-2A-2A-0;66A-5AA-2A-2A-0;66A-5A-2AA-2A-0;66AA-13A-2A-2A-0;66A-13AA-2A-2A-0;66A-13A-2AA-2A-0;66AA-66A-2A-2A-0;66A-66A-2AA-2A-0;66BA-2A-2A-0;66B-2AA-2A-0;66CA-2A-2A-0;66C-2AA-2A-0;66AA-66A-5A-2A-0;66A-66A-5AA-2A-0;66A-66A-5A-2AA-0;66BA-5A-2A-0;66B-5AA-2A-0;66B-5A-2AA-0;66CA-5A-2A-0;66C-5AA-2A-0;66C-5A-2AA-0;66BA-13A-2A-0;66B-13AA-2A-0;66B-13A-2AA-0;66CA-13A-2A-0;66C-13AA-2A-0;66C-13A-2AA-0;46A-2AA-0;46A-4AA-0;46A-13AA-0;46A-5AA-0;46A-5AA-1;66AA-46A-0;46A-46A-2AA-0;46C-2AA-0;46A-46A-4AA-0;46C-4AA-0;46C-5AA-0;46C-5AA-1;46A-5AA-2A-0;46A-5A-2AA-0;46A-13AA-2A-0;46A-13A-2AA-0;66AA-46A-2A-0;66A-46A-2AA-0;66AA-46A-5A-0;66A-46A-5AA-0;66AA-46A-13A-0;66A-46A-13AA-0;46C-46A-2AA-0;46D-2AA-0;46C-46A-4AA-0;46D-4AA-0;46D-5AA-0;46D-5AA-1;46D-13AA-0;66AA-46C-46A-0;66AA-46D-0;46C-5A-2AA-0;46C-5AA-2A-0;46C-13AA-2A-0;46C-13A-2AA-0;66AA-46C-2A-0;66A-46C-2AA-0;66AA-46C-5A-0;66A-46C-5AA-0;66AA-46C-13A-0;66A-46C-13AA-0;48A-2AA-0;48A-13AA-0;66AA-48A-0;48A-48A-2AA-0;66AA-48A-2A-0;66A-48A-2AA-0;48C-2AA-0;48A-48A-13AA-0;66AA-48A-13A-0;66A-48A-13AA-0;48C-13AA-0;66AA-48A-48A-0;66AA-66A-48A-0;66BA-48A-0;66CA-48A-0;66AA-48C-0;66AA-48A-48A-2A-0;66A-48A-48A-2AA-0;48D-2AA-0;66AA-48A-48A-13A-0;66A-48A-48A-13AA-0;48C-48A-13AA-0;66AA-48C-13A-0;66A-48C-13AA-0;48D-13AA-0;66AA-66A-48A-48A-0;66BA-48A-48A-0;66CA-48A-48A-0;66AA-48C-48A-0;66AA-48D-0;5AA-4A-4A-2A-0;5A-4AA-4A-2A-0;5A-4A-4A-2AA-0;5BA-0;5BA-2A-0;5B-2AA-0;5BA-4A-2A-0;5B-4AA-2A-0;5B-4A-2AA-0;66AA-5B-0;66A-5BA-0;66AA-5B-2A-0;66A-5BA-2A-0;66A-5B-2AA-0;66AA-66A-13A-2A-0;66A-66A-13AA-2A-0;66A-66A-13A-2AA-0;46C-13AA-0;66AA-46C-0;46D-2AA-0;46D-2AA-2A-0;46D-5AA-2A-0;46D-5A-2AA-0;46D-13AA-2A-0;46D-13A-2AA-0;66AA-46D-2A-0;66A-46D-2AA-0;66AA-46D-5A-0;66A-46D-5AA-0;66AA-46D-13A-0;66A-46D-13AA-0;66AA-46A-46A-0;66AA-66A-46D-0;66AA-48C-48A-2A-0;66A-48C-48A-2AA-0;66AA-48D-2A-0;66A-48D-2AA-0;48E-2AA-0;66AA-48C-48C-0;5BA-4A-4A-0;5B-4AA-4A-0;" />
+      <continue/>
+    </then>
+    <else>
+      <!-- Choose an CA band that is not supported by HW, CA will be disabled by doing this -->
+      <ca_band_combos string="41AA-39A-0;" />
+      <continue/>
+    </else>
+  </if>
+
+</policy>

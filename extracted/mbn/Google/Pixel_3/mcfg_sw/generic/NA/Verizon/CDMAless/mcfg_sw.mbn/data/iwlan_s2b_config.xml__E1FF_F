@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<IWLAN_S2B_CONFIG>
+    <GENERIC_VARIANT>
+        <epdg_addr_info>
+            <fqdn>wo.vzwwo.com</fqdn>
+            <fallback_mech>
+                <mech_type>PCO</mech_type>
+                <mech_type>DNS</mech_type>
+            </fallback_mech>
+            <natt_info>
+                <keep_alive_timer_sec>50</keep_alive_timer_sec>
+            </natt_info>
+            <multiple_ip_addr_support>TRUE</multiple_ip_addr_support>
+        </epdg_addr_info>
+        <ikev2_info>
+            <ke_payload_enabled>FALSE</ke_payload_enabled>
+            <ikev2_sa_rekey_timer>
+                <soft_sec>86400</soft_sec>
+                <hard_sec>86500</hard_sec>
+            </ikev2_sa_rekey_timer>
+            <esp_rekey_timer>
+                <soft_sec>86400</soft_sec>
+                <hard_sec>86500</hard_sec>
+            </esp_rekey_timer>
+            <retransmit_timer_sec>1</retransmit_timer_sec>
+            <max_retries>4</max_retries>
+            <ikev2_encr_algo_list>
+                <encr_algo value="12">
+                    <key_size>256</key_size>
+                </encr_algo>
+            </ikev2_encr_algo_list>
+            <ikev2_hash_algo_list>
+                <algo value="2"/>
+            </ikev2_hash_algo_list>
+            <ikev2_prf_algo_list>
+                <prf_algo value="2"/>
+            </ikev2_prf_algo_list>
+            <esp_encr_algo_list>
+                <encr_algo value="12">
+                    <key_size>128</key_size>
+                    <key_size>256</key_size>
+                </encr_algo>
+            </esp_encr_algo_list>
+            <esp_auth_algo_list>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <self_id>
+                <id_type>ID_RFC822_ADDR</id_type>
+                <mac_enabled>TRUE</mac_enabled>
+                <identifier>IMPI</identifier>
+            </self_id>
+        </ikev2_info>
+        <err_code_info>
+            <pdn_throttling>
+                <throttling_series type="default">
+                    <throttling_values>
+                        <seconds>0</seconds>
+                        <seconds>0</seconds>
+                        <seconds random="TRUE">60</seconds>
+                        <seconds>120</seconds>
+                        <seconds>480</seconds>
+                        <seconds>900</seconds>
+                    </throttling_values>
+                </throttling_series>
+                <throttling_series id="1">
+                    <throttling_values>
+                        <seconds>0</seconds>
+                        <seconds>0</seconds>
+                        <seconds infinite="TRUE"/>
+                    </throttling_values>
+                    <throttling_cause_codes>
+                        <cause_code>24</cause_code>
+                        <cause_code>
+                            <start>9000</start>
+                            <end>9050</end>
+                        </cause_code>
+                        <cause_code>
+                            <start>11000</start>
+                            <end>11050</end>
+                        </cause_code>
+                    </throttling_cause_codes>
+                </throttling_series>
+                <throttling_series id="2">
+                    <throttling_values>
+                        <seconds>3600</seconds>
+                    </throttling_values>
+                    <throttling_cause_codes>
+                        <cause_code>
+                            <start>10500</start>
+                            <end>10550</end>
+                        </cause_code>
+                    </throttling_cause_codes>
+                </throttling_series>
+                <throttling_series id="3">
+                    <throttling_values>
+                        <seconds infinite="TRUE"/>
+                    </throttling_values>
+                    <throttling_cause_codes>
+                        <cause_code>8192</cause_code>
+                    </throttling_cause_codes>
+                </throttling_series>
+            </pdn_throttling>
+            <error_code_mapping>
+                <NETWORK_TOO_BUSY>10000</NETWORK_TOO_BUSY>
+                <ROAMING_NOT_ALLOWED>11000</ROAMING_NOT_ALLOWED>
+                <RAT_DISALLOWED>11001</RAT_DISALLOWED>
+                <NO_SUBSCRIPTION>9000</NO_SUBSCRIPTION>
+                <NETWORK_FAILURE>10500</NETWORK_FAILURE>
+                <REQUEST_REJECTED_IF_S2B>10048</REQUEST_REJECTED_IF_S2B>
+                <PGW_OVERLOAD>10003</PGW_OVERLOAD>
+                <PROTOCOL_ERROR_IF_S2B>10049</PROTOCOL_ERROR_IF_S2B>
+                <NO_SUBSCRIPTION_IF_S2B>9049</NO_SUBSCRIPTION_IF_S2B>
+                <MISSING_OR_UNKNOWN_APN_IF_S2B>9048</MISSING_OR_UNKNOWN_APN_IF_S2B>
+                <UNSUPPORTED_PDN_TYPE_IF_S2B>11049</UNSUPPORTED_PDN_TYPE_IF_S2B>
+                <PERMANENT_FAILURE>11002</PERMANENT_FAILURE>
+                <RAT_DISALLOWED_IF_S2B>11003</RAT_DISALLOWED_IF_S2B>
+            </error_code_mapping>
+        </err_code_info>
+    </GENERIC_VARIANT>
+    <WP_VARIANT>
+        <ikev2_info>
+            <esp_auth_algo_list>
+                <algo value="1"/>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <configured_ike_port>4500</configured_ike_port>
+        </ikev2_info>
+    </WP_VARIANT>
+</IWLAN_S2B_CONFIG>

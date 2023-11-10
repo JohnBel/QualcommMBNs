@@ -1,0 +1,35 @@
+
+[Ut:XCAPCommonHC]
+
+#This config item controls the configuration of BSF server address
+#b/154133167: Enable GBA
+
+*bsfServerAddress = "bsf.mobilefrdm.ca"
+
+
+[QIPCALL:ImsVoiceConfig]
+
+#This config is required to configure the terminating identity presentation or restriction type.
+
+*terminatingIdentityService = 0
+
+
+[QIPCALL:ImsVoiceSuppsConfig]
+
+#This config is required to enable presentation of the call to
+#the user when UE is already in two calls (active and held).
+
+*presentThirdCalltoUser = 1
+
+
+[SIPConfig:Transport]
+
+#above this size choose TCP and value 0 means disable tcp port open on UE
+
+*TCPThresholdValue = 1300
+
+#enable or disable TCP Static threshold
+
+*TCPEnableStaticThreshold = 1
+
+
