@@ -1,0 +1,5 @@
+APN_String:;
+ATTACH_TYPE_RULES:TRUE;
+P-CSCF_OR_DNSAddressRequired:5;
+ON_DEMAND_TYPE_RULES:TRUE;
+P-CSCF_OR_DNSAddressRequired:5;

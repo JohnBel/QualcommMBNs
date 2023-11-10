@@ -1,0 +1,14 @@
+APN_String:ims;
+ATTACH_TYPE_RULES:TRUE;
+P-CSCFRequired:2;
+IPAddressRequired:2;
+ON_DEMAND_TYPE_RULES:TRUE;
+P-CSCFRequired:2;
+IPAddressRequired:2;
+APN_String:vzwinternet;
+ATTACH_TYPE_RULES:TRUE;
+P-CSCFRequired:4;
+IPAddressRequired:5;
+ON_DEMAND_TYPE_RULES:TRUE;
+P-CSCFRequired:4;
+IPAddressRequired:5;

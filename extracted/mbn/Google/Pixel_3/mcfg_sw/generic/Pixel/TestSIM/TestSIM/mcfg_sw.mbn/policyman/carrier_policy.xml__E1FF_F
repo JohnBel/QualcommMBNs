@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier Policy for LTE band / RAT configuration
+$Header: // $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 10262256 $"
+        enabled     = "true"
+        schema_ver  = "1"
+        policy_ver  = "43.3.18"
+>
+  <initial>
+    <boolean_define name="pm:allow_tds_on_this_sub" initial="true" />
+    <actions>
+      <!-- Set initial power up capability -->
+      <rat_capability base="none">
+        <include> LTE WCDMA GSM TDSCDMA CDMA HDR </include>
+      </rat_capability>
+    </actions>
+  </initial>
+</policy>

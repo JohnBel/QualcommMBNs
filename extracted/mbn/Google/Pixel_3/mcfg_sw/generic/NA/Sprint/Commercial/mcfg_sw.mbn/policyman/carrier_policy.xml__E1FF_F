@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Device configuration file for SRLTE with CHGWL roaming
+$Header: //commercial/MPSS.AT.4.0.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/Sprint/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#1 $
+-->
+<policy name        = "generic"
+        changelist  = "$Change: 14679233 $"
+        policy_ver  = "28.1.11"
+>
+
+  <initial>
+
+    <mcc_list name="sxlte_mccs"> 310 311 312 313 314 315 316 330 </mcc_list>
+
+    <rat_capability base="none">
+      <include> C H G W L </include>
+    </rat_capability>
+
+    <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>
+
+    <!-- Set HW RF bands excluding TDS -->
+    <rf_bands>
+      <gw_bands base="hardware" />
+      <lte_bands base="hardware" />
+      <tds_bands base="none" />
+    </rf_bands>
+
+    <feature single_sim="srlte"> dualmmode </feature>
+
+  </initial>
+
+  <rule precond="none">
+    <conditions>
+      <true />
+    </conditions>
+    <actions>
+      <if>
+        <cond> <location_mcc_in list="sxlte_mccs" /> </cond>
+        <then>
+          <!-- Pixel MOD b/146473964 To downgrade to B41D(4x4 2x2 2x2)  -->
+          <ca_band_combos string="25AA-25A-0;25AA-25A-1;26AA-25A-0;26AA-25A-1;26AA-25A-2;26A-25AA-0;26A-25AA-1;26A-25AA-2;26AA-25A-25A-0;26A-25AA-25A-0;41CA-0;41CA-1;41CA-2;41CA-3;41D422A-0;" />
+          <continue/>
+        </then>
+        <else>
+          <!-- Choose an CA band that is not supported by HW, CA will be disabled by doing this -->
+          <ca_band_combos string="41AA-39A-0;" />
+          <rf_bands base="hardware" />
+          <continue/>
+        </else>
+      </if>
+    </actions>
+  </rule>
+
+  <if>
+    <any_of>
+      <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+      <not> <have_location /> </not>
+    </any_of>
+    <then>
+      <stop />
+    </then>
+  </if>
+
+  <!-- Beyond this point, the device is ONLINE and has a location. -->
+  <if>
+    <location_mcc_in list="sxlte_mccs" />
+    <then> <ue_mode> 1X_CSFB_PREF </ue_mode> </then>
+    <else> <ue_mode> CSFB </ue_mode> </else>
+  </if>
+
+</policy>

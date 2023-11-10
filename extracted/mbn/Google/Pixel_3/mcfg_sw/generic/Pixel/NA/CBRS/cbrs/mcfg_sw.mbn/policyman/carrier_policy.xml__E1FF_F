@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Carrier configuration file for LTE CBRS network
+-->
+<policy name        = "generic"
+        changelist  = "$Change: $"
+        policy_ver  = "99.1.1"
+>
+
+  <initial>
+
+    <rat_capability base="none" >
+      <include> L </include>
+    </rat_capability>
+
+    <ue_mode_if> CSFB </ue_mode_if>
+
+    <rf_bands base="hardware" />
+
+    <service_domain>PS</service_domain>
+    <ims_config allowed="false" subs="this" />
+    <volte enabled="false" subs="this" />
+
+  </initial>
+
+
+  <!-- Stop if the device does not have location or is not online -->
+  <if precond="none">
+    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>
+    <then>
+      <rat_capability base="none">
+        <include> L  </include>
+      </rat_capability>
+      <stop />
+    </then>
+  </if>
+
+</policy>

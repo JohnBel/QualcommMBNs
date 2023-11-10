@@ -1,0 +1,1441 @@
+{
+  "AllowInfiniteThrot": {
+    "Value": 1
+  },
+  "AndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "  <Name>ims Policy</Name>",
+      "  <ISRP>",
+      "    <Node>",
+      "      <ForServiceBased>",
+      "        <MAPCON_1>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <LTEThreshold>",
+      "                    <LTERSRPLow>-117</LTERSRPLow>",
+      "                    <LTEAvailable>0</LTEAvailable>",
+      "                    <ConditionEvaluationPolicy>0</ConditionEvaluationPolicy>",
+      "                  </LTEThreshold>",
+      "                  <WiFiThreshold>",
+      "                    <WiFiRSSIHigh>-85</WiFiRSSIHigh>",
+      "                    <WiFiSINRHigh>29</WiFiSINRHigh>",
+      "                    <ConditionEvaluationPolicy>0</ConditionEvaluationPolicy>",
+      "                  </WiFiThreshold>",
+      "                  <ConditionEvaluationPolicy>1</ConditionEvaluationPolicy>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>02</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>1</RulePriority>",
+      "        </MAPCON_1>",
+      "        <MAPCON_2>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <LTEThreshold>",
+      "                    <LTERSRPHigh>-115</LTERSRPHigh>",
+      "                  </LTEThreshold>",
+      "                  <WiFiThreshold>",
+      "                    <WiFiRSSILow>-95</WiFiRSSILow>",
+      "                    <WiFiSINRLow>18</WiFiSINRLow>",
+      "                    <WiFiAvailable>0</WiFiAvailable>",
+      "                    <ConditionEvaluationPolicy>0</ConditionEvaluationPolicy>",
+      "                  </WiFiThreshold>",
+      "                  <ConditionEvaluationPolicy>1</ConditionEvaluationPolicy>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>02</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>2</RulePriority>",
+      "        </MAPCON_2>",
+      "        <MAPCON_3>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <LTEThreshold>",
+      "                    <LTERSRPHigh>-110</LTERSRPHigh>",
+      "                  </LTEThreshold>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>02</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>1</RulePriority>",
+      "        </MAPCON_3>",
+      "        <MAPCON_4>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <WiFiThreshold>",
+      "                    <WiFiRSSIHigh>-85</WiFiRSSIHigh>",
+      "                    <WiFiSINRHigh>29</WiFiSINRHigh>",
+      "                    <ConditionEvaluationPolicy>0</ConditionEvaluationPolicy>",
+      "                  </WiFiThreshold>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>04</CallType>",
+      "                  </Node>",
+      "                  <Node>",
+      "                    <CallType>06</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>1</RulePriority>",
+      "        </MAPCON_4>",
+      "        <MAPCON_5>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <LTEThreshold>",
+      "                    <LTERSRPHigh>-117</LTERSRPHigh>",
+      "                  </LTEThreshold>",
+      "                  <WiFiThreshold>",
+      "                    <WiFiRSSILow>-95</WiFiRSSILow>",
+      "                    <WiFiSINRLow>18</WiFiSINRLow>",
+      "                    <WiFiAvailable>0</WiFiAvailable>",
+      "                    <ConditionEvaluationPolicy>0</ConditionEvaluationPolicy>",
+      "                  </WiFiThreshold>",
+      "                  <ConditionEvaluationPolicy>1</ConditionEvaluationPolicy>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>04</CallType>",
+      "                  </Node>",
+      "                  <Node>",
+      "                    <CallType>06</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>1</RulePriority>",
+      "        </MAPCON_5>",
+      "        <MAPCON_6>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <WiFiThreshold>",
+      "                    <WiFiAvailable>1</WiFiAvailable>",
+      "                  </WiFiThreshold>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>00</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>1</RulePriority>",
+      "        </MAPCON_6>",
+      "        <MAPCON_7>",
+      "          <APN>ims</APN>",
+      "          <RoutingCriteria>",
+      "            <Node>",
+      "              <OPSpecificRANValidityCondition>",
+      "                <ThresholdConditions>",
+      "                  <LTEThreshold>",
+      "                    <LTEAvailable>1</LTEAvailable>",
+      "                  </LTEThreshold>",
+      "                </ThresholdConditions>",
+      "                <CallConditions>",
+      "                  <Node>",
+      "                    <CallType>00</CallType>",
+      "                  </Node>",
+      "                </CallConditions>",
+      "              </OPSpecificRANValidityCondition>",
+      "            </Node>",
+      "          </RoutingCriteria>",
+      "          <RoutingRule>",
+      "            <Node>",
+      "              <AccessTechnology>1</AccessTechnology>",
+      "              <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "            </Node>",
+      "            <Node>",
+      "              <AccessTechnology>3</AccessTechnology>",
+      "              <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "            </Node>",
+      "          </RoutingRule>",
+      "          <IsAPIOverride>1</IsAPIOverride>",
+      "          <RulePriority>2</RulePriority>",
+      "        </MAPCON_7>",
+      "        <Node>",
+      "            <APN>vzwadmin</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <RulePriority>1</RulePriority>",
+      "        </Node>",
+      "        <Node>",
+      "            <APN>vzwinternet</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <RulePriority>1</RulePriority>",
+      "        </Node>",
+      "        <Node>",
+      "            <APN>vzwapp</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <AccessTechnology>3</AccessTechnology>",
+      "                    <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <RulePriority>1</RulePriority>",
+      "        </Node>",
+      "        <Node>",
+      "            <APN>vzwemergency</APN>",
+      "            <RoutingRule>",
+      "                <Node>",
+      "                    <AccessTechnology>1</AccessTechnology>",
+      "                    <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <AccessTechnology>3</AccessTechnology>",
+      "                    <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                </Node>",
+      "            </RoutingRule>",
+      "            <IsAPIOverride>1</IsAPIOverride>",
+      "            <RulePriority>1</RulePriority>",
+      "         </Node>",
+      "      </ForServiceBased>",
+      "      <ForCSBased>",
+      "        <Home>",
+      "          <CDMA1xCondition>",
+      "            <ThresholdConditions>",
+      "              <CDMA1xECIOHigh>-9</CDMA1xECIOHigh>",
+      "            </ThresholdConditions>",
+      "          </CDMA1xCondition>",
+      "          <Is1xCSAvailable>1</Is1xCSAvailable>",
+      "          <RulePriority>1</RulePriority>",
+      "        </Home>",
+      "        <Home>",
+      "          <CDMA1xCondition>",
+      "            <ThresholdConditions>",
+      "              <CDMA1xECIOLow>-9</CDMA1xECIOLow>",
+      "              <CDMA1xAvailable>0</CDMA1xAvailable>",
+      "              <ConditionEvaluationPolicy>0</ConditionEvaluationPolicy>",
+      "            </ThresholdConditions>",
+      "          </CDMA1xCondition>",
+      "          <Is1xCSAvailable>0</Is1xCSAvailable>",
+      "          <RulePriority>2</RulePriority>",
+      "        </Home>",
+      "      </ForCSBased>",
+      "      <Roaming>0</Roaming>",
+      "      <PLMN>0</PLMN>",
+      "      <UpdatePolicy>0</UpdatePolicy>",
+      "    </Node>",
+      "  </ISRP>",
+      "</ANDSF>"
+    ]
+  },
+  "C2kSwitch2Srlte": {
+    "Value": 1
+  },
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<!-- Carrier configuration file for SRLTE with CHGWL roaming",
+      "$Header: //commercial/MPSS.AT.4.0.c2/Main/modem_proc/mmcp/policyman/configurations/Carrier/Verizon/1xSRLTE/CHGWL_roam/subsidized/carrier_policy.xml#3 $",
+      "-->",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 16091850 $\"",
+      "        policy_ver  = \"29.1.19\"",
+      ">",
+      "",
+      "  <initial>",
+      "",
+      "    <!-- List of the MCCs in which SRLTE is allowed. Do NOT rename this list. -->",
+      "    <mcc_list name=\"sxlte_mccs\"> 310 311 312 330 </mcc_list>",
+      "",
+      "    <!-- List of the MCCs that have CDMA roaming -->",
+      "    <mcc_list name=\"cdma_and_ca_mccs\" include=\"hplmn ehplmn\"> 302 310 311 312 330 334 376 001</mcc_list>",
+      "",
+      "",
+      "    <!-- These are the serving system PLMNs for which SRLTE will be allowed -->",
+      "    <!-- NOTE: Proper functioning of the SXLTE policy requires that there",
+      "         be an PLMN list named \"sxlte_plmns\". Do NOT rename this list.      -->",
+      "    <plmn_list name = \"sxlte_plmns\" include=\"hplmn ehplmn\">",
+      "      311-480 330-120",
+      "    </plmn_list>",
+      "",
+      "    <plmn_list name = \"vzw_lte_plmns\" include=\"hplmn ehplmn\">",
+      "        310-004 310-010 310-012 310-013 310-590 310-890 310-910 311-110 311-270 311-271 311-272 311-273 311-274 311-275 311-276 311-277 311-278 311-279 311-280",
+      "        311-281 311-282 311-283 311-284 311-285 311-286 311-287 311-288 311-289 311-390 311-480 311-481 311-482 311-483 311-484 311-485 311-486 311-487 311-488 311-489",
+      "    </plmn_list>",
+      "",
+      "    <define_fullrat_config>",
+      "      <ue_mode> CSFB </ue_mode>",
+      "      <rf_bands base=\"hardware\" />",
+      "    </define_fullrat_config>",
+      "",
+      "    <boolean_define name=\"cm:silent_redial_restricted_on_GW\" initial=\"false\" />",
+      "",
+      "    <boolean_define name=\"cm:rpm_enabled\" initial=\"true\" />",
+      "",
+      "    <boolean_define name=\"ue_mode_timer_running\" initial=\"false\" />",
+      "",
+      "    <define_timer name=\"hybr_oos\" interval=\"1\" units=\"min\" id= \"101\" />",
+      "    <define_timer name=\"ue_mode_timer\" interval=\"1\" units=\"min\" id=\"102\" />",
+      "",
+      "    <rat_capability base=\"none\" >",
+      "      <include> C H G W L </include>",
+      "    </rat_capability>",
+      "",
+      "    <feature single_sim=\"srlte\"> dualmmode </feature>",
+      "",
+      "    <ue_mode_if> 1X_CSFB_PREF </ue_mode_if>",
+      "",
+      "    <rf_bands base=\"hardware\" />",
+      "",
+      "    <ca_band_combos string=\"\" />",
+      "  </initial>",
+      "",
+      "",
+      "  <if>",
+      "    <timer_expired name=\"ue_mode_timer\" />",
+      "    <then>",
+      "      <expired_timer_handled name=\"ue_mode_timer\" />",
+      "      <boolean_set name=\"ue_mode_timer_running\" value=\"false\" />",
+      "      <continue />",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <!-- Stop if the device does not have location or is not online -->",
+      "  <if precond=\"none\">",
+      "    <not> <phone_operating_mode> ONLINE </phone_operating_mode> </not>",
+      "    <then>",
+      "      <rat_capability base=\"none\">",
+      "        <include> C H G W L  </include>",
+      "      </rat_capability>",
+      "      <stop />",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <if precond=\"none\">",
+      "    <not> <have_location /> </not>",
+      "    <then> <stop /> </then>",
+      "    <else>",
+      "      <boolean_set name=\"cm:silent_redial_restricted_on_GW\">",
+      "        <serving_plmn_in list = \"vzw_lte_plmns\" />",
+      "      </boolean_set>",
+      "      <svc_mode> FULL </svc_mode>",
+      "      <continue/>",
+      "    </else>",
+      "  </if>",
+      "",
+      "",
+      "  <if precond=\"none\">",
+      "    <location_mcc_in list=\"cdma_and_ca_mccs\" />",
+      "    <then>",
+      "      <ca_band_combos string=\"2AA-2A-0;4A-2AA-0;4A-2AA-1;4A-2AA-2;5A-2AA-0;5A-2AA-1;66A-2AA-0;66A-2AA-1;66A-2AA-2;13A-2AA-0;13A-2AA-1;4AA-2A-0;4AA-2A-1;4AA-2A-2;4AA-4A-0;4AA-4A-1;5A-4AA-0;5A-4AA-1;13A-4AA-0;13A-4AA-1;5AA-2A-0;5AA-2A-1;5AA-4A-0;5AA-4A-1;66A-5AA-0;13AA-2A-0;13AA-2A-1;13AA-4A-0;13AA-4A-1;66A-13AA-0;66AA-2A-0;66AA-2A-1;66AA-2A-2;66AA-5A-0;66AA-13A-0;66AA-66A-0;66BA-0;66CA-0;4A-2AA-2A-0;4AA-2A-2A-0;5A-2AA-2A-0;5AA-2A-2A-0;13A-2AA-2A-0;13AA-2A-2A-0;66A-2AA-2A-0;66AA-2A-2A-0;4AA-4A-2A-0;4A-4A-2AA-0;5AA-4A-2A-0;5A-4AA-2A-0;5A-4A-2AA-0;13AA-4A-2A-0;13A-4AA-2A-0;13A-4A-2AA-0;66AA-5A-2A-0;66A-5AA-2A-0;66A-5A-2AA-0;66AA-13A-2A-0;66A-13AA-2A-0;66A-13A-2AA-0;66AA-66A-2A-0;66A-66A-2AA-0;66BA-2A-0;66B-2AA-0;66CA-2A-0;66C-2AA-0;5AA-4A-4A-0;5A-4AA-4A-0;13AA-4A-4A-0;13A-4AA-4A-0;66AA-66A-5A-0;66A-66A-5AA-0;66BA-5A-0;66B-5AA-0;66CA-5A-0;66C-5AA-0;66AA-66A-13A-0;66A-66A-13AA-0;66BA-13A-0;66B-13AA-0;66CA-13A-0;66C-13AA-0;66CA-66A-0;66C-66AA-0;4AA-4A-2A-2A-0;4A-4A-2AA-2A-0;5AA-4A-2A-2A-0;5A-4AA-2A-2A-0;5A-4A-2AA-2A-0;66AA-5A-2A-2A-0;66A-5AA-2A-2A-0;66A-5A-2AA-2A-0;66AA-13A-2A-2A-0;66A-13AA-2A-2A-0;66A-13A-2AA-2A-0;66AA-66A-2A-2A-0;66A-66A-2AA-2A-0;66BA-2A-2A-0;66B-2AA-2A-0;66CA-2A-2A-0;66C-2AA-2A-0;66AA-66A-5A-2A-0;66A-66A-5AA-2A-0;66A-66A-5A-2AA-0;66BA-5A-2A-0;66B-5AA-2A-0;66B-5A-2AA-0;66CA-5A-2A-0;66C-5AA-2A-0;66C-5A-2AA-0;66BA-13A-2A-0;66B-13AA-2A-0;66B-13A-2AA-0;66CA-13A-2A-0;66C-13AA-2A-0;66C-13A-2AA-0;46A-2AA-0;46A-4AA-0;46A-13AA-0;46A-5AA-0;46A-5AA-1;66AA-46A-0;46A-46A-2AA-0;46C-2AA-0;46A-46A-4AA-0;46C-4AA-0;46C-5AA-0;46C-5AA-1;46A-5AA-2A-0;46A-5A-2AA-0;46A-13AA-2A-0;46A-13A-2AA-0;66AA-46A-2A-0;66A-46A-2AA-0;66AA-46A-5A-0;66A-46A-5AA-0;66AA-46A-13A-0;66A-46A-13AA-0;46C-46A-2AA-0;46D-2AA-0;46C-46A-4AA-0;46D-4AA-0;46D-5AA-0;46D-5AA-1;46D-13AA-0;66AA-46C-46A-0;66AA-46D-0;46C-5A-2AA-0;46C-5AA-2A-0;46C-13AA-2A-0;46C-13A-2AA-0;66AA-46C-2A-0;66A-46C-2AA-0;66AA-46C-5A-0;66A-46C-5AA-0;66AA-46C-13A-0;66A-46C-13AA-0;48A-2AA-0;48A-13AA-0;66AA-48A-0;48A-48A-2AA-0;66AA-48A-2A-0;66A-48A-2AA-0;48C-2AA-0;48A-48A-13AA-0;66AA-48A-13A-0;66A-48A-13AA-0;48C-13AA-0;66AA-48A-48A-0;66AA-66A-48A-0;66BA-48A-0;66CA-48A-0;66AA-48C-0;66AA-48A-48A-2A-0;66A-48A-48A-2AA-0;48D-2AA-0;66AA-48A-48A-13A-0;66A-48A-48A-13AA-0;48C-48A-13AA-0;66AA-48C-13A-0;66A-48C-13AA-0;48D-13AA-0;66AA-66A-48A-48A-0;66BA-48A-48A-0;66CA-48A-48A-0;66AA-48C-48A-0;66AA-48D-0;5AA-4A-4A-2A-0;5A-4AA-4A-2A-0;5A-4A-4A-2AA-0;5BA-0;5BA-2A-0;5B-2AA-0;5BA-4A-2A-0;5B-4AA-2A-0;5B-4A-2AA-0;66AA-5B-0;66A-5BA-0;66AA-5B-2A-0;66A-5BA-2A-0;66A-5B-2AA-0;66AA-66A-13A-2A-0;66A-66A-13AA-2A-0;66A-66A-13A-2AA-0;46C-13AA-0;66AA-46C-0;46D-2AA-0;46D-2AA-2A-0;46D-5AA-2A-0;46D-5A-2AA-0;46D-13AA-2A-0;46D-13A-2AA-0;66AA-46D-2A-0;66A-46D-2AA-0;66AA-46D-5A-0;66A-46D-5AA-0;66AA-46D-13A-0;66A-46D-13AA-0;66AA-46A-46A-0;66AA-66A-46D-0;66AA-48C-48A-2A-0;66A-48C-48A-2AA-0;66AA-48D-2A-0;66A-48D-2AA-0;48E-2AA-0;66AA-48C-48C-0;5BA-4A-4A-0;5B-4AA-4A-0;\" />",
+      "      <!-- Remove LTE on non-DDS when VoLTE is disabled in home. -->",
+      "      <if>",
+      "        <all_of>",
+      "        <not> <is_subs_dds /> </not>",
+      "        <not> <volte_enabled /> </not>",
+      "        <location_mcc_in list=\"sxlte_mccs\" />",
+      "        </all_of>",
+      "        <then>",
+      "          <rat_capability base=\"none\">",
+      "            <include> C H G W </include>",
+      "          </rat_capability>",
+      "          <continue />",
+      "        </then>",
+      "        <else>",
+      "          <rat_capability base=\"none\">",
+      "            <include> C H G W L </include>",
+      "          </rat_capability>",
+      "          <continue />",
+      "        </else>",
+      "      </if>",
+      "    </then>",
+      "    <else>",
+      "      <!-- Choose an CA band that is not supported by HW, CA will be disabled by doing this -->",
+      "      <ca_band_combos string=\"41AA-39A-0;\" />",
+      "      <rat_capability base=\"none\">",
+      "        <include> G W L </include>",
+      "      </rat_capability>",
+      "      <continue/>",
+      "    </else>",
+      "  </if>",
+      "",
+      "  <!-- Beyond this point, the device is ONLINE and has a location. -->",
+      "  <if>",
+      "    <boolean_test name=\"ue_mode_timer_running\" />",
+      "    <then>",
+      "      <stop />",
+      "    </then>",
+      "  </if>",
+      "",
+      "  <if>",
+      "    <any_of>",
+      "      <serving_plmn_in list=\"sxlte_plmns\" />",
+      "      <location_mcc_in list=\"sxlte_mccs\" />",
+      "    </any_of>",
+      "    <then>",
+      "      <ue_mode> 1X_CSFB_PREF </ue_mode>",
+      "    </then>",
+      "    <else>",
+      "      <if>",
+      "        <ue_mode_is> 1X_CSFB_PREF </ue_mode_is>",
+      "        <then>",
+      "          <timer_start name=\"ue_mode_timer\" />",
+      "          <boolean_set name=\"ue_mode_timer_running\" value=\"true\" />",
+      "        </then>",
+      "      </if>",
+      "      <ue_mode> CSFB </ue_mode>",
+      "    </else>",
+      "  </if>",
+      "",
+      "</policy>"
+    ]
+  },
+  "CustomEmergInfo": {
+    "Version": 1,
+    "IsEcbmRequired": 1,
+    "HoldConcurrentVoiceCallDuringEmergency": 1,
+    "IsAlternateRedialAlgorithm": 1,
+    "Reserved": 2621697
+  },
+  "DefaultAndsfXml": {
+    "Values": [
+      "<ANDSF>",
+      "    <Name>Default Profile</Name>",
+      "    <ISRP>",
+      "        <Node>",
+      "            <ForServiceBased>",
+      "                <Node>",
+      "                    <APN>ims</APN>",
+      "                    <RoutingRule>",
+      "                    <Node>",
+      "                        <AccessTechnology>1</AccessTechnology>",
+      "                        <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    <Node>",
+      "                        <AccessTechnology>3</AccessTechnology>",
+      "                        <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                    </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>vzwadmin</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>vzwinternet</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>vzwapp</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "                <Node>",
+      "                    <APN>vzwemergency</APN>",
+      "                    <RoutingRule>",
+      "                        <Node>",
+      "                            <AccessTechnology>1</AccessTechnology>",
+      "                            <AccessNetworkPriority>1</AccessNetworkPriority>",
+      "                        </Node>",
+      "                        <Node>",
+      "                            <AccessTechnology>3</AccessTechnology>",
+      "                            <AccessNetworkPriority>2</AccessNetworkPriority>",
+      "                        </Node>",
+      "                    </RoutingRule>",
+      "                    <IsAPIOverride>1</IsAPIOverride>",
+      "                    <RulePriority>1</RulePriority>",
+      "                </Node>",
+      "            </ForServiceBased>",
+      "            <Roaming>0</Roaming>",
+      "            <PLMN>12344</PLMN>",
+      "            <UpdatePolicy>0</UpdatePolicy>",
+      "        </Node>",
+      "    </ISRP>",
+      " </ANDSF>"
+    ]
+  },
+  "Ds3gppMtu": {
+    "Value": 1428
+  },
+  "DsAndsfConfigTxt": {
+    "Values": [
+      "andsf_rule_mgr_active:1;",
+      "lte_meas_alpha:50;",
+      "lte_sampling_interval:1000;",
+      "lte_avg_interval:5000;",
+      "wifi_meas_alpha:65;",
+      "wifi_sampling_interval:1000;",
+      "wifi_avg_interval:5000;",
+      "cdma_1x_meas_alpha:50;",
+      "cdma_1x_avg_interval:6000;",
+      "cdma_1x_acq_hyst_interval:3000;",
+      "cdma_1x_lost_hyst_interval:3000;",
+      "cdma_1x_sampling_interval:2000;"
+    ]
+  },
+  "DsApnSwitching": {
+    "Value": 1
+  },
+  "DsDsdAttachProfileTxt": {
+    "Values": [
+      "Attach_Profile_ID:1;\nAttach_Profile_ID:3;"
+    ]
+  },
+  "DynamicPortCfg": {
+    "Value": 2
+  },
+  "ExcludePtmsiTypeField": {
+    "Value": 1
+  },
+  "GetNetAutoMode": {
+    "Version": 0,
+    "Value": 1,
+    "Reserved": 0
+  },
+  "GnssLppEnable": {
+    "Value": 3
+  },
+  "HdrAcqDivEnable": {
+    "Value": 1
+  },
+  "HdrAcqDivThresh0": {
+    "Value": 65441
+  },
+  "HdrAcqDivThresh1": {
+    "Value": 65436
+  },
+  "ImsEnable": {
+    "Value": 1
+  },
+  "ImsHandoverConfig": {
+    "Values": [
+      "Adding Comments LTE RSRQ Src LTE SNR Destination",
+      "Some Comments",
+      "Ignore these commenrs",
+      "@@@",
+      "MediaULJitterGood = 10;",
+      "Alpha_media = 65;",
+      "MediaULJitterAcceptable = 40;",
+      "MediaULJitterFair = 40;",
+      "MediaULJitterBad = 50;",
+      "MediaULFrameLossGood = 5;",
+      "MediaULFrameLossAcceptable = 3;",
+      "MediaULFrameLossFair = 20;",
+      "MediaULFrameLossBad = 50;",
+      "MediaDL95JitterGood = 4; ",
+      "MediaDL95JitterAcceptable = 60;",
+      "MediaDL95JitterFair = 6;",
+      "MediaDL95JitterBad = 7;",
+      "MediaDLJitterGood = 10;",
+      "MediaDLJitterAcceptable = 40;",
+      "MediaDLJitterFair = 40;",
+      "MediaDLJitterBad = 50;",
+      "MediaDLFrameLossGood = 5;",
+      "MediaDLFrameLossAcceptable = 3;",
+      "MediaDLFrameLossFair = 20;",
+      "MediaDLFrameLossBad = 50;",
+      "MediaDLQDJSpeechBad = 3;",
+      "MediaDLQDJSilenceBad = 24;",
+      "MediaDLQDJSpeechAcceptable = 2;",
+      "MediaDLQDJSilenceAcceptable = 16;",
+      "MediaTimerInterval = 1;",
+      "MediaMetricsDisabled = 0;",
+      "DeltaMediaULJitterAcceptable = -24;",
+      "DeltaMediaDLJitterAcceptable = -24;",
+      "DeltaMediaDLQDJSpeechBad = -1;",
+      "DeltaMediaDLQDJSilenceBad = -8;",
+      "MAX_1x_samples = 5; ",
+      "LTE_MONITOR_TIME_SEC = 2;",
+      "ALGO_FLAVOR = 1;"
+    ]
+  },
+  "ImsOperationMode": {
+    "Value": 0
+  },
+  "ImsSipConfig": {
+    "Value": "ALgLAACAPgAAaEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMHUAAAAAAAAAAAAAAAAAADB1AAAAAAAAcBcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+  },
+  "ImsUserAgent": {
+    "ValueString": "Qualcomm IMS"
+  },
+  "Ip6DefaultMtu": {
+    "Value": 1428
+  },
+  "IwlanS2bConfigXml": {
+    "Values": [
+      "<?xml version=\"1.0\" ?>",
+      "<IWLAN_S2B_CONFIG>",
+      "    <GENERIC_VARIANT>",
+      "        <epdg_addr_info>",
+      "            <fqdn>wo.vzwwo.com</fqdn>",
+      "            <fallback_mech>",
+      "                <mech_type>PCO</mech_type>",
+      "                <mech_type>DNS</mech_type>",
+      "            </fallback_mech>",
+      "            <natt_info>",
+      "                <keep_alive_timer_sec>20</keep_alive_timer_sec>",
+      "            </natt_info>",
+      "            <multiple_ip_addr_support>TRUE</multiple_ip_addr_support>",
+      "        </epdg_addr_info>",
+      "        <ikev2_info>",
+      "            <ke_payload_enabled>FALSE</ke_payload_enabled>",
+      "            <ikev2_sa_rekey_timer>",
+      "                <soft_sec>86400</soft_sec>",
+      "                <hard_sec>86500</hard_sec>",
+      "            </ikev2_sa_rekey_timer>",
+      "            <esp_rekey_timer>",
+      "                <soft_sec>86400</soft_sec>",
+      "                <hard_sec>86500</hard_sec>",
+      "            </esp_rekey_timer>",
+      "            <retransmit_timer_sec>1</retransmit_timer_sec>",
+      "            <max_retries>4</max_retries>",
+      "            <ikev2_encr_algo_list>",
+      "                <encr_algo value=\"12\">",
+      "                    <key_size>256</key_size>",
+      "                </encr_algo>",
+      "            </ikev2_encr_algo_list>",
+      "            <ikev2_hash_algo_list>",
+      "                <algo value=\"2\"/>",
+      "            </ikev2_hash_algo_list>",
+      "            <ikev2_prf_algo_list>",
+      "                <prf_algo value=\"2\"/>",
+      "            </ikev2_prf_algo_list>",
+      "            <esp_encr_algo_list>",
+      "                <encr_algo value=\"12\">",
+      "                    <key_size>128</key_size>",
+      "                    <key_size>256</key_size>",
+      "                </encr_algo>",
+      "            </esp_encr_algo_list>",
+      "            <esp_auth_algo_list>",
+      "                <algo value=\"2\"/>",
+      "            </esp_auth_algo_list>",
+      "            <self_id>",
+      "                <id_type>ID_RFC822_ADDR</id_type>",
+      "                <mac_enabled>TRUE</mac_enabled>",
+      "                <identifier>IMPI</identifier>",
+      "            </self_id>",
+      "        </ikev2_info>",
+      "        <err_code_info>",
+      "            <pdn_throttling>",
+      "                <throttling_series type=\"default\">",
+      "                    <throttling_values>",
+      "                        <seconds>0</seconds>",
+      "                        <seconds>0</seconds>",
+      "                        <seconds random=\"TRUE\">60</seconds>",
+      "                        <seconds>120</seconds>",
+      "                        <seconds>480</seconds>",
+      "                        <seconds>900</seconds>",
+      "                    </throttling_values>",
+      "                </throttling_series>",
+      "                <throttling_series id=\"1\">",
+      "                    <throttling_values>",
+      "                        <seconds>0</seconds>",
+      "                        <seconds>0</seconds>",
+      "                        <seconds infinite=\"TRUE\"/>",
+      "                    </throttling_values>",
+      "                    <throttling_cause_codes>",
+      "                        <cause_code>24</cause_code>",
+      "                        <cause_code>",
+      "                            <start>9000</start>",
+      "                            <end>9050</end>",
+      "                        </cause_code>",
+      "                        <cause_code>",
+      "                            <start>11000</start>",
+      "                            <end>11050</end>",
+      "                        </cause_code>",
+      "                    </throttling_cause_codes>",
+      "                </throttling_series>",
+      "                <throttling_series id=\"2\">",
+      "                    <throttling_values>",
+      "                        <seconds>3600</seconds>",
+      "                    </throttling_values>",
+      "                    <throttling_cause_codes>",
+      "                        <cause_code>",
+      "                            <start>10500</start>",
+      "                            <end>10550</end>",
+      "                        </cause_code>",
+      "                    </throttling_cause_codes>",
+      "                </throttling_series>",
+      "                <throttling_series id=\"3\">",
+      "                    <throttling_values>",
+      "                        <seconds infinite=\"TRUE\"/>",
+      "                    </throttling_values>",
+      "                    <throttling_cause_codes>",
+      "                        <cause_code>8192</cause_code>",
+      "                    </throttling_cause_codes>",
+      "                </throttling_series>",
+      "            </pdn_throttling>",
+      "            <error_code_mapping>",
+      "                <NETWORK_TOO_BUSY>10000</NETWORK_TOO_BUSY>",
+      "                <ROAMING_NOT_ALLOWED>11000</ROAMING_NOT_ALLOWED>",
+      "                <RAT_DISALLOWED>11001</RAT_DISALLOWED>",
+      "                <NO_SUBSCRIPTION>9000</NO_SUBSCRIPTION>",
+      "                <NETWORK_FAILURE>10500</NETWORK_FAILURE>",
+      "                <REQUEST_REJECTED_IF_S2B>10048</REQUEST_REJECTED_IF_S2B>",
+      "                <PGW_OVERLOAD>10003</PGW_OVERLOAD>",
+      "                <PROTOCOL_ERROR_IF_S2B>10049</PROTOCOL_ERROR_IF_S2B>",
+      "                <NO_SUBSCRIPTION_IF_S2B>9049</NO_SUBSCRIPTION_IF_S2B>",
+      "                <MISSING_OR_UNKNOWN_APN_IF_S2B>9048</MISSING_OR_UNKNOWN_APN_IF_S2B>",
+      "                <UNSUPPORTED_PDN_TYPE_IF_S2B>11049</UNSUPPORTED_PDN_TYPE_IF_S2B>",
+      "                <PERMANENT_FAILURE>11002</PERMANENT_FAILURE>",
+      "                <RAT_DISALLOWED_IF_S2B>11003</RAT_DISALLOWED_IF_S2B>",
+      "            </error_code_mapping>",
+      "        </err_code_info>",
+      "    </GENERIC_VARIANT>",
+      "    <WP_VARIANT>",
+      "        <ikev2_info>",
+      "            <esp_auth_algo_list>",
+      "                <algo value=\"1\"/>",
+      "                <algo value=\"2\"/>",
+      "            </esp_auth_algo_list>",
+      "            <configured_ike_port>4500</configured_ike_port>",
+      "        </ikev2_info>",
+      "    </WP_VARIANT>",
+      "</IWLAN_S2B_CONFIG>"
+    ]
+  },
+  "LteBandPreference": {
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": true,
+    "B7": true,
+    "B8": true,
+    "B9": true,
+    "B10": true,
+    "B11": true,
+    "B12": true,
+    "B13": true,
+    "B14": true,
+    "B15": true,
+    "B16": true,
+    "B17": true,
+    "B18": true,
+    "B19": true,
+    "B20": true,
+    "B21": true,
+    "B22": true,
+    "B23": true,
+    "B24": true,
+    "B25": true,
+    "B26": true,
+    "B27": true,
+    "B28": true,
+    "B29": true,
+    "B30": true,
+    "B31": true,
+    "B32": true,
+    "B33": true,
+    "B34": true,
+    "B35": true,
+    "B36": true,
+    "B37": true,
+    "B38": true,
+    "B39": true,
+    "B40": true,
+    "B41": true,
+    "B42": true,
+    "B43": true,
+    "B44": true,
+    "B45": true,
+    "B46": true,
+    "B47": true,
+    "B48": true
+  },
+  "LteBandPreferenceExtn65": {
+    "Value": "AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "LteDisableDuration": {
+    "Value": 900
+  },
+  "LteNasTempFplmnBackoffTime": {
+    "Value": 4294967295
+  },
+  "MaxFbPdnFailureCount": {
+    "Value": 1
+  },
+  "MaxRabReestabRetryCnt": {
+    "Value": 4
+  },
+  "MinapnlistDisallowCall": {
+    "Value": 1
+  },
+  "Mmode1xsxLteOptimization": {
+    "Value": "AAABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "OneXDataServiceTransferTimer": {
+    "Value": 22
+  },
+  "PbmEccNums": {
+    "ValueString": "\\0\u0003\u0004*911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\u0003\u0004#911\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\u0002\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0"
+  },
+  "PbrInfo": {
+    "Field1": 5,
+    "Field2": 0,
+    "Field3": 0,
+    "Field4": 0,
+    "Field5": 2,
+    "Field6": 0,
+    "Field7": 0,
+    "Field8": 0,
+    "Field9": 0,
+    "Field10": 0,
+    "Field11": 0
+  },
+  "Profile1": {
+    "Values": "AQABAOsAAAAcAAAApaWlpQAAAACzCwAAAAAAAAAAAAAlAAEAARIAAQAAEwABAAAoABAAAAAAAAAAAAAAAAAAAAAAACYAAQAAJwABAAAgAAEAAC0AAQAAHwABAAE3AAIAAP84AAIANwE5AAMA4AEBMQABAAFFACgAAAAAAAAAAAA8AAAAeAAAAOABAACEAwAAhAMAAIQDAACEAwAAhAMAAEEAAQABQgABAAA+AAEAAD8AAQAASAABAAFHABQAAf8C/wAAAAAAAAAAAAAAAAAAAAABEAMAaW1zEQABAAMVAAQAAAAAABYABAAAAAAAHgAEAAAAAAAvAAEAADUAAQD/BxAIAAIAAAAAAAAA"
+  },
+  "Profile2": {
+    "Values": "AQACALgAAAAWAAAApaWlpQAAAACxkzVDAAAAAAAAAAAlAAEAAhIAAQAAEwABAAAoABAAAAAAAAAAAAAAAAAAAAAAACYAAQAAJwABAAAgAAEAAC0AAQAANwACAAD/OAACADcBOQADAOABATEAAQACRQAoAAAAAAAAAAAAPAAAAHgAAADgAQAAhAMAAIQDAACEAwAAhAMAAIQDAABBAAEAAEIAAQAAARAIAHZ6d2FkbWluEQABAAMVAAQAAAAAABYABAAAAAAAHgAEAAAAAAAvAAEAADUAAQD/"
+  },
+  "Profile3": {
+    "Values": "AQADAPYAAAAcAAAApaWlpQAAAACn+gAAAAAAAAAAAAAlAAEAAxIAAQAAEwABAAAoABAAAAAAAAAAAAAAAAAAAAAAACYAAQAAJwABAAAgAAEAAC0AAQAANwACAAD/OAACADcBOQADAOABATEAAQADPQAEAAEAAABFACgAAAAAAAAAAAA8AAAAeAAAAOABAACEAwAAhAMAAIQDAACEAwAAhAMAAEEAAQAAQgABAAABEAsAdnp3aW50ZXJuZXQRAAEAAxUABAAAAAAAFgAEAAAAAAAeAAQAAAAAAC8AAQAANQABAP8+AAEAAD8AAQAARwAUAAAAAAAAAAAAAAAAAAAAAAAAAAAASAABAAEHEAgAAQAAAAAAAAA="
+  },
+  "Profile4": {
+    "Values": "AQAEALYAAAAWAAAApaWlpQAAAAC7kzVDAAAAAAAAAAAlAAEABBIAAQAAEwABAAAoABAAAAAAAAAAAAAAAAAAAAAAACYAAQAAJwABAAAgAAEAAC0AAQAANwACAAD/OAACADcBOQADAOABATEAAQAERQAoAAAAAAAAAAAAPAAAAHgAAADgAQAAhAMAAIQDAACEAwAAhAMAAIQDAABBAAEAAEIAAQAAARAGAHZ6d2FwcBEAAQADFQAEAAAAAAAWAAQAAAAAAB4ABAAAAAAALwABAAA1AAEA/w=="
+  },
+  "Profile5": {
+    "Values": "AQAFAIMAAAAOAAAApaWlpc8CAACdEgAAAAAAAAAAAABBAAEAAkIAAQACRQAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAwAdnp3ZW1lcmdlbmN5EQABAAMfAAEAATEAAQAANgABAAE3AAIAAP84AAIANwE5AAMA4AEBPgABAAA/AAEAAAcQCAAAAgAAAAAAAA=="
+  },
+  "QpImsPlaniConfig": {
+    "Version": 0,
+    "AccessType": 0,
+    "Lac": 0,
+    "Tac": 0,
+    "CellIdentity": 0,
+    "Sid": 0,
+    "Nid": 0,
+    "Pzid": 0,
+    "BaseId": 0,
+    "SectorIdString": "",
+    "SubnetLength": 0,
+    "TimeSeconds": 0,
+    "TimeMinutes": 0,
+    "TimeHours": 0,
+    "TimeDays": 0,
+    "TimeMonths": 0,
+    "TimeYears": 0,
+    "TimeDayOfWeek": 0,
+    "MccString": "",
+    "MncString": ""
+  },
+  "QpImsRegConfigDb": {
+    "Version": 4,
+    "Items": [
+      {
+        "Rat": 272,
+        "ApnIndex": 17,
+        "ImsServiceInfoString": "263",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 16584,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "1792",
+        "AuthSecType": 1,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 2048,
+        "ApnIndex": 2,
+        "ImsServiceInfoString": "1041",
+        "AuthSecType": 1,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 51200,
+        "ApnIndex": 64,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 4,
+        "IpTypeInfo": 1
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 103,
+        "ImsServiceInfoString": "4352",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 200,
+        "ImsServiceInfoString": "Msrp",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      },
+      {
+        "Rat": 0,
+        "ApnIndex": 0,
+        "ImsServiceInfoString": "None",
+        "AuthSecType": 0,
+        "IpTypeInfo": 0
+      }
+    ],
+    "Items2": [
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      },
+      {
+        "RatApnFallback": 0,
+        "ServicePriorityWwan": 0
+      }
+    ],
+    "AllowedImsSrvOnWlanString": "None",
+    "AddAllFTs": 0,
+    "AcsPriority": 0,
+    "ISimPriority": 0,
+    "NvPriority": 0,
+    "PcoPriority": 0,
+    "ImsServiceStatus": 0,
+    "ApnNames": [
+      "",
+      "",
+      ""
+    ],
+    "ReservedBytes": "AAAyAAAAYgAAAHIAAAAAAAAAAAAAAAAAAAIDAQ8B4AZpbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdnp3ZW1lcmdlbmN5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+  },
+  "RatAcqOrder": {
+    "Version": 256,
+    "Values": []
+  },
+  "RefreshVoteOk": {
+    "Value": 1
+  },
+  "RejVoicePageForVolte": {
+    "Value": 1
+  },
+  "RmnetConfigTxt": {
+    "Values": [
+      "<config>",
+      "<instance_1>",
+      "<instance>1</instance>",
+      "<link_prot>IP </link_prot>",
+      "<qos>disabled</qos>",
+      "<ul_tlp>disabled</ul_tlp>",
+      "<autoconnect>enabled</autoconnect>",
+      "<ip_type>IPV4V6</ip_type>",
+      "<3gpp_profile>1</3gpp_profile>",
+      "<3gpp2_profile>000</3gpp2_profile>",
+      "</instance_1>",
+      "</config>"
+    ]
+  },
+  "SdssscrTimers": {
+    "Version": 1,
+    "Value": [
+      15,
+      1,
+      120,
+      10000,
+      3,
+      3,
+      30,
+      0,
+      5,
+      5,
+      2,
+      0,
+      0,
+      120,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "SmsDomainPref": {
+    "StringValue": "PsSmsPref"
+  },
+  "SmsMandatory": {
+    "Value": 0
+  },
+  "SmsRetyLimit": {
+    "Value": 1
+  },
+  "Supportfordualrxues": {
+    "Value": 1
+  },
+  "SxlteTimers": {
+    "Field1": 0,
+    "Field2": 0
+  },
+  "TcpAckPrio": {
+    "Value": 1
+  },
+  "ThreeGpp2BackPressureRemoval": {
+    "Field1": 1,
+    "Field2": 1000
+  },
+  "UeUsageSetting": {
+    "ValueString": "VoiceCentric"
+  },
+  "VoiceDomainPref": {
+    "StringValue": "ImsPsVoicePreferred"
+  },
+  "VolteSrControl": {
+    "Value": 1
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfb": {
+    "Value": 1
+  },
+  "WifiConfig": {
+    "Version": 3,
+    "IsWifiOnlyModeForVoice": 1,
+    "IsE911OverWifi": 0,
+    "WifiCsScanTimer": 5,
+    "Reserved": "AAAAAAAAAA=="
+  },
+  "WlanOffloadConfig": {
+    "StringValue": "IWlanS2b"
+  },
+  "Zz22SelParms": {
+    "Field1": 0,
+    "Field2": 0,
+    "Field3": 8,
+    "Field4": 30,
+    "Field5": -1
+  },
+  "Zz22Thresh": {
+    "Field1": 0,
+    "Field2": -100,
+    "Field3": -128,
+    "Field4": -95,
+    "Field5": -120,
+    "Field6": 0
+  },
+  "AGpsPositioningModesSupported": {
+    "Value": 33554303
+  },
+  "AuthenticationRequirePasswordEncryption": {
+    "Value": 1
+  },
+  "BandClassPreference": {
+    "Nam": 0,
+    "Band": -1
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "BroadcastSmsConfiguration": {
+    "Value": 2
+  },
+  "BroadcastSmsUserPreferences": {
+    "Value": 2
+  },
+  "CdmaReceiveDiversity": {
+    "Value": 27793
+  },
+  "CdmaSO68Enabled": {
+    "Value": 1
+  },
+  "CSimSupport": {
+    "Value": 1
+  },
+  "CstoVoipFallbackTimer": {
+    "Value": 10
+  },
+  "DataServiceOptionSet": {
+    "Value": 2
+  },
+  "DigitalAnalogModePreference": {
+    "Nam": 0,
+    "StringMode": "Automatic"
+  },
+  "DisableCmCallType": {
+    "Value": 2
+  },
+  "EnsEnabled": {
+    "Value": 0
+  },
+  "ExpandBandPreference16To32Bits": {
+    "Nam": 0,
+    "Value": -16385
+  },
+  "GsmUmtsCellBroadcastSmsCarrierConfiguration": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsServiceTable": {
+    "Index": 0,
+    "ActiveService": 1,
+    "ServiceFrom": 4370,
+    "ServiceTo": 4389,
+    "Selected": 1,
+    "LabelString": "0",
+    "LabelEncoding": 0,
+    "BcAlert": 0,
+    "MaxMessages": 0
+  },
+  "GsmUmtsCellBroadcastSmsServiceTableSize": {
+    "Value": 1
+  },
+  "GsmUmtsCellBroadcastSmsUserPreference": {
+    "Value": 2
+  },
+  "GsmUmtsSmsBearerPreference": {
+    "Value": 2
+  },
+  "HdrEmpaSupported": {
+    "Value": 1
+  },
+  "HdrL1DebugMask": {
+    "Field1": 0,
+    "Field2": 1
+  },
+  "HdrReceiveDiversity": {
+    "Value": -63
+  },
+  "HdrScpForceAtConfiguration": {
+    "Value": 2
+  },
+  "HdrScpForceRelease0SessionConfiguration": {
+    "Value": 0
+  },
+  "HdrScpSubtypeCustomConfig": null,
+  "Ipv6Enabled": {
+    "Value": 1
+  },
+  "Ipv6StateMachineConfiguration": {
+    "InitSolDelay": 500,
+    "SolInterval": 4000,
+    "ResolInterval": 4000,
+    "MaxSolAttempts": 3,
+    "MaxResolAttempts": 3,
+    "PreRaExpResolTime": 0
+  },
+  "Is2000CaiRadioConfigurationRcPreference": {
+    "Value": 3
+  },
+  "MgrfSupported": {
+    "Value": 0
+  },
+  "MipHandoffOptimizationEnabled": {
+    "Value": 1
+  },
+  "MobileCaiRevisionNumber": {
+    "Value": 6
+  },
+  "PhoneLock": {
+    "Value": 0
+  },
+  "PreferredHybridMode": {
+    "Value": 1
+  },
+  "PzidHysterisisActivationTimer": {
+    "Value": 0
+  },
+  "PzidHysterisisTimer": {
+    "Value": 60
+  },
+  "QncEnabledFlag": {
+    "Value": 0
+  },
+  "RoamingListEnabled": {
+    "Name": 0,
+    "Enabled": 1
+  },
+  "RrcCipheringEnabled": {
+    "Value": 1
+  },
+  "RrcFakeSecurityEnabled": {
+    "Value": 0
+  },
+  "RrcIntegrityEnabled": {
+    "Value": 1
+  },
+  "RtreConfiguration": {
+    "Value": 0
+  },
+  "SdConfigurableItems": {
+    "Version": 3,
+    "Items": []
+  },
+  "SlotCycleIndex": {
+    "Value": 2
+  },
+  "SmsMoOnAccessChannel": {
+    "Value": 0
+  },
+  "SmsMoOnTrafficChannel": {
+    "Value": 1
+  },
+  "SmsMoRetryInterval": {
+    "Value": 30
+  },
+  "SmsMoRetryPeriod": {
+    "Value": 135
+  },
+  "SmsServiceOption": {
+    "Value": 1
+  },
+  "ToolkitCsPsParallel": {
+    "Value": 0
+  },
+  "UiccMode": {
+    "Value": 1
+  },
+  "UimFirstInstructionClass": {
+    "Value": 1
+  },
+  "VoicePrivacy": {
+    "Value": 0
+  },
+  "VoipCancelRetryTimer": {
+    "Value": 10
+  },
+  "PppConfigData": {
+    "Index": 0,
+    "LcpTermTimeout": 3000,
+    "LcpAckTimeout": 3000,
+    "LcpReqTry": 10,
+    "LcpNakTry": 3,
+    "LcpTermTry": 2,
+    "AuthRetry": 5,
+    "AuthTimeout": 3000,
+    "IpcpTermTimeout": 1000,
+    "IpcpAckTimeout": 1000,
+    "IpcpReqTry": 20,
+    "IpcpNakTry": 3,
+    "IpcpTermTry": 2,
+    "IpcpCompressionEnable": 2,
+    "Ipv6cpTermTimeout": 1000,
+    "Ipv6cpAckTimeout": 1000,
+    "Ipv6cpReqTry": 20,
+    "Ipv6cpNakTry": 3,
+    "Ipv6cpTermTry": 3,
+    "Ipv6cpCompressionEnable": 2
+  },
+  "AagpsDefaultPresuplUeTimer2Value": {
+    "Value": 10
+  },
+  "AagpsDefaultPresuplUeTimer3Value": {
+    "Value": 30
+  },
+  "BandPref3263": {
+    "Nam": 0,
+    "Band": 4294967295
+  },
+  "SmsMaxPayloadLength": {
+    "Value": 0
+  }
+}

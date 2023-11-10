@@ -1,0 +1,241 @@
+
+[SIPConfig:GeoLocation]
+
+#max time sip waits for invite to wait till Geoloc query is completed in case reg is unblocked w.r.t geoloc query in seconds
+
+*iE911InviteLocTimeoutWLAN = 2
+
+#SIP Methods on which geo location needs to be added for E911 LTE RAT -any combination of QP_SIP_GEOLOC_METHOD_MASK
+#Possible INTEGER values for override Method mask values are as follows:
+#QP_SIP_METHOD_NONE = 0x0000,
+#QP_SIP_REGISTER = 0x0001         => Geo location to be added for REGISTER
+#QP_SIP_SUBSCRIBE = 0x0002        => Geo location to be added for SUBSCRIBE
+#QP_SIP_NOTIFY = 0x0004           => Geo location to be added for NOTIFY
+#QP_SIP_INVITE = 0x0008           => Geo location to be added for INVITE
+#QP_SIP_CANCEL = 0x0010           => Geo location to be added for CANCEL
+#QP_SIP_PRACK = 0x0020            => Geo location to be added for PRACK
+#QP_SIP_ACK = 0x00040             => Geo location to be added for ACK
+#QP_SIP_UPDATE = 0x0080           => Geo location to be added for UPDATE
+#QP_SIP_REFER = 0x0100            => Geo location to be added for REFER
+#QP_SIP_INFO = 0x0200             => Geo location to be added for INFO
+#QP_SIP_BYE = 0x0400              => Geo location to be added for BYE
+#QP_SIP_PUBLISH = 0x0800          => Geo location to be added for PUBLISH
+#QP_SIP_MESSAGE = 0x1000          => Geo location to be added for MESSAGE
+#QP_SIP_OPTIONS = 0x2000          => Geo location to be added for OPTIONS
+
+*LTEMethodsSupportedForEmergencyCalls = 8
+
+#SIP Methods on which geo location needs to be added for E911 IWLAN RAT -any combination of QP_SIP_GEOLOC_METHOD_MASK
+#Possible INTEGER values for override Method mask values are as follows:
+#QP_SIP_METHOD_NONE = 0x0000,
+#QP_SIP_REGISTER = 0x0001         => Geo location to be added for REGISTER
+#QP_SIP_SUBSCRIBE = 0x0002        => Geo location to be added for SUBSCRIBE
+#QP_SIP_NOTIFY = 0x0004           => Geo location to be added for NOTIFY
+#QP_SIP_INVITE = 0x0008           => Geo location to be added for INVITE
+#QP_SIP_CANCEL = 0x0010           => Geo location to be added for CANCEL
+#QP_SIP_PRACK = 0x0020            => Geo location to be added for PRACK
+#QP_SIP_ACK = 0x00040             => Geo location to be added for ACK
+#QP_SIP_UPDATE = 0x0080           => Geo location to be added for UPDATE
+#QP_SIP_REFER = 0x0100            => Geo location to be added for REFER
+#QP_SIP_INFO = 0x0200             => Geo location to be added for INFO
+#QP_SIP_BYE = 0x0400              => Geo location to be added for BYE
+#QP_SIP_PUBLISH = 0x0800          => Geo location to be added for PUBLISH
+#QP_SIP_MESSAGE = 0x1000          => Geo location to be added for MESSAGE
+#QP_SIP_OPTIONS = 0x2000          => Geo location to be added for OPTIONS
+
+*IWLANMethodsSupportedForEmergencyCalls = 8
+
+#max time to declare the geoloc data invalid for use in sip messages as per operator requirement in seconds
+
+*iE911LocDataValidity = 180
+
+
+[QIPCALL:EVS_1]
+
+#This config is bandwidth.
+#enum - BW_NB, BW_WB, BW_SWB, BW_FB, BW_NB_WB, BW_NB_SWB, BW_NB_FWB,
+#
+#Possible INTEGER values for Bandwidth are as follows:
+#0 --> BandWidth_NB
+#1 --> BandWidth_WB
+#2 --> BandWidth_SWB
+#3 --> BandWidth_FB
+#4 --> BandWidth_NB_WB
+#5 --> BandWidth_NB_SWB
+#6 --> BandWidth_NB_FWB
+#7 --> BandWidth_MAX
+
+*Bandwidth = 5
+
+
+[Registration:RegistrationTimers]
+
+#This config item controls the Register configuration for the network-initiated De reg Timer value.
+
+*networkInitiatedDeRegistrationTimer = 60
+
+#This config item controls the PCSCF Unavailability time value. Unit is seconds.
+
+*PCSCFUnavailabilityTimeValue = 0
+
+#This config item controls the Retry timer for permanent PDP failures
+
+*pdnRetryLongTimer = 1
+
+#This config item controls the time in seconds to wait for WWAN RAT in cellular preferred mode for SSIM device
+
+*wwanGaurdTimer = 45
+
+#This config item controls the time in seconds for epDN retry procedures
+
+*ePDNDefaultRetryTimerVal = 10
+
+#This config item controls the  Retry timer for temporary failures
+
+*pdnRetryShortTimer = 30
+
+
+[QIPCALL:ImsVoiceSrvccConfig]
+
+#This config is required to enable bSRVCC.
+
+*bSrvccEnabled = 0
+
+#This config is required to enable aSRVCC.
+
+*aSrvccEnabled = 0
+
+#This config is required to enable mid call SRVCC.
+
+*midcallSrvccEnabled = 0
+
+
+[QIPCALL:ImsRtcpConfig]
+
+#This config is required to configure the timer for RTCP
+#monitoring.
+
+*rtcpLinkAlivenessTimer = 10
+
+#This config is required to disbale/enable the RTCP monitoring.
+
+*disableRTCPMonitoring = 1
+
+
+[QIPCALL:ImsVoiceQoSConfig]
+
+#This config is required to start Mid-call qos timer after HO from Wifi to LTE is success
+
+*startMcqosAfterHOfromWifitoLte = 0
+
+#This config is required to enable Qos precondition negotiation
+#in SDP.
+
+*qosPreconditionsEnabled = 0
+
+
+[Registration:RegistrationFeatureFlags]
+
+#This config item controls whether Network Initiated Dereg to be handle as subscribe failure.
+
+*HandleNetworkInitDeregAsSubscribeFailure = 0
+
+
+[QIPCALL:ImsVoiceConfig]
+
+#This config is required to configure if Media restriction is enabled or not
+
+*mediaRestrictionEnabled = 0
+
+#This config is required to configure the default URI type
+#(SIP/TEL) for MO calls.
+#
+#Possible INTEGER values for the enum are as follows:
+#QPE_IMS_URI_INIT = 0,                       enum value 0
+#QPE_IMS_URI_SIP = QPE_IMS_URI_INIT,         enum value 0
+#QPE_IMS_URI_TEL,                            enum value 1
+#QPE_IMS_URI_ANY,                            enum value 2
+#QPE_IMS_URI_MAX                             enum value 3
+
+*uriType = 0
+
+#This config is required to configure the terminating identity presentation or restriction type.
+
+*terminatingIdentityService = 0
+
+#This config is required to enable Call end on RTP inactivity.
+
+*CallEndonRTPInactivity = 1
+
+
+[QIPCALL:ImsVoiceSuppsConfig]
+
+#This config is required to configure the dialog for the
+#conference event subscribe request.
+
+*confEvtSubOutOfDialog = 0
+
+
+[Registration:RegistrationCounters]
+
+#This config item controls the Immediate  Retry timer for failures
+
+*maxPDNIntermediateRetries = 2
+
+
+[SIPConfig:StandardTimers]
+
+#sip registration expires value
+
+*SipRegValue = 600000
+
+#sip reg subscription expires value
+
+*SipSubscribeValue = 600000
+
+
+[SIPConfig:FeatureFlags]
+
+#enable or disable sip instance inclusion in contact header
+
+*IsSipInstanceNeeded = 1
+
+#enable or disable IsImsiNeededForContactHeader
+
+*IsImsiNeededForContactHeader = 1
+
+
+[QIPCALL:ImsMediaProfileConfig]
+
+#b/165792897:enable EVS
+#This config is required to audio codec profile list.
+
+*AudioProfile1 = "EVS_0_109;AMR_1_104;AMR_4_110;AMR_0_102;AMR_2_108"
+
+
+[QIPCALL:EVS_0]
+
+#b/165792897:enable EVS,br=5.9-13.2,bw=nb-wb
+#channel aware setting
+
+*ch_aw_recv = 2
+
+#This config is used for bit rate. It has to be in DECIMAL format.
+
+*BitRate = 31
+
+#This config is bandwidth.
+#enum - BW_NB, BW_WB, BW_SWB, BW_FB, BW_NB_WB, BW_NB_SWB, BW_NB_FWB,
+#
+#Possible INTEGER values for Bandwidth are as follows:
+#0 --> BandWidth_NB
+#1 --> BandWidth_WB
+#2 --> BandWidth_SWB
+#3 --> BandWidth_FB
+#4 --> BandWidth_NB_WB
+#5 --> BandWidth_NB_SWB
+#6 --> BandWidth_NB_FWB
+#7 --> BandWidth_MAX
+
+*Bandwidth = 4
+

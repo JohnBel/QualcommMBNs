@@ -1,0 +1,122 @@
+{
+  "CarrierPolicyXml": {
+    "Values": [
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "",
+      "<policy name        = \"generic\"",
+      "        changelist  = \"$Change: 10180820 $\"",
+      "        schema_ver  = \"1\"",
+      "        policy_ver  = \"96.1.2\"",
+      ">",
+      "    <initial>",
+      "        <boolean_define name=\"pm:allow_tds_on_this_sub\" initial=\"true\" />",
+      "        <actions>",
+      "            <!-- Set initial power up capability -->",
+      "            <rat_capability base=\"none\">",
+      "                <include> CDMA HDR GSM WCDMA LTE TDSCDMA </include>",
+      "            </rat_capability>",
+      "            <ue_mode> NORMAL </ue_mode>",
+      "            <feature> normal </feature>",
+      "        </actions>",
+      "    </initial>",
+      "    <rule precond=\"none\">",
+      "        <conditions>",
+      "            <true />",
+      "        </conditions>",
+      "        <actions>",
+      "            <ca_band_combos string=\"\"/>",
+      "        </actions>",
+      "    </rule>",
+      "</policy>"
+    ]
+  },
+  "GnssLppEnable": {
+    "Value": 3
+  },
+  "LteBandPreference": {
+    "B1": true,
+    "B2": true,
+    "B3": true,
+    "B4": true,
+    "B5": true,
+    "B6": true,
+    "B7": true,
+    "B8": true,
+    "B9": true,
+    "B10": true,
+    "B11": true,
+    "B12": true,
+    "B13": true,
+    "B14": true,
+    "B15": true,
+    "B16": true,
+    "B17": true,
+    "B18": true,
+    "B19": true,
+    "B20": true,
+    "B21": true,
+    "B22": true,
+    "B23": true,
+    "B24": true,
+    "B25": true,
+    "B26": true,
+    "B27": true,
+    "B28": true,
+    "B29": true,
+    "B30": true,
+    "B31": true,
+    "B32": true,
+    "B33": true,
+    "B34": true,
+    "B35": true,
+    "B36": true,
+    "B37": true,
+    "B38": true,
+    "B39": true,
+    "B40": true,
+    "B41": true,
+    "B42": true,
+    "B43": true,
+    "B44": true,
+    "B45": true,
+    "B46": true,
+    "B47": true,
+    "B48": true
+  },
+  "NasL2gSrvccSupport": {
+    "Value": 1
+  },
+  "ProactiveFeatureEnableCfg": {
+    "Value": 2147483455
+  },
+  "WcdmaRrcCsfbSkipSib11Opt": {
+    "Value": 0
+  },
+  "WcdmaRrcFastReturnToLteAfterCsfb": {
+    "Value": 0
+  },
+  "CsgSupportConfiguration": {
+    "CsgSupport": 0
+  },
+  "Banner": {
+    "ValueString": ""
+  },
+  "DtmFeatureSupport": {
+    "Value": 1
+  },
+  "EdgeMultislotClass": {
+    "Value": 33
+  },
+  "EDtmFeatureSupport": {
+    "Value": 1
+  },
+  "GprsMultiSlotClass": {
+    "Value": 33
+  },
+  "UmtsAmrCodecPreferenceConfig": {
+    "Value": 15
+  },
+  "CgpsMinimumGpsWeekNumber": {
+    "Value": 1054
+  }
+}

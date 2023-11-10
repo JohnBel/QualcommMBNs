@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<IWLAN_S2B_CONFIG>
+    <GENERIC_VARIANT>
+        <ikev2_info>
+            <peer_id>
+                <id_type>ID_FQDN</id_type>
+                <mac_enabled>FALSE</mac_enabled>
+                <identifier/>
+            </peer_id>
+            <ikev2_dh_group_list>
+                <dh_group value="5"/>
+            </ikev2_dh_group_list>
+            <ikev2_encr_algo_list>
+                <encr_algo value="12">
+                    <key_size>128</key_size>
+                </encr_algo>
+            </ikev2_encr_algo_list>
+            <ikev2_hash_algo_list>
+                <algo value="12"/>
+            </ikev2_hash_algo_list>
+            <ikev2_prf_algo_list>
+                <prf_algo value="5"/>
+            </ikev2_prf_algo_list>
+            <esp_encr_algo_list>
+                <encr_algo value="3"/>
+                <encr_algo value="12">
+                    <key_size>128</key_size>
+                </encr_algo>
+            </esp_encr_algo_list>
+            <esp_auth_algo_list>
+                <algo value="2"/>
+                <algo value="5"/>
+            </esp_auth_algo_list>
+            <eap_fra_pseudo_enabled>TRUE</eap_fra_pseudo_enabled>
+            <eap_reauth_realm_enabled>TRUE</eap_reauth_realm_enabled>
+        </ikev2_info>
+        <epdg_addr_info>
+            <static_fqdn_enabled>FALSE</static_fqdn_enabled>
+        </epdg_addr_info>
+    </GENERIC_VARIANT>
+    <WP_VARIANT>
+        <ikev2_info>
+            <esp_auth_algo_list>
+                <algo value="1"/>
+                <algo value="2"/>
+            </esp_auth_algo_list>
+            <configured_ike_port>4500</configured_ike_port>
+        </ikev2_info>
+    </WP_VARIANT>
+</IWLAN_S2B_CONFIG>
